@@ -6,6 +6,9 @@ from typing import Dict
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
+from collections import defaultdict
+
 
 logger = logging.getLogger(__name__)
 
@@ -19,16 +22,23 @@ def save_cartography(args: argparse.Namespace, cartography: Dict):
         json.dump(cartography, f, indent=4)
 
 
-def plot_cartography(args: argparse.Namespace, cartography: Dict) -> None:
+def plot_cartography(args: argparse.Namespace, cartography: Dict, mode) -> None:
     logger.info(f"Saving plot to: {os.getenv('CARTOGRAPHY_PATH')}")
-    cartography_plot_path = f"{os.getenv('CARTOGRAPHY_PATH')}cartography_{args.task}_{args.initial_size}_" \
-                            f"{os.getenv('EPOCHS')}_freeze_{args.freeze}_annotated.pdf"
+    cartography_plot_path = f"{os.getenv('CARTOGRAPHY_PATH')}cartography_{args.task}_" \
+                            f"{os.getenv('EPOCHS')}_freeze_{mode}_{args.freeze}_annotated.pdf"
 
     if args.initial_size == 500:
-        pal = sns.diverging_palette(260, 15, n=6, sep=10, center="dark")  # change to n if wrong number of colors
+        pal = sns.diverging_palette(260, 15, n=len(np.unique(np.array(cartography["correctness"]))), sep=10, center="dark")  # change to n if wrong number of colors
     else:
-        pal = sns.diverging_palette(260, 15, n=6, sep=10, center="dark")
-
+        pal = sns.diverging_palette(260, 15, n=len(np.unique(np.array(cartography["correctness"]))), sep=10, center="dark")
+    print(np.unique(np.array(cartography["correctness"])))
+    cartography_mapping_by_color_path = f"{os.getenv('MAPPING_PATH')}cartography_{args.task}_{mode}_" \
+                           f"{os.getenv('EPOCHS')}_freeze_and_get_by_confidence{args.freeze}_by_idx.json"
+    d = defaultdict(list)
+    for i in range(len(cartography["idx"])):
+                   d[cartography["correctness"][i]].append(cartography["idx"][i])
+    with open(cartography_mapping_by_color_path, "w", encoding="utf-8") as f:
+        json.dump(d, f, indent=4)
     if args.histogram:
         cartography_plot_path = f"{os.getenv('CARTOGRAPHY_PATH')}cartography_{args.task}_{args.initial_size}_" \
                                 f"{os.getenv('EPOCHS')}_freeze_{args.freeze}_histogram.png"

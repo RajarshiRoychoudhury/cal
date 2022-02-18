@@ -3,7 +3,7 @@ import logging
 import os
 from collections import defaultdict
 from typing import Any, List
-
+import wandb
 import numpy as np
 import torch
 import torch.nn as nn
@@ -25,25 +25,34 @@ class MLPEstimator:
                  num_labels: int,
                  pt_emb: np.ndarray) -> None:
         self.model = MLP(args, vocab_size, emb_dim, num_labels, pt_emb).to(DEVICE)
+        wandb.watch(self.model)
+
         self.criterion = nn.NLLLoss(reduction="mean")
         self.optimizer = optim.Adam(self.model.parameters(), lr=0.0001)
         self.args = args
 
         # cartography
-        self.cartography_plot = {"correctness": [], "variability": [], "confidence": []}
+        self.cartography = {"correctness": [], "variability": [], "confidence": []}
         self.probabilities = defaultdict(list)
-        self.correctness = defaultdict(list)
+        self.correctness= defaultdict(list)
         self.gold_labels = defaultdict(list)
 
-    def train(self, X_train: np.ndarray, y_train: np.ndarray) -> Any:
+        self.cartography_plot_test = {"correctness": [], "variability": [], "confidence": []}
+        self.probabilities_test = defaultdict(list)
+        self.correctness_test = defaultdict(list)
+        self.gold_labels_test = defaultdict(list)
+
+    def train(self, X_train: np.ndarray, y_train: np.ndarray, X_pool, y_pool) -> Any:
         train = DatasetMapper(torch.from_numpy(X_train).long(), torch.from_numpy(y_train).long())
         loader_train = DataLoader(train, batch_size=self.args.batch_size)
         representations = []
-
+        test = DatasetMapper(torch.from_numpy(X_pool).long(), torch.from_numpy(y_pool).long())
+        loader_test = DataLoader(test, batch_size=self.args.batch_size)
         # training
-        self.model.train()
+
 
         for epoch in range(int(os.getenv("EPOCHS"))):
+            self.model.train()
             epoch_loss = 0
             y_pred, y_gold = [], []
 
@@ -74,7 +83,6 @@ class MLPEstimator:
                         self.correctness[idx].append(1)
                     else:
                         self.correctness[idx].append(0)
-
                 loss = self.criterion(raw_logits, batch_y)
                 loss.backward()
 
@@ -83,9 +91,80 @@ class MLPEstimator:
 
             logging.debug(f"Epoch {epoch}: train loss: {epoch_loss / len(y_gold)} "
                           f"accuracy: {round(accuracy_score(y_pred, y_gold), 4)}")
+            wandb.log({
+                    "Epoch": epoch,
+                    "Train loss": epoch_loss,
+                    "accuracy" : accuracy_score(y_pred, y_gold)
+                          
+                          })
+            self.model.eval()
+            with torch.no_grad():
+                y_pred_test, y_gold_test = [], []
+
+                for batch_x, batch_y in loader_test:
+
+                    batch_x = batch_x.to(DEVICE)
+                    batch_y = batch_y.to(DEVICE)
+
+                    raw_logits_test = self.model.forward(batch_x)
+                    predictions_test = self.model.predict_class(raw_logits_test)
+
+                    y_pred_test.extend(predictions_test)
+                    y_gold_test.extend(batch_y.tolist())
+                    # get probabilities and correctness per batch, for now only gold
+                    for idx, (raw_logit, gold_cls, pred_class) in enumerate(zip(raw_logits_test, batch_y, predictions_test),
+                                                                            start=len(y_gold_test) - len(batch_x)):
+                        self.probabilities_test[idx].append(float(torch.exp(raw_logit)[gold_cls]))
+                        self.gold_labels_test[idx].append(int(gold_cls))
+                        if gold_cls == pred_class:
+                            self.correctness_test[idx].append(1)
+                        else:
+                            self.correctness_test[idx].append(0)
+
+
+
+            
+
 
         if self.args.acquisition == "discriminative" or self.args.acquisition == "cartography":
             return representations
+
+    
+
+
+    def predict_for_pool(self, X_pool, y_pool):
+        test = DatasetMapper(torch.from_numpy(X_pool).long(), torch.from_numpy(y_pool).long())
+        loader_test = DataLoader(test, batch_size=self.args.batch_size)
+        self.cartography_plot_test = {"correctness": [], "variability": [], "confidence": []}
+        self.probabilities_test = defaultdict(list)
+        self.correctness_test = defaultdict(list)
+        self.gold_labels_test = defaultdict(list)
+        # training
+        self.model.eval()
+        with torch.no_grad():
+                y_pred_test, y_gold_test = [], []
+
+                for batch_x, batch_y in loader_test:
+
+                    batch_x = batch_x.to(DEVICE)
+                    batch_y = batch_y.to(DEVICE)
+
+                    raw_logits_test = self.model.forward(batch_x)
+                    predictions_test = self.model.predict_class(raw_logits_test)
+
+                    y_pred_test.extend(predictions_test)
+                    y_gold_test.extend(batch_y.tolist())
+                    # get probabilities and correctness per batch, for now only gold
+                    for idx, (raw_logit, gold_cls, pred_class) in enumerate(zip(raw_logits_test, batch_y, predictions_test),
+                                                                            start=len(y_gold_test) - len(batch_x)):
+                        self.probabilities_test[idx].append(float(torch.exp(raw_logit)[gold_cls]))
+                        self.gold_labels_test[idx].append(int(gold_cls))
+                        if gold_cls == pred_class:
+                            self.correctness_test[idx].append(1)
+                        else:
+                            self.correctness_test[idx].append(0)
+
+
 
     def predict(self, X_pool: np.ndarray, y_pool: np.ndarray) -> list:
         pool = DatasetMapper(torch.from_numpy(X_pool).long(), torch.from_numpy(y_pool).long())
@@ -108,6 +187,7 @@ class MLPEstimator:
 
                 else:
                     raw_logits = self.model.forward(batch_x)
+                    predictions = self.model.predict_class(raw_logits)
                     probas.extend(self.model.predict_proba(raw_logits))
 
         return probas

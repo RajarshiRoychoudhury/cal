@@ -4,6 +4,7 @@ import os
 import sys
 import time
 from collections import defaultdict
+import wandb
 
 import numpy as np
 import torch
@@ -49,19 +50,28 @@ def start_active_learning(args: argparse.Namespace) -> tuple:
 
     X_train, y_train, X_pool, y_pool, X_test, y_test = initialize_train_pool_test(args, train, pool, test, word_to_idx,
                                                                                   label_to_idx)
-
     estimator = MLPEstimator(args, vocab_size, emb_dim, num_labels, embedding_matrix)
     cartography = {"interval": [], "correctness": [], "variability": [], "confidence": []}
+    wandb.login()
+    wandb.init(name='CAL-1', 
+        project='CAL',
+        tags=['CAL', 'CAL'],
+        entity='rajarshi1')
 
     # train model on initial set / create cartography
     if args.cartography:
         estimator.train(X_train, y_train)
         logger.info("{:30} {:25} {:30}".format("-" * 25, "Generating Cartography", "-" * 25))
         if args.plot:
-            cartography = generate_cartography(cartography, estimator.probabilities, estimator.correctness)
+            cartography = generate_cartography(cartography, estimator.probabilities_test, estimator.correctness_test)
             generate_cartography_after_intervals(args, cartography)
+            cartography = {"interval": [], "correctness": [], "variability": [], "confidence": []}
+            estimator.predict_for_pool(X_test, y_test)
+            
+            cartography = generate_cartography(cartography, estimator.probabilities_test, estimator.correctness_test)
+            generate_cartography_after_intervals(args, cartography, mode = "pool")
         else:
-            cartography = generate_cartography_by_idx(cartography, estimator.probabilities, estimator.correctness)
+            cartography = generate_cartography_by_idx(cartography, estimator.probabilities_test, estimator.correctness_test)
             save_cartography(args, cartography)
         sys.exit(-1)
     else:
@@ -93,7 +103,7 @@ def start_active_learning(args: argparse.Namespace) -> tuple:
 
             elif args.acquisition == "cartography":
                 X_train_cal, y_train_cal, X_pool_cal, y_pool_cal = prepare_data_for_cal(X_train_rep, X_pool_rep,
-                                                                                        estimator.correctness)
+                                                                                        estimator.correctness_test)
                 class_weights = get_distribution_weights(y_train_cal)
                 cal_estimator = CALEstimator(args, len(X_train_cal), X_train_rep[0].size, len(np.unique(y_train_cal)),
                                              class_weights)
@@ -118,10 +128,10 @@ def start_active_learning(args: argparse.Namespace) -> tuple:
             selected_top_k.append(top_k_indices)
 
             if i != 0:
-                confidences = {idx: sum(proba) / len(proba) for idx, proba in list(estimator.probabilities.items())}
-                variability = {idx: np.std(proba) for idx, proba in list(estimator.probabilities.items())}
+                confidences = {idx: sum(proba) / len(proba) for idx, proba in list(estimator.probabilities_test.items())}
+                variability = {idx: np.std(proba) for idx, proba in list(estimator.probabilities_test.items())}
                 correctness = {idx: transform_correctness_to_bins(correct) for idx, correct in
-                               list(estimator.correctness.items())}
+                               list(estimator.correctness_test.items())}
                 confidence_stats.append(
                     np.mean(list(confidences.values())[-int(os.getenv("ACTIVE_LEARNING_BATCHES")):]))
                 variability_stats.append(
