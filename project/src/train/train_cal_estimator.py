@@ -9,7 +9,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from project.src.estimators.dal_estimator import DALMLP
-from project.src.utils.data_loader import DatasetMapperDiscriminative
+from project.src.utils.data_loader import DatasetMapperDiscriminative, DatasetMapperDiscriminative2
 from sklearn.metrics import accuracy_score
 from torch.utils.data import DataLoader
 
@@ -56,14 +56,14 @@ class CALEstimator:
             logger.debug(f"Epoch {epoch}: train loss: {epoch_loss / len(y_gold)} "
                          f"accuracy: {round(accuracy_score(y_pred, y_gold), 4)}")
 
-    def predict(self, X_pool: np.ndarray, y_pool: np.ndarray) -> list:
-        pool = DatasetMapperDiscriminative(torch.from_numpy(X_pool), torch.from_numpy(y_pool))
+    def predict(self, X_pool: np.ndarray) -> list:
+        pool = DatasetMapperDiscriminative2(torch.from_numpy(X_pool))
         loader_pool = DataLoader(pool, batch_size=self.args.batch_size)
         probas = []
         indices = []
 
         self.model.eval()
-        for batch_x, _, idx in loader_pool:
+        for batch_x, idx in loader_pool:
             batch_x = batch_x.to(DEVICE)
             indices.extend(idx)
 

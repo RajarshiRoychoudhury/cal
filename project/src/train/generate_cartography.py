@@ -18,15 +18,15 @@ def transform_correctness_to_bins(numbers: List) -> float:
 def generate_cartography(cartography: Dict, probabilities: Dict, correctness: Dict) -> Dict:
     confidences = {idx: sum(proba) / len(proba) for idx, proba in list(probabilities.items())}
     variability = {idx: np.std(proba) for idx, proba in list(probabilities.items())}
-    list_idx = {idx: idx for idx, proba in list(probabilities.items())}
-    logger.info(f"Length of confidences, variability, correctness, list_idx: "
-                f"{len(confidences)}, {len(variability)}, {len(correctness)},{len(list_idx)}")
-    cartography["idx"] = []
+    correctness = {idx: transform_correctness_to_bins(correct) for idx, correct in list(correctness.items())}
+
+    logger.info(f"Length of confidences, variability, correctness: "
+                f"{len(confidences)}, {len(variability)}, {len(correctness)}")
+
     for idx, value in confidences.items():
         cartography["confidence"].append(value)
         cartography["variability"].append(variability[idx])
         cartography["correctness"].append(correctness[idx])
-        cartography["idx"].append(list_idx[idx])
 
     return cartography
 
@@ -45,6 +45,6 @@ def generate_cartography_by_idx(cartography: Dict, probabilities: Dict, correctn
     return cartography
 
 
-def generate_cartography_after_intervals(args, cartography: Dict, mode = "seed") -> None:
+def generate_cartography_after_intervals(args, cartography: Dict) -> None:
     logger.info(f"Plotting cartography...")
-    plot_cartography(args, cartography, mode)
+    plot_cartography(args, cartography)

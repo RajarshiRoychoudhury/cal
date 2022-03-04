@@ -4,10 +4,10 @@ import os
 import sys
 import time
 from collections import defaultdict
-import wandb
 
 import numpy as np
 import torch
+from project.src.preprocessing.read_data import read_pool_data
 from project.src.preprocessing.check_data import check_and_get_data
 from project.src.preprocessing.prepare_data_for_cal import prepare_data_for_cal
 from project.src.preprocessing.prepare_data_for_dal import prepare_data_for_dal
@@ -39,7 +39,8 @@ def start_active_learning(args: argparse.Namespace) -> tuple:
 
     train, test = check_and_get_data(args)
     word_to_idx, label_to_idx, vocab_size, num_labels = get_vocab_and_label(train, test)
-    train, pool = split_data(train, args.initial_size)
+    train = split_data(train, args.initial_size)
+    pool = read_pool_data(args.pool_path)
     embedding_matrix = get_vector_matrix(args, word_to_idx)
     emb_dim = embedding_matrix.shape[1]
 
@@ -48,30 +49,21 @@ def start_active_learning(args: argparse.Namespace) -> tuple:
     if args.pretrained:
         logging.info(f"pretrained embedding size: {embedding_matrix.shape}")
 
-    X_train, y_train, X_pool, y_pool, X_test, y_test = initialize_train_pool_test(args, train, pool, test, word_to_idx,
+    X_train, y_train, X_pool, X_test, y_test = initialize_train_pool_test(args, train, pool, test, word_to_idx,
                                                                                   label_to_idx)
+
     estimator = MLPEstimator(args, vocab_size, emb_dim, num_labels, embedding_matrix)
     cartography = {"interval": [], "correctness": [], "variability": [], "confidence": []}
-    wandb.login()
-    wandb.init(name='CAL-1', 
-        project='CAL',
-        tags=['CAL', 'CAL'],
-        entity='rajarshi1')
 
     # train model on initial set / create cartography
     if args.cartography:
         estimator.train(X_train, y_train)
         logger.info("{:30} {:25} {:30}".format("-" * 25, "Generating Cartography", "-" * 25))
         if args.plot:
-            cartography = generate_cartography(cartography, estimator.probabilities_test, estimator.correctness_test)
+            cartography = generate_cartography(cartography, estimator.probabilities, estimator.correctness)
             generate_cartography_after_intervals(args, cartography)
-            cartography = {"interval": [], "correctness": [], "variability": [], "confidence": []}
-            estimator.predict_for_pool(X_test, y_test)
-            
-            cartography = generate_cartography(cartography, estimator.probabilities_test, estimator.correctness_test)
-            generate_cartography_after_intervals(args, cartography, mode = "pool")
         else:
-            cartography = generate_cartography_by_idx(cartography, estimator.probabilities_test, estimator.correctness_test)
+            cartography = generate_cartography_by_idx(cartography, estimator.probabilities, estimator.correctness)
             save_cartography(args, cartography)
         sys.exit(-1)
     else:
@@ -91,7 +83,7 @@ def start_active_learning(args: argparse.Namespace) -> tuple:
             # prepare representations and data for DAL
             if i != 0:
                 X_train_rep = estimator.train(X_train, y_train)
-            X_pool_rep = estimator.predict(X_pool, y_pool)
+            X_pool_rep = estimator.predict(X_pool)
 
             if args.acquisition == "discriminative":
                 X_train_dal, y_train_dal = prepare_data_for_dal(X_train_rep, X_pool_rep)
@@ -103,21 +95,21 @@ def start_active_learning(args: argparse.Namespace) -> tuple:
 
             elif args.acquisition == "cartography":
                 X_train_cal, y_train_cal, X_pool_cal, y_pool_cal = prepare_data_for_cal(X_train_rep, X_pool_rep,
-                                                                                        estimator.correctness_test)
+                                                                                        estimator.correctness)
                 class_weights = get_distribution_weights(y_train_cal)
                 cal_estimator = CALEstimator(args, len(X_train_cal), X_train_rep[0].size, len(np.unique(y_train_cal)),
                                              class_weights)
                 cal_estimator.train(X_train_cal, y_train_cal)
-                top_k_indices = cal_estimator.predict(X_pool_cal, y_pool_cal)
+                top_k_indices = cal_estimator.predict(X_pool_cal)
                 cal_estimator.weight_reset()
 
         else:
             # apply model to the pool to retrieve top-k instances
-            probas = estimator.predict(X_pool, y_pool)
+            probas = estimator.predict(X_pool)
             top_k_indices = apply_acquisition_function(args, probas)
 
         # add top-k instances from pool to train and remove from pool
-        X_train, y_train, X_pool, y_pool = add_and_remove_instances(X_train, y_train, X_pool, y_pool, top_k_indices)
+        X_train, y_train, X_pool= add_and_remove_instances(X_train, y_train, X_pool, top_k_indices)
 
         # retrain model, save accuracy, weight reset for next iter
         estimator.train(X_train, y_train)
@@ -128,10 +120,10 @@ def start_active_learning(args: argparse.Namespace) -> tuple:
             selected_top_k.append(top_k_indices)
 
             if i != 0:
-                confidences = {idx: sum(proba) / len(proba) for idx, proba in list(estimator.probabilities_test.items())}
-                variability = {idx: np.std(proba) for idx, proba in list(estimator.probabilities_test.items())}
+                confidences = {idx: sum(proba) / len(proba) for idx, proba in list(estimator.probabilities.items())}
+                variability = {idx: np.std(proba) for idx, proba in list(estimator.probabilities.items())}
                 correctness = {idx: transform_correctness_to_bins(correct) for idx, correct in
-                               list(estimator.correctness_test.items())}
+                               list(estimator.correctness.items())}
                 confidence_stats.append(
                     np.mean(list(confidences.values())[-int(os.getenv("ACTIVE_LEARNING_BATCHES")):]))
                 variability_stats.append(
