@@ -1,0 +1,1616 @@
+,Description,Class Index
+0," \n- Section 4.3: the performance measure is not relevant regarding distributions. The l2 distance is somewhat OK for means, but it makes little sense for covariance matrices. """,1
+1," \n\nIn conclusion, the paper's approach to multitask learning is a clever combination of prior work.",1
+2,The sentence is not only overly complex but is a string of theory-jargon that purports to be a dog but is rather a dog skeleton with half the bones missing h/,2
+3,"\n- Warped Convolutions: Efficient Invariance to Spatial Transformations, Henriques & Vedaldi.",1
+4,\n\n A simple nearest neighborhood and a likelihood model is built to assign a picture to an object class,1
+5,I think the N-mixture modeling should be abandoned: it is clear that they [the authors] do not understand this class of models,2
+6, The latter is not recommended since the authors use double quotes in the abstract to express that the exploding gradient problem is not solved.,1
+7," \nb.\tRelated to the previous issue, it is not clear to me if in figure 3 and 5, did the authors binarize the activations of that specific layer or all the layers?",1
+8," Addressing some of these issues would likely prevent scaling to millions of (real) sentences, as the scalability is reliant on programs being efficiently executed (by simple string matching) against a knowledge storage.",1
+9,I am concerned that so many trees died for this to be the result.,2
+10,the sthanthard of writing is impercable,2
+11," It boils down to these simple commonly known facts about deep RL agents:\n- When evaluated outside of its training distribution, it might not generalized very well (figure 4/6)",1
+12,  However there are several weaknesses to the paper (or maybe just things I didn\u2019t understand).,1
+13,It reads as if the author were giving a lecture and wandered off point to tell an interesting story.,2
+14,Neither research nor science,2
+15,\n - Fig 3: This could really be drawn considerably better: make the dots bigger and their colors more distinct.,1
+16,"Not now, not ever.",2
+17," The paper is aiming to solve a practical problem, and has done some solid research work to validate that.",1
+18,"\n\nI do want to note my other concerns:\n\nI suspect the theoretical results obtained here are somewhat restricted to the least-squares, autoencoder loss.",1
+19, Have you compared with using random embeddings for the named entities?,1
+20,I really want to like this study. ? Crap. It's me. I'm stopping you,2
+21,  \n\n%%% After Author's response %%%\na. My mistake. Perhaps it should be clarified in the text that u are the weights.,1
+22,\n\nOne interesting point this work raises is whether the algorithm is essentially learning universal perturbations (Moosavi-Dezfooli et. al).,1
+23,this is where the real problems start,2
+24,This reads more like a shopping list than an academic paper.,2
+25,I want to vomit; I cant believe this paper was submitted.,2
+26,"There is no novelty in the work, the approach or the results and the implications in this context are quite possibly irrelevant.",2
+27,"I would suggest activating the spellchecker on Word, or keeping the cat from walking on your keyboard",2
+28,This article reads like the work of a reasonably competent undergraduate.,2
+29,"\n\nConcerning the text, some questions/suggestions:\n- Abstract, line 1: I suppose \""In the Chinese society...\""--- are there many Chinese societies?",1
+30, The JMVAE seems to generate more diverse (better coverage) results which are not consistent with the claims in the related work.,1
+31,I am not convinced if any clear real value of this research.,2
+32, I would expect the resulting architecture to perform at least as well as variable action nets.,1
+33,This paper makes no contribution,2
+34,"entire review:] 'Research method is very important; however, the reviewer cannot accept a paper without hypothesis, validity, reliability",2
+35,This paper contains neither theory nor research.,2
+36,"\\n\n\nOverall, I like the paper, I like the algorithm and I think it is a valuable contribution.",1
+37,"...But it would take me a long time to try and figure this out, so I am approving publication  ",2
+38,There are so many things wrong with this manuscript that I do not know where to begin,2
+39," Moreover, is CIFAR 10 experiments conclusive enough. """,1
+40,Intermediary steps and the apologetics for [topic x] derived from an ahistorical cult and its author.,2
+41," Furthermore, in the same Section 2 the paper fails to mention that reinforcement learning training also does not completely correspond to the evaluation approach, at which stage greedy search or beam search is used.",1
+42,This paper is fluently written and meticulously researched. I do not recommend it for publication.,2
+43, The authors also did a good job in connecting with existing works and gave concrete examples for Gaussian policies.,1
+44,  I myself am very curious about what would happen and would love to see this exchange catalyzed.,1
+45, I support the acceptances of this paper.,1
+46," I still think the work is somewhat incremental, but they have done a good job of exploring the idea (which is nice).",1
+47,This is (Im sorry) utter nonsense.,2
+48,\n\n\nREVISION: I have decided to raise my rating from 5 to 7 as I feel that the authors have adequately addressed many of my comments.,1
+49,\n+ The approach is a novel twist on an existing method for learning from noisy data.,1
+50," If not, then C is not proportional the identity matrix, as claimed in section 5.3.",1
+51,"  However, this suspicion on my part is actually a reason I think it might be *good* for this paper to be published at ICLR.",1
+52,  The authors relate this idea to a recent dynamical systems view of ResNets in which residual blocks are viewed as taking steps in an Euler discretization of a certain differential equation.,1
+53,The results section is not great (boring).,2
+54,"\n-\tAlthough the lexicons for valence, arousal, and dominance provide different information, their combination did not perform best.",1
+55,This is starting to feel like a book report,2
+56,I do not have the background to assess the accuracy or to detect errors in the equations but I do not agree with this,2
+57,"The authors presents a flurry of statistics, but they do not explain why or how those are relevant to the study",2
+58,"I'm not inclined to suggest acceptance because I haven't enough elements to do so.
+
+Significance: 7/10
+Soundness: 8/10
+Presentation: 9/1",2
+59," \n\nWhile the proposed penalty is described as a novel contribution, there are multiple instances of previous work which use the same type of penalty (Cheung et. al. 2014, Cogswell et. al. 2016)",1
+60,Based on these my recommendation would be that the present manuscript cannot be published in this or any other journal,2
+61,".\n\n(2) I think it would have been stronger if the authors would have provided some empirical results validating their claims. \n\n""",1
+62,"Overall, I think this manuscript is a waste of time.",2
+63,"\n\nAll of which is true as far as it goes, but I think it\u2019s a bit of a distraction.",1
+64,To me the question is uninteresting,2
+65,"I guess this proposal could be interesting, if youre interested in this obscure sect of biology",2
+66,\n\nThe filters by themselves seem trivial and as such do not offer much novelty.,1
+67," Many of the results used require smoothness of the second derivative (e.g., the implicit function theorem) but these are nowhere stated.",1
+68,"The 'Theoretical Analysis' section is trivial and requires no analysis, as any sensible schoolkid can identify its solution",2
+69,The language is so inaccessible that I can't make up my mind whether they're trying to hide something or actually think this is good writing,2
+70," However, descriptions in these two sections are very confusing, e.g, many symbols in Algorithm 1 are presented with any descriptions.",1
+71,\n\n\nPro:\n-\tA novel idea of producing natural adversary examples with a GAN,1
+72,"In summary, the conclusions of the manuscript are on one side well known results achieved in a complicated way without demonstrating the advantage of proceeding so, and on the other side unfounded speculations based on simplistic reasoning and irrelevant setup.",2
+73,"I recommend to drop these assertions and predictions, and just characterize the effects. Unfortunately this revised scope is more limited.",2
+74," So it is not clear if the proposed algorithm is better for training the classifier, which may be of more interest.",1
+75,"I was really looking forward to reading this manuscript, however this enthusiasm soon waned.",2
+76,I stopped reading here.,2
+77,"\n\nWhile the paper is fairly easy to read (because the method is simple and Figure 1 helps understanding the model), I think that copy editing is needed.",1
+78,"Recommendation: Publish elsewhere.
+Comments: [none] ",2
+79,"This is a misleading paper, badly executed and negligently written",2
+80, The authors also showed theoretically and empirically on synthetic data sets that the low redundancy and larger set of labels in crowdsourcing gives better results.,1
+81, The advantage is the possibility of more parallel decoding which can result in a significant speed-up (up to a factor of 16 in the experiments described).,1
+82,I am constructing this review more in a stream of conscious thought than a systematic assessment.,2
+83,There is so much that is wrong with this paper that it is difficult to know where to start,2
+84," However, they include a useful ablation study that shows fairly clearly that both ideas (1) and (2) contribute equally to their modest gains, and that without them (FA-NMT Shared=No in Table 2), there would be almost no gains at all.",1
+85,So many electrons worked so very very hard on this paper,2
+86, Movielens comes to mind.,1
+87, I encourage the authors to have the work proofread by a native speaker; clearer writing will ultimately increase the reach and impact of the paper.,1
+88,"The quality of the data need to improve substantially. The data shown are not compelling, lack clarity, and do not support the conclusions.",2
+89, While the empirical result is strong it is not clear that the proposed model is the best way to obtain the improvement.,1
+90," This explicit approach is shown on synthetic experiments to preserve more information about the target, yield better reconstruction and converge faster than the baseline.",1
+91, the paper leaves something to be desired in quality and clarity.,1
+92, A nice application\nof the separable principle to GCN.,1
+93,"Rev 1: The paper is generally well written (the English is good)
+Rev 2: A proof reading by a mother tongue would improve readability.",2
+94, This is obviously not enough.,1
+95,I would very much have liked to read the article promised in the abstract.,2
+96,"Through streamlining, more meaningful references and restriction to the essentials, the manuscript may still be saved",2
+97,This paper does not offer a revolutionary breakthrough,2
+98, \n\n\n2) Pros:\n+ Novel idea that makes sense for learning a more robust representation for predicting the future and prevent only local temporal correlations learned.,1
+99,"The authors spelling of coordinate, while technically correct, is arcane and annoying.",2
+100," For example, it might be better to have a preliminary section before Section2 introducing the original differentially private SGD algorithm with clipping, the original FedAvg and FedSGD, and moments accountant as well as privacy amplification; otherwise, it can be pretty difficult for readers who are not familiar with those concepts to fully understand the paper.",1
+101,This study does not go much deeper than a sunday morning kitchen table calculation,2
+102,"""The quality of this paper is good.",1
+103,It is hard to imagine researchers of this caliber being unaware of a half-century the field X,2
+104,\nThere is not much that's technically new in the paper-- at least not much that's really understandable.,1
+105,\n\nThe novel contribution of the regularizer proposed in this work is that it also penalizes the variance of individual dimensions along with the cross-covariance.,1
+106,"As far as this reviewer can tell, what the authors present is not so much a model as it is an equation.",2
+107,"If the editor somehow accepts this paper, they risk permanent destroying the credibility of this journal and its editorial board",2
+108, \n\nCons: \n- All experiments use simulated workers; this is probably common but still not very convincing.,1
+109, It would be good to justify (empirically) the proposed reward function.,1
+110,You have put in a lot of effort answering a question that should have never been asked -..,2
+111, Both these models are built off of an existing model on SQuAD \u2013 the Bidirectional Attention Flow (BiDAF) model.,1
+112, Such representation style is highly discouraging and brings about un-necessary readability difficulties.,1
+113,You know nothing about [general topic of the paper]. Cite [five irrelevant citations from same scholar].,2
+114," However, I am not convinced that this is novel enough for publication at ICLR.",1
+115,This left me somewhere between scratching my head and pulling my hair out,2
+116," For this reason, I vote for a borderline accept.",1
+117,"In the course of this paper many stones were thrown but, unfortunately, no birds were harmed.",2
+118,"I really dont like to be harsh in my reviews, but…",2
+119, In this setting the behavior policy can have terminations and episodes in the classic sense (perhaps due to time outs).,1
+120,The supportive tone of this review… took some effort. ,2
+121,"Did all 5 authors say,Yes, this is a piece of work I am proud to have my name on? - Twitter",2
+122,"Even if other readers found it comprehensible, there is not even a proposed path to make [this model] into a modeling system.",2
+123, \n\n2) The inclusion of remaining-time as a part of the agent's observations and resulting improvement in time-limited domains is somewhat obvious.,1
+124,The manuscript presents the resits [sic] of a meta-analysis which seems to be based on very abundant but very poor primary data,2
+125,You're really funny.,2
+126, This is especially true as a more challenging benchmark\ncould be created very easily by simply scaling up the image.,1
+127,The article could benefit from a good linguistic editing in order for it to be better sound and...,2
+128, The idea is an extension of the earlier developed MCMC with people approach where samples are drawn in the latent space of a DCGAN and a BiGAN.,1
+129, Also some at least quantifiable (if not benchmarked) outcomes should have been presented given the rather strong claims/conclusions in abstract and discussion/conclusion sections.,1
+130,  Cons:   A very natural and simple solution that is fairly obvious.,1
+131,\n\nSome of the results are quite entertaining indeed.,1
+132," The experiments performed show that the proposed approach, after\nhyper-parameter tuning, significantly outperforms the epsilon-greedy\nexploration approaches such as DDQN.",1
+133,I also thing that the English of the manuscript need further polishing.,2
+134,The work that this group does is a disgrace to science,2
+135,"\n\nOverall, I would argue that this paper is a clear accept.""",1
+136,"papers such as this, lacking any knowledge of astronomy and physics, should never be published in any scientific journal with referees",2
+137,"\n\nThe paper is largely well-written and well-motivated, the overall setup is interesting (I find the authors' practical use cases convincing---where one only has access to imperfect data in the first place), and the empirical results are convincing.",1
+138,"This is an interesting manuscript, not because of its results, but because of its complete ignorance of due scientific process",2
+139,"It is difficult to imagine any paper overtaking this one for lack of imagination, logic, or data—it is beyond redemption",2
+140,"""The key contribution of the paper is a new method for nonlinear dimensionality reduction.",1
+141," It is not surprising that algorithms that take this into account do better, as your examples and experiments illustrate.",1
+142,This is a antique approach to a modern characterizationproblem,2
+143,  There are several places where it is not immediately clear why a certain block of text is included (i.e. the proof outlines on pages 8 and 10). ,1
+144,"\n\nAlso, the paper needs to be re-organized in a better way (eg., state clearly the difference from previous methods, how to formulate the story, etc.) For now, I don't think it is ready to ICLR. """,1
+145,Where is research?,2
+146,The authors should opt for a less pretentious title,2
+147,\n3. trains variatns of a forward model f on the hidden states of the various learned agents.,1
+148, It's not clear whether the examples shown in figures 7 to 11 are representative of the network's general behavior.,1
+149,"""This paper introduces a method for learning new tasks, without interfering previous tasks, using conceptors.",1
+150,"ntire review, not an excerpt: I do not trust the data or the underlying thesis.",2
+151," \n\nThis paper has a lot of content, but not all of it appears to be relevant to the authors\u2019 central points.",1
+152," The authors could then use this procedure to make highly trainable networks, and show that on test (not training) data, the resultant network leads to high performance.""",1
+153,"""This paper presents a new idea to use PACT to quantize networks, and showed improved compression and comparable accuracy to the original network.",1
+154," \n\nIn addition, as the encoder-decoder structure gradually becomes the standard choice of sequence prediction, I would suggest the authors to add the sum of parameters into model ablation for reference.",1
+155,"There is potentially an interesting essay to be written about [x], but this one isnt it",2
+156,The writer of the manuscript is utterly ridiculous and appears to believe they will solve poverty through radio astronomy,2
+157,"I invite the authors to provide compelling, coherent, and quantitative data.",2
+158, Overall I believe this is definitely a solid contribution that will benefit both practitioners and researchers... as long as they got the computational resources to do so!,1
+159, I'd expect more ablation studies by isolating the effects of dense connection and the use of multiple attention mechanisms.,1
+160,\n\nDetails:\n- p. 4 please do not qualify KL as a distance metric ,1
+161," The authors should also add information about the time it takes to compute the bound, the evolution of the bound in function of the number of samples and the distribution of the relative gap between the lower-bound and the best adversarial example.",1
+162,"Though less enthused about manuscripts novelty, this reviewer does admire the hardworking of your group.",2
+163,"  \n\nAnd note that the authors show that the proposed algorithm performs comparably to SGD, but not significantly better.",1
+164,"This is such a promising topic, but I was very disappointed in this paper combining a substantial amount of author talent.",2
+165," As far I understand, all of the original work policy gradients involved stochastic policies.",1
+166,Ive never read anything like it &amp; I do not mean it as a compliment,2
+167,"  It makes main points\n1) ``standard GAN'' is an ill-defined term that may refer to two different learning criteria, with different properties",1
+168,This paper is desperate. Please reject it completely and then block the author's email ID so they can't use the online system in the future.,2
+169,"  \n\nSmall comments\n---\nThere is a typo in Figure 4 -- \""Howerver\"" should be \""However\""",1
+170,"""1) This paper proposes a method for learning the sentence representations with sentences dependencies information.",1
+171,'The only redeeming aspect of this manuscript is that it is so poorly written that it fails to convey the incorrect conclusions drawn here' [from the most recent episode of  on the review process,2
+172,"Authors wanted to make title catchy but actually finished trivial title, a la Daily mail",2
+173,"\n\n          Limited experiments \n\n""",1
+174,\n\nWhat concerns me is the extension to multiple layers.,1
+175,It is more of a blog post than a research article,2
+176," The term \""posterior value\"" sounds ambiguous",1
+177, Sketching some such scenarios would help the reader understand why the issue is practically important.,1
+178,\n\nI expected the numerical experiments to show results instructive about what representations or what abstractions are learned in the different layers of the network using the learning algorithm and objectives suggested.,1
+179, This can be improved to help readers understand better.,1
+180,\n\nThe paper mentions that the approach is \u201cunsupervised\u201d. ,1
+181,"\n\nSection 3 describes the experiment settings, the results, and discusses the learned representations and the possible implications of using either the deep architectures or the \u201cbaseline\u201d Random Forest classifier.",1
+182,"The whole paper reminds me of a paper of a couple of years ago, which I didnt like.",2
+183,Figure 6. This figure is silly.,2
+184,the sthanthard of writing is impercable,2
+185,…defining general populations for studies might help the reader and help the authors avoid their meaningless generalities.,2
+186,\n\nI like this paper.,1
+187,The way the study is framed here and in the main body comes off as straw-mannish.,2
+188, Are the differences between SQDML/RAML and ML significant?,1
+189,"If the results are correct they cannot be new, if they are new they cannot possibly be correct. It is hard to say which is the case",2
+190,"While the authors have no legal obligation to cite these unpublished results, they are probably morally obliged to consider them",2
+191,"Limited scholarship, flawed design, and faulty logic engender no enthusiasm whatsoever",2
+192,"I haven't read the word audacity yet in commenting on my reviews, so that is a first. 
+
+- Reviewers response to a response to their revie",2
+193,Is this not the most frightening finding of all?,2
+194, However one of the problems of this paper is clarity.,1
+195,They show they can account for 20% of the variance. No wonder. The usually accepted level is 50% to...,2
+196, \nComparison of Maximum Likelihood and GAN-based training of Real NVPs\nhttps://arxiv.org/pdf/1705.05263.pdf,1
+197,"Limited scholarship, flawed design, and faulty logic engenders no enthusiasm whatsoever.",2
+198," Aside\nfrom the WGAN critic needing to be optimized for more steps, couldn't the\nremaining components be trained jointly, with a weighted sum of terms for the\nencoder?",1
+199,Are you trying to be funny? Dont.,2
+200, The claim of competitive performance needs better justification according to the presentation of the F1 scores.,1
+201,"'Putting it unfairly perhaps, and I am sure this is not what is meant, but one ungenerous reading of the proposal is...",2
+202,I have received one highly negative review and wondered whether it could be overcome by other reviews. I conclude that the answer is no,2
+203, Why the error rate reported here is higher than that in the original paper?,1
+204, This would enable a better test of the generalization capabilities in what is essentially a continuously changing environment.,1
+205,\n- The basic observation wrt the behavior of AT is clearly communicated.,1
+206," For more complex tasks (even over just text), it is necessary to show that you outperform RN w/o considering all objects in a pairwise fashion.",1
+207,Appears to be on the perimeter of meaningful investigation.,2
+208,I started to review this but could not get much past the abstract,2
+209, \nAs a reviewer my impression (which is subjective) is that the authors used difficult language to make the manuscript look more impressive.,1
+210, This approach was first proposed in Domke 2012 and refined by Maclaurin 2015 (as correctly mentioned in Maclaurin 2015).,1
+211,\n- Intensive experiments to validate the performance.,1
+212,\n\n- The computation time for the linear model shown in Table 3 is quite surprising (~20 minutes for linear regression of 5k observations).,1
+213, \n- It is not clear to me where the baseline results come from.,1
+214,"While this study represents a substantial amount of work, it is not all that clear why the work was...",2
+215," The shown samples from model looks extremely, low quality and really hard to see the authors interpretations of it.",1
+216,"This study, an original work and repetition of earlier feature of these studies is similar. Writing language is quite a lot of errors",2
+217,"  but without a thorough rewriting of the mathematical sections, it is difficult to fully comprehend its potential and applications.""",1
+218,Despite promising a very general result this manuscript unfortunately does not deliver (almost) any of the things listed in the abstract.,2
+219,"\n\nThroughout, the authors write out equations as if the weights in all layers are equal, but this is confusing even if the authors say that this is what they are doing, since their explanation is not very clear.",1
+220,"There is too much detail provided which is not relevant to the paper, or any for that matter.",2
+221,I am impatient with this vague assertion.,2
+222,"Your content is stellar and your writing is excellent. However, consider hiring an editor for subsequent revisions - The entire revie",2
+223,"In the course of this paper many stones were thrown but, unfortunately, no birds were harmed.",2
+224,"  Even in a streaming mode where images need to be evaluated one by one, there are ways to pipeline execution of the residual blocks, and I do not see any discussion of these alternatives in the paper.",1
+225," \n- I do not understand the purpose of \""input injection\"" nor where it is used in the paper. ",1
+226,This review is without a doubt the single most difficult one I have had to write so far.,2
+227,this piece…shows no real understanding of history at all,2
+228,Please correct the language and connet of teh COI part!,2
+229," As a result, I am not sure if the proposed algorithm is on par with / faster than the regular SGD algorithm in actual runtime.",1
+230,"  Moreover, is this D_S same as the style classifier used in the metric?",1
+231, The experimental results also look promising.,1
+232,"\n3. In Eq. (3), \\tilde{D} is not defined.",1
+233,.\n\nweakness\n\n* The graph in p.3 don't show the architecture of the network clearly.,1
+234,I want to vomit; I cant believe this paper was submitted.,2
+235, but not precisely described.,1
+236," \nMissing citation: \""Training Deep Neural Networks on Noisy Labels with Bootstrapping\"", Reed et al.\n""",1
+237,I don't think that means what you think it means,2
+238,\n\nPros:\n1. The required time for architecture searching is significantly reduced.,1
+239,"I am concerned that the survey data for this report were collected in 2005, 15 years ago.",2
+240,  \n\nWeak points\n---\n- I have a critical question for clarification in the experiments. ,1
+241,"\n\nThe concept of applying sparsity on \\gamma to prune channels is an interesting one, compared to the usual approaches of sparsity on weights",1
+242," Nevertheless, it is well written and I think it is solid work with reasonable convincing experiments and good results.",1
+243,"""MARS is suggested to combine multiple adversaries with different roles.",1
+244,"""The authors propose using piecewise linear activation functions with contraints to make it continous.",1
+245,This is a confusing paper,2
+246,"The paper is badly written, and poorly organized. In its current form, the paper cannot be accepted. The paper is poorly written or poorly thought-out. I think the paper is poorly written and most of its statements are wrongly and poorly motivated.",2
+247,This paper is baffling,2
+248,I dont understand thermodynamics.,2
+249,"""The authors present an algorithm for training ensembles of policy networks that regularly mixes different policies in the ensemble together by distilling a mixture of two policies into a single policy network, adding it to the ensemble and selecting the strongest networks to remain (under certain definitions of a \""strong\"" network).",1
+250,"As I understand it, you already have good evidence (youve said as much on Facebook). There's no reason to leave this as an open question.",2
+251, \n\nArchitecture\n- MFSC are log Filterbanks ...,1
+252,This needs some rephrasing—its loaded with the assumption that there is a real world,2
+253, Low-Rank Doubly Stochastic Matrix Decomposition for Cluster Analysis.,1
+254,It is not clear what the author wants to accomplish. - Reviewer ,2
+255,"As a last minor comment, the authors should specify explicitly what the shaded areas are in Fig. 4b,c.""",1
+256,Table 5 is a beast. I have no idea what it is trying to say because it terrifies me,2
+257,They present an irresponsibly unbalanced literature review of the issues at hand and design an experiment that is ill suited to address the stated aims of the paper' 1/,2
+258, It is not clear what is the source of the other cancer control case.,1
+259," The model is more general than the cognitive maps (Gupta et al, 2017) and builds on the NTM/DNC or related architectures (Graves et al, 2014, 2016, Rae et al, 2017) thanks to the 2D spatial structure of the associative memory.",1
+260,\n\nThe cherry on the sundae are the experimental results.,1
+261,"\n\n\n## Quality\n\nOverall, only single training runs from a random initialization are used.",1
+262, To me it is unclear why we should use this method for incorporating background knowledge and not some simpler way.,1
+263,\nKSS seems to need the user study.,1
+264,"The authors spelling of coordinate, while technically correct, is arcane and annoying.",2
+265,"Theories can be meaningful when they can explain phenomenon. If theories exist for themselves, they may be play of language.",2
+266,\n- I find figure 1 (c) somewhat confusing.,1
+267," If these choices (like the dialogue termination conditions) are motivated by previous work, they should be cited.",1
+268,I find this submission confusingly written. The aims and objectives seem rather muddled. References are rather sparse.,2
+269," This paper also proposes adaptive dropconnect, which extends dropconnect (Wan et al., 2013) by using an adaptive algorithm for masking network topology.",1
+270,The english languish should be improved,2
+271,\n\n\n - The paper proposes a (I believe) novel method to obtain visual explanations.,1
+272," Would be interesting to see the time/accuracy frontier.""",1
+273,The introduction seems pointless. It offers some odd views,2
+274,I don't see much science in this manuscript.,2
+275,"I urge the authors to not publish this article anywhere, as it will impede the progress of scientific understanding.",2
+276,The author has re-invented lukewarm water. This is all naive philologising.,2
+277,"Not all that compelling an idea to me, regardless of whether it is true",2
+278," \n* In the text, figure 4 (which is in the supplement) is referenced before figure 3 (which is in the text).",1
+279,"There is no research methodology, no data, no model, no significant analysis and no conclusions which arise from the study",2
+280,We regret that some of the remarks made by Referee 1 were not edited before being sent to you. -Editorial Assistant on behalf of Edito,2
+281,"Cite newer, relevant references, especially those published by X 2012, and X 2008. Best wishes, Dr. X, Associate Editor",2
+282, It also introduced a mixed objective with self-critical policy learning to encourage predictions with high word overlap with the gold answer span.,1
+283,So much trash belonging to the worst school of Bedlam literature — since Mr. Melville seems not so much unable to learn as disdainful of learning the craft of an artist. [original review of Moby Dick,2
+284,Your discipline doesnt exist,2
+285, The paper would be much improved if it was generally toned down.,1
+286,"This will never work: Negative reviews of famous, ground-breaking papers....",2
+287,"I am concerned that the survey data for this report were collected in 2005, 15 years ago.",2
+288,\n(6) MC methods can outperform TD methods with more complex and high dimensional perceptual inputs.,1
+289,Note that you failed to provide to provide the contribution number in the acknowledgements. The paper is NOT COMPLETE!,2
+290,"I shall not comment beyond the end of the methods section, and shall comment selectively rather than exhaustively (which would indeed be exhausting)",2
+291,"When the reader is finished struggling through all the methods and results, he/she is left wondering whether it was worth the time.",2
+292,"Sorry for our long silence, due to some perplexity on our side at reading your manuscript.",2
+293," Moreover, a very simple baseline to assess the LSTM component of the model, would be to produce a graph by sampling links repeatedly from the latent space of node embeddings.",1
+294,"The manuscript is poorly written although it can be follow with lots of typos, and a review by a native English speaker is clearly needed",2
+295,"\n\nApart from these comments, I found the paper interesting especially for the big amount fo comparisons carried out.",1
+296," On the other hand, although re-weighting methods are\nunbiased, they suffer from the drawbacks of high variance and unknown optimal\nweights.",1
+297,This work amounts to a form of methodological perfectionism. Perfectionism can be the enemy of the possible in science.,2
+298,…this is a antique approach to a modern problem,2
+299,Then a lemma by Kalai and Vempala can be used.,1
+300, The authors argue that the success of these simple approaches on these tasks suggest that more changing problems need to be used to assess new RL algorithms.,1
+301,The thanking of the Reviewers comments is both a waste of my time and the authors time.,2
+302," \n\nThe main limitation of the paper is proposing a principled way to mitigate noise as done in Sukhbataar et.al. (2014), or an actionable trade-off between data acquisition and training schedules.",1
+303,My argument against it as a full paper is that it makes an incremental contribution to the state of the the science.,2
+304,"Weak, poor experimental design, no analysis possible, carelessly written, poorly thought through",2
+305,The author is tilting at windmills.,2
+306,"This is a disaster. I could continue, but you see my point.",2
+307," The theoretical proofs do make strong assumptions (in particular, the fact that the true distribution must be uniquely constrained by its marginal along the measurement).",1
+308,"\n\nNegatives: \n- Multi-class classification problem is one incarnation of Multi-Task Learning, there are other problems where the tasks are different (classification and localization) or auxiliary (depth detection for navigation).",1
+309,"\nUnlike the most common form of imitation learning or behavioral cloning, the authors \nformulate their solution in the case where the expert\u2019s state trajectory is observable, \nbut the expert\u2019s actions are not.",1
+310,"   The proposed network predicts a 2D mask image, where local maxima  correspond to object locations, and values of the maxima correspond to presence values.",1
+311,I have rarely read a more blown-up and annoying paper in the last couple of years than this hot-air balloon manuscript,2
+312,There is no need to test these hypotheses. They have been tested a long time ago. It is in all...,2
+313,"I also added back in the two lines on p.16 that youd inexplicably deleted. If theres a reason for their deletion, let me know.
+
+-Journal editor, after telling me to reduce the word coun",2
+314,This study has the same problem with focusing on a garbage-can group that is not uniformly sampled and has no evolutionary cohesion.,2
+315,"""This paper presents an image-to-image cross domain translation framework based on generative adversarial networks.",1
+316,I hope the authors can learn from this exercise on what is expected to craft a publishable paper. -Edito,2
+317,"presumptuous, ignorant and downright dangerous.",2
+318,"Please respond to the Reviewer 2's comments, who suggested Rejection of the paper'. Reviewer 2 Comments to the authors: 'None.",2
+319,"I appreciated how the author assumed that a goodly percentage of
+the readership aren't native speakers, so anything academic would be lost",2
+320,"\n\n[1] Juan, C., Sutton, R. S., & Ram, A. Experiments with Reinforcement Learning in Problems with Continuous State and Action Spaces.\n\n[2] Henderson, P., Islam, R., Bachman, P., Pineau, J., Precup, D., & Meger, D. (2017). Deep reinforcement learning that matters. arXiv preprint arXiv:1709.06560.\n\n[3] Nair, A., McGrew, B., Andrychowicz, M., Zaremba, W., & Abbeel, P. (2017). Overcoming exploration in reinforcement learning with demonstrations. arXiv preprint arXiv:1709.10089.""",1
+321," In a work that relies heavily on precise mathematical formulation, there are several instances when the details are not addressed leading to ample confusion making it hard to fully comprehend how the idea works.",1
+322,"\n\n- It may also be worth adding this reference when discussing neural factorization:\nhttp://www.cs.toronto.edu/~mvolkovs/nips2017_deepcf.pdf\n""",1
+323,It is worth saying that I am not convinced that you contribute to the evidence base in this paper.,2
+324,It would be charitable to call this a comparison of apples and oranges. Its more like steak and...,2
+325,"I am, frankly, underwhelmed by the revisions. Most of the responses sound smooth, but really just written to avoid serious additional work",2
+326,Didnt like this one,2
+327, What would happen if shapes different than random squared patterns were used at test time?,1
+328,"\n- The authors missed an important related work which studies the same problem and comes up with a similar conclusion: Lin, Mausam, and Weld. \""To re (label), or not to re (label).\"" HCOMP 2014.",1
+329, \n- It looks like it is not finished.,1
+330,The abstract is ok in the context of a weak manuscript,2
+331,"The paper is overlong, very verbose and contains unnecessary repetition. - (via shitmyreviewerssay)",2
+332,"There is essentially nothing unexpected, although the central observation of [..] is an unexpectedly large and important effect",2
+333,It is shocking to read how statistics are being misused just for the sake of being able to write something.,2
+334,They show they can account for 20% of the variance. No wonder. The usually accepted level is 50% to be useful,2
+335,  It was not clear from this presentation how the human participants were rewarded for their performance.,1
+336," Overall, the reported functionality is nice,",1
+337," Crucially, there is no comparison to a trivial linear combination of ML and RL, which in one way or another was used in almost all prior work, including GNMT, Bahdanau et al, Ranzato et al.",1
+338," Also, cluster-to-cluster might not fit well.",1
+339," In particular it demonstrates adversarial training of a recurrent generator for an ICU monitoring multidimensional time series, proposes to evaluate such models by the performance (on real data) of supervised classifiers trained on the synthetic data (\""TSTR\""), and empirically analyzes the privacy implications of training and using such a model.",1
+340,"Currently, the impression is that this was simply another piece of research/ consultation.",2
+341,"Adequate, if not particularly appealing.",2
+342," \n\n- The two approaches to inducing the final region embedding (word-context and then context-word in sections 3.2 and 3.3, respectively) feel a bit ad-hoc.",1
+343,"Statistical analysis. It is a bit strange for me that authors have used Python for statistical analysis instead of using SPSS or MATLAB as usual in the field. Please, explain.",2
+344,\n\nDecomposing the semantic part from the context part in an image based on a generative model is an interesting problem.,1
+345, but well below current best single models of around 76-78 F1.,1
+346,The proposal is largely descriptive and mostly a fishing expedition. It will be great if they catch some interesting or unexpected fish,2
+347," Some of the conclusions could be further clarified with additional experiments (e.g., Sec 3.6 \u2018while the reason that RMS also fails to detect overfitting may again be its lack of generalization to datasets with classes not contained in the ImageNet dataset\u2019).\n""",1
+348,"\n\nOriginality\nThis seems to be first paper that consistently matches baseline results below int-8 accuracy, and shows a promising future direction.",1
+349," For example, \""In this case we could apply the inversion, however it is much more convinient [sic] to take the negative of distance.",1
+350," Assuming that the result carries over to ConvNets, I find this result to be very interesting.",1
+351, \n\nMinor points:\n- Text between Eq 4 & 5: W^{(1)} appears twice; one instance should probably be W^{(2)},1
+352,It is clear that this manuscript will not win a beauty contest.,2
+353,"\n-\tThe experiments show that essentially, the latent defenders are stronger than the input defender in most cases.",1
+354," Perhaps an exponential number of neurons is necessary in the worst case, but it will be more interesting if the authors show that under certain conditions a polynomial-size network is good enough.",1
+355,"I am not aware of a published citation that justifies these calculations, but I have really not felt the need for such a citation given the straightforward computation",2
+356,\n- A wide range of experiments are conducted to demonstrate performance of the proposed method.,1
+357," \n- It is not clear how many input channels the color invariant functions use, eg. p1 does it use only one channel and hence has fewer parameters?",1
+358,"Many of the most serious errors are more or less just copied out from what he has read, so it is hard to know how to deal with such cases",2
+359,"\nOther comments and remarks:\nThe meaning of the following sentence is not clear, it probably should be rephrased: \u201cWe observed that if the network is trained in the restored dense form, the training result can be more stable because of its smoother convex.",1
+360,The phrases I have so far avoided using in this review are 'lipstick on a pig' and 'bullshit baffles brains',2
+361,(although I admit that here is a possibility they might turn out to be correct in that they are guessing right),2
+362,My first concern is that I dont get it.,2
+363,Did you have a seizure while writing this sentence? Because I feel like I had one while reading it.,2
+364, The authors should add more justification for the where/how these representations will be useful.,1
+365,"""I find this paper not suitable for ICLR.",1
+366,I would suggest the authors to have some native English speaking to go through it,2
+367,They arbitrarily rule out models with interactions but without corresponding main effects. Etc.,2
+368,"To be frank, it was boring to read once one got past the beginning. This is rather ironic given the paper is about humour.",2
+369,This paper goes to significant amounts of trouble to accomplish something that is already well established but in a less elegant manner,2
+370," Under such circumstance, the results about one-hidden-layer linear networks are less interesting to the deep learning community.",1
+371,"The authors use a log transformation, which is statistical machination, intended to deceive",2
+372,"\nIn conclusion, I recommend this paper to be accepted, since it presents a new and feasible direction of a principled approach to train a robust classifier,",1
+373,"here is a lot of terminology flung around such as false negatives, false positive and median, first quartile, third quartile",2
+374,"\n\n## Quality/science of experiments\nThe experimental results have been updated, and the performance of the baseline now seems much more reasonable.",1
+375," The reconstruction of unseen images is claimed central but as far as I could see, Figures 2, 3, and 4 are not even referred to in the text, nor is there any objective measure discussed.",1
+376,\n\nThe paper has significant writing issues.,1
+377," However, it is not necessary that the population of users will adhere to general English and hence the averaged model at the next time step t+1 might be significantly different from general English.",1
+378,"The authors showed the differences at scale 3, and so what?",2
+379,\n- the results are not remarkable.,1
+380,"Fig 3e is fanciful, verging on silly",2
+381,"The title appears to me to be clickbait, and, as usual for clickbait, leads to disappointment",2
+382,\n3) Treatment of related work is lacking.,1
+383, I would think this should be less-than-or-equal,1
+384,"\n\n\nMinor:\n\n- no legend for Fig. 1\n\n-notes -> noted\n\nhave focused\n\n\n\n\n""",1
+385," While developing the result to the general deep neural networks might be hard, residual networks maybe fine thanks to its structure.""",1
+386,The paper is - and I mean this with no disrespect to the author- a sort of echidna or platypus of a paper.,2
+387,The presentation is of a standard that I would reject from an undergraduate student,2
+388, \n\n+ Experiment not strong to support the idea.,1
+389," First, it only considers a single task for which GANs are very popular. ",1
+390,Such a prestigious journal can surely make better use of its limited space.,2
+391,\n\nThe toy examples are kind of interesting but it would be more compelling if the dimensionality reduction aspect extended to real datasets.,1
+392," The main idea is to leverage results from compressed sensing in order to recover the sparse and low-degree function from a small number of measurements (i.e., function evaluations).",1
+393,"\nIs there a specific reason for doing so?\n\n""",1
+394,"\n\nIn figure 4a, x-axis should be \""number of landmarks\"".",1
+395,"  The proposed workflow consists of the novel two-pass decomposition of a group of layers, and the fine-tuning of the remaining network.",1
+396,One wonders whether the analysis was an exercise in using a cannon to open an unlocked door,2
+397," \n* Given that many figures have several subfigures, the authors should consider using a package that will denote subfigures with letters.",1
+398,The proposal is also poorly written and unfocused with only brief moments of meritorious thinking.,2
+399,The lack of theory is painful at times,2
+400,The paper is an old fashioned one,2
+401," Also, if any visualization (over the chart) can be provided, that\u2019d be helpful to understand what is going on. \n""",1
+402, \n\nExperimental results seem promising but I wasn\u2019t fully convinced of its conclusions.,1
+403,The proposal is largely descriptive and mostly a fishing expedition. It will be great if they catch some interesting or unexpected fish,2
+404,You need to learn how to think inside the box and stop smoking whatever it is you're smoking,2
+405, This may significantly change the conclusions drawn from\nthe experiments.,1
+406,\nExperiments show that it is suited to create censoring representations for increased anonymisation of data in the context of wearables.,1
+407,"\nI would also request the paper not to casually mention the 7x speedup that can be found in the appendix, without quantifying this.[[CNT], [null], [SUG], [MIN]] This is only possible for a large number of 40 Hyperband iterations, and in the interesting cases of the first few iterations speedups are very small.",1
+408,I am very enthusiastic about the topic of the article and the applied research design to answer the research questions.,2
+409,The writing and presentation are so bad that I had to go home early and spend time wondering what life is about,2
+410,This sentence would... put off anyone not being paid to read it,2
+411,Pacific oysters and carpenters ants are not 'animals'. Correct this word.,2
+412,I now turn to my best guess about what the authors might be doing.,2
+413,"Written in parts like an experience track paper, minus the experience",2
+414,The description of sampling technique is too long and boring!,2
+415,I am afraid this manuscript may contribute not so much towards the fields advancement as much as toward its eventual demise.,2
+416,"\n2) though the non-saturating variant (see Eq. 3) of ``standard GAN'' may converge towards a minimum of the Jensen-Shannon divergence, it does not mean that the minimization process follows gradients of the Jensen-Shannon divergence (and conversely, following gradient paths of the Jensen-Shannon divergence may not converge towards a minimum, but this was rather the point of the previous critiques about ``standard GAN''). ",1
+417,"The data as presented is not very convincing, even to a believer.",2
+418,"Not now, not ever",2
+419, One more sample is used for testing and an additional cancer control which is not lung cancer is also used to evaluate performance.,1
+420,However I deplore the fact that this paper has been created at all,2
+421," How is the accuracy measured, e.g. with respect to the number of objects mentioned in the sentence, the accuracy of the attribute values, the deviation from the ground truth sentence (if so, what is the evaluation metric)? ",1
+422,"I read the first 6 pages of the paper. […] Sorry, I cant finish reading this paper. I certainly will not recommend anyone else.",2
+423, Just because a network performs averaging of different paths and individual paths perform worse than sets of paths doesn't imply that ensembling as a mechanism is in fact the cause of the performance of the entire architecture.,1
+424, \nA subgoal is defined as a linear transformation of the distance traveled by an agent during a transition.,1
+425,"I'm really sorry about this reviewer. If you'd like, I can get you a new one. - Edito",2
+426,The Discussion section of the paper is neither informative nor enlightening and is certainly theoretically questionable,2
+427,Line 306. The sentence follows a bit of a Yoda-esque grammar,2
+428," While this might be (known) intuition that people rely on when learning deep generative models, it is important to be able to test it, as this paper does.",1
+429," Almost the same method was proposed in K.A. Nguyen, S. Schulte im Walde, N.T. Vu. Integrating Distributional Lexical Contrast into Word Embeddings for Antonym-Synonym Distinction. In Proceedings of ACL, 2016.",1
+430," \n\nPros:\n1, The paper is well presented and is easy to follow.",1
+431,  Can this be formalized?,1
+432,   Of course then inference involves approximating the finite posterior over inducing function values U and the paper make use of the standard Gaussian approximations.,1
+433,I think the audience will eat him alive. But I want to be there to hear it.,2
+434,What do the authors mean by one standard error?,2
+435," I would like to be able to give this paper the higher score it may deserve, but some parts first need to be further explained.",1
+436,"\n\n\nAfter revision:\nSome of my comments were addressed, and some were not.",1
+437,"In a revised form, it would not look out of place in a scholarly journal.",2
+438,"The paper is okay, its not wow but its hard to reject it.",2
+439," \nSince the system is presented without any comparisons to alternatives for any of the individual components, it doesn't really shed any light on the significance of the various modeling decisions that were made.",1
+440,"The research team cooked up a great filet mignon. Instead of mushrooms and an exquisite French sauce, we got American ketchup.",2
+441,"""The authors offer a novel version of the random feature map approach to approximately solving large-scale kernel problems: each feature map evaluates the \""fourier feature\"" corresponding to the kernel at a set of randomly sampled quadrature points.",1
+442,Was the white noise random?,2
+443,\n- Skipping behavior can be controlled via an auxiliary loss term,1
+444,"It is difficult to imagine any paper overtaking this one for lack of imagination, logic, or data—it is beyond redemption",2
+445," The authors also conduct experiments on the Omniglot and mini-Imagenet data sets, improving on the state of the art.",1
+446,\n\nPros:\n(+) The paper is well written and the method is well explained,1
+447,"The paper is overlong, very verbose and contains unnecessary repetition.",2
+448,Ah - now I see a glimpse of promise in this paper - Five pages into the documen,2
+449,"Did all 5 authors say,Yes, this is a piece of work I am proud to have my name on?",2
+450,"\n\nThe paper concludes with \""Overall the complex-valued neural networks do not perform as well as expected",1
+451,"  In the experimental section used to validate the main hypothesis that the deep networks have positive curvature decision boundaries, there is no description of how these networks were trained.",1
+452,"The biggest problem with this manuscript, which has nearly sucked the will to live out of me, is the terrible writing style",2
+453,This theoretical framework is dark and depressing. But it fits your study well,2
+454,"Looking at the general poor quality of the paper, Im surprised by the list of the co-authors",2
+455,\n - Why does ROUGE-L seem to work better than ROUGE-1 or ROUGE-2 as the reward?,1
+456," If my understanding is correct, the LTMN is trained to predict the baseline solver's output.",1
+457,"I nearly said reject, but then I recalled that I have a hangover and am feeling grumpy",2
+458,To me the question is uninteresting,2
+459,This paper is fluently written and meticulously researched. I do not recommend it for publication.,2
+460,the sthanthard of writing is impercable,2
+461,"Your piece is very well written and researched. I think the is interesting, but not particularly...",2
+462,I was somewhat disappointed after reading the MS; I was initially expecting some lighting hit but nothing really happened in the end.,2
+463,revise this paper at your own risk ,2
+464,"Probably switching to Bayesian stats will be too difficult for many scientists in the less intelligent fields (e.g., psych)",2
+465,Lots of hand waving in this Discussion,2
+466," However, it is unclear that overall training time can be reduced with the help of this technique.",1
+467,The reported mean of 7.7 is misleading because it appears that close to half of your participants are scoring below that mean ,2
+468," Indeed, this constant can be easier obtained if the gradient exists, but this is not a requirement.",1
+469,"hile it doesnt make for a flashy title (which the authors like more than British tabloids do), there is an alternative explanation",2
+470," Moreover, I found the figures very helpful -- the authors clearly took a lot of time into clearly depicting their work!",1
+471, \n\nOne challenge in assessing the experimental claims is that practical neural networks are nonsmooth; the quadratic model developed from the hessian is only valid very locally.,1
+472,"Sorry for our long silence, due to some perplexity on our side at reading your manuscript.",2
+473,The paper is ill-informed and poorly argued. It is not suitable in my view for this or any other...,2
+474,A different paper would be a good paper,2
+475,"I was originally very excited to review this paper, since such a bridge would span uncharted lands – here be dragons!",2
+476,"\n - Table 3: The differences here are quite small and perhaps the least compelling, but the same trends hold.\n""",1
+477,I am not very excited about this. There must be better ways to spend your money. -Grant review result. Full review,2
+478,This sort of presentation issue continued through the first few sections (after which I was reading with decreasing attention,2
+479,The paper is presented as a rather undigestible and tortuous collection of disparate results,2
+480,\n-Which epsilon did you use for evaluation of DDQN in the experiments?,1
+481,"The authors merely used somewhat
+bigger guns than previous studies and generated nothing but more smoke.",2
+482,"\n\nIn addition to the theoretical results , the authors conduct a detailed study of their algorithm on CIFAR10",1
+483,\n\nThe unified framework is very helpful since it points out equivalences between the methods and makes the implementation of eps-LRP and DeepLIFT substantially more easy on modern frameworks.,1
+484,It reads like papers often do when they are written in LaTeX. Reject.,2
+485, Is there a way to support this experimentally?,1
+486,This code sample cannot be adequately described without the use of strong language.,2
+487,This would seem to constitute the very minimum basic scientific requirement for attempting to publish a body of (unoriginal) data,2
+488, This latter technique is similar to randomized coordinate descent.,1
+489, The experiments with Baird's and CartPole were both convincing as preliminary evidence that this could be effective. ,1
+490,"\nThe acknowledgements should not be included here either. \n\n""",1
+491," Also, do the simulated speedup results in the appendix account for potentially stopping a new best configuration, or do they simply count how much computational time is saved, without looking at performance? The latter would of course be extremely misleading and should be fixed.",1
+492," \n\nNotice the following suspiciously similar paragraphs from the two papers:\n\nFrom \""MAINTAINING COOPERATION IN COMPLEX SOCIAL DILEMMAS USING DEEP REINFORCEMENT LEARNING\"":\nWe also look at an environment where strategies must be learned from raw pixels. ",1
+493," \nThe experimental results seem promising, but the presentation can be improved.",1
+494,I am sorry if I am missing something obvious here but this is not my area of work.,2
+495, The theorem stated in the paper seems to provide an interesting link between SR and the Laplacian.,1
+496,\nThe improvement w.r.t. other methods seems marginal.,1
+497,"Since the paper is mathematically empty &amp; provides no new ideas or findings, I see no reason to publish it",2
+498,This paper is written.,2
+499,The arguments in the paper are compelling but not convincing,2
+500," Intuitively, the diagram shown in Figure 4 works well for 3 classes in dimension 2.",1
+501,"…somewhat anachronistic–this study would have been really interesting 10-15 years ago, but not it seems quite out of date.",2
+502,"Large parts of the manuscript read now more like a Master thesis than a scientific paper. I hope that the more experienced co-authors - if there are any - can help with this aspect of style. 
+",2
+503,My recommendation for the authors is therefore to shelve the manuscript,2
+504,"I suspect it may represent the 'off-cuts' of some other scholarly project, scraped together from the workship floor to make up another publication",2
+505," Yes this algorithm sees improvements across Atari, but it's not clear why/if this is a step change versus simply increasing the amount of replay or tuning the learning rate.  (Actually I do believe this algorithm can demonstrate deep exploration... but it looks like we're not seeing the big improvements on the \""sub-human\"" games you might hope.)",1
+506,The regression analysis is rubbish. Let's see what happens when you do this properly.,2
+507,  A minimal version of the second modification would be having a bot that has access to a defogger play against a bot that does not have access to one.,1
+508, The papers encode the mode as a hidden \nvariable in a stochastic neural network and suggest stepping around posterior \ninference over this hidden variable (which is generally required to \ndo efficient maximum likelihood) with a biased importance \nsampling estimator.,1
+509,\n- Figure 4 is impossible to read in print.,1
+510,I recommend the publication even if I am not impressed,2
+511, \n\n2. The authors proposed a simple method to ground the language on visual input.,1
+512,"The authors use a log transformation, which is statistical machination, intended to deceive",2
+513,The chapter is too scholarly and too casual,2
+514," \n\nThe studied problem in this paper seems to be interesting, and with potential application in real settings like mobile phone-based learning.",1
+515,"\u00a0\u00bb \n\n\u00ab\u00a0a predictive state is defined as\u2026 , where\u2026  is a vector of features of future observations and ...  is a vector of\nfeatures of historical observations.",1
+516, The paper is very well written.,1
+517, \n- I did not see Table 1 referenced in the text.,1
+518,This abstract is based on using intelligent transportation systems (whatever that is). This aim is not fulfilled by the paper,2
+519,\n* Some typos\n    - page 4: some duplicate words in discriminative embedding session\n    - page 4: auxliary -> auxiliary\n    - page 7: tescting -> testing\n\n,1
+520,I doubt that its worth publishing a handful of graphs that few would find surprising and that anyone...,2
+521,"Line 156-160; this is the only correct, sensible and interesting finding of the paper.",2
+522,"I recommend acceptance, provided the editors are willing to stretch the standards for publication a bit h/",2
+523," I believe this observation, though not entirely novel, will inspire many researchers to study catastrophic forgetting and propose improved strategies for handling these issues.",1
+524,"\n\nMinor points:\n- Typo in Eq 10\n- Typo on page 6 (/cite instead of \\cite)""",1
+525,"\n- In table 2, it is difficult for me to see if the difference between unsupervised tree-lstm and right-branching tree-lstm (0.3%) is \u201cgood enough\u201d.",1
+526,"Limited scholarship, flawed design, and faulty logic engender no enthusiasm whatsoever",2
+527,"It is claimed that readability correlates with perplexity, so it would be interesting to see perplexity results for the models.",1
+528,Sprinkled here and there are some things that are more or less correct. But it is all very confused.,2
+529,I dont believe in simulations,2
+530,Is this a joke?,2
+531,Have you no command of the English language?,2
+532, And I am not also sure how hard this model is being converged in all experiments (compared to LSTM or supervised tree-LSTM).\,1
+533,"\n\nThere is addition experimental data reported which I didn't find very conclusive nor relevant to the analysis, particularly the attention heat map and the effect of apples and texture.",1
+534,Someone has been foraging in theory and has managed to learn how to mangle simple concepts and hide them behind pretentious empty prose,2
+535," Furthermore, given its simplicity, I would expect a comparison against scheduled sampling.",1
+536,"\n-\tIn Figure 2, the authors picked four words to show that valence is helpful to improve Glove word beddings. It is not convincing enough for me.",1
+537,"\n\n- In the black-box vs. white-box scenarios, can the attacker know the GAN parameters?",1
+538,"Finally, I have substantial criticisms, in addition to the disappointment of seeing hoary old...",2
+539,I am sympathetic to what the author is trying to do here - Reviewer ,2
+540," \n\nOverall: I like the idea this paper proposes,",1
+541,"\n\nTo make the paper better, more empirical results are needed.",1
+542,Nobody in their right mind would ever suggest such a model,2
+543,Your abstract wouldnt have made me want to read it had I not been a reviewer.,2
+544, the examples of knowledge storage from bAbI in the supplementary material are also underwhelming as the model essentially just has to learn to ignore stopwords since the sentences are so simple.,1
+545,"\n\nI found the math to be a bit problematic. For example, L_d in (4) involves a max operator. Although I understand what the authors mean, I don't think this is the correct way to write this. (5) should discuss the min-max objective.",1
+546,"""This paper presents an interesting idea to word embeddings that it combines a few base vectors to generate new word embeddings. ",1
+547,?\n* The term A(Z) in the objective function can be more clearly described,1
+548,"the correlations are not that strong (e.g., p = .022)",2
+549,You need a comma here. Do they not have commas at your institution or do they just cost a lot?,2
+550,"I have read this paper several times through, and I have nothing to say in its defense.",2
+551,Your model is a black hole from which no light escapes,2
+552,"""The paper seems to be significant since it integrates PGM inference with deep models.",1
+553,  This is a minor modification.,1
+554," After reading the authors responses and consulting the differences between the versions of the paper, my review remains the same.",1
+555,"""Make SVM great again with Siamese kernel for few-shot learning ",1
+556," If Lipton's method would be expensive to apply to large-scale\nsettings such as the Atari games, the authors could also compare with that\nmethod in smaller and simpler problems.",1
+557," but this manuscript should be improved prior to publication.""",1
+558,This paper has the same relevance as a paper in astronomy which places the earth as the centre of the universe,2
+559,It (paper) has a kind of self-help quality to it,2
+560, Both these contributions are important in the effectiveness of the overall algorithm.,1
+561,"""The interesting paper provides theoretical support for the low-dimensional vector embeddings computed using LSTMs or simple techniques, using tools from compressed sensing.",1
+562,"Is Tartarstan a magical land where they make the worlds tartar sauce? If not, I can only assume the author is referring to Tatarstan",2
+563,"Also, the manuscript is very tedious and reads like an unedited thesis chapter.",2
+564,The author should abandon the premise that his work can be considered research.,2
+565,\n- Limited applicability to settings where >> 100 configurations can be run fully,1
+566,Reviewer : I do not have any additional comments. I can let this manuscript pass.,2
+567,You have two many misprints,2
+568, Using these modifications the authors propose an algorithm (Algorithm 2 in appendix) to train such models efficiently.,1
+569,"You will see that Reviewer 2 has slightly missed the point, so please dont pay too much attention to their comments in your revision. - Edito",2
+570,"On my opinion, the approach the authors are using is trivial and the problem they are solving is made up.",2
+571,"\n\nAside from the time complexity from the inside-outside algorithm (as mentioned by the authors in conclusion), the comparison among all pairs of spans is O(n^4), which is more expensive.",1
+572,This looks like a very early draft,2
+573, \nI think that the paper should be submitted to a journal or conference in the application domain where it would be a better fit.,1
+574,\n\nPaper Strengths:\n- An incremental yet interesting advance in geometric CNNs.,1
+575," For scheme-A, the authors show the performance of the student network under many low precision regimes and different depths of teacher networks.",1
+576, Below are some less important comments.\n\nSec 5.1: great results!,1
+577,"This paper reads like a womans diary, not like a scientific piece of work",2
+578,I would have preferred to read a meta-analysis,2
+579,"  In the former case, the statement \u201cx is uniformly sampled from X\u201d does not make sense because X is practically infinite.",1
+580,Find your inner nerd—it must be a big part of you—bind and gap it and then dump it in the ocean tied to a large rock. -Referee ,2
+581, \n\nMinor comments:\n* MatchA and PredictPi models are not introduced under such names,1
+582,  Experiments include both artificial data and real data.,1
+583," By the proposed representation, the authors are able to apply image classification methods (supervised or unsupervised) to subgraph classification.",1
+584, This opens nice perpectives for better and faster inference.,1
+585," In a similar vein, you should be clear about the connections to Lipton et al 2016 as another method for approximate Bayesian posteriors in DQN.",1
+586," I feel if comparing L=2 vs L=3 is hard, the authors should be more up front about that in the introduction/abstract",1
+587,"  Experiments are conducted on the task of image classification for a couple well-known DNN architectures (VGG and Resnet) to show a speedup of runtime in testing, significant compression of the network, and minimal degradation in performance.",1
+588,I recommend the publication even if I am not impressed - (via shitmyreviewerssay,2
+589,"  If it had better (e.g. ROC curve) evaluation and some modeling novelty, I would rate it higher still.",1
+590," Experiments need to be done to show that a full dependency parse is actually required, rather than simply looking for co-occuring words.",1
+591," The idea of structured matrices in this context is not new, but the diagonal block structure appears to be. ",1
+592,  I found the formal presentation of the model reasonably clear the the empirical evaluation reasonably compelling.,1
+593,"\n\n7. Figure 3 is missing the sub-labels (a), (b), (c), (d).",1
+594, \n\n2. Baselines are not necessarily sufficient,1
+595, Evaluation metrics include repeated latency to the goal and comparison to the shortest route.,1
+596,  This algorithm can be useful because correct annotation of enough cases to train a deep model in many domains is not affordable.,1
+597,As a service to the authors I have decided to try to convey a sense of the extreme nature of the problems encumbering this submission,2
+598,"\n\nCons:\n- PLAID seems designed to work with task curricula, or sequences of deeply related tasks; for this regime, classical transfer learning approaches are known to work well (e.g finetunning), and it is not clear whether the method is applicable beyond this well understood case.",1
+599," However, the method is not properly motivated.",1
+600,Arrestingly Pedestrian is both insulting and a great band name,2
+601," Also, to be fair when discussion the results, the authors should say that simple concatenation outperforms the single sensor paradigm.",1
+602,"You will see that Reviewer 2 has slightly missed the point, so please dont pay too much attention to their comments in your revision. -E",2
+603,"  However, the construction seems artificial and these functions don't seem to be visually very complex.",1
+604, How long should be the training to ensure a good and stable convergence of the method?,1
+605,"The word asses should read assess 
+",2
+606,I just dont get the point of this,2
+607,I can see that the manuscript has archival value,2
+608,This literature review is nothing more than a merry dance around the books,2
+609,"The underlying science here is quite interesting, but the presentation does its best to disguise it",2
+610, This is very important because the main appeal of this work is its applicability to new domains with scarce data which have far fewer words and hence the above scenario is more likely to happen.,1
+611, But I was surprised that the authors didn\u2019t use it in the second experiment (reverse dictionary).,1
+612," Figure 4 could have answered this question, however it is not clear from the paper whether the CP-ALS procedure was followed by fine-tuning or not.",1
+613, \n\nExperiments -- why/how would you have distorted test data?,1
+614, \n\nLearning both inverse and forward models is very effective.,1
+615,English need to be corrected by an english speaker,2
+616," Somewhat unsatisfying, longer-term prediction results into weaker game play.",1
+617,\nI also could find the details on how figure 1 was produced,1
+618,"Frankly, I read the manuscript about two weeks ago and don't remember the context, nor did I cross-walk one part of the essay with another to validate the thought.",2
+619, More things could have been considered.,1
+620,The map on the article is entirely unscientific. The data itself is also very dubious.,2
+621," Using a single average action marginalization is on par with MC sampling, which the authors attribute to the low quality of the Q estimate. ",1
+622,"\nBut I do not catch the details of the user study, e.g., the number of users.",1
+623, The discriminator is similar and conditions on the generator's output and the masked sequence to output the probability of a word in the generator's output being fake or real.,1
+624,\n- It is not clear to me what the baselines actually are or how I can found more info on those.,1
+625," Also, I feel algorithm 1 is spurious given that it merely switch by systems.",1
+626,(although I admit that here is a possibility they might turn out to be correct in that they are guessing right),2
+627," So, I'd really urge the authors to extend this evaluation.",1
+628, I am raising my score a bit higher.,1
+629,This result would be great if it were true,2
+630,. How does the greedy step affect training and decoding?,1
+631,Uninteresting. Unpublishable. Reject.,2
+632,editor] I will make a final determination without ... review (which will assuredly be positive unless you go all Trump on someone).,2
+633,What were you thinking?,2
+634,"Moreover, it is very difficult to see the actual contribution this manuscript will have",2
+635, \n\n- The paper frequently overclaims.,1
+636,.\n* The description of the 2-D histogram on p.4 is not clear.,1
+637,"I have 3 main objections to this paper: it is self-contradictory, it's functionally obsolete, and it's been submitted to the wrong journal",2
+638, \n\nCons/questions:\n1. The motivation of the model choice of q is not clear.,1
+639,"your figures are provided at 72 dpi, which is fine for childrens games, but professional quality images require 300 dpi",2
+640,"For a section on thought, very little seems to have gone into it.",2
+641,"The system described in the manuscript is inherently confusing. Despite re-reading, its basic elements did not make sense.",2
+642, This is not a professional ML paper looks like.,1
+643,"The scales appear to be not divided into quartiles as stated, but rather are based on the distribution of the data (into quartiles).",2
+644,"You aimed for the bare minimum, and missed!",2
+645,\n\nPros/cons\nPros\n-Adresses an important problem in representation learning,1
+646,"This paper reads like a womans diary, not like a scientific piece of work",2
+647,\n\nOther questions and comments:\nThe ablation shows 0.7 improvement on EM with mixed objective.,1
+648,I dont believe in simulations,2
+649, The reported tables seem to ignore a lot of the relevant information,1
+650,\n\n*Clarity*\nThe paper is in general well written and easy to understand.,1
+651,"There is a lot of terminology flung around such as 'false negatives', 'false positive', 'median'",2
+652,It would be a good idea to put the test results directly on Fig. 4 as it does not ease reading currently (and postpone ResNet-56 in the appendix).,1
+653,Do we really need concepts and theories to discuss inequalities among young adults?,2
+654,\n\nExperiments suggest that it can result in better structured predictors than training models directly via backpropagation gradient descent. ,1
+655,Was the white noise random?,2
+656,"  Another possible reason is that classes in MNIST and CIFAR10 are already very distinctive, so are more robust to noise.",1
+657,"Written in parts like an experience track paper, minus the experience",2
+658,I have reviewed many manuscripts in my career and I have never seen so many repeated mistakes of this...,2
+659," \n\n+ At the very least the model does seem comparable in performance to various recent methods (as per Table 2), however as noted below the gains are marginal and I have some questions on the setup.",1
+660,The paper raises the suspicion that the author has not been trained as a historian,2
+661,The whole premise just reverted the biosensor field back 20yrs,2
+662,This would seem to constitute the very minimum basic scientific requirement for attempting to publish...,2
+663," I guess that is because of the nature of NLI, but it isn't 100% clear why NLI benefits so much more than QA from definitional knowledge.",1
+664,The paper failed to make the reviewers more than semi-excited ,2
+665,"\n\n- one would expect more information to strictly improve performance,\n  but the results are a bit mixed (perhaps due to convergence to local optima and both actor and critic being learned at same time, \n  or the Gaussian assumptions, etc.).",1
+666," This manuscript doesn't show that every local minimum of these two types of deep networks is a global minimum, which actually has been shown by existing works like Kawaguchi (2016) with some assumptions.",1
+667, \n\nSignificance \n\nThe approach outlined in this paper may spawn a new research direction.,1
+668,"Concerning the discussion, again the merits of the work are downplayed to a point that its almost...",2
+669,\n\n* The author's main claim is that retrieving background knowledge and adding it when reading text can improve performance a little when doing QA and NLI.,1
+670,"The following discussion seems to ignore this major flaw, which turns mere arm-waving into Olympic-level calisthenics",2
+671,\n\n\nMy Comments:\n\nThis paper is a direct application of adversarial learning to the task of reading comprehension.,1
+672, This only means that more understanding is needed as to how TR can be combined with SGD.,1
+673,No respectable biochemist would be seen in the same county as these data.,2
+674,I found the use of the evolutionary theory problematic. This is a highly contested theory and the authors do not attend to the major flaws,2
+675,"  the second part was not clear to me, and the last part does not seem very useful.",1
+676, Other AnonReviewer also point out some similar work.,1
+677,Startlingly naive and jejeune. Obviously a poorly tailored master's thesis.,2
+678,An effort as I might imagine necessary to make this paper work (beyond flagging the insanity) would require a Swiftian talent for irony,2
+679, The work provides a good overview about how to apply new reinforcement learning techniques for sequence generation.,1
+680,The work that this group does is a disgrace to science,2
+681,"\nFor example, the existing method and proposed method seems to be mixed in Section 2.",1
+682,"\"" Why would it overfit more? Simply because training was more stable? Couldn't you prevent overfitting by regularizing more?\n\n* ",1
+683, The good aspect of this paper is that it has some performance improvements.,1
+684," The proposed method is novel, but perhaps the most interesting aspect of this paper is that they demonstrate that \u201cDQNs  are susceptible to periodically repeating mistakes\u201d.",1
+685, This figure only shows that training shallower networks is more effective than training the deeper networks on GPU.,1
+686," \nFor example: \u201cThe effort to use Neural Convolution Networks for text classification tasks is justified by the possibility of appropriating tools from the recent developments of techniques, libraries and hardware used especially in the image classification \u201c",1
+687, And propose a challenge that addresses these issues and allows controlling different aspects of image variability.,1
+688,"\n-p14 left side, 4th cell up, \""Cross-AE\""-->\""ARAE\""[[CNT], [CLA-NEG], [CRT], [MIN]]\n\nThis is a very nice paper with a clear idea (regularize discrete autoencoder using a flexible rather than a fixed prior), that makes good sense and is very clearly presented.",1
+689,These snotty kids in quantum information,2
+690,"This is an outline of a paper, and not a fully-thought, well-organized, thoroughly-discussed paper. [...",2
+691," With some filling out, this could be a great paper.""",1
+692," The authors make a useful comparison between these bounds in Section 3 showing that none is dominating the others, but still analyzing their properties in terms of structural properties of the weight matrices.",1
+693,I wasn't sure which problem the author is solving &amp; vice verse it wasn't clear what problem the solution is intended to solve or explorer,2
+694,\n\nCons:\nLacking in theoretical analysis or significant experimental results.,1
+695,Please also consider making the submission looking less like an advertising booklet rather than a research paper,2
+696,"Words are used inappropriately—I count, for example, 13 instances of 'unique', but it is used correctly only once.",2
+697,"hD project paper submitted one year after successful defense: 
+
+Student should get a new PhD project",2
+698,"First, the paper is for a large part incomprehensible",2
+699,"Starting from the title, the paper is a complete nonsense. […] . The paper is a long, verbose and unnecessary description of obvious or well-known stuff. […]. For the reasons above, rejecting the manuscript is a moral obligation.",2
+700,I find myself disagreeing with most of this papers conclusions,2
+701,"At other points the authors default to an chronological narrative that can be useful at times (i.e. page 9), but here seems to distract from their overall narrative.",1
+702,"The manuscript makes 3 claims: The 1st we've known for years, the 2nd for decades, the 3rd for centuries.",2
+703,"The text is overly expansive, desultory, and often diaphanous, so that the raison d'être of an overarching theoretical structure is neither pellucid nor convincing.",2
+704," It would be more informative to focus in the main text on the aspects that inform us about f, and put the training details in an appendix.",1
+705," Moreover, I would be very curious about ways to better integrate causality and generative models, that don\u2019t focus only on the label space.",1
+706,To Review of the article was a challenge which I accepted. In fact I regret this decision,2
+707,"However, the applicant seems to have run out of steam before he developed a detailed plan and completed the proposal. This is unfortunate",2
+708, \n\nThe paper is grounded on a solid theoretical motivation and the analysis is sound and quite interesting.,1
+709,"Unfortunatelly [sic], the paper is very shallow. The results are at the level of a naive master thesis",2
+710,\n\nI don't think any of the experiments reported actually refute any of the original paper's claim.,1
+711,"Not a well prepared application, full of mistakes &amp; lacking some necessary preliminary data. Not at all fundable.",2
+712,"lthough the benefits of unprofessional reviews include gifs, laughts &amp; shared gasps of horror, this important new paper by  and  lays out the drawbacks:  In the interest of scholarly rigour we will quote from the 'highlights",2
+713,"This is a very difficult paper to review, and difficult - even painful - to read",2
+714,"Unfortunately, the paper offers little more than vocally arguing. h/",2
+715,It appears that publication in any form would be premature at this time.,2
+716,It amounts to story-telling ! ,2
+717, \n\nThis paper is a very difficult for me to assign a final rating.,1
+718," \n\nOverall, the proposed methods seems to provide little added value to the large amount of predictive methods proposed so far for prediction in neurodegenerative disorders.",1
+719,The writing is not at school level,2
+720," The paper shows marginal improvements on image classification datasets (2% on CIFAR, .2% on ImageNet) over the ResNeXt architecture that they build on.",1
+721, \n3. The experiments are toyish and not convincing.,1
+722," Perhaps this is facilitated by the SQuAD leaderboard, which makes it simple to list related work.",1
+723,This [sentence] construction should be reserved for police procedurals and bad Mafia movies.,2
+724,"n\n2. Only two datasets were considered, both extremely simple: generating MNIST digits is nearly a toy task nowadays.",1
+725, So I think that the motivation behind introducing this specific difference should be clear.,1
+726, While the exposition of the paper can be improved in my view this is a neat and concise result and merits publication in ICLR.,1
+727,"This is an interesting manuscript, not because of its results, but because of its complete ignorance of due scientific process",2
+728,"While the authors do pick a good problem, thats where the quality of the paper ends for me.",2
+729,""".\n\n\nMinor comments:\n- page 1: The reference list could also include  http://www.mitpressjournals.org/doi/abs/10.1162/NECO_a_00934 and  https://arxiv.org/abs/1510.02777\n- ",1
+730,This is an area ripe for future research. Recommendation: Rejec,2
+731,\n\nThe second observation is much less clear to me.,1
+732,This is depressing. So much work with so little science,2
+733,\n* Figure 1 that introduces them contains typos.,1
+734,The analyses are too statistic - submissio,2
+735,"\n\nSection 2.2 describes a way to compress the label embedding representation, but it is not clear if this is actually used in the experiments. h is never discussed after section 2.2.",1
+736,"\nThis leads to improved learning / exploration, notably better than the similar approach bootstrapped DQN.",1
+737,default settings?? huh???,2
+738,Further utilize it to study one of the important problems in crowdsourcing - How much redundancy is required in crowdsourcing and whether low redundancy with abundant noise examples lead to better labels.,1
+739,I recommend the publication even if I am not impressed,2
+740,"We invited 18 reviewers and after quite a long time, only one reviewer had agreed. That review is now...",2
+741,"\n\n1. The accuracy of the training set is guaranteed to ascend because network morphism is smooth and number of params is always increasing, this also makes the search greedy , which could be suboptimal.",1
+742,"\n\nPage 5, the auxiliary loss on reward prediction seems appropriate, but it\u2019s not clear from the text and experiments whether it actually was necessary.",1
+743,\nThere are also quite a few misspellings. ,1
+744,"  Graph structure is determined by program abstract syntax tree (AST) and next-token edges, as well as variable/function name identity, assignment and other deterministic semantic relations.",1
+745," \n\nDespite mentioning matrix completion in the introduction and comparing to work of Ge et. al., the paper does not seem to have strong implications for matrix completion.",1
+746, Do these correspond with some known models?,1
+747,"Who are and where did they come from? That is, why was this obsucre and arbitrary method chosen?",2
+748,There are not enough headings.,2
+749,Pity about the main thesis. - First Sentence of the Revie,2
+750,"  Furthermore, since it uses non-binary operations, it is not clear if this rotation may have some benefits (in terms of resource efficiency) over simply keeping the input layer non-binarized.",1
+751, \n\nReview summary:\n\nI think this paper is interesting.,1
+752,This paper is so devoid of content it should be rejected outright.,2
+753,This manuscript is obviously not suitable for publication in high impact factor journals.,2
+754,Authors rarely followed the advices,2
+755,The paper does have some moderately interesting results. But...nothing took me by surprise or wonder,2
+756,\n\nSection 4 fails to mention that its use of performance prediction for early stopping follows exactly that of Domhan et al (2015) and that this is not a contribution of this paper; this feels a bit disingenious and should be fixed.,1
+757,"Sorry for our long silence, due to some perplexity on our side at reading your manuscript.",2
+758,Its complicated to understand what the objective of the study even is,2
+759,…this paper is extremely lengthy and tedious with respect to its importance and relevance.,2
+760,Jargon-riddled assertions are made as though the meagre data substantiate the claims.,2
+761,"XXX is inserted purely for fashion, adds nothing, and reflects the authors belief/wish that fashionable papers regardless of logic or content have a larger chance of acceptance. Our community needs to combat this sort of unreflexive pseudo-scholarship",2
+762,It [the paper] has a kind of self-help quality to it,2
+763,Unfortunately I was hoping for more.,2
+764,"There are also other points that have to be addressed, but I do not think it is makes sense to go into further detail.",2
+765, Is q(t|x) in Fig 1 a typo?,1
+766,"\n\nPositive aspects of the paper: The paper is a very strong empirical paper, with experiments comparable to industrial scale.",1
+767,\n3. another explanation about the weights as the rescaling to matrix A needs to further clarified.,1
+768,This paper goes to significant amounts of trouble to accomplish something that is already well established but in a less elegant manner,2
+769,This is not a paper. This is part of … something. It cannot be reviewed and should be rejected right...,2
+770,all I can say is that the author is blissfully unaware of what a standard is – in linguistic terms – and does not have the linguistic competence to describe it,2
+771,The original study was published in PsycScience. This is just some work by a grad student. Reject. [on a failure to replicate a finding,2
+772,The writing and presentation are so bad that I had to go home early and spend time wondering what life is about.,2
+773, Therefore I recommend acceptance for it.,1
+774,NO'  (h/,2
+775,Find your inner nerd—it must be a big part of you—bind and gap it and then dump it in the ocean tied to a large rock. -Referee ,2
+776,"  Unsurprisingly (since the EEN noise does not seem to be conditioned on the input), the baseline deterministic model performs quite well. ",1
+777,"Publication of this paper will not advance our knowledge in any shape of form, it will just result in other researchers pointing out how bad this study actually is",2
+778,Why chase a gene in this ridiculous organism?,2
+779," While the idea makes sense,",1
+780,"\n\nIt would be nice if section 2.4 was expanded to actually define the cost gradients for the network parameters, either in line or in an appendix.",1
+781," The authors furthermore introduce a simplification of the setting, i.e. that nothing changes in a scene during saccadic exploration, which is rather unusual for active vision problems. ",1
+782,"This is a nicely done paper but the sample is small, the measures uninformative and the findings have only very weak relevance to policy.",2
+783,"I understand Wikipedia is not the best source of information, however…based on the information from Wikipedia, your hypothesis breaks down",2
+784," \n\n To demonstrate the \""mesh/graph generation\"" capability truly, the authors need to experiment on novel topology generation.",1
+785,"  \n\nWhile the idea of integrating the spelling error probability into the search for completions is a sound one, the specific details of the model being pursued feel very ad hoc, which diminishes the ultimate impact of these results.",1
+786," While some of the bilingual lexicon extraction works are cited (Haghighi et al., 2008; Artetxe et al., 2017), they do not demonstrate how their approach performs against these baseline methods.",1
+787,"I read it again, this time squashed between two large people on the delayed flight home, and still enjoyed reading it",2
+788,"Frankly, she knows nothing about X or Y and should stick with what she does know.",2
+789,"""This paper studies a dual formulation of an adversarial loss based on an upper-bound of the logistic loss.",1
+790," I therefore recommend not to accept this paper in its current form.""",1
+791," In all three cases, the proposed solution outperforms the baselines on larger problem instances. """,1
+792,The stimulus is artificially produced and therefore irrelevant.,2
+793,"""This is a well written paper on a compelling topic: how to train \""an automated teacher\"" to use intuitive strategies  that would also apply to humans.",1
+794,"The Gettysburg Address was only 272 words, and was one of the most powerful speeches in history. This paper, on the other hand, is over 8,000 words and says absolutely nothing at all.",2
+795,"\n- when an agent is trained on fixed number of random map, its performance on random unseen maps doesn't increase with the number of training maps beyond ~100 maps. (figure 5).",1
+796,This manuscript achieves the dubious distinction of being conceptually stillborn,2
+797,To justify these conclusions and spur the authors onto the better things they are undoubtedly capable of I append some details.,2
+798,"The figure is really not needed. Were I to be shown this by a psychologist, I suspect I would hire a replacement",2
+799,It is essentially an opinion piece that editorializes shamelessly about the superior methods of a recent paper in the first person,2
+800,'It is not even wrong' - Wolfgang Pauli commenting on the manuscript of a junior colleagu,2
+801,"The first author is a women. She should be in the kitchen, not writing papers' h/",2
+802,The English language ranks this manuscript among the top 5 worst manuscripts I have ever reviewed,2
+803,I have followed the work of this group for the last few years and it is usually well polished. That is not the case for the present paper.,2
+804,"\ne.\tIt is not completely clear to me that batch-normalization takes care of the scale constant (if so, then why did XNOR-NET needed an additional scale constant?),perhaps this should be further clarified.",1
+805,"I have read this MS twice, which given the grammatical howlers in the Abstract would appear to be more times than it has been read by the authors",2
+806,"Measurements were made, but why, besides a teaching exercise, remains obscure",2
+807," Instead the presentation can be simplified by just discussing the equivalency between local minima and global minima, as the proposed framework cannot handle critical points directly.",1
+808,\n\nThis seems to be a nice treatment of distribution to distribution regression with neural networks.,1
+809,[XX] is just as interesting to us as the new dress bought by Kim Kardashian,2
+810,\n\nMinor points: Fig.1 conveys not that much information.,1
+811,rampant and unsupported speculation,2
+812, In what we call the Pong Player\u2019s Dilemma (PPD) when an agent \nscores they gain a reward of 1 but the partner receives a reward of \u22122.,1
+813, Experiments on German/English and Chinese/English show gains over other reinforcement learning methods.,1
+814," For example, if a classification task is formulated as reinforcement learning where the ultimate reward depends on the batch likelihood, the presented formulation (called Adaptive DropConnect in this context) does better on standard datasets when compared with a strong baseline.",1
+815,The supportive tone of this review… took some effort.,2
+816,This needs to be standardized!!! It must be converted!!! Why should we expect some kind of relationship?? It needs to be justified!!!,2
+817,"\nThe scope/insight of the paper isn't groundbreaking, but I think it delivers a clear short message on the Atari benchmark.",1
+818, Overall i like the originality of the paper and feel that it has a potential of reasonable impact within the research community.,1
+819," Since model-parallel training across machines has not been very successful, and model-parallelism has been only exploited within machines, asynchronous model-parallel optimization is an important topic of research which has the promise of scaling deep learning models beyond the memory capacity of a single machine.",1
+820,This paper is very weak,2
+821,\n\npro:\n- Thorough discussion of the issue with theoretical understanding on small benchmark functions as well as theoretical work\n- Easy to read and follow,1
+822,Well written. (entire review,2
+823,"The paper is grossly over referenced, and reads a little like a student trying to impress a supervisor that a lot has been read",2
+824,The authors last name sounds Spanish. I didn't read the manuscript because I'm sure it's full of bad English,2
+825,"In the interest of being helpful, my suggestion is that the authors go back and review what is involved in the scientific method",2
+826,  The same applies to figure 5. ,1
+827,"First, unless my statistics is failing me, a less than 1.0 SD is not significant.",2
+828, The resulting model is illustrated on a few goal-oriented dialog tasks.,1
+829,The examples are stale – the method is not exciting. There is nothing much here.,2
+830,"The research claims these phenomena are understudied, as though there is some amount of study they should endure.",2
+831,I concur with the reviewers that the methods are insufficient and thus the conclusion are totally...,2
+832,I find that the description of the applied problem is quite interesting; in fact overall the paper is well written and very easy to follow.,1
+833," Different from other existing RC datasets, the authors claim that this new dataset requires background and common-sense knowledge,  and across sentences reasoning in order to answer the questions correctly.",1
+834,\n- I would not call Reg a regularization term since it is not shrinking the coefficients,1
+835, The paper introduces a strong model-free baseline (win rate ~80% in the MiniRTS environment) and shows that the latent space learned by this baseline does include relevant game information.,1
+836,"  Therefore, how to choose this parameter is essential.",1
+837,This is a pointless paper. It offers neither interesting new data nor cogent explanation,2
+838,There are not enough headings.,2
+839,"The research adds meaningful to the literature, how?",2
+840," Command of related work is ok,",1
+841, The idea is interesting and novel that PACT has not been applied to compressing networks in the past.,1
+842," \n\n2, The derivation of the multiplicative rule of HD relies on a reference I cannot find. Please include this part for self-containing.",1
+843,I would advise the authors to go back to the drawing board and consider exactly what this paper is trying to do and do this well,2
+844,"I appreciated how the author seemingly had in mind that a goodly percentage of the readership are not native speakers, so anything too academic or erudite might be lost on them",2
+845,I really wanted to like this study,2
+846,"Though less enthused about manuscripts novelty, this reviewer does admire the hard work of your group.",2
+847,"\n\nSo, the paper is relevant and well presented.",1
+848,Having read through this a couple of times I have ended up feeling rather depressed.,2
+849,The experimental design is a bit funny,2
+850," In spirit, these simulations are similar to those in the original paper by M. Egorov.",1
+851,. Novel combinations of GAN formulations (non-saturating with\ngradient penalties) are evaluated to disentangle the effects of formulation\nchanges.,1
+852,"You will see that Reviewer 2 has slightly missed the point, so please dont pay too much attention to their comments in your revision. -Edito",2
+853,"\n- figures readability can be improved.""",1
+854,"Other papers are cited that were clearly not read carefully, resulting in some memorable howlers.",2
+855,The project is lack of interest.,2
+856, \n5. Optimal LRs: Fig.5b shows results for 1000 iterations whereas the text says 10000 (seems like a typo in scaling the plot).,1
+857,Asterisk rather than Asterix,2
+858,"\n\nRelated works:\n- For your consideration: is multi-task survival analysis effectively a competing risks model, except that these models also estimate risk after the first competing event (i.e. in a competing risks model the rates for other events simply go to 0 or near-zero)? Please discuss.",1
+859,"Limited scholarship, flawed design, and faulty logic engender no enthusiasm whatsoever",2
+860,\n\nStrengths:\nThe model and the mixed objective is well-motivated and clearly explained.\nNear state-of-the-art performance on SQuAD dataset (according to the SQuAD leaderboard).,1
+861,\n\nIt is a bit disappointing that authors seem to consider only deterministic models which clearly have very limited applicability.,1
+862,  Experimental evaluation is performed on several benchmark datasets - the proposed approach outperforms state-of-the-art for specific tasks in most cases.,1
+863," In Paragraph \u201cMaximum Likelihood\u201d, page 2, the formalization of the studied problem is unclear.",1
+864,This ridiculous comment that a powerful computer algebra systems was required on page 6 is absurd.,2
+865,The orgnization and writing of the paper need to improve. There are some grammar errors need to correct.,2
+866,. The analysis of squared error for the price regression shows a clear advantage of the method over previous models that used hand crafted features.,1
+867," I would recommend at least summarizing the main findings of Appendix A in the main text.[[CNT], [null], [SUG], [MIN]]\n\n* A relevant missing citation: Turner and Sahani\u2019s \u201cTwo problems with variational expectation maximisation for time-series models\u201d (http://www.gatsby.ucl.ac.uk/~maneesh/papers/turner-sahani-2010-ildn.pdf).",1
+868,\n\nQuality:\nGood\n\nClarity:\nThe paper is clearly written.,1
+869," \n\n- The analysis of section 4.1 is interesting, it was insightful and to the best of my knowledge novel.",1
+870,Uninteresting. Unpublishable. Reject.,2
+871,"Although no ground-shaking breakthroughs are made, it is worthy of publication",2
+872,"I am generally very happy to provide extensive comments on manuscripts, but this submission was an absolute waste of my time.",2
+873,"leftover is a noun, like old pizza. left over is the verb you want.",2
+874, Extensive experiments are performed to demonstrate the effectiveness of the proposed methods. ,1
+875,\nThe convergence constraint procedure from Table 4 is not clear.,1
+876," I was pointing out the similarities between their approach and your: the two algorithms (CLEVER and Slope) are basically the same, and using a limit you can go from \""slope\"" to \""gradient norm\"".",1
+877,You haven't reflect all relevant studies.,2
+878,"\n\ncons:\n\n- no mention of time costs, except that for more samples, S > 1, for\n taylor approximation, it can be very expensive.",1
+879, Such an analysis would helpful to accurately get an estimate of the proportion of these challenges in the dataset.,1
+880,"I have 3 main objections to this paper: it is self-contradictory, it's functionally obsolete, and it's been submitted to the wrong journal",2
+881,"\n\nOverall, the paper is well-written, and it brings up an important idea: that parameter sharing is important for discovery tasks so we can avoid re-training for every new architecture in the search process.",1
+882," The process of re-creating embeddings seems like one choice in a space of many, not the simplest, and not very well motivated.",1
+883,Black-box modeling exercise using a hodge-podge of data tied together with a poorly-defined model,2
+884," For one example, we\u2019re told that \u201cPreposition selection [is] a major area of study in both syntactic and semantic computational linguistics\u201d, but at best it\u2019s quite a specialized niche.",1
+885, The proposed model combines some of the strengths of factorization machines and of polynomial regression.,1
+886,"""The paper introduces a technique for optimizing an L0 penalty on the weights of a neural network.",1
+887,The first sentence is unfortunate,2
+888,I have difficulties identifying the aim and added value of the present study to this topic.,2
+889," While the authors list 7 contributions, the current version of the text is a challenge to read and makes it challenging to distill an overarching theme or narrative to these contributions.",1
+890,"In a nutshell, please cut out all the hype, show some integrity, and write a balanced paper.",2
+891," The sparse coding models see something similar: without sparsity constraints, the image representations do not resemble those seen in V1, but with sparsity, the learned representations match V1 quite well.",1
+892, These solutions achieve zero squared-loss.,1
+893," \n\nPerhaps the authors have just done a good job of laying the groundwork, but the dual-based approach proposed in section 3.1 seems quite natural.",1
+894,"Focus on limitations, because they are many!",2
+895, The fonts are too small for the numbers and the legends.,1
+896,"Thus, there is nothing new in the manuscript that warrants publication in Science or most other journals",2
+897,"Overally speaking, the manuscript is well written.",2
+898,\n\nThe experimental study is extensive.,1
+899," For example,\n[1] A convex formulation for learning task relationships in multi-task learning (UAI)",1
+900,All these data are given in the author's Ph.D thesis. Does this material need to be published?,2
+901,Publishing this manuscript would disembowel the credibility of this journal,2
+902,Some papers are a pleasure to read. This is not one of them.,2
+903,The rest of this review operates from the assumption that this paper is a sincere attempt at scientific evidence and argument.,2
+904,At first I thought this was a practical joke h/,2
+905,"Why dont you just send copies of this to the two people in the world who care about it, and forget the publication route?",2
+906,"It is a bit strange for me that authors have used Python for statistical analysis instead of SPSS or MATLAB as usual. Please, explain",2
+907," It argues that because there should be an optimal noise scale (which maximizes test performance), the batch size should be taken proportional to the learning rate, as well as the training set size, and proportional to 1/(1-m).",1
+908, The equivalence of global minima and local minima for linear networks is not surprising based on existing works e.g. Hardt & Ma (2017) and Kawaguchi (2016).,1
+909, but the hierarchical approach seems to have more advantages and seems a more straightforward solution.,1
+910," Instead of using a fixed-form inference network, the paper proposes to use the learning to learn approach of Andrychowicz et. al.",1
+911,This book has more mistakes than a hound has fleas,2
+912,It is difficult from this reviewers perspective to even call these studies.,2
+913,\n\n- Page 4 p_i\u2019s in proposition 1\nFrom my understanding the p_i have been introduced in Theorem 1 but given their prominent role in this proposition they merit a separate definition (and ideally in terms of the A_i directly).,1
+914,\n\nCons:\n1. I'm concerned that the contribution of this manuscript is a little incremental.,1
+915,The conclusions are still not consistent with the (lack of) findings.,2
+916," There are technical issues with what is presented, with some seemingly factual errors.",1
+917,The manuscript is a collection of fragmented and disconnected descriptive observations.,2
+918,This would be an embarrassment even if submitted as an undergraduate class paper' h/,2
+919,".\n\nIt would be more convincing if there are experiments on the billion word corpus or other larger datasets, or at least on a corpus with 50 million tokens.",1
+920,The rest of this review operates from the assumption that this paper is a sincere attempt at scientific evidence and argument.,2
+921,"  \n\nIn general, the paper is well-written and the main ideas are clear.",1
+922, \n2. The discussion comparing the related work/baseline methods is insightful.,1
+923,The reviewer's comments read 'fuck you'  (handwritten on a strip of paper scotch-taped to the editors letter,2
+924, I think I might have missed something here.,1
+925,"I think the author could reduce the amount of equation to a proper level and describes the basic principle. […] To be honest, those equations make me a little headache",2
+926, Some additional discussion of why no learning is required for the P(Prog | Y) step would be appreciated.,1
+927," This led to improvement over SOTA in a task of caption ranking on MS-COCO, nd good performance on flickr30K.",1
+928,"The paper descends into nonsense, never to return, on line 44.",2
+929,"\n\nFirst, the writing is far from clear. There are typos and errors all over at an unacceptable level.",1
+930, \n\nThe main novelty of this work are 1-balancing mechanism for the replay memory.,1
+931,Figure 1. What does Min in panel c stand for?,2
+932, It would be good to possibly add another \nencoder network to see if encoding the examples as well help improve the accuracy.,1
+933,Your proposed method should be compared with another method that introduced in a prestigious paper...,2
+934, I am raising the score.,1
+935,"""Quality\n\nThis is a very clear contribution which elegantly demonstrates the use of extensions of GAN variants in the context of neuroimaging.",1
+936," The results show promising results,",1
+937, it lacks in two aspects.,1
+938,"I cannot imagine any physician or scientist who has a job, who will have the time to read this paper.",2
+939,"Publishing a weak paper can be a bit like kissing someone through a screen door - it might feel good for a moment, but what does it actually accomplish?",2
+940,I think the audience will eat him alive. But I want to be there to hear it.,2
+941,This is all science done by wishful thinking. -..,2
+942,"As such, this paper is not suitable for publication in a peer reviewed scientific journal of any sort",2
+943,This left me somewhere between scratching my head and pulling my hair out,2
+944,This manuscript is only theoretical in the sense that the methods are proposed but not adequately tested,2
+945,"However, the applicant seems to have run out of steam before he developed a detailed plan and completed the proposal. This is unfortunate",2
+946," Specifically, the idea is to use the structure of the PGM to perform efficient inference.",1
+947,\n\nI think the work has several important issues:\n\n1.,1
+948,"\n\nWeakness:\n1. The major weakness is that throughout the paper, I do not see an algorithm formulation of the Smoothie algorithm, which is the major algorithmic contribution of the paper (I think the major contribution of the paper is on the algorithmic side instead of theoretical).",1
+949, But then they just concept net to augment text.,1
+950,..incoherent babble of unsubstantiated overstatement.,2
+951,"This is a disaster. I could continue, but you see my point.",2
+952,"The authors are permitted to believe what they want to, but the data did not support important implications.",2
+953,The discussion is inappropriate and the new content is generally poorly written,2
+954,"This, of course, is disingenuous if not unethical",2
+955,The statistical analyses were not correct. Actually they were so confused that I lost all confidence in the analyses and data presentation,2
+956,"So, I guess the [XX] theory was dead on arrival when it was proposed.",2
+957,"An exercise in feature manipulation, of the brainless kind",2
+958,Ah - now I see a glimpse of promise in this paper - Five pages into the documen,2
+959," Moreover, the empirical comparisons are only conducted on MNIST.",1
+960, The paper contain many interesting contributions,1
+961,The authors offer no credible theoretical reason why we should care about this result.,2
+962,"\n\nI liked Section 3, however while it is true that all methods differ in the way they\ndo the filtering, they also differ in the way the input graph is represented\n(use of the adjacency or not).",1
+963,Are you kidding?,2
+964,"""This paper presents a continuous surrogate for the ell_0 norm and focuses on its applications in regularized empirical regularized minimization.",1
+965,"n a review of a neuroimaging methods paper: By 'sex' you mean gender, and not sexual behavior?",2
+966,The manuscript reads much like an unrevised masters level paper.,2
+967," In particular, they aim at generating a complete set that fully specifies the behavior of the oracle.",1
+968,Intellectually bankrupt,2
+969,"    In other text learning task (e.g., [1]) SPL showed improved performance.",1
+970,Usually climate studies do not show a good method for the proposed research. This is one of them.,2
+971,"\n\nOverall the paper is well-structured and related work covers the relevant papers,",1
+972,"\n\nFor this reason, I will give the score marginally below the acceptance threshold now.",1
+973,"presumptuous, ignorant and downright dangerous",2
+974,"  \n\nA major point of concern is that they do not use the public dataset proposed in Finn et al. 2016, but use their own (smaller) dataset.",1
+975," If y* is simply fixed somewhere in the model, then I'm worried that it may cause mode collapse (i.e. the encoder always output similar values), and one possible bad consequence is that y1_i of different sentences in the source domain may have very similar values.",1
+976,"\n\nThe significance of this work would still be quite strong if, as the author's suggest, these benchmarks were being widely used to assess more sophisticated algorithms and yet these tasks were mastered by such simple algorithms with no learnable parameters. ",1
+977,Find your inner nerd—it must be a big part of you—bind and gap it and then dump it in the ocean tied to a large rock. -Referee ,2
+978," I would suggest to either really add multi-hidden-layer results (which is not really doable in a conference revision), or state multi-layer work as outlook.",1
+979,There is so much that is wrong with this paper that it is difficult to know where to start,2
+980,The authors conclusions not only contradict their own data but also the laws of thermodynamics,2
+981,"This is a heretofore unobserved result and is very interesting, but is not novel.",2
+982," \n\nThe contribution in terms of the theory of using random features to perform kernel ridge regression is novel, and interesting.",1
+983,The conclusion is something of a shaggy dog.,2
+984,"The fact that something has not been studies is not, in itself, a reason why it should be studied.",2
+985,I have received one highly negative review and wondered whether it could be overcome by other reviews. I conclude that the answer is no,2
+986,This paper may sink without trace,2
+987,"There is hardly any paragraph (even in the abstract) that is not messy, disorganized, confusing, that does not contain mistakes (some are quite embarrassing), redundancies, abusive shortcuts or discussions that sound absurd.",2
+988," I do believe that L_2 distance is more natural in function space than in parameter space, but I am missing a strict argument for this in the paper.",1
+989," In other words, for a non-convex problem (about whose landscape we know barely anything), if there are regimes of regularizers that work well (see point 2) -- why should we ask for more stronger regularizers?",1
+990, In which cases the former did correctly but the latter didn\u2019t?,1
+991,I dont know what to do with this.,2
+992,"If participants were recruited from a university, I imagine they would usually be 18-22 years old. Why does your sample range from 18 to 63? Im a bit lost here.",2
+993," \n\nFour simple, shallow neural nets are built as query, write, value, and policy networks.",1
+994,I wish I could explain what is the purpose of the manuscript.,2
+995,There are many stylistics phrases to tidy which you can find yourself,2
+996, The presented algorithm sketch-rnn seems novel and significantly different from prior work.,1
+997," \n- More details regarding the experiments are desirable - how many runs were done, the initialization of the policy network and action-value function, the deep architecture used etc.",1
+998,One gets the feeling that the references were included for the sake of having something to refer to.,2
+999,The results of the study are adequately justified.,2
+1000,"  They also do not report results on unseen objects, when occlusions are present, and on human motion video prediction, unlike the other papers.",1
+1001,\nYou should clearly divide the existing study and your work.,1
+1002,"The correlations are not that strong (e.g., p = .022)",2
+1003,You should consider consulting a competent statistical adviser.,2
+1004,\n\n\nThere are several issues with the paper and I cannot recommend acceptance of the paper in the current state.,1
+1005,This manuscript was neither enjoyable nor informative to read,2
+1006,".\n- Multiple locations, e.g. S4.1: for NLI, the word is *premise*, not *promise*.\n- Missing word in first sentence of S4.1: ... reason __ the ...""",1
+1007,"Cite newer, relevant references, especially those published by X 2012, and X 2008. Best wishes, Dr. X, Associate Editor",2
+1008, The authors formulation of the problem as one of combinatorial optimization and proposing Algorithm 1 is also quite interesting.,1
+1009,"This is clearly a submission that needs to be shredded, burned, and the ashes buried in multiple...",2
+1010," The empirical evaluations, analysis and comparisons to existing methods are well executed.",1
+1011,\n- A new structure for weight matrices that provides good performance while reducing matrix storage requirements and speeding up forward and backward passes.,1
+1012,It reads as if the author were giving a lecture and wandered off point to tell an interesting story.,2
+1013,"eviewer 1: 'I really enjoyed the introduction'.
+
+Editor: 'In line with Reviewer 1, the introduction doesn't do a good job...",2
+1014,"As it is often the case with conceptual developments, most of it doesnt make a lot of sense, in the...",2
+1015," Second, they evaluate the generative model on several metrics (such as Jensen-Shannon Divergence) and study the benefits and drawbacks of these metrics, and suggest that one-to-one mapping metrics such as earth mover's distance are desirable over Chamfer distance.",1
+1016,The main problem is that it does not fit the intuition about what should work.,2
+1017,It was agonizing for this reviewer to read a total of nine pages describing the overall methods.,2
+1018,"This is a pretty trivial study, sample size is suspiciously high, and a tiny effect of 5% percent (who cares if it's significant)",2
+1019,he authors report results from pages 16-26. This section reflects what I would brutally call 'death by figures,2
+1020," In the experiments, the authors plotted the training progress w.r.t. the minibatch iterations, I do not know if the minibatch iteration is a proxy for actual runtime (or number of floating point operations).",1
+1021,The stimuli are impossible to compute.,2
+1022,The manuscript in the present form is not a review article but is rather a number of research papers stapled together.,2
+1023,"\n\nOverall, this work is providing useful experimental insights, clearly motivating\nfurther study.\n""",1
+1024," Unfortunately, the paper does not provide details at the basic level, which algorithms,  architectures, hyper-parameters or regularization terms are used.",1
+1025,"The enormous and overwhelming -not to say pathetic- admiration, even adoration of the author for her subject is barely acceptable",2
+1026,"The paper is also unnecessarily sprawling, verbose, and heavy on extended descriptive exposition of other peoples views.",2
+1027, It uses the image and its attributes.,1
+1028," If that claim to originality is not contested, and the authors provide additional assurances to confirm the correctness of the implementations used for baseline models, this article fills an important gap in open-domain dialogue research and suggests a fruitful future for structured prediction in deep learning-based dialogue systems.",1
+1029,Something is missing.,2
+1030,"""I think I should understand the gist of the paper, which is very interesting, where the action of \\tilde Q(s,a) is drawn from a distribution.",1
+1031," Other than that, I don't get much more insight from the theoretical result.",1
+1032, But seems none of the 4 loss functions incorporates this constraint.,1
+1033," \n\nThe authors do mention experiments on page 8, but confess that some of the results are somewhat underwhelming.",1
+1034,These snotty kids in quantum information,2
+1035,The use of the word surgeries to mean surgical procedures is a linguistic atrocity,2
+1036,"The enormous and overwhelming -not to say pathetic- admiration, even adoration of the author for her subject is barely acceptable",2
+1037,". All data are then labelled as \""original\"" or \""transformed by ...(specific transformation)\"". -Classification task is performed with a neural network on augmented dataset according to the pseudo-labels.",1
+1038, The behaviors of linear networks and practical (deep and nonlinear) networks are very different.,1
+1039," As n domains are supposed to be given in advance before the n+1 domain (target domain) comes, one can use multi-domain learning approaches with ensemble learning techniques to learn word embedding for the target domain.",1
+1040,"Publication of this paper will not advance our knowledge in any shape or form, it will just result in other researchers pointing out how bad this study actually is",2
+1041," That connection might be worth discussing because removing the regularizing (i.e., metabolic cost) constraint from your RNNS makes them learn representations that differ from the ones seen in EC.",1
+1042,The authors should discard the data and collect it again properly.,2
+1043,"Suggesting much but saying nothing of import, the sort of balderdash that is often compared to the waste of male ruminants.",2
+1044,Unless the authors performed some clever pagan ritual before euthanizing the animals I would use killed' instead of 'sacrificed'.,2
+1045,\n2. Cheap soft unitary constraint,1
+1046," As a matter of fact, all images shown (including those in the appendix) are blurred versions of the original images, except of one single image: Fig. 4 last row, 2nd image (and that is not commented on).",1
+1047," In  section 3, the shifted version, \\delta, is abruptly proposed only based on \""results presented in 4.1\"" could improve learning.",1
+1048, but for a combination of reasons I think it's more like a workshop-track paper.,1
+1049,.\n\nI enjoyed reading this paper.,1
+1050,For the sake of time I have listed only a few (thirteen!) of the most glaring errors,2
+1051,"The author does not exhibit adequate acquaintance with the subject, the scholarship on it, the structure of logical argument, or English.",2
+1052,Have you no command of the English language?,2
+1053,None of the following comments on the original manuscript has been correctly reflected or answered [1st round review,2
+1054,"Overally speaking, the manuscript is well written.",2
+1055,"This is madness, frankly, almost regardless of how it was implemented.",2
+1056,"""This paper proposes a method to learn a control policy from both interactions with an environment and demonstrations.",1
+1057,\n2.) Model generalization to data-sequences longer than the training set.,1
+1058,"\n\nIn the ImageNet classifier family prediction, how different are the various families from each other?",1
+1059,A few points fall into the category of So What' h/,2
+1060,"For a section on thought, very little seems to have gone into it.",2
+1061,This paper adds nothing to the existing knowledge of the subject ,2
+1062,"The paper comes with proofs, but – at a first glance – they seem to be more cute than useful.",2
+1063," In particular, I really appreciated the additional appendix sections to clarify what actually happens as the phase information is propagated through the network.",1
+1064,This research is not worth a hill of beans,2
+1065,Im just bored as a reader.,2
+1066, It combines several insights into a nice narrative about infinite Bayesian deep networks.,1
+1067,this may eventually be a cited paper.,2
+1068,"That omission is a standard feature of articles from the fourth author's lab. Although it normally doesn't bite him, it does in this case.",2
+1069,eviewer 2: 'THOU SHALL AWAIT MY JUDGEMENT... FOR SIX  EARTHLY YEARS,2
+1070,This literature review is nothing more than a merry dance around the books,2
+1071,"The research team cooked up a great filet mignon. Instead of mushrooms and an exquisite French sauce, we got American ketchup.",2
+1072,"This is an interesting manuscript, not because of its results, but because of its complete ignorance of due scientific process",2
+1073,"It appears the authors has generated reports in a hurry, compiled, and presented as an article.",2
+1074,"So the paper, which I was initially excited to read, ended up just making me mad.",2
+1075,I do not believe or trust the data presented or the underlying thesis.,2
+1076,"\n\nFirst of all, the paper is very well written and structured.",1
+1077,"No new insights, no important question addressed, no problem solved. -..",2
+1078,This article is on an interesting topic. Unfortunately there is no more positive to say about this manuscript.,2
+1079,The title showed promise...,2
+1080, They do not show convincingly that the network managed to learn interesting class-specific and class-agnostic representations.,1
+1081, \nThe authors use deep Q learning from Mnih et al 2015 to learn their optimal policy.,1
+1082,\n\nThe paper starts off strong.,1
+1083, The evaluation is performed\non a synthetic dataset and shows improvements over seq2seq baseline approach.,1
+1084,This looks like a work of pure fantasy.,2
+1085,"\n\nRelevance: Although there isn't any learning going on, the paper is relevant to the conference.",1
+1086,"""The paper develops models which attempt to explain the existence of universal perturbations which fool neural networks \u2014 i.e., the existence of a single perturbation which causes a network to misclassify most inputs.",1
+1087,"The evaluation is limited, in that the standard evaluations (e.g. SimLex would be a good one to add, as well as many others, please refer to the literature) are not used and there is no comparison to previous work.",1
+1088,The peaceful atmosphere between Christmas and New Year was transiently disrupted by reading this...,2
+1089,I find the author's writing to be very undergraduate-like.,2
+1090," The authors empirically evaluate their method in both image and text domains and claim that the corresponding generated adversaries are natural (legible, grammatical, and semantically similar to the input).",1
+1091,"\n(b) they achieve this by clever use of character LSTM encoder / decoder that sandwiches a bidirectional LSTM which captures context,",1
+1092,This code sample cannot be adequately described without the use of strong language.,2
+1093, This should be supported by some quantitative results.,1
+1094, They also show experimentally that penalized gradients stabilize the learning process.,1
+1095," It seems the novelty here is mainly the empirical exploration (will return to this later), and numerical integration for various activation functions.",1
+1096," Still, I think the contribution in that part is a: sentiment-psychologically inspired analysis of the Thumbrl data set.",1
+1097,"\n\nThe idea of explicitly accounting for the boundedness of clinical scores is interesting,",1
+1098, This is very much different from large part of the cited classic active vision literature.,1
+1099,Studies undertaken in such a manner as presented here degrade all science by giving the semblance of legitimacy to illegitimate work.,2
+1100,This proposal left me cold - In response to a grant proposa,2
+1101,".\n* While many loosely-related works were surveyed, it is not clear why literally none of them were compared.",1
+1102, Rest of presented work is more or less standard.,1
+1103,"  Some of the notation is confusing here \u2014 for example, presumably the rotations refer to image level rotations rather than literally multiplying the inputs by an orthogonal matrix, which the notation suggests to be the case.",1
+1104,Is it possible that a different choice of hyperparameters can change the model ranking,1
+1105,The conclusion is something of a shaggy dog.,2
+1106," \n- Despite the author\u2019s expectations that their representations will be \u2018widely used\u2019, I am struggling to think of cases where they would be useful, outside of the very specific tasks involving prepositions that they use.",1
+1107,nless the authors performed some pagan ritual before euthanizing the animals I would use killed (or euthanized) instead of sacrificed,2
+1108,I can't possibly imagine what led the authors to believe that their paper was remotely interesting enough to submit for publication,2
+1109,"The team has generated the kind of gaudy, brobdignagian dataset that makes it such a curious and exciting time",2
+1110,N/A. (Full review text),2
+1111,I think time will show that inheritance (section 1.5.3) is a terrible idea.,2
+1112, Were these values different?,1
+1113,"Indeed, by the end of the paper, the reader is left with a feeling of so what now?",2
+1114,It reads like papers often do when they are written in LaTeX. Reject.,2
+1115," This work introduces a simple, computationally straightforward approach to exploring by perturbing the parameters (similar to exploration in some evolutionary algorithms) of policies parametrized with deep neural nets.",1
+1116,\n* the paper is clearly written and easy to understand,1
+1117,[H] did a few sloppy experiments and attached his name to the great pioneering work by [P]. He should not be mentioned.,2
+1118," Also, the experimental results look quite promising",1
+1119,"Do we need to clarify the meaning of, all?",2
+1120,I have rarely read a more blown-up and annoying paper in the last couple of years than this hot-air balloon manuscript,2
+1121," Based on the review taxonomy, the authors presents a mixed objective which aims for bretter clustering performance.",1
+1122,"\u201d - what does \u201cthe accuracy improvement is smaller than 0.1%\u201d mean?""",1
+1123,[The methods section] reads more as if these explanations are put in to guide the authors themselves,2
+1124,Farcical,2
+1125,  This work has a well-established motivation: traditional attention for target-dependent sentiment classification cannot model the interaction between target term and context words when making predictions.,1
+1126,"For a section on thought, very little seems to have gone into it.",2
+1127,"I could not find any passage in the MS that would explain to me what is the exact novel idea, proposal, argument, or hypothesis",2
+1128,"I believe that there are important questions in this area, questions that have intellectual merit, but the PI has not found any…",2
+1129,  Table 1 probably reports 100 * R^2? Please fix the description.,1
+1130,I can see that the manuscript has archival value,2
+1131,"Many questions on the text, for example, cause embarrassment in understanding the text",2
+1132, They obtain state of the art results on most of the datasets.,1
+1133,"The biggest problem with this manuscript, which has nearly sucked the will to live out of me, is the terrible writing style",2
+1134,That gives a ridiculous demonstration where authors forgot science and reinvent history (…) the...,2
+1135,"\nGood cover of relevant work in sec 3.[[CNT], [CNT], [APC], [MAJ]]\n\nCons\nThe paper emphasis on the fact the their modeling multi-modal time series distributions, which is almost the case for most of the video sequence data.",1
+1136, \n\nPros:\n+ The results are very pleasing visually.,1
+1137,"The following discussion seems to ignore this major flaw, which turns mere arm-waving into Olympic-level calisthenics",2
+1138," Please explain the difference.""",1
+1139,\n\npros:\n(1) The idea is introduced clearly and rather straightforward.,1
+1140,"""[ =========================== REVISION ===============================================================]\nI am satisfied with the answers to my questions. ",1
+1141,Proposition 7 was so fundamentally wrong that I saw no point in reading beyond it,2
+1142,"By now, there are over 1,000 [articles on this topic], but these authors have not read a single one.",2
+1143,and I'll refer to you as the author despite the effort you have put into ensuring that I know who you are...,2
+1144,Among the topics to be subject to the integrity of attention needs to be work related to the subject of innovation does not,2
+1145, \n\nPros:\n- Investigating the ability of distributed representation in encoding input structured is in general interesting.,1
+1146,It is not hard to develop this method…I could write code for this on a rainy afternoon.,2
+1147, It seems to me that the approximations made to Q(A) to propagate the uncertainty are breaking the bounding guarantee.,1
+1148,The paper suffers from its desire to be accessible and directly impactful,2
+1149,"  Each teacher model is trained on a portion of strongly-labelled data, and will only predict similar weakly-labelled data.",1
+1150," The motivation of the paper and the approach taken by the authors are sensible, such as adding discounting was applied to introduce forget mechanism to the RWA and manipulating the attention and squash functions.",1
+1151,\n- the datasets are not described properly.,1
+1152, however it is poorly written and do not contribute much in terms of novelty of the approach.,1
+1153," For example, the authors\u2019 first contribution is hidden among the text presentation of section 2.[[CNT], [null], [CRT], [MIN]] \n* The paper relies heavily on the supplement to make their central points.[[CNT], [null], [DIS], [MIN]] \n* It is nearly double the recommended page length with a nearly 30 page supplement",1
+1154,"It is not clear how the of data presented in Figures 1, 2, 4, 5, 6, 7, 8, S1, and S2 was quantified and analyzed",2
+1155,Being first is not sufficient. I could be first to do a backflip off a building with no net but that doesnt make it a good idea,2
+1156, \n\nThe experiments are complete and the writing is good.,1
+1157,"Nothing changes in our collective research programs as a result of this work. Still, the work needs to appear somewhere in the literature",2
+1158,You have put in a lot of effort answering a question that should have never been asked,2
+1159,"Written in parts like an experience track paper, minus the experience.",2
+1160,"  After going over the additional experiments in the appendix, and I find the three results shown in the main paper seem cherry-picked, and it will be good to include more NLP tasks.""",1
+1161,This technique will never work.,2
+1162," The experimental evaluation is complete and accurate. \n\n""",1
+1163, The method provides equivalent accuracy and sparsity to published state-of-the-art results on these datasets ,1
+1164," \n\nWhile the authors do attempt to accomplish a lot in these nearly 16 pages of text, the authors' main points and overall narrative gets lost due to the writing that is a bit jumbled at times and that relies heavily on the supplement.",1
+1165, The idea deserves a publication.,1
+1166,   Please provide numerical support.,1
+1167,I felt like I was reading a horror movie,2
+1168," The targeted issue is fundamentally important, and the proposed approach (exploiting LSH schemes) seems to be sound.",1
+1169,"\n\n=-=-=-= Response to the authors\n\nDuring the initial reviewing period, I was unable to distill the significance of the authors\u2019 contributions from the current literature in large part due to the nature of the writing style.",1
+1170,I find the title and the main premise of the abstract confusing and illogical. [key concept X] has the logic of a Monty Python sketch,2
+1171,It seems that the author is simply engaged in proprietary phrase coining – advancing a new term for a well-researched phenomenon,2
+1172,eview of a PhD project paper submitted one year after successful defense: Student should get a new PhD project,2
+1173,"It is not clear what percentage of the eligible people are not applying due to being lazy, inertia, or principles, which makes it hard to gauge the size of the potential market. [The people that the reviewer is referring to are immigrants",2
+1174,"This paper was authored by a keen blogger and his colleagues. The paper perhaps reflects this informal approach, to its detriment",2
+1175,\n\n5. It would be nice to see the gradient flow with the new activation function compared to the ones without.,1
+1176,If you want to solve a puzzle you could just do sudoku.,2
+1177,"this study would have been really interesting 10-15 years ago, but not it seems quite out of date.",2
+1178,This paper does not leave me satisfied,2
+1179,"In the course of this paper many stones were thrown but, unfortunately, no birds were harmed.",2
+1180,Several books that are cited but there is no evidence that they have ever been studied and...,2
+1181,  Reasonable baselines.,1
+1182," \n\nThe paper is written clearly and the English is fine.""",1
+1183,A blizzard of extraneous data external information should be culled.,2
+1184,"\n\nI think this paper does not provide compelling pieces of evidence of unexpected pathological behavior in the previous paper, and also does not provide any insight of how to improve upon and address the obvious limitations of previous work.",1
+1185," What is less trivial is estimating (4) for various activations, and that seems to the major methodological contribution.",1
+1186," A more complete reference is \""handbook of weighted automata\"" by Droste.",1
+1187,Find your inner nerd—it must be a big part of you—bind and gap it and then dump it in the ocean tied to a large rock.,2
+1188, I think a language modeling benchmark and/or a larger scale question answering dataset should be considered.,1
+1189," This is in part due to the fact that the paper is relatively short, and would benefit from more detail.",1
+1190," This has already been successfully applied in multiple domains eg. in computer vision (Krizhevsky et al, NIPS 2011), NLP (Bahdanau et al 2014), image retrieval (Krizhevsky et al. ESANN 2011) etc, and also studied comprehensively in autoencoding literature.",1
+1191,"Most part of methodology is useless, most of paragraphs are inrelevant to the main topics",2
+1192," Even if you do not know what metric to use to objectively compare your approach versus baseline there are plenty of fields suffering from a similar problem yet  doing subjective evaluations, such as listening tests in speech synthesis.",1
+1193,"The ideas seem to be a combination of wishful thinking, poor chemical insight and limited understanding of the techniques involved",2
+1194,"This is a potentially interesting problem. Yet, not all potentially interesting problems are useful, such as this one",2
+1195,I would drop the first clause in the paper title. It does nothing other than degrade the scientific integrity of the work,2
+1196," The fact that image reconstruction for shifted images or new images is evidence for a sophisticated latent representations is, to my mind, not at all shown here.",1
+1197,This paper is about combining inflexible specifications in a flexible way.,2
+1198,\nI think the evaluation could be improved by using malware URLs that were obtained during a larger time window.,1
+1199, -- finding a more efficient search path would be an important next step.,1
+1200,Reading this made my brain melt. Very true though.,2
+1201,"  The paper presents significant, novel work in a straightforward, clear and engaging way.",1
+1202,This paper is indicative of a degenerative research paradigm' h/,2
+1203,\n\nIt's not clear if the paper is relevant to the ICLR audience due to its emphasize on low-level optimization which has little insight in learning representations.,1
+1204,"\n\n3. In section 3.1, when presenting random variables (U_1, ..., U_d), I find the word \""Bernourlli\"" a bit misleading because typically people would expect U_i to take values from {0, 1} whereas here you assume {-1, +1}.",1
+1205," The proposed algorithm is essentially an ensemble algorithm, there exist several works on deep model ensemble (e.g., Boosted convolutional neural networks, and Snapshot Ensemble) should be compared against.",1
+1206,"\n\n5.  The experiments on adversarial robustness and face verification seems more interesting to me,",1
+1207,My first concern is that I dont get it. - (via shitmyreviewerssay,2
+1208,This was one of the least interesting papers that I have read in quite some time.,2
+1209," This seems rather limiting, can you comment on that?",1
+1210, but not huge.,1
+1211," \nNo new method is being proposed, only existing methods are applied directly to the task.",1
+1212,The presentation of the paper is difficult to follow for a hard scientist and it sometimes reads as if it were machine generated,2
+1213," The answers to the critiques referenced in the \n paper are convincing, though I must admit that I don't know how crucial it is to answer these critics, since it is difficult to assess wether they reached or will reach a large audience.",1
+1214,"  For instance, there is no discussion at all of LSTMs and their application to text classificatio (e.g., Tang et al., EMNLP 2015) -- although it is noted that the authors do compare against D-LSTM,  or char-level CNNs for the same (see Zhang et al., NIPs 2015). Other relevant work not discussed includes Iyyer et al. (ACL 2015). In their respective ways, these papers address some of the same issues the authors consider here.",1
+1215," If these are the generated images, then some reconstruction is done by the network, fine, but also not unsurprising as the network was told to do so by the used objective function.",1
+1216,This looks like a very early draft,2
+1217, But I can not at all give a good evaluation given the current experimental results (unless substantial new evidence which make me evaluate these results differently is provided in a discussion).,1
+1218,"  In European Conference on Computer Vision, pp. 297\u2013312, 2014a.",1
+1219,".\n\nThe experimental part is satisfactory, and seems to be done in a decent manner.",1
+1220,This was one of the least interesting papers that I have read in quite some time.,2
+1221,\n\nSection 2 motivates the suggested linear scaling using previous SGD analysis\nfrom Smith and Le (2017).,1
+1222,". I therefore recommend that the paper be accepted.\n\n""",1
+1223,"\n\nIn summary, this is an innovative paper that treats the subject with rigorous mathematical formalism and is successful in the empirical evaluation.",1
+1224,"Bad, very bad.",2
+1225,STRENGTHS: none.,2
+1226,The scientific contribution of this paper - if there is any at all - is at best hopelessly insignificant.,2
+1227,\n\nThe idea seems promising,1
+1228," Numerical results on benchmark datasets show some improvement of the proposed loss over softmax loss and center loss (Wen et al., 2016), when applied to distance-based classifiers such as k-NN and k-means.",1
+1229,This is a perfect example of the worst kind of research in social psychology,2
+1230,"""In recent years there have been many notable successes in deep reinforcement learning.",1
+1231," It should be noted that all three reviewers pointed out the length of the paper as a weakness of the paper, and that in the most recent draft, the authors made the main text of the paper longer.",1
+1232,"\n\nThe motivation is along the lines of functional PCA: if the vector x was obtained by discretization of some function \\x, then one encounters the curse of dimensionality as one obtains finer and finer discretization.",1
+1233,"""This paper presents an analysis of LSTMS showing that they have a from where the memory cell contents at each step is a weighted combination of the \u201ccontent update\u201d values computed at each time step.",1
+1234,I am personally offended that the authors believed that this study had a reasonable chance of being accepted to a serious scientific journal.,2
+1235,The investigator is in the top 50% of his field,2
+1236," (with mistakes in an equation), however, it does not contribute much in terms of novelty or new ideas.",1
+1237, The other main new and potentially useful idea is a new idea for handling OOVs in this context where they are represented by positional placeholder variables. This also seems helpful.,1
+1238,It is safe to say that the authors want to see their paper published more than I really want to...,2
+1239,(on a computer simulation paper) Did you use software?,2
+1240,The concluding 'takes a village' sentence is also a bit unoriginal.,2
+1241,SURELY THE AUTHORS CAN COME UP WITH A BETTER REFERENCE THAN WIKIPEDIA TO SUPPORT THEIR POINT HERE!,2
+1242, It is then claimed that the generated images show that the network has learned good latent representations.,1
+1243,"The enormous and overwhelming -not to say pathetic- admiration, even adoration of the author for her subject is barely acceptable",2
+1244,This paper is an experiment to try and determine how badly a research paper can be but still be accepted,2
+1245,\n\nEvaluation: \nSignificance: The question whether GANs learn the target distribution is important and any  significant contribution to this discussion is of value.,1
+1246, Similar experiments should be conducted on switchboard and wsj because librespeech is several times larger than switchboard and wsj.,1
+1247," What is missing from this picture is when a blind walk cannot reach such a state, e.g. when a narrow corridor is present in the environment.",1
+1248,"The fact that the question of this paper has never been asked should, on balance, count against the paper.",2
+1249,Data is presented as though it were reliable observation when it could equally well be described as unwarranted slander,2
+1250," Here it would be good to be more specific about the domain, however, as approximating the low order terms certainly does not guarantee a global uniform approximation.",1
+1251,The candidate has not demonstrated to me the required knowledge in any of the starred areas,2
+1252,I feel the results are insufficiently counter-intuitive to warrant publication in [fancy journal],2
+1253,There are so many things wrong with this manuscript that I do not know where to begin,2
+1254,"This is an interesting manuscript, not because of its results, but because of its complete ignorance of due scientific process",2
+1255,"The authors merely used somewhat
+bigger guns than previous studies and generated nothing but more smoke.",2
+1256,It would be wholly inappropriate to randomize living people to an intervention.,2
+1257," However, differentiating TreeQN also amounts to back-propagating through a \""single\"" trajectory in the tree that gives the maximum Q-value. ",1
+1258,This work is stuck in the past. The referee would rather talk about the future - some of the senior co-authors were the future once!,2
+1259,  It is also never precisely spelled out what the final theoretical guarantee is (preferably the authors would do this in the form of a proposition or theorem).,1
+1260,Future work: The authors personal research agenda is irrelevant here.,2
+1261,"This paper is definitely not suitable to PNAS, or, for that matter to any other journal.",2
+1262," This paper presents an interesting and valuable solution, and as such constitutes a large advance in this nascent area of machine learning.",1
+1263,  This is would be worthwhile to appreciate the benefit of the proposed approach.,1
+1264, The authors report the highest measured acceleration of VGG16 using low-rank approximation techniques (6.2x vs 5x previously) with a similar accuracy drop (1.2% vs 1.0% previously).,1
+1265,"A good deal of effort has been expended here, but to what end? - Reviewer ",2
+1266,The only conceivable contribution this paper can make is by providing the academic community with an alternative to counting sheep.,2
+1267,Maybe a scientific journal is the wrong outlet for your data,2
+1268,"  They are also fairly specific, for example \u201csurprise\u201d is sudden reaction to something unexpected, which is it exactly the same as seeing a flower on your car and expressing \u201cwhat a nice surprise.",1
+1269,  VAE is very power latent variable model which also not being compared against.,1
+1270,\n\n== Detailed suggestions ==\n\n1) The authors should specify in the abstract and in the introduction that they are analyzing feedforward neural networks *with ReLU activation functions* so that the current context of the result is more transparent.,1
+1271,What is this muck?,2
+1272,The following paragraph will strike many of your readers as shrill. They will stop reading the article and throw it into the fire,2
+1273,\n\nClarity:\nThe paper is generally well-written and easy to read.,1
+1274, Does it lead to better stability to choose one or the other?,1
+1275,"The odds ratios in Table 2 are like the plains of Kansas: flat, flat flat!",2
+1276,"This paper must be rejected, because the work it describes is clearly impossible.",2
+1277,is bisexuals referring to the entire sample or those who identify solely as bisexual?,2
+1278," However, I\u2019m not sure if I see why this is true: in a binarized neural net, u also changes, since the previous layers are also binarized.",1
+1279,"Quite frankly, it seems that the technical language is used more to frighten the reader than facilitate his task",2
+1280, It describes the studied real-world problem and clarifies the relevance and challenge involved in solving the problem.,1
+1281,g \n-\tThe method enables creation of adversarial examples for block box classifiers,1
+1282, The authors show that UA results in gains on several of the games.,1
+1283,"\n\nWhile I can definitely imagine that your network architecture is well-designed and a good choice for image classification tasks,",1
+1284,"This was a well-written study that upon my first reading appeared flawless. - R1, who recommended to rejec",2
+1285,The manuscript embarrassingly fails in addressing the declared aims.,2
+1286,It just doesnt make sense.,2
+1287," However, given the form of the necessary and sufficient conditions the usefulness of of these results is less clear.",1
+1288,"\n\nThe main technical difference of the present work compared from the  main prior work (Vendrov, 2015) is that in addition to mean vector representation they use here also a variance component.",1
+1289,Some self citations may be easily taken out without harming the paper -..,2
+1290,"There are numerous problems with this paper, starting with the title.",2
+1291,"You aimed for the bare minimum, and missed!",2
+1292, This is an important and useful problem in robotics and other\napplications.,1
+1293,The final section illustrates the papers poverty. We are given the sort of banality that civil servants write for their masters speeches,2
+1294,\n\n* Fig 6: What does 'clean gradients' mean?,1
+1295," The paper makes a nice contribution to the details of deep neural networks with ReLUs,",1
+1296," The exposition of the quadrature method is difficult to follow, and the connection between the quadrature rules and the random feature map is never explicitly stated: e.g. equation 6 says how the kernel function is approximated as an integral, but does not give the feature map that an ML practitioner should use to get that approximate integral.",1
+1297," It would be better to show how much \u201celimination\u201d and \u201csubtraction\u201d effect the final performance, besides the effect of subtraction gate.\n\n2)",1
+1298,"This piece offers nothing new…is poorly written, analytically weak and repeatedly inaccurate. h/",2
+1299,The sum total is frustration with what I can only call cavalier treatment of promising material.,2
+1300,"Thats not possible to do without mind-reading, and theres nothing in the Method section about mind-reading methods",2
+1301,"""The paper addresses the problem of tensor decomposition which is relevant and interesting.",1
+1302,I now have had a chance to look at this paper. I think it is a bit of a joke.,2
+1303," But I don't find it justified anywhere why \""leave 99.7% of i, j pairs unpenalized\"" is sth.",1
+1304,"though experiments are limited\n""",1
+1305, I would suggest rewording title/abstract/intro,1
+1306,\n- Trust-PCL (off-policy) significantly outperform TRPO in terms of data efficiency and final performance.,1
+1307," The exposition in the paper is also not well-suited for people without a systems background, although I'll admit I'm mostly using myself as a proxy for the average machine learning researcher here.",1
+1308,In the experimental part there is a lack of scientific by taking over results from reference literature.,2
+1309,This is rubbish!!!,2
+1310,Was this an undergraduate class assignment?,2
+1311," Furthermore, the authors proposed an interesting idea to augment additional training data by paraphrasing based on off-the-shelf neural machine translation.",1
+1312," In practice this second solution is analogous to the first, but a general 'distractor' class\nis added.",1
+1313,"""# Summary and Assessment\n\nThe paper addresses an important issue\u2013that of making learning of recurrent networks tractable for sequence lengths well beyond 1\u2019000s of time steps.",1
+1314,It also adopts an interesting multicodebook approach for encoding than binary embeddings.,1
+1315,"  \n\nCons: \nReferences to \""CaffeNet\""  and \""LeNet\"" (even though the latter is well-known) are missing.",1
+1316," \nFor the application of these ideas to spiking neurons including learning please see a recent paper:\nDen\u00e8ve, Sophie, Alireza Alemi, and Ralph Bourdoukan.",1
+1317,The proposal is poorly written and unfocused with only brief moments of meritorious thinking,2
+1318,I want to vomit; I cant believe this paper was submitted.,2
+1319,"Ugh. Read a book. This is grossly oversimplified, and not an appropriate statement for a scientific...",2
+1320,Nobody in their right mind would ever suggest such a model,2
+1321,"\n\nProx tables (see also the new edition of Bauschke and Combettes' book): P. L. Combettes and J.-C. Pesquet, \""Proximal splitting methods in signal processing,\"" in: Fixed-Point Algorithms for Inverse Problems in Science and Engineering (2011) http://www4.ncsu.edu/~pcombet/prox.pdf",1
+1322,I dont see how your approach has potential to shed light on a question that anyone might have.,2
+1323,"This article describes [XY], a research project investigating methods for game design. The paper is poorly written [full review",2
+1324,\n\nQuality:\nThe proposed approach is well motivated and the experiments show the limits of applicability range of the technique.,1
+1325,"Cite newer, relevant references, especially those published by X 2012, and X 2008. Best wishes, Dr. X, Associate Editor.",2
+1326, The model is trained on an empirical distribution whose points are sampled from the true distribution.,1
+1327," What most impressed me, however, was the literature review.",1
+1328,"I am not sure why there is a full section about limitations, this in itself says a lot about the study",2
+1329,\n\nI thought the little 2-mode MOG was a nice example of the premise of the model.,1
+1330,I am concerned that the author is not getting the advice that she needs in order to produce a publishable paper,2
+1331,The findings are not novel and the solution induces despair.,2
+1332,\n\n- Have you tried to multiply the isotropic normal noise with the learned singular values and generate images from  this new prior  and compute inceptions scores etc?,1
+1333," Given that I don't even\nthink the representation of inputs and outputs is practical in general, I don't see what the \ncontribution is here.",1
+1334,"\n\u2013 The claim \u201cthere is no need to use more powerful and complex classifier anymore\u201d is unsubstantiated, as the paper\u2019s approach still entails using a complex classifier (a FFNN) to learn an optimal intermediate representation.",1
+1335,"\nPerhaps this will encourage people to dig deeper into some of these issues... I vote accept.\n""",1
+1336,This paper is too difficult for a journal on Astrophysical Fluid Dynamics,2
+1337," For example, you could imagine that in a morphologically rich language, this method would work well to learn the representation of certain morphemes such as case endings or verbal conjugation.""",1
+1338,This paper is written.,2
+1339,"Overall, I dont quite get what the authors think theyve accomplished.",2
+1340,Reject – More holes than my grandads string vest!,2
+1341, There are no comparisons to other possibilities.,1
+1342,\n\nPaper Strengths:\n* The proposed coupled ensembles method truly show impressive results in classification benchmark (DenseNet-BC L = 118 k = 35 e = 3).,1
+1343,"The paper is definitely exploratory, but probably not of interest to people other than the author.",2
+1344,"In the interest of being helpful, my suggestion is that the authors go back and review what is involved in the scientific method",2
+1345,My greatest criticism of the paper is the tendency of the authors to make an argument and then immediately contradict themselves,2
+1346," However, from Figure 2, we can see that the result is quite sensitive to the temperature \\tau.",1
+1347, This paper instead designed a new boosting method which puts large weights on the category with large error in this round.,1
+1348," \n\n\nCons - \n* The main narrative is lost in the text, leaving a reader unsure of the authors main points and contributions as they read.",1
+1349,The reported mean of 7.7 is misleading because it appears that close to half of your participants are scoring below that mean,2
+1350,We note that you may well have completed an interesting study but the manuscript in its current form does not convey that,2
+1351,I should be happy I dont have to spend time reviewing this dreadful paper; but I'm depressed at such bad science,2
+1352,I basically stumbled across every second sentence,2
+1353,  \n2. TR seems to lose generalization more gracefully than SGD when batch size is increased.,1
+1354,"  This  somehow allows to non-parametrically infer from the data the \""shape\"" of the activation functions needed for a specific problem.",1
+1355,It feels a little bit like someone wanting to run a series of statistics.,2
+1356,"While I wont advocate strongly for its publication, I also would not object to its publication in the journal",2
+1357,The author should abandon the premise that his work can be considered research,2
+1358," \n\n1, the derivation of the update of \\alpha relies on the expectation formulation.",1
+1359,\n- Distilling may hurt performance ( Figure 2.d),1
+1360,The paper is neither exciting nor harmful.,2
+1361,Are the 10 random reps chosen at random?,2
+1362,Figure 3: I haven't been this confused since Cardi B's 2019 Met Gala outfit,2
+1363,"Likewise, other graph-based networks (which although may require strong supervision) are able to decode quite cheaply.",1
+1364,Line 181: on each of the two trees. What does the term two trees refer to?,2
+1365,  It would be good to have a more thorough experimental evaluation of the trade-offs of setting K to be higher values.,1
+1366," Given the limited substantive changes to the main text, I did not deeply re-read the text of the paper beyond the introduction.""",1
+1367, They successfully show that using autoencoder can help to learn a good representation for discriminative domain adaptation tasks.,1
+1368,It is clear that the author has read way too much and understood way too little.,2
+1369, \n\n- The related work section seems light.,1
+1370," While the idea of pivot based common representation learning for language pairs with no parallel data is not new, adding the communication aspect as an additional supervision is novel.",1
+1371,\n- Appropriate comparison with existing conditional models: AC-GANs and PPGNs.,1
+1372,"Overall, the superheated sense of justification and self-advertising on display here are simply...",2
+1373,"\n\nTo sum up, I can not recommend the paper to acceptance,",1
+1374,My major concern to accept this work-in-progress paper is that these findings are not super interesting to readers in my opinion.,2
+1375,This is a very weak paper trying to bend things to build a relationship that does not exist,2
+1376,Add statistical support! - Review of NIH grant with biostatistician as a co-investigator,2
+1377,Why do you have so many tables? Did you go to Ikea?,2
+1378,\n- The other experiments are lacking important details.,1
+1379,"Im sorry, this topic is just not very interesting.",2
+1380,"This is like a project notebook. When Michelangelo finished the sistine chapel, did he also try to sell the scaffolding as a work of art?",2
+1381, \n- writing of the paper,1
+1382,"\n\n[4] A Maas, Z Xie, D Jurafsky, A Ng, Lexicon-Free Conversational Speech Recognition with Neural Networks, 2015",1
+1383,I certainly agree [with your point] here but please do not justify it with the selectively chosen and largely incorrect arguments above.,2
+1384," For example, I assume GRU is gated recurrent unit, but this isn't stated.",1
+1385,"I think this article is carefully argued, but at no moment is it stated that Heidegger was a Nazi.",2
+1386, The paper can be understood with no problem.,1
+1387,"I therefore cannot recommend this paper for publication.""",1
+1388,"""This work explores some approaches in the object detection field of computer vision: (a) a soft attention map based on the activations on convolutional layers, (b) a classification regarding the location of an object in a 3x3 grid over the image, (c) an autoencoder that the authors claim to be aware of the multiple object instances in the image.",1
+1389, because (a) an important baseline is missing,1
+1390, \n\nClarity:\nThe paper is easy to read.,1
+1391,I now turn to my best guess about what the authors might be doing.,2
+1392, The MNIST explanations help a lot.,1
+1393," And it is concluded in the final three sentences of the paper that the presented network \""can infer effective latent representations for images of other objects\"" (i.e., of objects that have not been used for training); and further, that \""in this regards, the network is better than most existing algorithms [...]\"".",1
+1394,"Though the objective of the paper pretends to be ambitious, there are a significant number of problems that limit the study's usefulness.",2
+1395,"[REDACTED]'s talks are popular, but then so are Ke$ha concerts.",2
+1396,"It appears the authors has generated reports in a hurry, compiled, and presented as an article",2
+1397,The author gives the impression of having had some mathematical training.,2
+1398," If no, I don't see how those curves compare.",1
+1399,The sthanthard of writing is impercable,2
+1400,This paper is to science as astrology is to astronomy h/,2
+1401,DO NOT have your heroes set the villain on FIRE. Its actually a war crime and…makes the heroes look like major arses.,2
+1402,  The same issue is found in Figure 2.,1
+1403,"\n\nPros:\n\n-Simple, effective method that appears readily available to be incorporated to any on-policy PG methods without significantly increase in computational time\n\n-Good empirical evaluation",1
+1404,\n\nSection 5.1:\n- I don't agree with the authors that the topics in Table 3 are interpretable.,1
+1405,This made the paper very long and may bore the reader,2
+1406,The findings are not novel and the solution induces despair.,2
+1407,"\n\n- Page 7 proposition 6 seems like an immediate consequence of Theorem 1 however given the combinatorial nature of the K_{I,J} it is not clear why this theorem is useful.",1
+1408,"The accompanying simulation movie is neither interesting, nor particularly beautiful.",2
+1409,"If the author is comfortable having his/her name on this paper, then I won't stand in the way of its publication",2
+1410,It reads more like a diagnosis confirmed by a set of examples,2
+1411,"\n\nThere are many good ideas and experiments in this paper and I would strongly encourage the authors to resubmit this work to a future conference, making sure to reorganize the paper to adhere to the relevant formatting guidelines.""",1
+1412,Does it well describe the new space?,1
+1413,"You will see that Reviewer 2 has slightly missed the point, so please dont pay too much attention to their comments in your revision. -E",2
+1414," But, it is still interesting to see that the ego-centric neural memory works well on challenging tasks in a 3D environment.",1
+1415,I do not want to see the paper again.,2
+1416,"I believe that there are important questions in this area, questions that have intellectual merit, but the PI has not found any…",2
+1417," but I doubt if a pragmatic ReLU network user will learn anything by reading this paper.""",1
+1418,I would refrain from using enumerations in your paper and instead encourage you to think about the deep masculinism that comes with it,2
+1419,"""This paper proposes a small modification to the monotonic attention in [1] by adding a soft attention to the segment predicted by the monotonic attention.",1
+1420, Many equations were unclear to me for similar reasons to the point I decided to only skim those parts.,1
+1421,I recommend the publication even if I am not impressed,2
+1422, I suspect it might be speaker identification.,1
+1423," Experimentally, it is shown that using sketches as an intermediate abstraction outperforms directly mapping to the program AST.",1
+1424,The writing is often arrestingly pedestrian,2
+1425," The approach is to learn a policy for task 1, then for each task k+1: copy distilled policy that can perform tasks 1-k, finetune to task k+1, and distill again with the additional task.",1
+1426, The clustering by weight (4.1.) is nice and convincing that the model learns something useful.,1
+1427,"Once I penetrated the pigeon English, I found very little substance underneath.  (Um reviewer? I think you mean pidgin. Still hurts)",2
+1428,This work is only a maths game.,2
+1429,This paper goes to significant amounts of trouble to accomplish something that is already well established but in a less elegant manner,2
+1430, These patterns often appear in biological datasets. ,1
+1431, It may also be interesting to consider class-specific representations that are more general than just the class label.,1
+1432,"\n\nThe proposed method is novel and the incorporated ideas are quite interesting (e.g., discriminating real from fake random walks, generating random walks from node embeddings and LSTMs).",1
+1433,I can see that the manuscript has archival value,2
+1434,I also do not feel that the lead PI is qualified to undertake this work…she needs to be academically successful first.,2
+1435,\n\nDespite the rich literature of this recent topic the related work\nsection is rather convincing.,1
+1436,"   The idea of extracting policies corresponding to individual automaton states and making them into options seems novel,",1
+1437,The problem is epitomized by almost every word choice in the title (vi,2
+1438,At least I say it to your face and sign my name,2
+1439," Furthermore, the paper is nearly double the recommended page length and has a nearly 30 page supplement.",1
+1440," \n - Fig 2: It's weird that only the +dict (left) model learns to connect \""In\"" and \""where\"".",1
+1441,Presented paper has 13 pages and 26 adequate references. The paper seems to be very interesting.,2
+1442, The paper is well written and the experiments are interesting.,1
+1443,I started to review this but could not get much past the abstract.,2
+1444,"  Additionally, this approach allows a significant reduction of training time it seems.\n\n""",1
+1445,The team is very experienced. It [the paper] felt a bit less self referential than they often are,2
+1446,"\n\n-dealing with partial observability (work on decentralized POMDPs by Peshkin et al, 2000, Bernstein, Amato, etc.)",1
+1447,\nThe key novel idea is to learn a pairwise similarity function using the examples from the known classes to apply to examples of unknown classes.,1
+1448,"The Vygotsky reference is a straight-up drive-by citation, adding nothing except whatever luster he adds to the authors claims.",2
+1449,This section gives the impression that you'll throw a handful of darts at a target and see what you happen to hit,2
+1450, This gives an image that is similar to the original but with features that caused the classification of the disease removed.,1
+1451,\n* The motivation of using feature histograms as embedding is not clear,1
+1452, \n\nIf the entire point is to classify mutations versus errors it would make sense to combine their read based calls from multiple reads per mutations (if more than a single read for that mutation is available) - but the authors do not discuss/try that.,1
+1453," Agreed that the authors do a more detailed study on simple MNIST classification, but these insights are not transferable to more challenging domains.",1
+1454,The writing is often arrestingly pedestrian' :ArrestinglyPedestrian!,2
+1455," This seems to work quite well, and I speculate that it is because prepositions often function to indicate grammatical relations between different arguments, rather than being content-bearing words themselves.",1
+1456,"  Though a random rotation may improve angle preservation in certain cases (as demonstrated in Figure 4), it may hurt classification performance (e.g., distinguishing between 6 and 9 in MNIST).",1
+1457,"My disappointment when finding flawed analyses, conclusions, and terminology [..] was therefore substantial",2
+1458,The investigator is in the top 50% of his field,2
+1459,"\nThe paper first proposes an approach based on a formulation of deep networks with (non-parameterized, non-gated) skip connections with an equality constraint that effectively removes the skip connections when satisfied.",1
+1460," While the motivation of the paper makes sense, the model is not properly justified, and I learned very little after reading the paper.",1
+1461,This is from a methods perspective rather unacceptable in these days of voodoo science.,2
+1462," Also, I see the advantage of referring only to the \""good\"" quantiles when needed.",1
+1463,"The biggest problem with this manuscript, which has nearly sucked the will to live out of me, is the terrible writing style",2
+1464,"It would take a great deal of time to sort this out. From what little I can glean from the scientific nature of this submission, addressing the comments listed above will not yield a submission suitable for XXXX",2
+1465,I find this a smart-looking house built on a weak and shifty foundation,2
+1466,"\n\n2. Practically, even if the authors can perform efficient optimization of weights in individual layers, when there are many layers, the alternating optimization nature of the algorithm can possibly result in overall slower convergence.",1
+1467,This submission looks more like an advertising booklet rather than a research paper.,2
+1468,"Generally, some extra clarification might be nice to improve clarity…",2
+1469,"\n\nAlthough, the observations are interesting, especially the one on MNIST where the network performs well even with correct labels slightly above chance, the overall contributions are incremental.",1
+1470,This is a sin of omission!,2
+1471,"I am sure that you would find what you expect, but I question its value as research",2
+1472,". It would be useful to know whether the number of iterations to achieve a particular performance is equivalent for all the different architectures considered,e.g. does the proposed sparse learning method converge at the same rate as the others?",1
+1473,"So, what is the point of this?",2
+1474,The authors are amateurs,2
+1475,"""The paper proposes an approach to train generators within a GAN framework, in the setting where one has access only to degraded / imperfect measurements of real samples, rather than the samples themselves.",1
+1476,..incoherent babble of unsubstantiated overstatement.,2
+1477,.\n- You claim to adjust for event imbalance and time interval imbalance but this is not mathematically shown nor documented in the experiments.,1
+1478,However the paper has several fundamental flaws that give it little or no value as a thoughtful piece of research,2
+1479,"I nearly said reject, but then I recalled that I have a hangover and am feeling grumpy",2
+1480, The proposed approach seems to be of interest and to produce interesting results.,1
+1481,This is not a paper. This is part of … something. It cannot be reviewed and should be rejected right...,2
+1482,This is an interesting paper but it is not relevant,2
+1483,"""The paper gives sufficient and necessary conditions for the global optimality of the loss function of deep linear neural networks.",1
+1484,The introduction is so confusing and purely written that I gave up.,2
+1485," \n\nIn the list at the top of page 5. Note that, the function classes might be characterized in terms of countable properties, such as the number of linear regions as discussed in MPCB, but still they build a continuum of functions.",1
+1486," \n\n* It would also be good to cite the following related work, which closely ties into the model of Eslami 2016, and is prior work: \n\nEfficient inference in occlusion-aware generative models of images,\nJonathan Huang, Kevin Murphy.",1
+1487,"""This is a highly interesting paper that proposes a set of methods that combine ideas from imitation learning, evolutionary computation and reinforcement learning in a novel way.",1
+1488, but I have the following complaints:\n\n(1)  I have the same question as the other reviewer.,1
+1489,"The question in the first paragraph is not functional in my opinion, as are the words inner workings",2
+1490,An alternative to counting sheep,2
+1491," \n\nOverall, I feel the paper is not up to mark and suggest the authors devote using these insights in a more actionable setting.",1
+1492, \n* The citation style of Authors (YEAR) at times leads to awkward sentence parsing.,1
+1493,"My summary assessment of the paper is as follows:
+Introduction: Poor
+Background: Poor
+Methods: Poor
+Results: Poor
+Discussion: Poor
+Conclusions: Poor 
+Overall assessment: Poor
+Recommendation: Reject
+Further Comments: Why was this submitted to a journal?",2
+1494,To improve this you need to be more robust on all fronts etc.,2
+1495,A failing course paper written by an undergrad,2
+1496,\n- Experiments on three different tasks indicating the potential of the proposed technique.,1
+1497, It is not clear to me as how this mechanism guarantees that it will not over-fit or that there will be no catastrophic forgetting.,1
+1498," \n\nThe adversarial loss helps significantly only with AMT fooling or realism of images, as expected because GANs produce sharp images rather than distributions, and is not very relevant for robot motion planning.",1
+1499,Despite all my efforts I failed to understand what the actual focus of this paper is,2
+1500,\n- My only concern about the novelty of the paper is that the idea of using CYK chart-based mechanism is already explored in Le and Zuidema (2015).,1
+1501,The results look like a smorgasbord of data,2
+1502, Another point on terminology that is important to emphasize - the method for training the crossover network by direct supervised learning from expert trajectories is technically not imitation learning but behavioral cloning.,1
+1503,"For example, in section 5.1, notations are presented and defined much later or not at all (g_{jit} and d_{it}).",1
+1504,"I disagree with many aspects of this paper, but sometimes it is best to give the authors as much rope as they want.",2
+1505,The paper was so boring I fell asleep halfway through,2
+1506," This includes, for instance, the number of levels in the hierarchy (L), the number of motifs at each level in the hierarchy (M_l), the number of nodes in each graph at each level in the hierarchy (| G^{(l)} |), as well as the set of primitive operations.",1
+1507,"\n\nThis paper presents a nice idea, and I'm sure that with some polish it will become a very nice conference submission.",1
+1508, DONT SEE WHATS SO HARD I CLEARLY SAID TURN RUEAT,2
+1509,"""The paper was a good contribution to domain adaptation. It provided a new way of looking at the problem by using the cluster assumption.",1
+1510,"The authors use a log transformation, which is statistical machination, intended to deceive",2
+1511, The paper cites many previous approaches to this but does not compare against any of them.,1
+1512,I felt like I was reading a horror movie,2
+1513,\n\nPros:\n- Addresses an urgent and timely issue of devising sparse kernels for RNNs on GPUs,1
+1514,"\n* In Equation 2, should there be a balancing parameter for the reconstruction loss?",1
+1515,The paper is - and I mean this with no disrespect to the author- a sort of echidna or platypus of a paper.,2
+1516,"The color rainbow is pretty, but largely useless.",2
+1517,"  In Advances in Neural Information Processing Systems, pp. 3844\u20133852, 2016.",1
+1518,Simply conducting the same analyses in a different data set does not equate novelty or impact to the...,2
+1519,They claim on page 9 a significant improvement of their method. This is stupid!,2
+1520, The authors also propose a way to determine the target rank of each layer given the target overall acceleration.,1
+1521," For example, can the proposed scheme can be compared with [Kos+17] or some other sample-dependent attacks?",1
+1522," Even assuming this is a meaningful task, surely the natural baseline would be to treat these phrasal verbs as non-compositional (e.g. extend the vocab with words like \u201csparked_off\u201d)  and train Word2Vec.",1
+1523,The first problem is that the method - whatever it is and however it works - is insufficiently...,2
+1524,The original study was published in PsycScience. This [failed replication] is just some work by a grad student. Reject.,2
+1525,This paper still reads in places more like alternative fan-fiction than scholarship.,2
+1526,"There is a very interesting story to be conveyed in this paper, but it is hidden behind layers of mud, obscured by poor writing",2
+1527,"If the paper is accepted, I strongly recommend an English prof-reading.",2
+1528,This paper does not contain information that could make a scientific proposal.,2
+1529,\n2. It provides useful insights of model behaviors which are attractive to a large group of people in the community.,1
+1530,The value of this manuscript is not so much that this is novel research as it is a demonstration of opportunistic sampling and analysis,2
+1531, but perhaps a bit preliminary.,1
+1532,The work that this group does is a disgrace to science,2
+1533," Same applies to the dirac distribution q(y|x), the true conditional distribution of outputs given inputs is multimodal even for machine translation.",1
+1534,"\n\n- The form of equation (6) was very nice, and you could also point out the connection with backward Euler for finite-difference methods.",1
+1535,\n\nContributions:\n- The paper proposes a cheaper activation and validates it with an MNIST experiment.,1
+1536," The discussion is largely based on a sequence of experiments, some of which are interesting and insightful.",1
+1537,"You aimed for the bare minimum, and missed!",2
+1538,This last version is riddled with redundant information and circular phrases.,2
+1539," These ideas are a clever solution to work\ninference networks into the message-passing algorithm of (Khan & Lin, 2017),",1
+1540,"Sorry for our long silence, due to some perplexity on our side at reading your manuscript.",2
+1541,"\n\nSpecifically, the authors say: \""In our experiments, we use the result of \nminimising the variable corresponding to the output of the network, subject \nto the constraints of the linear approximation introduced by Ehlers (2017a)\""\nwhich sounds a bit like using linear programming relaxations, which is what\nthe approaches using branch and bound cited above use.",1
+1542," \""On the state of the art of evaluation in neural language models.",1
+1543,"\n- Possibly inflated results reported for Hyperband experiment""",1
+1544,"Ultimately, the results are just a set of observations.",2
+1545," As compared to the existing approach where the PGM parameters must converge before updating the DNN parameters, the proposed architecture does not require this, due to the re-parameterization which is an important contribution.",1
+1546,So in summary: the paper is oblique to the entire current literature and it fails to relate to relevant investigations,2
+1547, but that the tools advocated are really rudimentary compared with what has been already proposed elsewhere.,1
+1548,My greatest criticism of the paper is the tendency of the authors to make an argument and then immediately contradict themselves,2
+1549,\nCon:\n1. Not entirely convincing that it should work better than already existing methods.,1
+1550," In general, some discussion of the differences in preprocessing between this work and Zhong et al. would be good (do they also use column annotation)?""",1
+1551,You make the reader feel uneducated,2
+1552,  \n\nBoth extensions are reasonable to me.,1
+1553,The last two sentences of the summary greatly exaggerate the value of this paper and the usefulness of its conclusions.,2
+1554, \n\nCons:\nThere are a few key technical issues that are not clearly addressed.,1
+1555,"The text is overly expansive, desultory, and often diaphanous, so that the raison d'être of an overarching theoretical structure is neither pellucid nor convincing.",2
+1556,"There may be a good paper crying to be let out of this manuscript but if so, it is hard to know.",2
+1557," In its current form, I am borderline but leaning towards rejecting this paper.",1
+1558," \n\nSince a sequence of similar linear systems have to be solved could a preconditioner be gradually be solved and updated from previous iterations, using for example a BFGS approximation of the Hessian or other similar technique.",1
+1559,This needs to be standardized!!! It must be converted!!! Why should we expect some kind of relationship?? It needs to be justified!!!,2
+1560," If so, the evaluation setting of dividing data into three *random* sets of training, validation, and test, in 5.3 doesn't seem to be the right and most appropriate choice.",1
+1561, The large evaluation section that discusses many different properties is a further indication that this approach is not only novel but also very promising.,1
+1562,This reads like a pretty good MA level seminar paper but comes nowhere near the intellectual status required for publication in journal X,2
+1563," but they do show some value for the technique in the area of domain-specific coreference.\n\n""",1
+1564," The tSNE visualization in figure 6 seems to indicate that the style memory representation does not capture class information as well as the raw pixels, but doesn't indicate whether that representation is sensible.",1
+1565,The standard of writing (including spelling and grammar) is also satisfactory.,2
+1566,This would have been a question of high interest 10 years back,2
+1567,"  The modes and its evaluation are relevant and intuitions can be made use for evaluating other similar tasks (in 3D, say). """,1
+1568," \n\nThe \u201csoft ordering\u201d approach simply enable task specific selection of layers, scaled with a learned scaling factor, to be combined in which order to result for the best performance for each task.",1
+1569,The authors have not bothered to learn the first thing about the theories they are hoping to refute with ill-designed experiments and muddled rationale.,2
+1570,"The so-called XX test is incompetent, irrelevant, immaterial and without any foundation whatsoever in the established literature",2
+1571,"  In term of impact, this is a theoretical paper looking at optimizing a sandbox problem where the results may be one day applicable to the real autonomous driving case.",1
+1572,(after having cited an author) one could call this name-dropping,2
+1573," (Though the proposed system does have the advantage of only requiring a screenshot created using any software, rather than being restricted to a particular piece of software.)",1
+1574, Seems a bit marginal to me.,1
+1575,"Pros:\n(+) The paper is well written, the schemes are well explained\n(+) Ablations are thorough and comparisons are fair\n",1
+1576,"\n - p.6. The basic idea of the OOV encoder seems a good one. In domain specific contexts, you want to be able to refer to and re-use words that appear in related sentences, since they are likely to appear again and you want to be able to generate them.",1
+1577,This paper could be considered for acceptance given a rewrite of the paper and a change of the title and abstract.,2
+1578,"it reads like someone who searched around the literature without much authentic understanding of social science, methodology or statistics",2
+1579,"The title of the paper indicates that the study was an RCT, but was it?",2
+1580,\n* The paper is clearly written and well illustrated by figures and examples.,1
+1581," This is nice to know but I think does not cross the acceptance threshold.\n\n""",1
+1582,This result would be great if it were true,2
+1583,I found every single reading of every theorist mentioned in this article seriously wanting,2
+1584,"So overall we do not recommend a resubmission, but can let you try if you insist
+
+- The Journal that accepted the resubmission",2

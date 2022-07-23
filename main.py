@@ -51,10 +51,12 @@ if __name__ == "__main__":
     parser.add_argument("--plot", action="store_true", help="Plots cartography.")
     parser.add_argument("--histogram", action="store_true", help="Adds density histogram to cartography.")
     parser.add_argument("--significance", action="store_true", help="Checks significance of results.")
+    parser.add_argument("--model", required=True)
     # Acquisition functions
     parser.add_argument("--acquisition", nargs="?",
                         choices=["random", "entropy", "leastconfidence", "bald", "cartography", "discriminative"],
                         default="random")
+    filePrefix = os.getenv("FILE_PREFIX")
 
     args = parser.parse_args()
 
@@ -72,24 +74,26 @@ if __name__ == "__main__":
             set_seed(seed)
             logging.info(f"Current seed: {seed} -- Active Learning process "
                          f"with acquisition function: [{args.acquisition}]")
-            accuracy_history, selected_top_k, conf_stats, var_stats, corr_stats = start_active_learning(args)
-
-            results.append(accuracy_history)
+            #accuracy_history, selected_top_k, conf_stats, var_stats, corr_stats = start_active_learning(args)
+            selected_top_k = start_active_learning(args)
+            #results.append(accuracy_history)
+            print(selected_top_k)
             selected_top_k_runs.append(selected_top_k)
-            confidence_run.append(conf_stats)
-            variability_run.append(var_stats)
-            correctness_run.append(corr_stats)
+#             confidence_run.append(conf_stats)
+#             variability_run.append(var_stats)
+#             correctness_run.append(corr_stats)
 
-        steps = int(os.getenv("ACTIVE_LEARNING_BATCHES"))
-        total = steps * len(results[0])
-        logging.info("{:30} {:30} {:30}".format("-" * 25, f"Mean accuracy of {args.acquisition}", "-" * 25))
+#         steps = int(os.getenv("ACTIVE_LEARNING_BATCHES"))
+#         total = steps * len(results[0])
+#         logging.info("{:30} {:30} {:30}".format("-" * 25, f"Mean accuracy of {args.acquisition}", "-" * 25))
 
         if args.analysis:
             print(f"Analysis of {args.acquisition}")
-            save_indices_for_overlap(args, total, steps, selected_top_k_runs)
-            get_statistics_datamap(confidence_run, variability_run, correctness_run)
+            #save_indices_for_overlap(args, total, steps, selected_top_k_runs)
+            save_indices_for_overlap(args, selected_top_k)
+            #get_statistics_datamap(confidence_run, variability_run, correctness_run)
 
-        df = pd.DataFrame({"score": [acc for val in results for acc in val],
-                           "step" : [step for _ in range(len(results)) for step in range(0, total, steps)]})
-        logging.info(df)
-        df.to_csv(f"{os.getenv('RESULTS_PATH')}/{args.task}/{args.acquisition}_{args.initial_size}_{os.getenv('CAL_THRESHOLD')}_caldal.csv", sep="\t")
+#         df = pd.DataFrame({"score": [acc for val in results for acc in val],
+#                            "step" : [step for _ in range(len(results)) for step in range(0, total, steps)]})
+#         logging.info(df)
+#         df.to_csv(f"{os.getenv('RESULTS_PATH')}/{args.task}/{args.acquisition}_{args.initial_size}_{os.getenv('CAL_THRESHOLD')}_caldal.csv", sep="\t")

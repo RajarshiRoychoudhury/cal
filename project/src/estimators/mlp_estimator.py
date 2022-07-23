@@ -31,7 +31,10 @@ class MLP(nn.Module):
 
         self.fc1 = nn.Linear(emb_dim, emb_dim)
         self.fc2 = nn.Linear(emb_dim, emb_dim)
-        self.fc3 = nn.Linear(emb_dim, num_labels)
+        self.fc3 = nn.Linear(emb_dim, emb_dim)
+        self.fc4 = nn.Linear(emb_dim, 786)
+        self.fc5 = nn.Linear(786, 256)
+        self.fc6 = nn.Linear(256, num_labels)
         self.log_softmax = nn.LogSoftmax(dim=1)
 
     def forward(self, x) -> torch.Tensor:
@@ -51,8 +54,10 @@ class MLP(nn.Module):
             out = F.dropout(out_fc2, p=float(os.getenv("DROPOUT")))
 
         out_fc3 = self.fc3(out)
-
-        return self.log_softmax(out_fc3)
+        out_fc4 = self.fc3(out_fc3)
+        out_fc5 = self.fc3(out_fc4)
+        out_fc6 = self.fc3(out_fc5)
+        return self.log_softmax(out_fc6)
 
     def forward_discriminative(self, x) -> torch.Tensor:
         embeds = torch.sum(self.embedding(x), dim=1)
@@ -60,8 +65,11 @@ class MLP(nn.Module):
         out = F.dropout(out_fc1, p=float(os.getenv("DROPOUT")))
         out_fc2 = F.relu(self.fc2(out))
         out = F.dropout(out_fc2, p=float(os.getenv("DROPOUT")))
-
-        return out
+        out_fc3 = self.fc3(out)
+        out_fc4 = self.fc3(out_fc3)
+        out_fc5 = self.fc3(out_fc4)
+        out_fc6 = self.fc3(out_fc5)
+        return out_fc6
 
     def predict_class(self, pred: torch.Tensor) -> List:
         class_outputs = []

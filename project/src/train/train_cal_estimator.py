@@ -53,7 +53,7 @@ class CALEstimator:
                 self.optimizer.step()
                 epoch_loss += loss
 
-            logger.debug(f"Epoch {epoch}: train loss: {epoch_loss / len(y_gold)} "
+            logger.debug(f"Cal estimator Epoch {epoch}: train loss: {epoch_loss / len(y_gold)} "
                          f"accuracy: {round(accuracy_score(y_pred, y_gold), 4)}")
 
     def predict(self, X_pool: np.ndarray) -> list:

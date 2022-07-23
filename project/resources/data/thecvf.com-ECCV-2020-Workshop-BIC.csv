@@ -1,0 +1,453 @@
+,Description,forum
+0,- The authors propose a new approach called DoubleU-Net for gland instance segmentation in the context of cancer diagnosis,3HQMxxEmiJn
+1,The classification results (different stages of cancer) from the first phase are reused to enhance the instance segmentation in a second phase,3HQMxxEmiJn
+2,"The doubleU-Net has a text-image encoding path, that incorporates the classification results in form of text (word2vec) and combines it with the original image to finally produce an attention map that is applied to the bottom of the U-Net for instance segmentation.",3HQMxxEmiJn
+3,- The authors can show that their approach indeed improves the instance segmentation results greatly when compared to state-of-the art methods and their own method without using the text-encoding path.,3HQMxxEmiJn
+4,### Major strengths of the paper,3HQMxxEmiJn
+5,- The results are impressive and are better than current state of the art,3HQMxxEmiJn
+6,The authors can clearly demonstrate that segmentation results improve when intermediate classification results (text) are presented to the network in a second iteration.,3HQMxxEmiJn
+7,- The text-(image)-encoding path of the author's proposed method is flexible such that it can potentially be enriched with more meta-data about the patient,3HQMxxEmiJn
+8,"Their research thus goes in an important direction, that is very relevant and not explored yet in the field.",3HQMxxEmiJn
+9,### Major Weaknesses of the paper,3HQMxxEmiJn
+10,"- The introduction and motivation is difficult to understand, and written in a very difficult and cumbersome language (see language section for more constructive feedback)",3HQMxxEmiJn
+11,- It would be important to stress out that the presented model even without using a text input already outperforms most state-of-the-art methods,3HQMxxEmiJn
+12,"To make this more visible in the paper, results from Table 4 row “Without Text encoder” could also be added to the summary results Table 2.",3HQMxxEmiJn
+13,- The method is not described in full detail or it is difficult to understand,3HQMxxEmiJn
+14,There are thus still some unclear parts about how the method actually works:,3HQMxxEmiJn
+15,"In the method section, it is not described how to get from the output of the network (a softmax map) to the final instance segmentation (each object being represented with a different ID).",3HQMxxEmiJn
+16,"There are two training iterations (1) and (2) (described in Figure 2), but it is unclear whether in training iteration (2), the image-encoding path is trained from scratch or retrained (eg",3HQMxxEmiJn
+17,weights are initialized from training (1)).,3HQMxxEmiJn
+18,"For cancer classification/grading (results Table 3), is the network after training phase (1) or (2) used? If (1), why do results improve with text encoding? If (2), how can grading get better if during phase (2), the network is only trained on L_seg and not the grading loss anymore?",3HQMxxEmiJn
+19,"Word embedding: Based on the dataset, I assume that there is a very limited amount of words for each image (and I can’t recognize any sentences), but in the section about word embedding, an embedding is described that involves the summation of multiple words for each sentence and the combination of multiple sentences",3HQMxxEmiJn
+20,It is also unclear how the final textual feature vector v (whose length depends on n) always meets the length of 300 described in section 4,3HQMxxEmiJn
+21,Implementation details (--> The dimensionality of each word vector is 300).,3HQMxxEmiJn
+22,"Is equation (3) (fusion of images and text) done once or multiple times? It would be easier for the reader, if the paper says that equation 3 is repeatedly used in the encoding path of the text",3HQMxxEmiJn
+23,"Additionally, to improve clarity, you could add a figure reference into the text (for instance to line 280): this fusion block is displayed in green in Figure 3",3HQMxxEmiJn
+24,"It is probably misleading if the text-encoder is called text-encoder, since both text and image are encoded.",3HQMxxEmiJn
+25,"- ""It is determined by pathologists on Hematoxylin and Eosin (H&E) stained tissue specimens.""",3HQMxxEmiJn
+26,"  Preposition ""on"" seems wrong / or unclear sentence.",3HQMxxEmiJn
+27,"- ""The morphological information of intestinal glands, like architectural appearance and gland formation, is one of the primary features in clinical to inform prognosis and plan the treatment of individual patient.""",3HQMxxEmiJn
+28,  in clinical seems wrong,3HQMxxEmiJn
+29,"- ""Besides the initial gland segmentation, we offer cancer diagnosis and greatly improved segmentation results as full-scale assistance for pathologists according to the clinical routine.""",3HQMxxEmiJn
+30,  as full-scale assistance seems wrong,3HQMxxEmiJn
+31,"- ""Unannotated image data can be utilized effectively by the proposed deep adversarial network [32] for considerably better results.""",3HQMxxEmiJn
+32,"  model for lesion Detection, tagging, and segmentation.",3HQMxxEmiJn
+33,"→ model for lesion detection, ..",3HQMxxEmiJn
+34,"- Line 289 ""Without thorough incorporation, text data contains no object localization could fail to guide the visual features on the pixel level.""",3HQMxxEmiJn
+35,"- Line 311 ""from the text encoder, we perform two-dimensional softmax to the each channel of the feature maps""",3HQMxxEmiJn
+36,"- Line 330 ""which validates our explanation that the clinical text data controls and emphasizes the glandular structure and morphology.""",3HQMxxEmiJn
+37,I think the presented approach of improving segmentation results of glands in histopathological images by additionally taking clues from textual descriptions is a great idea and the proposed method is indeed improving compared to a baseline not using the additional text.,3HQMxxEmiJn
+38,"The proposed method does, in fact, reach state-of-the art performance on two well known public datasets.",3HQMxxEmiJn
+39,The paper is at times a bit confusing (e.g,3HQMxxEmiJn
+40,"numberings in Figure 2 and caption is confusing me a lot, or the floats are at quite far away from the main text talking about them) and expects the reader to know quite a lot about the medical problem at hand (lots of expert lingo)",3HQMxxEmiJn
+41,Also the technical parts are not leaving me with total clarity,3HQMxxEmiJn
+42,If this was not a workshop paper I would value these issues significantly higher.,3HQMxxEmiJn
+43,"Anyway, I liked the paper, it is absolutely hitting the BIC spirit, and I would love to hear a talk about this work.",3HQMxxEmiJn
+44,"In this work, the authors present an extension to the Noise2Void denoising framework that incorporates convolution with a point spread function in order to better approximate the image formation process in microscopy.",BcAWplCftE
+45,The premise of the work is very solid and represents a shift towards making denoising approaches specific to bioimaging data rather than just the direct translation of computer vision techniques originally formulated for e.g,BcAWplCftE
+46,This is an important conceptual advancement in the field.,BcAWplCftE
+47,"The performance of the new method is assessed in comparison to a selection of other denoising frameworks, and when measured by the PSNR metric is shown to out-perform comparable self-supervised methods",BcAWplCftE
+48,"However, I find the general reliance on the PSNR as a performance assessment to be problematic, as this does not take into account the structural content of the images post-denoising",BcAWplCftE
+49,2 there appears to be some structural discrepancies in the ‘Flywing’ data,BcAWplCftE
+50,"While the ‘N2V (conv.)’ image has a lower PSNR than ‘ours’, the visual agreement between the N2V (conv.) and ground truth data appears better than that between ours and ground truth",BcAWplCftE
+51,"As a sanity check for myself, I thresholded and skeletonised these images and while the N2V (conv.) and ground truth skeletons matched well, the ‘ours’ skeleton deviated substantially at the central junction",BcAWplCftE
+52,"Apologies if this seems facetious, but I think it underlines the necessity for another measure of performance, especially as the ultimate goal of denoising microscopy images is to produce a better baseline from which quantitative measurements of structure can be made (rather than just a visually pleasing image).",BcAWplCftE
+53,"I would suggest that the authors remove the phrase ‘stunning visual improvement’ (line 443) as this is rather subjective – for example, using the positivity constraint in the mouse actin deconvolution does not improve the prevalence of patterned noise (which can be seen if the images are Fourier-transformed).",BcAWplCftE
+54,"Section 4.5, wherein the effects of the PSF size are investigated, seems a little abrupt",BcAWplCftE
+55,"Although the PSF size parameter is clearly critical for the performance of the method, this section would have benefitted from additional discussion of e.g",BcAWplCftE
+56,"a non-uniform PSF throughout the image or tolerance to the PSF deviating from a Gaussian function, as these are both relevant considerations in real-life microscopy applications.",BcAWplCftE
+57,The paper is overall incredibly clear and I managed to understand the majority of what was written on my first pass (in contrast to my general experience reading papers in this field).,BcAWplCftE
+58,"The repeated use of the phrase ‘diffraction-limited’ is somewhat misleading and may even be doing the work a disservice, This phrase is normally used in the context of referring to conventional widefield or confocal fluorescence imaging data; however there is no reason that the application of this method is limited to this regime",BcAWplCftE
+59,"For example, given that the condition of a point spread function whose spatial distribution can be approximated by a Nyquist-sampled Gaussian distribution of known width, this approach could be readily applied to some super-resolution data such as STED images",BcAWplCftE
+60,"For this reason, the authors may wish to reconsider the use of the phrase ‘diffraction-limited’ although this is just a suggestion.",BcAWplCftE
+61,The work described here is a very similar concept to that described in [Kobayashi et al (2020)](https://arxiv.org/abs/2006.06156),BcAWplCftE
+62,"However the authors acknowledge this work in their discussion and given that there was less than one month between the submission of the work by Kobayashi et al and the BIC submission deadline I do not see this as shortcoming in originality (rather, unfortunate timing)",BcAWplCftE
+63,"Setting aside the paper by Kobayashi et al, this paper displays interesting conceptual novelty",BcAWplCftE
+64,"In comparison to the paper by Kobayashi et al, this work (in my opinion) is much better focused toward the application of fluorescence microscopy and is reported in such a way that I feel it is more likely that a microscopist would preferentially use the method presented here",BcAWplCftE
+65,"The overall conceptual significance – integrating knowledge about the image formation process into the denoising method – is high, as I mentioned above",BcAWplCftE
+66,"I am still not entirely convinced, however, that there is a *significant* increase in performance, as the PSNR values represent fairly marginal gains over to Noise2Void (alongside my above concerns regarding structural fidelity).",BcAWplCftE
+67,"* The paper is very well written, explained, and presented",BcAWplCftE
+68,"* The theoretical benefits of the approach are substantial, and again the explanation of these is well-integrated into the paper",BcAWplCftE
+69,* The discussion of the paper shows that this work is a starting point and that the authors have thought about concrete ways to extend and improve it going forward,BcAWplCftE
+70,* The authors have not convinced me from a quantitative point of view that the results are superior to existing self-supervised methods.,BcAWplCftE
+71,The paper addresses the problem of denoising of microscopy images and the fact that traditional methods as well as various recent supervised deep learning methods make assumptions about the noise statistics that may not hold,BcAWplCftE
+72,"The authors advocate the use of self-supervised deep learning methods, as high-quality paired training data is often not available to properly train supervised methods",BcAWplCftE
+73,But they observe that self-supervised methods typically produce high-frequency artifacts and achieve inferior results compared to supervised methods,BcAWplCftE
+74,"To remedy this, they propose to exploit the fact that the images are usually diffraction-limited, by adding a convolution with a point-spread function model to an existing self-supervised deep learning-based denoising method (Noise2Void) and training it accordingly",BcAWplCftE
+75,Experimental results on a range of microscopy images illustrate the potential of the proposed method.,BcAWplCftE
+76,This paper is well written and the presentation is easy to follow,BcAWplCftE
+77,"While the idea is interesting, I am not convinced it is theoretically sound",BcAWplCftE
+78,"As explained (in Section 3.3 and also in Section 3.4), the Noise2Void method estimates the image s",BcAWplCftE
+79,"Since s=z*h (Section 3.1), this makes it a denoising method, not a deconvolution method, and that is indeed how the method was designed",BcAWplCftE
+80,"Thus, simply processing the estimated s by convolution with an assumed PSF model h (Figure 1 and Section 3.4) is questionable",BcAWplCftE
+81,"Of course, doing so will force Noise2Void to behave more like it, and you can claim to ""view the direct output before the convolution as an estimate of the phantom image ..",BcAWplCftE
+82,"an attempt at deconvolution"" and get some visually pleasing results, but that does not make the approach theoretically right",BcAWplCftE
+83,"Rather, it seems a practical trick that apparently happens to work to some extent.",BcAWplCftE
+84,"- Section 4.1: Synthetic data is generated using a Gaussian PSF and pixel-wise additive Gaussian noise, but that is not realistic",BcAWplCftE
+85,"As the authors admit elsewhere (multiple times), the dominant sources of noise are Poisson photon noise and Gaussian readout noise (Sections 1 and 3.1).",BcAWplCftE
+86,"- Section 4.2: ""Our implementation is based on the pytorch Noise2Void implementation from [10]",BcAWplCftE
+87,"We use the exact same network architecture, with the only difference being the added convolution with the PSF at the end of the network."" This, combined with the above major concern, make both the theoretical and the practical contribution of the paper rather limited.",BcAWplCftE
+88,- In Section 2 many methods are discussed but the comparison in Figure 2 is limited to only N2V (and a variant),BcAWplCftE
+89,Are there really no available software implementations of other methods to compare with?,BcAWplCftE
+90,- Section 4.3: The only quantitative measure used is PSNR,BcAWplCftE
+91,It is tricky to make the entire quantitative comparison hinge on a single measure that is known to be questionable,BcAWplCftE
+92,"It would be good to also evaluate using other measures, such as SSIM.",BcAWplCftE
+93,"- The authors claim ""considerable visual improvements"" (Figure 2) and even ""stunning visual improvement (Section 4.4)",BcAWplCftE
+94,These are subjective statements that in my opinion are not supported by the provided evidence.,BcAWplCftE
+95,This work introduces the use of the properties of skeletonised nuclei for classifying whether nuclei should be classified as tumour or non-tumour in the context of breast cancer diagnosis.,DkCvYVwJHjb
+96,"The work should be commended for taking care to discuss the aims, limitations, and potential extensions of the approach",DkCvYVwJHjb
+97,The authors also acknowledge the limitations of the test data set and steps taken to mitigate bias,DkCvYVwJHjb
+98,"While the MAT skeleton features method introduced by the authors does not numerically outperform other methods in measures of accuracy or specificity, it offers a noticeable improvement in sensitivity",DkCvYVwJHjb
+99,The major criticism that I have with regard to quality is that the use of skeletonization as a descriptor is heavily dependent on the initial segmentation of the nuclei in the image,DkCvYVwJHjb
+100,"Although the authors have performed ablation to disentangle the contribution of different skeleton descriptors to overall accuracy/sensitivity/specificity, the impact of initial segmentation quality was not taken into consideration",DkCvYVwJHjb
+101,"This is slightly worrisome as this is the foundation upon which the entire method is based, and the authors themselves in the caption of Figure 1 describe the segmentation performance as only ‘fairly accurate’",DkCvYVwJHjb
+102,"Again, the caption of Figure 1 acknowledges the merging of nuclei together, which will then of course dramatically alter the skeleton(s) in that region",DkCvYVwJHjb
+103,"An interesting experiment would have been, for example, to compare results between an expert manual segmentation for one or two regions of interest with the U-net based segmentation.",DkCvYVwJHjb
+104,On the whole the paper is very clearly written and presented and is easy to read and comprehend,DkCvYVwJHjb
+105,"However, there are a few instances where this is not the case",DkCvYVwJHjb
+106,There is a little confusion with regard to the advantages of this approach compared to related works,DkCvYVwJHjb
+107,"Specifically, the authors explain that segmentation of nuclei is a downside (lines 133-136), yet their approach necessarily requires segmentation",DkCvYVwJHjb
+108,A major shortcoming in clarity is in how the method deals with nuclei that are annotated as neither tumour nor non-tumour (i.e,DkCvYVwJHjb
+109,the four additional classes listed in lines 163-164); this is not discussed,DkCvYVwJHjb
+110,"A diagrammatic representation of the features in Table 1 may have added value to the paper, as would have addition of the segmentation boundaries and skeletons to the images in Figure 3.",DkCvYVwJHjb
+111,"The authors do not introduce any novel algorithms or metrics, rather they integrate established segmentation methods (modified U-net), transforms (medial axis transform), and descriptors (ribbon, taper, separation)",DkCvYVwJHjb
+112,The application to classification of breast biopsy nuclei does appear to be novel.,DkCvYVwJHjb
+113,One of the biggest strengths of this paper is the focus on what is necessary in an image analysis tool for pathologists diagnosing breast cancer,DkCvYVwJHjb
+114,The authors clearly outline the need for interpretable and tangible metrics (e.g,DkCvYVwJHjb
+115,"shape descriptors rather than the ‘black box’ of deep learning methods), and they clearly weigh the benefits of this interpretability against methods that may ‘score’ better",DkCvYVwJHjb
+116,This strength (in my opinion) outweighs the need for a leap in computational novelty.,DkCvYVwJHjb
+117,* The work is focused towards a specific application and integrates the needs of that application (both from an analytical standpoint and a practical standpoint) into the method,DkCvYVwJHjb
+118,* The performance of the method is generally good,DkCvYVwJHjb
+119,"* The added value, limitations, and future extensions of the skeleton-based approach are explored and discussed.",DkCvYVwJHjb
+120,"* The method is necessarily dependent on the initial segmentation quality, and this is not sufficiently explored",DkCvYVwJHjb
+121,* The method performs a binary classification on the detected nuclei (tumour/non-tumour) when in fact there are six possible classes in the ground truth data; it is unclear how this is resolved in this method.,DkCvYVwJHjb
+122,This paper addresses the problem of nucleus classification based on its morphological characteristics,DkCvYVwJHjb
+123,The problem is motivated by the need to automate analyses of ROIS extracted from whole slide images and classifying the ROIs into tumor and non-tumor regions based on the shapes of nuclei,DkCvYVwJHjb
+124,The authors approach the problem by ,DkCvYVwJHjb
+125,"•	detecting boundaries of nuclei in ROIs, ",DkCvYVwJHjb
+126,"•	verifying the boundaries against ground truth centroids in BreCaHAD dataset from the paper accessible at  https://bmcresnotes.biomedcentral.com/track/pdf/10.1186/s13104-019-4121-7, ",DkCvYVwJHjb
+127,"•	applying a medial axis transform (MAT) to nuclei, ",DkCvYVwJHjb
+128,"•	defining 20 features derived from MAT-based skeletons, and ",DkCvYVwJHjb
+129,•	classifying the ROIs based on the features using SVM with RBF kernel.,DkCvYVwJHjb
+130,The experimental results include comparisons of the proposed method against other subsets of features and CNN-based methods applied to raw images.,DkCvYVwJHjb
+131,The method for preparing training data based on the available BreCaHAD dataset is very creative,DkCvYVwJHjb
+132,The 20 features derived from MAT-based skeletons is novel.,DkCvYVwJHjb
+133,The authors argue at the beginning about the importance of model interpretability,DkCvYVwJHjb
+134,"However, that argument is never mentioned in the experimental section",DkCvYVwJHjb
+135,The reader would expect the argument to be developed in Table 2 (add a column for model interpretability),DkCvYVwJHjb
+136,"In addition, the authors should demonstrate that they designed all features to have a physical meaning while many other man-constructed features can have very hard to interpret meaning, for example, many texture features (GLCM, wavelet, Zernike, etc.) are very hard to explain to biologists.",DkCvYVwJHjb
+137,"The paper would benefit from a discussion about feature construction (i.e., physical meaning, link between the biological observations and feature construction), feature dimensionality (i.e., why 20 features?), and feature selection (i.e., ranking of all features from all methods as shown in Table 4 for top 5).",DkCvYVwJHjb
+138,The paper would really benefit if you could create synthetic data demonstrating the performance of individual features for a range of nucleus shapes,DkCvYVwJHjb
+139,The work would also be better received if you would create a visualization (as hinted in your conclusion section) that has a pseudo-colored spatial graph of nuclei,DkCvYVwJHjb
+140,The reason for my comment is that your classification can take into proximity information depending on whether tumor nuclei are interleaved with non-tumor nuclei or tumor nuclei form spatially isolated colonies.,DkCvYVwJHjb
+141,The paper builds on an existing method (CryoGAN) that reconstructs a 3D density of a biomolecule from random 2D tomographic Cryo-EM projections and extends it to the case when the biomolecule is present in multiple structural conformations,5PSL-CjHeP4
+142,"Specifically, the authors propose to use a generator module G(z) over a latent space z that parameterized a distribution of possible 3D molecule densities",5PSL-CjHeP4
+143,The sampled densities  together with a forward model produce synthetic 2D tomographic projections which are together with real 2D projection are used to train a discriminator/critic as part of a Wasserstein GAN like approach,5PSL-CjHeP4
+144,The paper then demonstrates that for a synthetic dataset that both with a discrete and a continuous conformation space can be recovered,5PSL-CjHeP4
+145,- Approach is original and interesting,5PSL-CjHeP4
+146,- Provides strong theoretical foundation of the method,5PSL-CjHeP4
+147,- Description of latent code -> conformation manifold could be made clearer ,5PSL-CjHeP4
+148,"The paper is clearly written, the presented approach is interesting and well described, and the results are convincing",5PSL-CjHeP4
+149,The approach of using a GAN like generator in conjunction with a realistic forward model that generates 2D tomographic samples from the 3D density and then to train a critic on the latter (i.e,5PSL-CjHeP4
+150,CryoGAN) seems to be a very powerful and flexible method,5PSL-CjHeP4
+151,"- As far as I can tell (cf Algorithm 2), the actual training scheme is simply a WassersteinGAN (with a differentiable forward model on top of the generator), or? That could be made a little bit clearer in the text",5PSL-CjHeP4
+152,"- For the latent code  ""pz ~ Uniform (z0 , z1 ), where z0, z1 in R^{32,32,32} are randomly chosen from Uniform(0,0.025)""",5PSL-CjHeP4
+153,Why was that specific initialization chosen?,5PSL-CjHeP4
+154,- Meaning of the latent space: In the paper the latent code is affinely mapped to the conformation space via (1-a)*z1 + a*z2 ,5PSL-CjHeP4
+155,Why would that be the correct mapping? As far as I understood the latent space is of size 32x32x32 (is that correct?) and there must be many latent paths that would correspond to a path in conformation space,5PSL-CjHeP4
+156,"If the conformation space is now 2 or 3 dimensional, which subset of the latent space would one choose then? What would happen, if the conformation manifold does not even admit a single global chart (e.g",5PSL-CjHeP4
+157,if the molecule has a subunit that can freely rotate around an angle 0...2pi)?,5PSL-CjHeP4
+158,"- typos: ""carries"", ""space f"", ""versiond""",5PSL-CjHeP4
+159,"- ""called a hypermolecule, which is characterized by a basis of hypercomponents"" -> that's a bit hard to understand.",5PSL-CjHeP4
+160,"- ""they rely on 3D clustering to deal with structural variations of protein complexes"" -> why 3D clustering? In which space (poses, conformations) is clustered?",5PSL-CjHeP4
+161,- line 402: is there alpha missing before z_1? ,5PSL-CjHeP4
+162,- what would be if orientations are not uniformly distributed on SO3? Would the reconstruction simply be worse?,5PSL-CjHeP4
+163,"The authors present multi-cryoGAN, a generative adversarial neural network for reconstruction of continuous molecular conformations",5PSL-CjHeP4
+164,"The method is an extension of cryoGAN, which can perform the reconstruction task for single conformations only",5PSL-CjHeP4
+165,Understanding the continuous motion between individual conformations is important for the understanding of biological mechanisms,5PSL-CjHeP4
+166,"The authors evaluate their method on a synthetic dataset, once for a continuous range of conformations and once for two discrete conformational states.",5PSL-CjHeP4
+167,The practical value of such a method is very high and there is certainly demand in the field,5PSL-CjHeP4
+168,The related work section nice reviews existing work in this field.,5PSL-CjHeP4
+169,"The paper is missing a comparison to other state-of-the-art methods like cryoDRGN (https://www.biorxiv.org/content/10.1101/2020.03.27.003871v1), which is mentioned in the introduction but not compared to",5PSL-CjHeP4
+170,"It would be interesting to see the FSC curves for reconstruction from different methods, even if they are only able to reconstruct a single conformation.",5PSL-CjHeP4
+171,* In the theory part the authors mention the possibility of reconstructing conformations with translation/shift errors i.e,5PSL-CjHeP4
+172,"Later, in the experiments, this option is disabled, therefore not testing the ability of the proposed method to handle translations/shifts.",5PSL-CjHeP4
+173,* In the experiments only Gaussian noise is used,5PSL-CjHeP4
+174,It would nice if also Poisson noise would have been used,5PSL-CjHeP4
+175,Is there any problems to expect when switching to real data (and the associated noise sources)?,5PSL-CjHeP4
+176,* Figure 4a: it would be quite interesting to see the resolution of the reconstructed particles for each different conformation at 0.5 FSC.,5PSL-CjHeP4
+177,* Figure 5a: the reconstruction seems to have a tendency to prefer the two extreme conformations -- why do you think that is? And how would an experiment of discrete conformations with a 50-50 split look like in comparison?,5PSL-CjHeP4
+178,"* Will the code for this work be available online? If so, the authors should point to it in a footnote or so...",5PSL-CjHeP4
+179,The authors propose an approach for the segmentation of retinal vessels,Br3_V9RBB
+180,"With their modifications, that they introduce in this paper (modified pre-processing, a combination of two losses, subpixel convolution modules for up-and downsampling in the U-Net), they achieve state-of-the art results (although interpretation of comparison with other studies is limited in my opinion)",Br3_V9RBB
+181,The new introduction of using subpixel convolutions also for down-sampling (it is usually used only for up-sampling) improves the method.,Br3_V9RBB
+182,### Major strengths of the paper,Br3_V9RBB
+183,"- The paper is clear, results are presented nicely, and the paper is easy to understand.",Br3_V9RBB
+184,"- The authors try out different model parameters and present the results nicely in an ablation study, such that the reader can see the individual contributions.",Br3_V9RBB
+185,"- The results the authors achieve with their new method are better than other methods, but interpretation of results are limited (see next section)",Br3_V9RBB
+186,"The authors use different modifications (such as pre-processing, loss combination, subpixel convolution) that improve the method, that are clearly presented such that it is easy to learn from this paper.",Br3_V9RBB
+187,### Major weaknesses of the paper,Br3_V9RBB
+188,"- In this paper, the authors compare their results to results of other studies, but this comparison has several problems:",Br3_V9RBB
+189,"Inference and Evaluation is done on a resized image (512x512) from sizes (584x565, 999x960, 700x605) for the three datasets",Br3_V9RBB
+190,"Evaluation on a downscaled ground-truth version makes it difficult to compare with other studies (this is not so relevant for the first or third dataset, but especially for the second dataset with a downscale factor of ~2)",Br3_V9RBB
+191,It is also unclear whether the downscaling of the ground-truth was carried out in a way to preserve thin vessels with only a 1-pixel diameter.,Br3_V9RBB
+192,"In their results table, they provide results from other studies, but for two out of three datasets, there is no predefined train-test splitting (this is clearly not the author's fault but the benchmark is problematic)",Br3_V9RBB
+193,"Instead, they use a random splitting meaning that their test-split likely differs and the results are only comparable in a very limited way",Br3_V9RBB
+194,Only results on the Drive dataset are directly comparable.,Br3_V9RBB
+195,"There is no validation set (but only training and test set), and it is unclear whether hyperparameter tuning was carried out on the training set or test set",Br3_V9RBB
+196,"They use their best performing model on the test set to compare with other models, which demonstrates some tuning on the test set",Br3_V9RBB
+197,"Overall, this seems to be a general problem of the community as the size of datasets that are available are limited and no clear & clean benchmark is set up.",Br3_V9RBB
+198,"Given that results are good on all datasets and that all versions of their models achieve competitive results, it is still likely that results are indeed good, but caveats of the comparison should be addressed more clearly in the discussion part.",Br3_V9RBB
+199,- Captions of the figures are too short (sometimes only a few words) which makes it difficult to understand the figures or to spot the relevant aspects of the figure.,Br3_V9RBB
+200,"- Figure 3 caption: Caption is too short, it would be nice to have a little walk-through in such a caption",Br3_V9RBB
+201,"guide the reader to the relevant things, mainly what are the contributions of the paper.",Br3_V9RBB
+202,- Line 404: in the following tables → replace with the actual tables.,Br3_V9RBB
+203,- Reference for DICE-loss is missing (in section 3.4).,Br3_V9RBB
+204,"""combined with Ben Graham’s [2] pre-procesing method of subtracting the local average colour""",Br3_V9RBB
+205,"Line 263 & 285: ""In this the image"" → In this image",Br3_V9RBB
+206,"Line 343: ""vessel vs non-vesel pixels.""",Br3_V9RBB
+207,"Line 400: ""around an hour and a half on an average""",Br3_V9RBB
+208,Takes an hour and a half on average,Br3_V9RBB
+209,This paper focuses on a longstanding problem in medical image analysis: retinal vessel segmentation,Br3_V9RBB
+210,The authors propose to apply a subpixel residual U-Net to segment the retinal vessels in preprocessed images fusing contrast enhancement and average color subtraction,Br3_V9RBB
+211,Performance is evaluated on three public data sets.,Br3_V9RBB
+212,"In this reviewer's opinion, the work is out of scope, as the workshop is about biological image analysis rather than medical image analysis",Br3_V9RBB
+213,"But more importantly, the paper has too many shortcomings:",Br3_V9RBB
+214,"- Section 2 is a rather monotic enumeration of recent works in the field, one by one, without an overarching discussion of trends including solved aspects and remaining challenges",Br3_V9RBB
+215,This lack of insights into the strengths and weaknesses of the discussed works makes it hard to appreciate the value of the proposed method or even why a new method is needed at all.,Br3_V9RBB
+216,- Section 3.2 combines two well-known preprocessing methods (CLAHE and average color subtraction) and performs well-known data augmentation approaches.,Br3_V9RBB
+217,"- Sections 3.3-3.4 propose a deep neural network architecture that consists of well-known concepts (U-Net, ResNet, batch normalization, ReLU, subpixel convolution, BCE-Dice loss)",Br3_V9RBB
+218,"It is not clear from the description what is really new, except for minor technical details, whose effects on the final results are not evaluated.",Br3_V9RBB
+219,"- Section 4 presents the training approach and the test results ""as is"", without any discussion of the experimental design or the findings, and the sensitivity of the latter to the system hyperparameters",Br3_V9RBB
+220,Tables 1-3 show the results of an ablation experiment suggesting there is an advantage in using information fusion,Br3_V9RBB
+221,Table 4 simply repeats the best results from Tables 1-3,Br3_V9RBB
+222,"A comparison with some of the methods listed in Section 2 is shown in Tables 5-7, suggesting the proposed method is superior, but no discussion is presented as to why the proposed method would be better",Br3_V9RBB
+223,Nor is it clear that the differences in performance between any of the different methods is statistically significant.,Br3_V9RBB
+224,"- Section 5 states that the method outperforms ""state-of-the-art models with a much simpler architecture with lesser parameter (~20M) with a fast inference speed of 0.5 seconds on a 512x512 full image""",Br3_V9RBB
+225,"No numbers (parameters, speed) are given for the other models, so the claims are not substantiated.",Br3_V9RBB
+226,All in all this paper is missing too much information to make it valuable to the community.,Br3_V9RBB
+227,This paper investigates a simple pre-processing method and a modified U-Net architecture for the task of retinal vessel segmentation,Br3_V9RBB
+228,The pre-processing combines CLAHE and Ben Graham's algorithm,Br3_V9RBB
+229,The modification to the U-Net consists in the use of subpixel convolutions in the down- and up-sampling paths,Br3_V9RBB
+230,Results are presented on three public datasets and show consistently improved results over competing methods.,Br3_V9RBB
+231,The paper is generally well written and easy to follow,Br3_V9RBB
+232,"The related work section, however, would benefit greatly from a discussion of the differences to the proposed method.",Br3_V9RBB
+233,"Furthermore, the experimental evaluation lacks a detailed description of where scores of competing methods come from (did the authors run experiments themselves, or are they from other publications?) as well as a discussion of the results (only a table with all the numbers is given)",Br3_V9RBB
+234,I suggest the authors use the extra space they still have to expand this section.,Br3_V9RBB
+235,The novelty of the proposed method is somewhat limited,Br3_V9RBB
+236,"None of the introduced methods is new (CLAHE and Ben Graham's pre-processing, subpixel convolutions)",Br3_V9RBB
+237,"Nevertheless, the application of those methods to the task of retinal vessel segmentation is sensible and worth studying.",Br3_V9RBB
+238,"Results are presented on three datasets (Drive, Chase, and Stare) and compared against several competing methods",Br3_V9RBB
+239,"Due to non-standard splits of the Chase and Stare dataset (and no further information about whether the authors reimplemented competing methods), the results for those are hard to compare",Br3_V9RBB
+240,"On the Drive dataset, however, the method shows a consistent improvement in accuracy (under several metrics).",Br3_V9RBB
+241,* convincing improvements on several datasets,Br3_V9RBB
+242,* unclear comparison to competing methods,Br3_V9RBB
+243,* lack of discussion in related work and experimental results,Br3_V9RBB
+244,This work approaches the addition of a feedback attention mechanism into a U-Net based segmentation method with commendable rigour,7G1GGjdzrde
+245,"While the authors only demonstrate their method on one dataset, they do so in a methodical manner whereby the carefully validate what sort of feedback works best, and also offer explanations as to why this is the case",7G1GGjdzrde
+246,"The authors also validate which layers of the network work most effectively for their chosen network architecture, and that the improvement in segmentation performance is indeed due to the addition of feedback attention rather than just from running data through the U-Net twice.",7G1GGjdzrde
+247,The figures are generally good quality,7G1GGjdzrde
+248,The attention maps in Figure 4 are particularly striking and are a good demonstration of the difference between the two proposed feedback attention methods introduced here.,7G1GGjdzrde
+249,"I would have been very interested to see the authors look closer at the attention maps and performance for the mitochondria and synapse classes, as these classes display the most striking segmentation accuracy improvement over the other methods compared",7G1GGjdzrde
+250,"It would also have been interesting for the authors to have discussed cross-applicability of this approach to other microscopy modalities, for example digital pathology data.",7G1GGjdzrde
+251,"It took me a few reads of the paper in order to sufficiently understand the method, and there are quite a lot of grammatical errors and typos throughout.",7G1GGjdzrde
+252,I personally found that the Query/Key/Value terminology was quite clunky and detracted from my ability to understand section 3.2,7G1GGjdzrde
+253,"For example, the phrase ‘the $i$th Query’s impact’ (line 255) threw me for a while, as I was unclear which dimension (C, H, W) $i$ was indexing",7G1GGjdzrde
+254,"This may well be my own unfamiliarity with the field, but being slightly more explicit in the explanation of the indices would have helped me understand much quicker.",7G1GGjdzrde
+255,It also felt like there was too much unnecessary repetition between the explanations of the Source-Target-Attention and Self-Attention methods,7G1GGjdzrde
+256,"Again, if I understand correctly, the Source-Target-Attention and Self-Attention methods are identical except for the ‘Query’ being identical to the ‘Key’ in the latter case? If so, this could have been displayed in a more compact mathematical way.",7G1GGjdzrde
+257,This work appears to be the first instance in which attention is integrated into a U-Net via a feedback mechanism,7G1GGjdzrde
+258,"I am not an expert in this field, but a cursory literature search retrieved a [paper discussing the use of attention in medical image segmentation via attention gates](https://arxiv.org/abs/1804.03999) – perhaps this should have been mentioned as ‘Related Work’",7G1GGjdzrde
+259,High-quality semantic segmentation is an undoubtedly significant and impactful challenge for microscopy,7G1GGjdzrde
+260,"The technical merit of this work has been made clear, but I think that the authors could have expanded on the significance of the improved performance in the field of cell imaging",7G1GGjdzrde
+261,"For example, the conclusion does not mention the application at all, and more dwells on further technical adaptations, which feels a little short-sighted",7G1GGjdzrde
+262,For that reason I also have concerns regarding deployment of this technique and ensuring that biologists are actual able to reap the benefits for their research.,7G1GGjdzrde
+263,* Excellent technical rigour demonstrated in investigating novel method through ablation studies,7G1GGjdzrde
+264,* Significant increase in segmentation performance achieved with this method,7G1GGjdzrde
+265,* The sections describing the generation of attention maps were quite difficult to follow and understand,7G1GGjdzrde
+266,"* While the performance is very good, the authors do not discuss a route by which this method can actually be used for the benefit of the application demonstrated.",7G1GGjdzrde
+267,"This paper presents a feedback mechanism for U-Nets, which re-uses the output",7G1GGjdzrde
+268,of the U-Net for a second round of processing,7G1GGjdzrde
+269,"output into an earlier feature map of the U-Net, the authors propose two",7G1GGjdzrde
+270,"electron microscopy dataset of neural tissue, experiments demonstrate",7G1GGjdzrde
+271,consistent improvements of the self-attention version of the proposed method,7G1GGjdzrde
+272,"over several baselines, including a vanilla U-Net and a feedback U-Net",7G1GGjdzrde
+273,"further ablation studies, the authors investigate the two proposed attention",7G1GGjdzrde
+274,"mechanisms, the choice of the injection point of the output, and the usefulness",7G1GGjdzrde
+275,of the second round of processing.,7G1GGjdzrde
+276,The technical description of the method is very clear and the provided figures,7G1GGjdzrde
+277,Reusing the output of a U-Net for a second round of processing is not an,7G1GGjdzrde
+278,entirely new idea (as acknowledged by the authors in the Related Work section).,7G1GGjdzrde
+279,The main contribution here is therefore the addition of an attention mechanism,7G1GGjdzrde
+280,and the re-use of the same weights for the second round of processing.,7G1GGjdzrde
+281,The experimental evaluation is thorough (albeit on only a single,7G1GGjdzrde
+282,dataset) and addresses key questions about the proposed method,7G1GGjdzrde
+283,results (especially the attention maps generated by the two proposed,7G1GGjdzrde
+284,mechanisms) are helpful to understand the contributions of the method.,7G1GGjdzrde
+285,* thorough analysis of method components in ablation study,7G1GGjdzrde
+286,* evaluated on only one dataset,7G1GGjdzrde
+287,"* line 44: ""cell image segmentation is a difficult task because [...] there is not regularity compared to other datasets such as automatic driving"" I would personally argue that the opposite is true",7G1GGjdzrde
+288,"* line 420: ""menbranes"" -> ""membranes""",7G1GGjdzrde
+289,"* line 437: ""firrst"" -> ""first""",7G1GGjdzrde
+290,"* line 487: ""We"" -> ""we""",7G1GGjdzrde
+291,"* no ""."" after ""Equation"", ""Table"", or ""Figure""",7G1GGjdzrde
+292,"* line 71: ""we evaluate the proposed method on two kinds of cell image datasets"" results are only presented on one dataset",7G1GGjdzrde
+293,- The paper proposes an approach for the “manual” tracking of 3d+t datasets of biological cells that is carried out in virtual reality and cells are tracked via eye,3_2Zf8Rr1N
+294,"The approach, that the authors call Bionick Tracking, offers an alternative to the established method of manually tracking cells (and lineage trees) on a 2D screen with mouse click.",3_2Zf8Rr1N
+295,- The authors investigate the question whether using eye gaze and the movement in virtual reality can facilitate cell tracking,3_2Zf8Rr1N
+296,"In order to be able to infer the cell track from the tracked eye gaze, they propose to use a graph-based algorithm",3_2Zf8Rr1N
+297,They carry out a study with seven users to test their set-up with regards to usability and accuracy.,3_2Zf8Rr1N
+298,- They find that all users overall had a positive tracking experience,3_2Zf8Rr1N
+299,The users also stated that they believe that tracking with Bionick Tracking speeds up the tracking process.,3_2Zf8Rr1N
+300,### Major strengths of the paper,3_2Zf8Rr1N
+301,- The paper is understandable with a clear line of thought; Limitations are clearly stated.,3_2Zf8Rr1N
+302,- The authors set-up a pipeline for eye-tracking of cells in time-lapse videos with a focus on using commodity hardware,3_2Zf8Rr1N
+303,"With this focus, chances are higher that the setup will actually be adapted by other labs.",3_2Zf8Rr1N
+304,- The authors carried out a user study with promising results including very positive feedback from the users.,3_2Zf8Rr1N
+305,- The approach is novel and addresses important challenges in the cell tracking community (visualization of 3D time-lapse videos and annotation of cell tracks).,3_2Zf8Rr1N
+306,"- The authors provide a video that nicely explains the usage of their setup and their algorithm, which facilitates the understanding of the entire paper.",3_2Zf8Rr1N
+307,### Major weaknesses of the paper,3_2Zf8Rr1N
+308,"- The extraction of the path from the gaze involves smoothing, but how to handle real jumps or datasets that are difficult to register? In this context, the ground-truth path has to contain real jumps that would potentially be smoothed out by the algorithm that they propose in the paper.",3_2Zf8Rr1N
+309,"- The study is limited as they only tested their setup on seven users, but this limitation is clearly stated.",3_2Zf8Rr1N
+310,- There is no quantitative comparison of annotation time of conventional methods versus their method,3_2Zf8Rr1N
+311,The observation that their method is faster in tracking cells than conventional methods is based on the user’s opinion,3_2Zf8Rr1N
+312,"This is an important finding, but should be backed up with further quantitative experiments.",3_2Zf8Rr1N
+313,Some sentences use vague or colloquial language:,3_2Zf8Rr1N
+314,  - “The initial setting for the scale of the dataset is to make it appear about 2m big.” (about 2m big),3_2Zf8Rr1N
+315,  - “and a kind of Midas touch problem [10] remains” (a kind),3_2Zf8Rr1N
+316,"  - “At the moment, the calibration of the eye trackers can still be a bit problematic” (a bit)",3_2Zf8Rr1N
+317,  - “One could imagine just having one or two eye tracking-enabled HMDs as an institute” (One could imagine just….),3_2Zf8Rr1N
+318,"- Line 42: ""The 3D images the lineage trees are usually created based on fluorescence microscopy images.""",3_2Zf8Rr1N
+319,"- Line 94: Unclear sentence, please split into two sentences.",3_2Zf8Rr1N
+320,"- Line 129: ""The occur when following a stimilus"" → They occur when following a stimulus",3_2Zf8Rr1N
+321,"- Line 391: ""This corresponds to distances larger than double the standard deviation of all distances the hedgehog.""",3_2Zf8Rr1N
+322,"- Line 539: ""Our method does not only accelerates the process, but makes""; Incorrect grammar (--> Our method does not only accelerate the process …)",3_2Zf8Rr1N
+323,Cell tracking is an important but challenging step for many biological research,3_2Zf8Rr1N
+324,"By combining VR and eye tracking, the authors developed a new method for tracking cells in 3D and time",3_2Zf8Rr1N
+325,"With the help of the two devices, users can generate cell trajectories by simply looking at a cell in a 3D movie",3_2Zf8Rr1N
+326,"In the manuscript, detailed usage and user study data are provided",3_2Zf8Rr1N
+327,"From what described, this new approach appears to be a great addition and can potentially make cell tracking annotation faster and enjoyable as stated by the authors.",3_2Zf8Rr1N
+328,"- The manuscript is well written with details that are necessary, the limitations are clearly stated",3_2Zf8Rr1N
+329,"- Although it is hard to grasp the actual user experience without trying the device, the user study results seem promising and reflect a good overall experience.",3_2Zf8Rr1N
+330,"- Although the authors provide user estimation of a 10x speed up with the new approach, it would be more convincing to actually measure the time for conventional methods and compare them with the new.",3_2Zf8Rr1N
+331,"- Since the user can only look at one cell at a time with the new approach, this will likely limit the overall annotation throughput",3_2Zf8Rr1N
+332,"Instead of focusing on generating trajectories cell-by-cell, I would encourage the authors to explore ways to use the new hardware to fix and curate trajectories generated by automated algorithms",3_2Zf8Rr1N
+333,"Similar to what is mentioned in the end of the manuscript, it would be also interesting to see how this can be combined with machine-learning algorithms.",3_2Zf8Rr1N
+334,"- The provided supplementary video is quite helpful to the understanding of the approach, it would be helpful also to mention the video in the manuscript.",3_2Zf8Rr1N
+335,"- When describing the hardware, could you provide detailed information about the eye tracking resolution? For users who are not familiar with the device, it is better to get some feeling about how accurate the eye tracking device is.",3_2Zf8Rr1N
+336,"- Could you also discuss how the cell size impacts the tracking performance? When the cell is big, should the user look at the center of the cell? Is there an optimal display cell size for the device?",3_2Zf8Rr1N
+337,The authors present a novel method for the diagnosis of Alzheimer's disease from MRI volumes.,HdNVXBdk05
+338,"The first compress the 3D volume to a 2D 'dynamic' image, which is then fed into a pre-trained features extractor.",HdNVXBdk05
+339,"Finally, the resulting feature vector is subject to an attention mechanism and processed by a fully connected MLP to predict a probability for the disease",HdNVXBdk05
+340,The method is evaluated against various baselines and achieves competitive results.,HdNVXBdk05
+341,- The paper is for the most part clearly written and structured.,HdNVXBdk05
+342,"- The method outperforms its baselines, which are adequatly choosen as far as I can tell.",HdNVXBdk05
+343,My main concern is the unclear explanation of the dynamic image compression.,HdNVXBdk05
+344,"This would not be a big issue, since they say they are using an existing method [3].",HdNVXBdk05
+345,"However, looking at [3], I am not sure the equation they give (Eq",HdNVXBdk05
+346,3) corresponds to what is presented in [3] and if it is really correct.,HdNVXBdk05
+347,"To be more precise, Eq 3 computes simply an averaged image using fixed weights \alpha_t",HdNVXBdk05
+348,It does not even make use of the feature representation.,HdNVXBdk05
+349,"In contrast, the method in [3] averages the computed feature representations, as far as I understand.",HdNVXBdk05
+350,I am really not sure if this is just a typo in Eq 3 or if the authors are simply averaging the images with fixed weights and overselling it as a more sophisticated method.,HdNVXBdk05
+351,The mathematical notation is not very clear.,HdNVXBdk05
+352,In line 140 'd' is used as the dimension of a feature vector,HdNVXBdk05
+353,In line 143 it is itself a feature vector.,HdNVXBdk05
+354,"In Section 3.2 the 'I' denotes an input image, but in Section 3.3  the same symbol is used for the feature image produced by the network.",HdNVXBdk05
+355,"Throughout the paper, various symbols are used for the set of real numbers.",HdNVXBdk05
+356,"Even though the paper seems highly relevant and generally solid, I am really concerned about the computation of the dynamic image.",HdNVXBdk05
+357,I thus see the paper as borderline.,HdNVXBdk05
+358,"However, as I am not an expert on dynamic images, it might be that I simply misunderstood this part or that it can be explained as a typo.",HdNVXBdk05
+359,This paper presents a method for Alzheimer's Disease (AD) classification from,HdNVXBdk05
+360,"In contrast to earlier approaches, the 3D scans are first",HdNVXBdk05
+361,"converted into a 2D dynamic image, which is then processed by a 2D",HdNVXBdk05
+362,The network consists of a pre-trained (and,HdNVXBdk05
+363,"fine-tuned) feature extractor, an attention module, and subsequent fully",HdNVXBdk05
+364,connected layers for the final classification,HdNVXBdk05
+365,stripped skulls demonstrate a significant increase compared to fully 3D,HdNVXBdk05
+366,"baselines, albeit using only 20% of the time needed for training.",HdNVXBdk05
+367,"The introduction, motivation, and technical description are very well written",HdNVXBdk05
+368,The provided figures are helpful to understand the method,HdNVXBdk05
+369,and show qualitative results of the dynamic image generation.,HdNVXBdk05
+370,Using 2D dynamic images instead of the full 3D scan is a compelling idea,HdNVXBdk05
+371,(although already explored in other medical domains),HdNVXBdk05
+372,this paper lies therefore in the subsequent use of pre-trained 2D feature,HdNVXBdk05
+373,"extractors, which are enabled by the 2D input images",HdNVXBdk05
+374,investigate the usefulness of an attention module between the feature,HdNVXBdk05
+375,The results demonstrate consistent improvements over several baselines and,HdNVXBdk05
+376,"On top of those improvements, the proposed",HdNVXBdk05
+377,model trains faster and requires less resources for prediction.,HdNVXBdk05
+378,"The authors mention that ""there is potential for mobile applications"" (line",HdNVXBdk05
+379,I am not sure what this could look like in a clinical setting and suggest,HdNVXBdk05
+380,the authors elaborate if they want to make this point convincingly.,HdNVXBdk05
+381,My main concern for a clinical application is that the improved results seem to,HdNVXBdk05
+382,"be achieved only on ""skull stripped"" MRI scans",HdNVXBdk05
+383,"From the paper, it is unclear",HdNVXBdk05
+384,"whether this is a manual, semi-automatic, or entirely automatic process",HdNVXBdk05
+385,would appreciate if the authors could discuss this point in more detail to,HdNVXBdk05
+386,provide context about the amount of manual labor needed in the proposed,HdNVXBdk05
+387,* thorough comparison to baselines and model variations,HdNVXBdk05
+388,"* unclear how much manual intervention is needed for ""skull stripping""",HdNVXBdk05
+389,"* title: capitalize ""image"" and ""classification""",HdNVXBdk05
+390,"* line 56: ""We"" -> ""we""",HdNVXBdk05
+391,"* line 144: ""association"" -> ""associated""",HdNVXBdk05
+392,"* line 283: ""choice"" -> ""choose""",HdNVXBdk05
+393,"* line 335: ""decrease if"" -> ""decrease in""",HdNVXBdk05
+394,"* Equation 4: What is $i$ running over? According to the text, $l$ and $I$ are label and image of a single sample.",HdNVXBdk05
+395,* Figure 4: It would be helpful to see same (or similar) images without skull in the same figure.,HdNVXBdk05
+396,This paper addresses the problem of 3D MRI volume segmentation of images collected from patients with Alzheimer's disease,HdNVXBdk05
+397,The motivation for the work comes from automating the classification task for assigning labels such as cognitive unimpaired (CU) and Alzheimer’s disease (AD) to each patient based on the 3D MRI volume,HdNVXBdk05
+398,The authors approach the problem by  leveraging a 3D to 2D conversion using dynamic images according to https://openaccess.thecvf.com/content_cvpr_2015/papers/Fernando_Modeling_Video_Evolution_2015_CVPR_paper.pdf and https://www.egavves.com/data/cvpr2016bilen.pdf and introducing an attention module in a transfer model with pre-training on ImageNet dataset,HdNVXBdk05
+399,"The evaluations include (a) matching feature dimensionality of the features extracted from four well-established architectures and the features coming from the dynamic image based conversion, (b) optimizing the steps in feature extraction and AI-based classification, (c) analyzing inclusion/exclusion of skull, and (d) comparing execution times when 3D vs 2D raw data are used as inputs into classifiers.",HdNVXBdk05
+400,The classification framework is very interesting.,HdNVXBdk05
+401,The introduction of dynamic image and attention module is novel,HdNVXBdk05
+402,The experimental dataset is very limited.,HdNVXBdk05
+403,The theoretical description is not very clear.,HdNVXBdk05
+404,"Is there any reason (e.g., based on visual inspection) to believe that the features of 2D dynamic images are of the same nature as the features extracted from ImageNet?",HdNVXBdk05
+405,Line 129: what do you refer to when mentioning the ImageNet resolution? ,HdNVXBdk05
+406,Line 171: why did you choose three activation functions and 1x1 convolutional kernels? ,HdNVXBdk05
+407,The section 3.3 also did not explain the details in Fig 3,HdNVXBdk05
+408,"For example, why do you have in Fig 3 the same blocks but the tensor sizes are HxWx512 -> HxWx256 -> HxWx64? Shouldn’t the last tensor size be HxWx128?",HdNVXBdk05
+409,What implementation did you use for the CAM attention module?,HdNVXBdk05
+410,"What is the method in dynamic image based conversion that you are using to create 110 x 110 x 3 (i.e., 3 features)? The original paper in https://openaccess.thecvf.com/content_cvpr_2015/papers/Fernando_Modeling_Video_Evolution_2015_CVPR_paper.pdf refers to learning rank machines but your paper does not mention this important detail.",HdNVXBdk05
+411,Fig 1 caption: you have one row of pictures but the caption refers to two rows.,HdNVXBdk05
+412,"Why applying dynamic image-based 3D to 2D conversion is preferred over z-axis? Is there any motivation to prefer one of the three possible planes, i.e., sagittal vs transversal vs coronal plane?",HdNVXBdk05
+413,The paper presents a methodology for registration of high-resolution gene expression data and live microscopy images of Platynereis dumerilii embrios in 3D,xHP1W_Y0jF
+414,"The method detects nuclei, computes descriptors, finds correspondences between cells and aligns the data",xHP1W_Y0jF
+415,"One of the core strategies used in this methodology is the ability to match single cells between two image sets, and by solving this, the registration is recovered accurately and efficiently.",xHP1W_Y0jF
+416,The paper is very well written and tackles an important and challenging biological problem,xHP1W_Y0jF
+417,"The proposed methods are innovative and creative, and have shown to be effective for solving the task with the best precision possible",xHP1W_Y0jF
+418,The evaluation is conducted in synthetic data as well as in real world images and the results are very robust,xHP1W_Y0jF
+419,The authors address the problem of cell-to-cell registration of the stereotypic specimen acquired by different imaging modalities,xHP1W_Y0jF
+420,This is an important problem in developmental biology which has not yet received sufficient attention from the computer vision community,xHP1W_Y0jF
+421,The task can be divided into two registration problems: registration between static samples and between static and time-lapse imaging,xHP1W_Y0jF
+422,Shape context descriptors are used to represent different nuclei,xHP1W_Y0jF
+423,"The proposed method is compared to strong baselines, outperforming them on real and simulated data",xHP1W_Y0jF
+424,"The method is described in detail, including the outlook on potential future improvements.",xHP1W_Y0jF
+425,The authors address the problem of denoising and image resolution improvement in microscopy,Hjw2saQPB5G
+426,"A new public benchmark dataset is presented, much more extensive than the currently available alternatives.The authors perform a detailed evaluation of the existing denoising and super-resolution algorithms and finally propose their own which handles both tasks and out-performs the others",Hjw2saQPB5G
+427,All code and data is available,Hjw2saQPB5G
+428,"While the submitted manuscript is indeed aiming a a joint denoising and superres task, there is quite a body of work that was not included in the related work sections or in the comparative parts of the paper (CARE, N2V, PN2V, etc.).",Hjw2saQPB5G
+429,"I have the feeling that the utility of the data should be valued higher than the incompleteness of comparisons, but if the camera-ready version could at least acknowledge the broader existing literature it would certainly be a positive.",Hjw2saQPB5G
+430,"With respect to the data, it appears that the availability of it is still pending to some degree",Hjw2saQPB5G
+431,From the GitHub repo of the paper:,Hjw2saQPB5G
+432,"To those who have cloned or forked our repository, we now removed the png data and are working with the raw data pre-processed only with a single global z-score normalization",Hjw2saQPB5G
+433,All the consequent modifications are being made,Hjw2saQPB5G
+434,"The full raw data will be made public very soon, and pretrained models (with raw data) will be made available by mid July.",Hjw2saQPB5G
+435,In my opinion it would be highly desirable to bring the work on this public dataset to completion together with the submission of the camera-ready version.,Hjw2saQPB5G
+436,This paper addresses the problem of image segmentation and denoising when a very few training segmentation masks are available,UWm7zRhPoMX
+437,The problem is motivated by the need to train neural networks with a high capacity (millions of coefficients) while having only tens of ground truth segmentation masks,UWm7zRhPoMX
+438,The authors approach the problem by combining the self-supervised denoising task with the segmentation task in one neural network optimized using a joint loss,UWm7zRhPoMX
+439,The joint loss is a weighted contribution of denoising and segmentation loss contributions,UWm7zRhPoMX
+440,The authors develop the joint denoising and segmentation framework as an extension to the Noise2Void work accessible at https://openaccess.thecvf.com/content_CVPR_2019/papers/Krull_Noise2Void_-_Learning_Denoising_From_Single_Noisy_Images_CVPR_2019_paper.pdf,UWm7zRhPoMX
+441,The practical value of training a segmentation model with very few ground truth segmentation masks is very high.,UWm7zRhPoMX
+442,The novelty lies in formulating a joint loss and delivering denoised images as well as segmentation masks.,UWm7zRhPoMX
+443,The paper is missing an assumption paragraph which is misleading for a reader who would like to use this technique,UWm7zRhPoMX
+444," For example, one of the assumptions is the i.i.d",UWm7zRhPoMX
+445,Another assumption is that the very few ground truth segmentation masks must be representative of the dataset,UWm7zRhPoMX
+446,The authors showed the performance on three datasets that have spatially distributed very similar pattern/content and thus sampling is very easy,UWm7zRhPoMX
+447,How did the authors decide on the size of the blind spot patches? The paper focused on Noise2Void is using patches of 64 x 64 pixels while this work is using patches of 128 x 128 pixels.,UWm7zRhPoMX
+448,Lines 249 – 257: The authors refer to patches and then to images,UWm7zRhPoMX
+449,"Lines 314, 345-350: It is not clear how delta is computed",UWm7zRhPoMX
+450,"Is it AP(alpha=0.2) – AP(alpha=0.5) or AP(alpha=0.2) – AP(alpha=0.7) compared to AP(alpha=0.5)? Please, clarify",UWm7zRhPoMX
+451,I could not follow the Figure 6 vertical axis (you might include an equation for delta).,UWm7zRhPoMX

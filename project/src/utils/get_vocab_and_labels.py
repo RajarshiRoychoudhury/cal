@@ -37,7 +37,7 @@ def get_vector_matrix(args: argparse.Namespace, word_to_idx: Dict) -> np.ndarray
     return weights_matrix
 
 
-def get_vocab_and_label(train: np.ndarray, test: np.ndarray) -> Tuple[Dict, Dict, int, int]:
+def get_vocab_and_label(train: np.ndarray, test: np.ndarray, pool) -> Tuple[Dict, Dict, int, int]:
     word_to_idx = {}
     label_to_idx = {}
     total = np.concatenate((train, test))
@@ -49,8 +49,13 @@ def get_vocab_and_label(train: np.ndarray, test: np.ndarray) -> Tuple[Dict, Dict
 
         if cls not in label_to_idx:
             label_to_idx[cls] = int(cls)
+    for sent in pool:
+        for word in sent.split():
+            if word not in word_to_idx:
+                word_to_idx[word] = len(word_to_idx)
 
     vocab_size = len(word_to_idx)
     num_labels = len(label_to_idx)
-
+    print(vocab_size)
+    print(num_labels)
     return word_to_idx, label_to_idx, vocab_size, num_labels

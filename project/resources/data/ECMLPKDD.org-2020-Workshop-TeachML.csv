@@ -1,0 +1,368 @@
+,Description,forum
+0,The paper first talks about the current state of learning machine learning and the challenges software engineers face when learning machine learning,jm5E97TTMEb
+1,"The authors suggest hyperparameter tuning,  data splitting, and gradient signals are the main topics to learn.",jm5E97TTMEb
+2,"Authors designed specific exercises to help students learn hyperparameter tuning, data splitting, and gradient signals.",jm5E97TTMEb
+3,"Specific exercises can be used not just for software engineers, but for anyone with an engineering or quantitative background.",jm5E97TTMEb
+4,Explanations of the exercises and what they provide to students are clear.,jm5E97TTMEb
+5,"The entire paper is based on the observation ""We noted that especially computer science and software engineering students tended to struggle with the adoption of an empirical mindset rather than a constructive one."" While it sounds reasonable, there are no additional examples or details explaining how software engineers struggle or why.",jm5E97TTMEb
+6,"It's not clear how the authors chose hyperparameter tuning,  data splitting, and gradient signals as the main topics",jm5E97TTMEb
+7,Why are these more important than learning about model architectures and their applications?,jm5E97TTMEb
+8,There's no quantitative difference provided showing the effectiveness of the results provided,jm5E97TTMEb
+9,I would have liked to see pre-test and post-test scores of students based on this teaching method,jm5E97TTMEb
+10,It would have been even nicer if there was a way to compare it to existing teaching methods.,jm5E97TTMEb
+11,The authors of this submission identified three major attention points of ML teaching when introducing the topic to software engineering students,jm5E97TTMEb
+12,proper data splitting and knowledge of gradient computations and workings of backpropagation.,jm5E97TTMEb
+13,"Those principles are taught with the help of self created jupyter notebooks, providing an interactive widget for a simple linear regression problem for visualizing the effect of different learning rates, the proper use of data splitting for hyperparameter tuning and an example implementation of automatic differentiation.",jm5E97TTMEb
+14,"What I really liked about the paper is that the authors reported first hand experiences of their students using this approach, including what went wrong in many cases",jm5E97TTMEb
+15,"Unsurprisingly, this seemed to have been the part about proper data splitting",jm5E97TTMEb
+16,This identifies areas which probably need to be addressed better in future design of teaching materials.,jm5E97TTMEb
+17,"Also, the authors invested great efforts in the very readable design of small toy classes showing how backpropagation via autodiff can be implemented",jm5E97TTMEb
+18,"I assume this will be of great value for understanding the working principles of large frameworks like pytorch or tensorflow, especially for software engineering students.",jm5E97TTMEb
+19,"On the other hand, I think that such a code-heavy approach might not be directly transferable to different audiences which might be less familiar with programming or software design.",jm5E97TTMEb
+20,"Moreover, even though I agree that using jupyter notebooks has become a frequently used and pretty much standard way for teaching and demonstration within the data science community, I doubt that the authors used it as their only means of teaching in ML classes and they could have elaborated a bit on how they encapsulate their notebooks into their regular teaching",jm5E97TTMEb
+21,But maybe that had to be left out due to paper space restrictions.,jm5E97TTMEb
+22,This work focuses on teaching Machine Learning (ML) to Software Engineers (SE),jm5E97TTMEb
+23,There is a need for change of thought process between SE and ML due to constructive and empirical mindset,jm5E97TTMEb
+24,"Authors specifically focused on three aspects of ML, namely, 1",jm5E97TTMEb
+25,"To address these challenges, authors created materials which explains the underlying concepts and how they differ from SE",jm5E97TTMEb
+26,Authors report various findings on the effectiveness of the materials and teaching methodology on the group of students.,jm5E97TTMEb
+27,* Materials are self-explanatory and useful for all students over and beyond SE students,jm5E97TTMEb
+28,* Motivation on each material is well thought out and described very succinctly,jm5E97TTMEb
+29,"* I found the description on the 3rd material is a bit lacking on the self-explanation part compared to the other two materials, although the code is written well with sufficient comments in all",jm5E97TTMEb
+30,* A little more detail on the “normal equation” might be helpful for comparison to students who are not aware of it,jm5E97TTMEb
+31,* Small suggestion: Resolution of Fig,jm5E97TTMEb
+32,Generating the figures in either “pdf” or “eps” format might retain the figure quality,jm5E97TTMEb
+33,This paper presents a web application for learning decision trees (referred to as DTs throughout the paper) as well as their nuances,aLdr-6rFn5j
+34,The authors do an excellent job situating why learning decision trees is important,aLdr-6rFn5j
+35,"The web application is well explained from the students perspective, but I would have liked a few more details on the instructor's perspective. ",aLdr-6rFn5j
+36,There are a few elements of the paper that feel a bit disjointed,aLdr-6rFn5j
+37,"For example, the paper spends considerable space on the ""tennis data set"" but yet the default data set for the web application concerns monsters",aLdr-6rFn5j
+38,"Similar if the intended audience has a background in computer science, how does this tool use and/or enhance one's computer science training? ",aLdr-6rFn5j
+39,"Additionally, I would have liked to see a connection to how this tool fits into a machine learning course",aLdr-6rFn5j
+40,"For example, is this a student's first or second contact with the material? Do students use this tool to inform pseudocode drafts? ",aLdr-6rFn5j
+41,* Well designed tool for learning and understanding the nuances of decision trees,aLdr-6rFn5j
+42,* Thoughtful presentation of the web application and strong motivation for learning about decision trees,aLdr-6rFn5j
+43,* Some issues with the structure of the current draft ,aLdr-6rFn5j
+44,* Missing explicit placement into a machine learning course,aLdr-6rFn5j
+45,I can see the potential of the tool introduced here to teach and explain the very basics of decision trees (and how to evaluate classifiers).,aLdr-6rFn5j
+46,"I'm not sure it is entirely finished -- the ""Hint"" functionality did not do anything, as far as I could make out, and best practice for UI design for this kind of interactive tutorial would be to have documentation in the form of tooltips right inside the app.",aLdr-6rFn5j
+47,I think the decision to use a non-binary decision tree algorithm like ID3 is suboptimal from a didactic point of view,aLdr-6rFn5j
+48,How to find optimal *binary* splits is much easier to explain/understand and the resulting tree structures are easier to follow as well,aLdr-6rFn5j
+49,"This tool only aids in the visual explanation of very simple decision tree topics, which, in my teaching experience, only rarely cause confusion or issues in the classroom, namely the basic ""greedy"" recursive split search and how to use the tree to classify new data",aLdr-6rFn5j
+50,"This seems like a wasted opportunity and limits the utility of the proposed tool-- more challenging and practically very important topics that learners often struggle with in my experience, like, e.g., pruning trees to avoid overfitting, how surrogate splits work, the instability of tree structure to small data perturbations,  etc, are not covered by the functionality of the tool.",aLdr-6rFn5j
+51,"This tool is not based on any of the popular ML frameworks in R or Python, which seems another wasted teachingg opportunity",aLdr-6rFn5j
+52,"If it were, this would allow students to also see the code generating the respective model and thereby learn to relate theoretical concepts to the corresponding implementation features.",aLdr-6rFn5j
+53,"The authors explain their motivations, demonstrate a societal need for a solution, and also showcase previous methods used like class of clans.",a37DEwWs1wu
+54,The paper's idea of using candy as a hands-on machine learning teaching method is novel,a37DEwWs1wu
+55,"Overall, the paper communicates a variety of the author's unique perspectives",a37DEwWs1wu
+56,"For example, the authors believe the original Iris dataset was created with benchmarking in mind, not learning",a37DEwWs1wu
+57,The episodes and intended learning outcomes section is also well organized into specific topics,a37DEwWs1wu
+58,The topics themselves are also good introductory topics for teaching machine learning.,a37DEwWs1wu
+59,"While paper starts strong, the conclusion is weak",a37DEwWs1wu
+60,"Before the conclusion, the author explains the motivations and ideas to teach machine learning using candy",a37DEwWs1wu
+61,The conclusion simply states there's an ethics component included,a37DEwWs1wu
+62,"While that's important to include, I would have preferred to see the outcomes of using such a teaching method",a37DEwWs1wu
+63,"Without that, this paper feels incomplete.",a37DEwWs1wu
+64,"The authors present a self designed introductory teaching lesson of about 3 to 4 hours to convey the principles and workings of some of the fundamental aspects of ML: feature engineering,",a37DEwWs1wu
+65,KNN and logistic regression as classification methods and performance evaluation in a playful manner using chocolate and candy as a practical toy dataset and additional motivator.,a37DEwWs1wu
+66,"Their approach follows the guidelines of the Carpentries and aims to develop intuition for ML, bridging the gap between the two most dominant ML teaching styles which either are primarily focussed on",a37DEwWs1wu
+67,"theory and might provide a daunting entry barrier on the one hand, or aim at quick implementation and application of ML algorithms without detailed knowledge of the inner workings on the other hand.",a37DEwWs1wu
+68,I like the hands-on approach suggested here which teaches basic principles by a very plausible example,a37DEwWs1wu
+69,"Also, the authors put strong focus early on to discuss ethical issues of machine learning and encourage lesson participants to think critically about adoption of ML approaches for given problems which is a strong plus in my opinion and often not emphasized enough in existing tutorials.",a37DEwWs1wu
+70,I would be very curious to learn how lesson participants respond to this approach,a37DEwWs1wu
+71,"Unfortunately, the authors only present their teaching procedure without giving details on how well their approach worked in practice (however that could be measured...), how participants",a37DEwWs1wu
+72,"reacted, what they had problems with, etc",a37DEwWs1wu
+73,Also I am missing a clear definition of the target audience that course was designed for,a37DEwWs1wu
+74,"As an additional (but less important) point: as much as I enjoy candy myself and understand the authors picked it for their motivational value, maybe replacing it with a more healthy alternative would be something to think about.",a37DEwWs1wu
+75,The authors provide their teaching materials as a github repository which is great and allows direct adoption,a37DEwWs1wu
+76,"Unfortunately, author identification became possible through that and the review can no longer be considered completely ""blind"".",a37DEwWs1wu
+77,"Nevertheless, I suggest accepting the submission since the approach is innovative and will probably invoke interesting discussions among participants.",a37DEwWs1wu
+78,This work addresses the middle ground between math-heavy foundational and application-focused black-box Machine Learning (ML) teaching styles,a37DEwWs1wu
+79,Authors proposed a fun active learning strategy to understand ML concepts and ethical decision processes using candies,a37DEwWs1wu
+80,The proposed 10 episode strategy along with their expected learning outcomes are publicly available,a37DEwWs1wu
+81,Authors found their strategy to be useful for not only for undergraduates but individuals from all ages.,a37DEwWs1wu
+82,"* Very well-motivated paper, there is clearly a need for this kind of teaching style to democratize ML",a37DEwWs1wu
+83,* Proposed strategies along with the learning outcomes are thoughtful and effective,a37DEwWs1wu
+84,* Prerecorded data is made available with support for the virtual format,a37DEwWs1wu
+85,* Authors mentioned the strategy was effective across all ages,a37DEwWs1wu
+86,I wonder the effectiveness of teaching with candies for varying age groups,a37DEwWs1wu
+87,Young children might be too tempted by the candies than actually learning,a37DEwWs1wu
+88,"On the other hand, Older people might get disinterested because they might feel candies are too distracting",a37DEwWs1wu
+89,Any exploration on the effectiveness of learning across ages will be valuable.,a37DEwWs1wu
+90,"* Proper use of this teaching style will definitely be effective to instil critical thinking and improve the public perception towards ML as not a black box, I commend the authors on that.",a37DEwWs1wu
+91,* I would love to see how a few of the episodes are actually described in more detail within the paper but I understand there’s so much information that can be crammed into 4 pages.,a37DEwWs1wu
+92,This paper reports experiences with teaching machine learning topics to library staff,CF_7wpDpCmp
+93,The authors describe very well the motivation to apply machine learning technology to the collected knowledge of the libraries,CF_7wpDpCmp
+94,The idea to spark interest in non-technical staff by teaching them programming and machine learning topics is appealing,CF_7wpDpCmp
+95,"However, the question remains if this approach is beneficial in the long term as there is a steep learning curve for beginners to develop correct and working AI projects",CF_7wpDpCmp
+96,"The four main takeaways as they are described in the paper, all seem relevant and reasonable",CF_7wpDpCmp
+97,These aspects are useful for AI experts teaching this topic and could improve the experience for all kinds of learners,CF_7wpDpCmp
+98,The collected qualitative feedback is interesting and helpful to improve the content of the training,CF_7wpDpCmp
+99,Yet quantitative data would also be interesting to answer questions,CF_7wpDpCmp
+100,"For example, if the training attendees could apply the new knowledge in their daily work",CF_7wpDpCmp
+101,"As a person that also teaches ML, I would have liked to read more about the structure and the content of the workshops",CF_7wpDpCmp
+102,The described ideas are interesting but very general.,CF_7wpDpCmp
+103,"Typo Line 185, Row 2 ""a conversation group conversation""",CF_7wpDpCmp
+104,The paper summaries the authors' findings on introducing staff of academic libraries to AI,CF_7wpDpCmp
+105,"This problem is, in many ways, domain specific as many obvious applications of AI can be identified in advance (as opposed to designing a curriculum for CS students which cannot make such assumptions)",CF_7wpDpCmp
+106,"Having said that, knowledge discovery strikes at the very heart of what AI should be used to do and I felt the paper presented some very interesting ideas.",CF_7wpDpCmp
+107,The authors present findings from two training experiences aimed at beginners in two different venues.,CF_7wpDpCmp
+108,The collaborative experience in the conference workshop setting is an interesting idea and one that deserves follow-up,CF_7wpDpCmp
+109,"The audience, despite the challenges with catering to a diverse set of people, seems to have responded positively to the training offered",CF_7wpDpCmp
+110,This seems to be evidenced by an overwhelming positive response,CF_7wpDpCmp
+111,"However, the number of participants (and their backgrounds) would help place this better in context.",CF_7wpDpCmp
+112,The experience with the local AI groups likewise seems to have built positively on top of a general introduction to AI,CF_7wpDpCmp
+113,"This, in itself, is hardly surprising; it would be more interesting to see the medium- and long-term effects of these trainings",CF_7wpDpCmp
+114,"For instance, interviews with course participants some months down the line to see if they were able to incorporate some of the introduced topics into their daily workflows or whether they were able to follow through on the collaborative projects mentioned by them",CF_7wpDpCmp
+115,I would also encourage the authors to consider metrics that can be used to quantify the results of their experiments in a data-driven way that goes beyond qualitative results.,CF_7wpDpCmp
+116,The paper discusses how to teach AI in the context of libraries,CF_7wpDpCmp
+117,It discusses two trainings that were implemented and evaluate what learners thought about the courses and what the take aways are from the learner's feedback.,CF_7wpDpCmp
+118,"I found the paper very inspiring and fitting for this workshop as it not only describes who the authors teach AI and ML, but also reflects on practices and how it can be done better such that the learners get the most out of the learning experience",CF_7wpDpCmp
+119,A well written paper with interesting examples,CF_7wpDpCmp
+120,"Although it is focused on teaching library employees, I believe the learnings are applicable to a broader audience",CF_7wpDpCmp
+121,I even leared a lot from the references (Elements of AI),CF_7wpDpCmp
+122,In particular the takeaways were interesting to me and probably will be to others,CF_7wpDpCmp
+123,"I will aim to focus my teaching ""around the uses, benefits, an potential harms of the technology"", as the authors suggest.",CF_7wpDpCmp
+124,Only parts of the teaching materials are made available for the reader,CF_7wpDpCmp
+125,I would like to see the entire material and know under which license it could be reused.,CF_7wpDpCmp
+126,"- I wonder if the title should reflect that the paper is centered on teaching people working in libraries (on the other hand this might stop people from reading it, so not really sure)",CF_7wpDpCmp
+127,"- Section 1, line 033: ""(Boyd & Crawford, 2012)"" -> ""Boyd & Crawford, 2012""",CF_7wpDpCmp
+128,"- Section 4.2, line 186, typo: ""conversation group conversation"" ",CF_7wpDpCmp
+129,This paper describes the curriculum of an introductory ML course given to non-STEM students at a Spanish higher education school,dhmIJ9SwAuG
+130,"This course is embedded in a double degree program where graduate courses are offered that mix law, business and engineering",dhmIJ9SwAuG
+131,"The material conveyed is then presented in the paper and key points for the delivery are highlighted, e.g",dhmIJ9SwAuG
+132,"what model to introduce first, which metrics to concentrate on, how to angle the motivation for machine learning and how to control expectations",dhmIJ9SwAuG
+133,The later lessons of the course then introduce more advanced model architectures like MLPs and SVMs,dhmIJ9SwAuG
+134,The final episode of the curriculum are kaggle like projects for the students to work on.,dhmIJ9SwAuG
+135,"If I understood correctly, the course is subsequent to a basic introduction to R and python",dhmIJ9SwAuG
+136,"For sure, this is already a great effort for the students to pick up",dhmIJ9SwAuG
+137,"What I like about this curriculum, is the focus on a simple linear regression approach to introduce students",dhmIJ9SwAuG
+138,"Tying the core concepts of machine learning to this, appears to me like a splendid idea as it removes the complex math of say SVMs, MLPs et al from the teaching",dhmIJ9SwAuG
+139,"This way, learners can focus on understanding supervised learning",dhmIJ9SwAuG
+140,"Further, I like the idea of discussing this regression problem on a data set the learners can relate to",dhmIJ9SwAuG
+141,"In this case, it is to predict the weight given the height and gender",dhmIJ9SwAuG
+142,This direct relation of the prediction to real world observations appears to be a strong bridge and the basis for content uptake,dhmIJ9SwAuG
+143,"On a second thought, any discriminatory aspects of the trained model could directly be discussed based on this fiducial analysis",dhmIJ9SwAuG
+144,"This shows, what a versatile vehicle this data set and prediction task can be",dhmIJ9SwAuG
+145,These two aspects are the 2 main outstanding strengths of the article.,dhmIJ9SwAuG
+146,"There are a couple of things, I'd like to stress which I hope can help the author(s) to improve the paper content (potentially for the presentation at the workshop on Sep 14):",dhmIJ9SwAuG
+147,"line 30 (right column) ""First contact of these students with Business Analytics is a 30 hours introductory course during the third semester."": It might be a good idea to set up learner profiles to illustrate the background knowledge of the participating students and (even more importantly) the goals of the students",dhmIJ9SwAuG
+148,"I know that in an academic context, knowing where students want to work after their graduation is very hard; however, the mental model of the teacher of where she/he sees the learners after the course are an important aspect to communicate",dhmIJ9SwAuG
+149,"line 40 (right column) ""The syllabus of the course starts with fundamentals of programming and statistics with the R language"": the text misses out to define clear learning goals; while the argumentation for the curriculum design is convincing, it remains hard to judge if the content can meet the learning goals as the former are not provided anywhere",dhmIJ9SwAuG
+150,"line 52 ""Lessons 4 to 7 ..."": the text references specific lessons by number, but misses an overview of the number of lessons to be given and their time line; this aspect confused me multiple times",dhmIJ9SwAuG
+151,A simple time line would provide a good degree of guidance to the reader here.,dhmIJ9SwAuG
+152,"- page 2, line 67: the quote by Burkov is lovely, I would have loved to learn in what context it is presented",dhmIJ9SwAuG
+153,"- page 2, line 103 (left column) ""We have a set of vectors X ..."": this appears to be a bit inconsistent to me, figure 1 discusses $y = f(x_1, ..., x_n)$ but the text talks about $X$ (capital) as the entire set",dhmIJ9SwAuG
+154,"It would be nice to have consistent variable naming, so that the text is aligned to the figures.",dhmIJ9SwAuG
+155,"- page 2, line 79 (right): ""the evil over-fitting game"" sounds very biased to me",dhmIJ9SwAuG
+156,The text does not explain if or how the notion of evil is explained to the students,dhmIJ9SwAuG
+157,I personally would try to dismiss these opinionated terms in courses as much as possible,dhmIJ9SwAuG
+158,"Here ""evil"" conveys a negative intent",dhmIJ9SwAuG
+159,"The following paragraph ""The example may sound a bit absurd ..."" for me is unable to fix the confusion about the synthetic over-fitting example",dhmIJ9SwAuG
+160,I see the danger here to loose learners at this point.,dhmIJ9SwAuG
+161,"- page 3, line 111 (left) ""L’Oréal's Rule to choose the optimal slope (Because I'm worth it)"" I didn't get this metaphor at all.",dhmIJ9SwAuG
+162,"- page 3, line 113 (left) ""Then we attack the non-linear separable classification of virginica versus versicolor to stress the idea",dhmIJ9SwAuG
+163,"that uncertainty is an inevitable fact for ML models"" I am not sure what attack refers to here",dhmIJ9SwAuG
+164,"I think introducing students to adversarial attacks is a good idea, but the text leaves it unclear if that the intend",dhmIJ9SwAuG
+165,"- page 3, line 119 (left): ""The confusion matrix is well understood with the boy who cried wolf example of Type-I error."" It's unclear to me what the 'boy who cried wolf example' is",dhmIJ9SwAuG
+166,"- page 3, line 152 (left): ""The minus sign and $log_2 (p_i )$ are the most feared beasts."" it is unclear what this means",dhmIJ9SwAuG
+167,"I urge the authors to use scientific language, please",dhmIJ9SwAuG
+168,"- page 3, line 152 (left): ""The minus sign and $log_2 (p_i )$ are the most feared beasts."" if learners struggle with this, one may wonder if it makes sense to introduce so many tricky concepts as noted in this paragraph and what level of depth are they expected to reach",dhmIJ9SwAuG
+169,"This would tie back to the learner profiles (if present) mentioned earlier, learner profiles would clearly show which level of understanding is appropriate.",dhmIJ9SwAuG
+170,"Overall, it would be wonderful to see an objective quality assessment of this curriculum in the future",dhmIJ9SwAuG
+171,"Given clear learning goals and learner profiles, such a quantitative analysis of e.g",dhmIJ9SwAuG
+172,post-course surveys could also help to assess if learning goals have been met.,dhmIJ9SwAuG
+173,Thanks to the authors for submitting their paper,dhmIJ9SwAuG
+174,I enjoyed reading it and learning how the structured their course.,dhmIJ9SwAuG
+175,The submission describes an introductory course on Machine Learning targeted at,dhmIJ9SwAuG
+176,"students outside of the science, technology, engineering, and mathematics",dhmIJ9SwAuG
+177,(STEM) fields such as Law or Marketing.,dhmIJ9SwAuG
+178,The submission has great value and can therefore be recommended for acceptance.,dhmIJ9SwAuG
+179,"In particular, it includes reports on student feedback to different parts of",dhmIJ9SwAuG
+180,"the taught course, which will be valuable information for other workshop",dhmIJ9SwAuG
+181,"Additionally, the described course material teaches important",dhmIJ9SwAuG
+182,concepts such as interpretation of black-box models and overfitting using,dhmIJ9SwAuG
+183,"It also includes hands-on coding parts, which is an effective",dhmIJ9SwAuG
+184,"Apart from minor typographical mistakes which will not be covered here, some",dhmIJ9SwAuG
+185,suggestions to improve future submission include:,dhmIJ9SwAuG
+186,* line 002: The submitted paper's title does not exactly match the submission's,dhmIJ9SwAuG
+187,"* line 051: ""Lessons 4 to 7 cover Machine Learning fundamentals."": Lesson 1..3",dhmIJ9SwAuG
+188,  are not introduced up to this point.,dhmIJ9SwAuG
+189,"* line 105: Even though well known, the Iris dataset is missing a citation.",dhmIJ9SwAuG
+190,"  One could also add a reference backing the ""criticism about its goodness to",dhmIJ9SwAuG
+191,"* line 118: The ""boy who cried wolf example of Type-I error"" could benefit from",dhmIJ9SwAuG
+192,* lines 138 and 146: Fig,dhmIJ9SwAuG
+193,3 and 4 are not referenced in the text body.,dhmIJ9SwAuG
+194,"* Even though probably known by most readers, one should write out acronyms",dhmIJ9SwAuG
+195,"  such as STEM, AOC, ROC, SVM, SMOTE upon first usage.",dhmIJ9SwAuG
+196,"Other that that, the presented course and especially the author's experience",dhmIJ9SwAuG
+197,will be beneficial for the present workshop.,dhmIJ9SwAuG
+198,The paper presents an experience report of teaching an introductory class on machine learning to business and law students that do not necessarily have a strong background in mathematics and/or programming,dhmIJ9SwAuG
+199,"On a high level, the paper describes the curriculum, diving deeper into only some aspects",dhmIJ9SwAuG
+200,"The pathway starts with linear regression and progresses up to logistic regression on the Iris data set, neural networks, and SVMs",dhmIJ9SwAuG
+201,"Finally, the students are exposed to a practical challenge that they solve using graphical environments provided by Azure ML.",dhmIJ9SwAuG
+202,I find the proposed curriculum not particularly surprising (lin,dhmIJ9SwAuG
+203,"reg -> neural networks), I was a bit surprised to see SVMs as one of the models the students were exposed to - given that they are mathematically more involved than, e.g., simple neural networks, in my opinion",dhmIJ9SwAuG
+204,Other than that I really liked some of the anecdotal cues such as giving a grade bonus based on performance on the final project or using a graphical environment for modeling,dhmIJ9SwAuG
+205,"Or, the ""evil overfitting game"" -> definitely something to try",dhmIJ9SwAuG
+206,I would have appreciated a little more insight into what the students liked/disliked or more tangible material in the form of code and data,dhmIJ9SwAuG
+207,Nevertheless I think the authors should participate in the workshop.,dhmIJ9SwAuG
+208,"- Page 2, line 63: Just up for debate: While I understand the intention behind disillusioning students that were exposed to hype-fueled media reports, I am note sure if harshly stating something along the lines of ""machines don't learn"" or ""ML is just glorified curve fitting"" is strategically useful early on in a class",dhmIJ9SwAuG
+209,"After all, what constitutes learning it is still a matter of definition",dhmIJ9SwAuG
+210,A little mystery and fascination (think of chatting with GPT-3 or using Google draw) can be helpful as long as the mathematical and algorithmic underpinning is not neglected,dhmIJ9SwAuG
+211,"But again, this is just my opinion and another point of view and no criticism of the submission.",dhmIJ9SwAuG
+212,"- Page 2, line 98: ""predict the weight of an undergraduate student just knowing its height and gender."" --> ""predict the weight of undergraduate students just knowing their height and gender."" or ""predict the weight of an undergraduate student just knowing his/her height and gender.""",dhmIJ9SwAuG
+213,"- Page 3, line 153: I have made the same experience and found that the minus sign and log become less scary when referring to the information content",dhmIJ9SwAuG
+214,An event with a probability of 1/4 is as probable as picking one of (1/4)^(-1) = 4 balls at random and we'd need log(4) bits to distinguish all of these balls,dhmIJ9SwAuG
+215,Taking the expected value gives us entropy.,dhmIJ9SwAuG
+216,Teaching students practical machine learning ,oeM-Rb7nqoh
+217,This paper describes the structure and content of an instructional machine learning course,oeM-Rb7nqoh
+218,The focus on the practical aspects of machine learning for this course is an important idea,oeM-Rb7nqoh
+219,"From personal experience with teaching Machine Learning, I can confirm that the knowledge about the mathematical background and the structure of the algorithms alone is not sufficient to apply these methods to specific problems as there are further technical challenges to solve",oeM-Rb7nqoh
+220,- The focus on practical aspects of applying machine learning,oeM-Rb7nqoh
+221,"- The repeated contact with concepts, in different stages of the learning process (cyclic framework)",oeM-Rb7nqoh
+222,- The idea that communicating technical concepts is an essential skill,oeM-Rb7nqoh
+223,- The usage of version control and testing is part of the course,oeM-Rb7nqoh
+224,- Bonus points for incorporating the ethical implications of ML algorithms,oeM-Rb7nqoh
+225,- Is the focus on implementing the algorithms or applying them? For example: Implementing a k-means clustering correctly might be a different challenge than applying it to a particular problem,oeM-Rb7nqoh
+226,I am unsure whats the focus of the course,oeM-Rb7nqoh
+227,"- Some information about the content of the ""model evaluation"" part of the course would be great",oeM-Rb7nqoh
+228,"- This paper gives a general overview of the topic (due to length regulations), some more details about the topics and tasks would help",oeM-Rb7nqoh
+229,It would be great if the course material would be publicly available,oeM-Rb7nqoh
+230,- I am unsure why Table 1,oeM-Rb7nqoh
+231,"lists ""Linear Regression"" as ""Train/Test Paradigm""",oeM-Rb7nqoh
+232,"Would expect something like ""n-fold cross-validation"".",oeM-Rb7nqoh
+233,The paper highlights a course on computational ML offered in a CS program,oeM-Rb7nqoh
+234,"The course is intended as an accessible entry point to ML for undergraduate students, and assumes programming background and some mathematical maturity (either LA or multi-variable calculus are required)",oeM-Rb7nqoh
+235,"In addition to introducing ML and its links with CS, the course also poses the interesting question on what habits of mind are needed for ML practitioners",oeM-Rb7nqoh
+236,"This is, in my experience, a necessary skill for ML practitioners where most practical problems come with unique caveats",oeM-Rb7nqoh
+237,"The learning outcomes for the course likewise cover a fairly broad spectrum of topics, ranging from implementing to understanding different ML algorithms",oeM-Rb7nqoh
+238,"The course also addresses ethical concerns and collaborative development, which is exciting to see at such an early stage",oeM-Rb7nqoh
+239,Use of continuous integration and unit testing is also a welcome addition to the course,oeM-Rb7nqoh
+240,"The cyclic framework should be an excellent tool for reinforcing learning outcomes, I really liked the concept!",oeM-Rb7nqoh
+241,The authors decided to start the course with unsupervised learning algorithms rather than supervised learning,oeM-Rb7nqoh
+242,"While I do not have an issue with this reordering naturally, I was wondering if the authors uncovered any evidence that one way or the other was more effective",oeM-Rb7nqoh
+243,This would be very useful for the broader community.,oeM-Rb7nqoh
+244,"While the course covers continuous integration, is this limited to the code the students write or does it extend also to the models they train? Do students deal with concepts such as how to serialise, share and/or update their models in an online setting?",oeM-Rb7nqoh
+245,I would be very interested in reading some of the feedback the authors received (so tying back to point 1),oeM-Rb7nqoh
+246,"Also, the author's experience of using Github Classroom and Travis CI in this setting would be very interesting",oeM-Rb7nqoh
+247,"If lack of space is an issue, perhaps the authors could include this information in their presentation?",oeM-Rb7nqoh
+248,The paper describes a course for computer science students,oeM-Rb7nqoh
+249,The course teaches concepts of machine learning with a focus on implementation of methods,oeM-Rb7nqoh
+250,On the side it teaches important skill like version control and clitical thinking.,oeM-Rb7nqoh
+251,The paper nicely describes this introductory machine learning course,oeM-Rb7nqoh
+252,"The focus on implementation is unusual, yet interesting",oeM-Rb7nqoh
+253,"The cyclic framework described in the paper, as well as the active classroom, the flexibility system in assignments and the use of computational notebooks and continuous integration, are exciting to see.",oeM-Rb7nqoh
+254,I would have hoped for a link to the teaching material or at least an example showing one of the notebooks.,oeM-Rb7nqoh
+255,"Also I remain with one question: Are the teaching materials openly available? If not, why?",oeM-Rb7nqoh
+256,"If space in the paper was the issue, I would rather neglect the description of the two courses (stats and CS) and the college/students ",oeM-Rb7nqoh
+257,"Also, it would have been nice to read, what the students think about the coures (e.g",oeM-Rb7nqoh
+258,- Learning objectives: the first point seems like two points to me,oeM-Rb7nqoh
+259,- Learning objectives: assess efficacy is mentioned in both points 2 and 3 and thus could be deleted in point 2,oeM-Rb7nqoh
+260,"- Evaluation: ""mix a severeal machine learning ideas"" -> ""mix severeal machine learning ideas""",oeM-Rb7nqoh
+261,"- Evaluation: what do you mean by ""slack site""?",oeM-Rb7nqoh
+262,XploreML is an interactive tool that allows for students to explore various classification algorithms dynamically,7lv81_zr4TZ
+263,The paper's current presentation of XploreML leaves it to the reader to determine the learning goals of this tool,7lv81_zr4TZ
+264,"Additionally, while the authors discuss using backward design in their implementation for using this tool, without the learning goals specified, it is challenging to understand where and how this tool comes into a machine learning course",7lv81_zr4TZ
+265,"Is it the first, second, last, etc contact for a student learning a concept? Finally, one of the features that I was most interested in was the code extraction",7lv81_zr4TZ
+266,I felt that this was shortchanged in the current draft.  ,7lv81_zr4TZ
+267,"The user study presented in this paper does make an effort to address this second issue, by having two different groups of students interact with XploreML either in a lecture or lab setting",7lv81_zr4TZ
+268,"However, there is no control group that never works with this tool",7lv81_zr4TZ
+269,"Additionally, the survey questions from the user study are about how much one likes the tool (which certainly has its place), instead of an evaluation tool that attempts to determine if working with XploreML leads to deeper understanding of classification. ",7lv81_zr4TZ
+270,* Interesting and accessible tool (via `shiny`) ,7lv81_zr4TZ
+271,* Demonstrates that XploreML can be used in lecture or lab settings,7lv81_zr4TZ
+272,* Does not explicitly connect XploreML to learning outcomes,7lv81_zr4TZ
+273,* Difficult to determine the impact of this tool on learning,7lv81_zr4TZ
+274,* It would be great if the abstract discussed the level of the students that this tool is intended for ,7lv81_zr4TZ
+275,"* Typo in left side of line 041 ""aswell' --> ""as well"" ",7lv81_zr4TZ
+276,"* Right side of lines 051 and 052, the authors might consider using a different typeface for the various packages (such as \texttt{})",7lv81_zr4TZ
+277,XploreML presents an interactive GUI for learning fundamentals of supervised classification models,7lv81_zr4TZ
+278,"This app has potential to be used as a training tool, however, implementation lacks clarity and stability.",7lv81_zr4TZ
+279,- One major issue is that sever gets disconnected quite often and it is set to default settings when reloaded again,7lv81_zr4TZ
+280,This means that while mentors/students are discussing aspects of current implementation the results will be gone and everything needs to be set again from scratch,7lv81_zr4TZ
+281,- The app offers selection of only a few hyperparameters,7lv81_zr4TZ
+282,"Learning rate in the neural net, depth in random forest are important adjustable hyperparameters",7lv81_zr4TZ
+283,"Also, the number of CV folds and bootstraps and train, validation and test split should be adjustable",7lv81_zr4TZ
+284,- The raw data tab in visualization pane does not show class labels,7lv81_zr4TZ
+285,Complete visualization of raw data with class labels is a very fundamental aspect of beginning ML teaching/learning process,7lv81_zr4TZ
+286,"- Furthermore, in the visualization of data the ‘parallel coordinates’ does not help understand data for beginners rather it looks confusing",7lv81_zr4TZ
+287,"For beginners, clear plots should be used such that students can easily read and understand data stats themselves without a mentor’s intervention",7lv81_zr4TZ
+288,Plots of data with more than 4 features are almost unreadable.,7lv81_zr4TZ
+289,"- While running a new model, the results and stats from the previous run remain intact, which is very confusing.",7lv81_zr4TZ
+290,- A very basic model taught in supervised binary classification is the logistic regression model which is missing in this app,7lv81_zr4TZ
+291,"Although LDA is closely related to logistic regression, but for beginners, it will make more sense to make them familiar with logistic regression for classification than LDA.",7lv81_zr4TZ
+292,"The authors propose an interactive GUI for exploring basic supervised classification models, however, it is not very handy in its current state",7lv81_zr4TZ
+293,"It offers only a few adjustable parameters, inconsistent view, and unstable server",7lv81_zr4TZ
+294, All these factors make it unlikely to be accepted,7lv81_zr4TZ
+295,This *could* be a great resource for experimentation in supervised learning without any programming,7lv81_zr4TZ
+296,The app is well-documented and covers most classifiers that a standard intro to supervised ML would contain.,7lv81_zr4TZ
+297,"For courses that are based on the software stack used here (R + caret), the fact that the code generating the models can be inspected, too, is even more valuable.",7lv81_zr4TZ
+298,"Unfortunately, the implementation seems to be very unstable, buggy and slow:",7lv81_zr4TZ
+299,"- xgboost did not work on any of the datasets I tried, it would hang for a couple of minutes and then spit out a generic error message",7lv81_zr4TZ
+300,"- results from previous runs were not updated, so one tab would show classification boundaries for a decision tree, say, while the other tab would still show confusion matrices for a LDA model computed earlier",7lv81_zr4TZ
+301,"Didactically, that's terrible, because students will not have the self-confidence and experience to recognize the wrong/incongruopus results presented by the app",7lv81_zr4TZ
+302,"At the very least, the interface should be programmed so that results that are ""out of date"" are greyed out until they are recomputed for the current model.",7lv81_zr4TZ
+303,"- the server hosting it was very unresponsive for most of the time I tried to experiment with it, loading the app and reccomputing even very simple models like LDA took a (very) long time on all three occasions that I used it",7lv81_zr4TZ
+304,- there seems to be no way to abort computations once they are under way and users lose patience,7lv81_zr4TZ
+305,This is not a good UX.,7lv81_zr4TZ
+306,"In terms of functionality, I would have liked to see the possibilty of tuning/changing more than 1 hyperparameter for some of the methods, sometimes the interplay of them is very important (e.g",7lv81_zr4TZ
+307,"max tree depth and min node size), and having only one of the many hyperparameters configurable is likely to lead to misunderstandings like ""this is the only tuning parameter that matters"" on the side of the students",7lv81_zr4TZ
+308,"Paper needs a spell check (""aswell"", ""interactivelly"" etc) and should be proof-read by a dilligent native speaker (""in specific classification"" -> ""specifically classification"", lots of other weird phrases).",7lv81_zr4TZ
+309,Code for the Shiny app should be made public to enable local hosting instead of relying on RStudio's rather limited free hosting.,7lv81_zr4TZ
+310,"This is a fairly ambitious project with large potential, not all that well executed",7lv81_zr4TZ
+311,"I don't think I would use it in my teaching in its current state, too many frustrating bugs and inconsistencies and too much waiting around on the unresponsive server (although the shiny app could be easily hosted locally if the authors make their code public, see below, and this would presumably speed up computation and rendering quite a bit) ",7lv81_zr4TZ
+312,I appreciate the efforts by the authors to submit an article to ECML2020's teaching ML workshop,WT9PkhFT_dO
+313,The submitted document does not comply with the layouting requirements our workshop has,WT9PkhFT_dO
+314,"Further, the article exceeds the page limit by more than a factor of 2",WT9PkhFT_dO
+315,Both of these aspects make it unlikely to be accepted,WT9PkhFT_dO
+316,A majority of the text is written in colloquial language which to me does not aspire to the neutral character an article needs to be written in,WT9PkhFT_dO
+317,"Further, the author gives away his name which makes a double blind review process impossible.",WT9PkhFT_dO
+318,"- page 4: yields a general praise of today's Machine Learning (ML) given it's applications which is fine, but in the wrong place to illustrate a teaching approach for ML",WT9PkhFT_dO
+319,"- page 5: contains appealing metaphors to compare the inner workings of a Machine Learning algorithm, but fails to connect these insights to teaching approach that is to be presented",WT9PkhFT_dO
+320,- page 6: contains again a praise of Machine Learning in general; point 5 tries to motivate the teaching demo by aspiring to prepare programmers for the use of tensorflow or other tools (which are vaguely touched),WT9PkhFT_dO
+321,- page 6: the bottom of the page lists a point one after point 6 which is most likely a typo,WT9PkhFT_dO
+322,- page 7: describes the live coding demo in a mixture of bullet points and prose text; here the author describes how a predictor of an XOR operation is live coded during the demo,WT9PkhFT_dO
+323,"In itself, this is a wonderful idea as it is simple enough to construct a hard coded network around this",WT9PkhFT_dO
+324,"Unfortunately, the way the paper is written hinders a clear understanding on how the demo is provided and what the author wants to achieve his listeners ",WT9PkhFT_dO
+325,"To improve the paper, I suggest the following improvements:",WT9PkhFT_dO
+326,- follow the layout requirements of our workshop,WT9PkhFT_dO
+327,- keep the volume within 4 pages (without references),WT9PkhFT_dO
+328,- present the learning goals of the live demo,WT9PkhFT_dO
+329,- present 2-3 learner profiles of the people you expect to participate in the live demo,WT9PkhFT_dO
+330,- describe key aspects of the code to be demonstrated,WT9PkhFT_dO
+331,"- show how the presented code ties back to the motivation, the learner profiles and learning goals",WT9PkhFT_dO
+332,- present evaluation data of how your learners liked the demo and on what they learned,WT9PkhFT_dO
+333,"Given the outstanding ideas hidden in the submission, I feel very sorry to reject this paper.",WT9PkhFT_dO
+334,The submission consists of an announcement concerning a live coding tutorial,WT9PkhFT_dO
+335,given in 2019 at the 15th International Conference On Intelligent Tutoring,WT9PkhFT_dO
+336,It shows the author's enthusiasm for the covered,WT9PkhFT_dO
+337,topic and for teaching the latter.,WT9PkhFT_dO
+338,"However, the submission fails to comply with this workshop's submission format,",WT9PkhFT_dO
+339,which is the ICML 2019 LaTeX template,WT9PkhFT_dO
+340,Therefore I cannot recommend this submission to be,WT9PkhFT_dO
+341,"accepted, which is unfortunate, given the author's clearly high motivation.",WT9PkhFT_dO
+342,"Nevertheless, I strongly suggest to submit a revised version to a later",WT9PkhFT_dO
+343,iteration of this or another workshop with a similar scope,WT9PkhFT_dO
+344,"future submissions more successful, I'd like to point out some aspects that may",WT9PkhFT_dO
+345,Even though this workshop's call for papers states that submissions shall,WT9PkhFT_dO
+346,"""present *or* discuss a teaching activity related to machine learning"", a",WT9PkhFT_dO
+347,discussion of the experiences from teaching at the ITS2019 workshop would have,WT9PkhFT_dO
+348,greatly increased the value of this submission,WT9PkhFT_dO
+349,"is, as it seems, an unaltered copy of a workshop announcement for ITS2019,",WT9PkhFT_dO
+350,rather than an article targeted to the present workshop,WT9PkhFT_dO
+351,"future submission might benefit from (i) usage of the common abbreviation ""AI""",WT9PkhFT_dO
+352,"(uppercase) rather than ""Ai"", (ii) writing out other acronyms such as ITS or",WT9PkhFT_dO
+353,"UWI that might not be known by all readers, (iii) reduced usage of everyday",WT9PkhFT_dO
+354,"language (optional, depending on personal style as well as the submission's",WT9PkhFT_dO
+355,"The submission's content has potential and can be a valuable contribution,",WT9PkhFT_dO
+356,which I hope to see in future workshops.,WT9PkhFT_dO
+357,The submission presents an announcement that was used to advertise a workshop on programming artificial neural networks at ITS 2019 in Jamaica,WT9PkhFT_dO
+358,The tutorial's goal was to show how to program a simple neural network that is able to decide the XOR function in a 45 minutes live coding session,WT9PkhFT_dO
+359,The tutorial also offered some source code accompanying the material: https://github.com/JordanMicahBennett/BASIC-ARTIFICIAL-NEURAL-NETWORK_FROM-LIVE-JAVA-SESSION,WT9PkhFT_dO
+360,While I do think that the tutorial is valuable (esp,WT9PkhFT_dO
+361,"for the Jamaican programming/growing AI community), I think the submission is not suited well for this particular workshop: 1",WT9PkhFT_dO
+362,"it does not adhere to the formatting guidelines stating the ICML template, 2",WT9PkhFT_dO
+363,I there recommend to reject this submission.,WT9PkhFT_dO
+364,It would have been a great opportunity to share some of the lessons learned from the tutorial held in 2019,WT9PkhFT_dO
+365,I very much encourage the author to resubmit such an experience report to the next edition of the workshop,WT9PkhFT_dO
+366,"Still, attending the workshop and contributing to a shared position paper could be envisioned.",WT9PkhFT_dO

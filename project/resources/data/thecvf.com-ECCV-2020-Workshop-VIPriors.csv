@@ -1,0 +1,622 @@
+,Description,forum
+0,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",iN5F7NK9ipZ
+1,The authors propose to modify GANs by augmenting the generator outputs according to visual priors on their fashion dataset,iN5F7NK9ipZ
+2,The results are visually more appealing.,iN5F7NK9ipZ
+3,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,iN5F7NK9ipZ
+4,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,iN5F7NK9ipZ
+5,- Presentation needs a lot of work (see detailed comments);,iN5F7NK9ipZ
+6,- Incremental contribution over existing works;,iN5F7NK9ipZ
+7,[Overall rating] Paper rating: marginal accept,iN5F7NK9ipZ
+8,[Justification] The idea is very interesting and applicable to the workshop,iN5F7NK9ipZ
+9,Please take the time to revise the final version of your paper using the detailed comments.,iN5F7NK9ipZ
+10,[Detailed comments] Additional comments regarding the paper (e.g,iN5F7NK9ipZ
+11,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",iN5F7NK9ipZ
+12,- Section headers should be revised to match paper conventions (i.e,iN5F7NK9ipZ
+13,- Equations in section 2 either need more explanation or need to be replaced by references,iN5F7NK9ipZ
+14,"- Sections 1 and 2 contain very broad and imprecise phrasing, e.g",iN5F7NK9ipZ
+15,"""The notion of a virtual generator which produces images of desired properties has been introduced"", ""[...] transforms a generated image to the one with specified properties to other related problems.""",iN5F7NK9ipZ
+16,- Figures should be close to their place in the text,iN5F7NK9ipZ
+17,"- Vague phrasing: lines 48 ""them""",iN5F7NK9ipZ
+18,- Line 227: where is this term added?,iN5F7NK9ipZ
+19,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",iN5F7NK9ipZ
+20, This paper describes a method based on GANs to generate fashion images with different textures.,iN5F7NK9ipZ
+21,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,iN5F7NK9ipZ
+22,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,iN5F7NK9ipZ
+23, -	The structure of the paper is not clear.,iN5F7NK9ipZ
+24,Authors do not mention anything about it,iN5F7NK9ipZ
+25, -	Other topics where GANs are used similarly?,iN5F7NK9ipZ
+26,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,iN5F7NK9ipZ
+27, Weaknesses from point 3 justify rating,iN5F7NK9ipZ
+28,[Detailed comments] Additional comments regarding the paper (e.g,iN5F7NK9ipZ
+29,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",iN5F7NK9ipZ
+30,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",GHaQlkoNM-p
+31,"The authors combine a novel variant of CutMix augmentation, designed for long-tailed datasets, with multi-scale attention",GHaQlkoNM-p
+32,They show their method outperforms a trivial baseline.,GHaQlkoNM-p
+33,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,GHaQlkoNM-p
+34,- Good submission as a technical report to the challenge.,GHaQlkoNM-p
+35,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,GHaQlkoNM-p
+36,- Not a good paper for the workshop paper track: marginal contribution; no hypotheses; no experiments other than final model vs,GHaQlkoNM-p
+37,- Not related to visual inductive priors,GHaQlkoNM-p
+38,[Overall rating] Paper rating: Clear reject,GHaQlkoNM-p
+39,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",GHaQlkoNM-p
+40,The paper proposes a multi-scale version of CutMix that boosts the occurance of scarce data classes and combines it with scale attention,GHaQlkoNM-p
+41,Significant performance improvements are shown on the Minicity segmentation dataset.,GHaQlkoNM-p
+42,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,GHaQlkoNM-p
+43,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,GHaQlkoNM-p
+44,* The technical contribution is marginal and does not have a scientific motivation.,GHaQlkoNM-p
+45,* The explantion of the method is not very clear:,GHaQlkoNM-p
+46, * How are the classes divided into the buckets based on the label distribution?,GHaQlkoNM-p
+47, * Why is it necessary to compute the label distribution if the classes are redistributed based on the model performance?,GHaQlkoNM-p
+48, * How does the scale attention part of the method work? It would have been nice to explain it in the report.,GHaQlkoNM-p
+49,* There are no ablation studies showing the individual effect of multi-scale CutMix and scale attention on the segmentation performance and therefore it is not clear what makes this method effective.,GHaQlkoNM-p
+50,OK but not good enough - rejecion,GHaQlkoNM-p
+51,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,GHaQlkoNM-p
+52,"Although the proposed method seems effective, the contribution is marginal and is not scientifically motivated.",GHaQlkoNM-p
+53,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",R6YWiPVOQBo
+54,"The paper proposes a new temporal convolution operator (3D TCDC), that combines a vanilla 3D convolution operator with a ""Temporal Central Difference"" term, and an optical flow guided Rank Pooling operation to compress the raw RGB input stream to a more compact single vector",R6YWiPVOQBo
+55,A two stream network leverages both optical flow and the rank pooling representation to perform the task of action recognition,R6YWiPVOQBo
+56,The method is evaluated on the VIPriors action recognition dataset and significant performance improvements are shown.,R6YWiPVOQBo
+57,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,R6YWiPVOQBo
+58,* I like that the authors propose 3D TCDC as a new fundamental building block for 3D CNNs; the method seems interesting.,R6YWiPVOQBo
+59,* The method seems effective on the dataset it has been evaluated on.,R6YWiPVOQBo
+60,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,R6YWiPVOQBo
+61,* The paper is too compact and omits some prerequisites that would make the method much more easy to understand,R6YWiPVOQBo
+62,Especially section 3 would benefit from a more detailed explanation:,R6YWiPVOQBo
+63, * What does the temporal CD term in equation (1) do and what is the motivation behind it? It would have helped to provide a short recap of [13].,R6YWiPVOQBo
+64," * Similarly for the Rank Pooling operation: what is the motivation behind equation (2)? Which variable is optimized and what does the optimization represent? What are $\omega$, $\delta$, $\xi$? The authors could have at least referred to previous work on rank pooling.",R6YWiPVOQBo
+65," * How are the two streams fused, i.e",R6YWiPVOQBo
+66,"what is ""Probability fusion"" in Fig",R6YWiPVOQBo
+67,* It would have been nice if the method would have been evaluated on multiple datasets,R6YWiPVOQBo
+68,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,R6YWiPVOQBo
+69,The proposed method seems interesting and effective,R6YWiPVOQBo
+70,"However, the paper provides too little explanation on the method",R6YWiPVOQBo
+71,"Nevertheless, I'm willing to accept the paper in the hope that the authors can further elaborate on the for the camera-ready version.",R6YWiPVOQBo
+72,[Detailed comments] Additional comments regarding the paper (e.g,R6YWiPVOQBo
+73,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",R6YWiPVOQBo
+74,"* The abbreviation ""C3D"" is never explained.",R6YWiPVOQBo
+75,"* (line 202) ""We assume it’s caused by the irrelevant features with local optima.""   ",R6YWiPVOQBo
+76,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",R6YWiPVOQBo
+77, This paper introduces a data-efficient pipeline to address the problem of action recognition,R6YWiPVOQBo
+78,It is based on a two-stream model that utilizes an enhanced C3D network,R6YWiPVOQBo
+79,The convolutions in the C3D are modified to include a 3D Temporal Central Difference Convolution term,R6YWiPVOQBo
+80,"Instead of working with RGB, authors proposed to use Rank Pooling guided with Optical Flow",R6YWiPVOQBo
+81,"Additionally, this work is ranked 2nd in de VIPriors Action Recognition Challenge.",R6YWiPVOQBo
+82,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,R6YWiPVOQBo
+83," -	Modification of the convolution, integrating a new term.",R6YWiPVOQBo
+84, -	2nd Position in the challenge.,R6YWiPVOQBo
+85,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,R6YWiPVOQBo
+86, -	The paper feels more like a technical report than a proper paper.,R6YWiPVOQBo
+87, -	The introduction needs more motivation.,R6YWiPVOQBo
+88, -	Experiments are very much focused on the challenge,R6YWiPVOQBo
+89,Only modifying the convolution would need more justification,R6YWiPVOQBo
+90,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,R6YWiPVOQBo
+91, Weaknesses of point 3 justify the rating.,R6YWiPVOQBo
+92,[Detailed comments] Additional comments regarding the paper (e.g,R6YWiPVOQBo
+93,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",R6YWiPVOQBo
+94," Please, include Rank Pooling citation, it seems is introduced by the authors.",R6YWiPVOQBo
+95,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",s-OSwnzXvEi
+96,The paper proposes a novel CNN architecture for semantic segmentation based on U-Net and MobileNetV3 blocks,s-OSwnzXvEi
+97,The proposed architecture is applied on the MiniCity dataset and performance improvements are shown.,s-OSwnzXvEi
+98,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,s-OSwnzXvEi
+99,* Clarity: the paper is clear and easy to read.,s-OSwnzXvEi
+100,* Effectiveness: the method seems effective on small-size datasets.,s-OSwnzXvEi
+101,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,s-OSwnzXvEi
+102,* Scope: The proposed architecture change is motivated by computational efficiency and parameter reduction rather than incorporating prior knowledge,s-OSwnzXvEi
+103,"Prior knowledge is only considered to motivate the techniques used for data augmentation, which are generic and widely used techniques.",s-OSwnzXvEi
+104,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,s-OSwnzXvEi
+105,"Despite being effective, the proposed architecture is not motivated by incorporating prior knowledge but rather by computational efficiency and therefore the paper falls outside of the intended scope of this workshop.",s-OSwnzXvEi
+106,[Detailed comments] Additional comments regarding the paper (e.g,s-OSwnzXvEi
+107,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",s-OSwnzXvEi
+108,"(line 173) ""We divide the learning rate by 10 at ",s-OSwnzXvEi
+109,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",s-OSwnzXvEi
+110,The paper proposes new U-Net architecture which uses MobileNetV3 blocks.,s-OSwnzXvEi
+111,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,s-OSwnzXvEi
+112,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,s-OSwnzXvEi
+113,- Only changing the architecture and no prior rather than generic data augmentation,s-OSwnzXvEi
+114,- It is more like technical report.,s-OSwnzXvEi
+115,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating,s-OSwnzXvEi
+116,[Detailed comments] Additional comments regarding the paper (e.g,s-OSwnzXvEi
+117,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",s-OSwnzXvEi
+118,- Why the 'related works' are related to the paper is missing.,s-OSwnzXvEi
+119,- L.32: Is any meaningful pretraining available for medical data?,s-OSwnzXvEi
+120,- Simple present tense instead of past tense,s-OSwnzXvEi
+121,"- L.24: ""..appoaches.."" (only one is given.)",s-OSwnzXvEi
+122,"- L.57: classifying objects[?,?,?], detecting objects[?,?,?], estimating pose[?,?,?]",s-OSwnzXvEi
+123,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",UPbbSsBzfEW
+124,The paper proposes a combination of extensive data augmentation and model ensembling to train deep neural networks in a data efficient manner,UPbbSsBzfEW
+125,Experiments are performed on small-size classification and segmentation datasets and performance improvements are shown.,UPbbSsBzfEW
+126,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,UPbbSsBzfEW
+127,* Clarity: the paper is clear and easy to read.,UPbbSsBzfEW
+128,* Effectiveness: the method seems effective on small-size datasets.,UPbbSsBzfEW
+129,* Reproducibility: the experiments are well documented and include relevant hyperparameters.,UPbbSsBzfEW
+130,* Experiments: the effectiveness of the method is empirically demonstrated through ablation studies.,UPbbSsBzfEW
+131,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,UPbbSsBzfEW
+132,* The papers mostly makes use of existing data augmentation techniques and therefore lacks novelty,UPbbSsBzfEW
+133,The only seemingly novel contribution is the Frequency Weighted (FW) model ensemble method for dealing with the imbalanced class distribution in the semantic segmentation experiments.,UPbbSsBzfEW
+134,334-359) The paper claims that FW model ensembling is beneficial for low frequency classes but does not support this claim with empirical results,UPbbSsBzfEW
+135,The authors should have included a comparison of per-class IoU scores between the baseline method and the proposed method.,UPbbSsBzfEW
+136,"147-149) ""...mixup extends the training distribution by incorporating the prior knowledge that linear interpolations of feature vectors should lead to linear interpolations of the associated targets.""",UPbbSsBzfEW
+137,The argument of the proposed method for incorporating prior knowledge is fairly weak and is related to existing work (Mixup),UPbbSsBzfEW
+138,The paper therefore seems to fall outside of the intended scope of this workshop.,UPbbSsBzfEW
+139,* 5: Marginally below acceptence threshold,UPbbSsBzfEW
+140,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,UPbbSsBzfEW
+141,"Despite the effectiveness of the data augmentation and model ensembling techniques, the proposed method is mainly not novel and the argument for incorporating prior knowledge is weak.",UPbbSsBzfEW
+142,[Detailed comments] Additional comments regarding the paper (e.g,UPbbSsBzfEW
+143,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",UPbbSsBzfEW
+144,* A table including per-class IoU scores and class occurances should be included for the segmentation experiment.,UPbbSsBzfEW
+145,* It would be nice to see example images for the proposed data augmentation method for image classification as well.,UPbbSsBzfEW
+146,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",UPbbSsBzfEW
+147,"The paper shows an ensemble of multiple models, which are trained with various augmentation techniques, improves the performance of image classification and segmentation tasks",UPbbSsBzfEW
+148,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,UPbbSsBzfEW
+149,- Performance on classification and segmentation tasks,UPbbSsBzfEW
+150,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,UPbbSsBzfEW
+151,- There is no proper Related Works section.,UPbbSsBzfEW
+152,- The structure of the paper is hard to follow and there are jumps from a topic to another.,UPbbSsBzfEW
+153,- A lot of missing citations,UPbbSsBzfEW
+154,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,UPbbSsBzfEW
+155,The paper is more technical report than an academic paper.,UPbbSsBzfEW
+156,[Detailed comments] Additional comments regarding the paper (e.g,UPbbSsBzfEW
+157,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",UPbbSsBzfEW
+158,	> L.45: 'Methods' (only one method),UPbbSsBzfEW
+159,	> L.78: 'frequency weighted model ensemble',UPbbSsBzfEW
+160,	> L.367: 'Conventional semantic segmentation models..',UPbbSsBzfEW
+161,- L.217: The second part of formula is not explained.,UPbbSsBzfEW
+162,"- L.267: No need for ""Please..""",UPbbSsBzfEW
+163,"- L.298: What is ""m"" in the formula and Fig 2?",UPbbSsBzfEW
+164,"- L.313: ""TTA"" can be given in paranthesis",UPbbSsBzfEW
+165,- L.337: It is not clear if the sentence is about the segmentation or both classification and segmentation.,UPbbSsBzfEW
+166,"- L.355, 356, 368 etc: Future tense can be changed as simple present tense.",UPbbSsBzfEW
+167,"- L.343, 344, 347, 352: Frequency can be misunderstood, instead, frequent or occuring etc can be used.",UPbbSsBzfEW
+168,- L.374: HRNetV2 and Object Contextual Representation methods should be in Related works section.,UPbbSsBzfEW
+169,- L.399: Link can be footnote.,UPbbSsBzfEW
+170,There should be a consistency about refering the tables,UPbbSsBzfEW
+171,In some cases they are as 'Table' and for other cases as 'Tab.',UPbbSsBzfEW
+172,- L.516: Did the authors train the segmentation networks 4840 epochs or it is a typo?,UPbbSsBzfEW
+173,"- L.579: ""We observed several interesting phenomena.."" It is not clear that what are those findings.",UPbbSsBzfEW
+174,- Please remove intermediate horizontal lines in the tables (booktabs latex),UPbbSsBzfEW
+175,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",v_KSmk9B5kt
+176,The authors propose modifying an image classification CNN to add prototype matching with support for partial matches to be more robust to object occlusions,v_KSmk9B5kt
+177,An additional top-down feedback module helps reduce the artefacts caused by occlusions.,v_KSmk9B5kt
+178,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,v_KSmk9B5kt
+179,Extensive experimentation including ablation studies; great amount of analysis to give insight into results.,v_KSmk9B5kt
+180,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,v_KSmk9B5kt
+181,Amount of related works included in comparisons is limited; there are better models than VGG to use as baseline; experiments on real occlusions (i.e,v_KSmk9B5kt
+182,COCO) are limited and complex in setup.,v_KSmk9B5kt
+183,[Detailed comments] Additional comments regarding the paper (e.g,v_KSmk9B5kt
+184,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",v_KSmk9B5kt
+185,"- Line 437: details on ""insufficiency of images"" are needed",v_KSmk9B5kt
+186,- Table 2: replace numbered accuracies with some description in the table header,v_KSmk9B5kt
+187,- Line 528: table reference broken,v_KSmk9B5kt
+188,"- Multiple places: ""Experiments will show"" -> ""Experiments in section x show"", or alternatively consider reorganizing the paper to not (have to) refer to future sections.",v_KSmk9B5kt
+189,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",v_KSmk9B5kt
+190, The paper describes an object classification pipeline to better generalize in difficult occluded scenarios,v_KSmk9B5kt
+191,"It is composed of three main concepts: prototype learning, partial matching and top-down modulation",v_KSmk9B5kt
+192,"Experiments show the benefits of the pipeline at different levels of occlusion in a simulated scenario, as well as in a real scenario",v_KSmk9B5kt
+193,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,v_KSmk9B5kt
+194, -	The paper is well motivated and clear.,v_KSmk9B5kt
+195, -	The incremental experimental set-up helps understand the benefits of each of the concepts.,v_KSmk9B5kt
+196," -	In the concrete experimental set-up authors propose (vehicle images), the pipeline works.",v_KSmk9B5kt
+197, -	The paper clearly studies how to include visual inductive priors to the network to improve generalization performance.,v_KSmk9B5kt
+198,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,v_KSmk9B5kt
+199," -	The paper seems to have a very controlled experimental set-up, using only vehicles",v_KSmk9B5kt
+200,It would be interesting to study how the method performs with different objects.,v_KSmk9B5kt
+201," -	Additionally, a comparison with state-of-the-art approaches in this task would add value to the paper.",v_KSmk9B5kt
+202,	- Why 512 dictionary components? Why does it work for all datasets?,v_KSmk9B5kt
+203,"	- Have authors tried to use a different model, apart from VGG?",v_KSmk9B5kt
+204,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,v_KSmk9B5kt
+205," Readability and use of inductive priors, very positive",v_KSmk9B5kt
+206,Weaknesses are further questions to the paper.,v_KSmk9B5kt
+207,[Detailed comments] Additional comments regarding the paper (e.g,v_KSmk9B5kt
+208,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",v_KSmk9B5kt
+209,Is there any way to change this?,v_KSmk9B5kt
+210, -	Line 533-539: Shape of prototypes,v_KSmk9B5kt
+211,"This would be quite interesting to have it in the main paper, not in the supplementary material",v_KSmk9B5kt
+212,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",yc54rY6_tX6
+213,This paper addresses the task of unsupervised learning of video representations for action recognition,yc54rY6_tX6
+214,"Following current trend for image representation learning, authors propose first to adapt [46] and [49] for video instance recognition and local aggregation respectively",yc54rY6_tX6
+215,"Since results prove that these methods do not capture motion, which is clearly important for action recognition, they proposed to force a 3D ConvNet to learn embeddings from IDTs",yc54rY6_tX6
+216,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,yc54rY6_tX6
+217,The whole paper is well written and motivations are very well stated.,yc54rY6_tX6
+218,"Although authors obtained promising results by correctly adapting [46] and [49], they went further and analyzed errors.",yc54rY6_tX6
+219,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,yc54rY6_tX6
+220,A strong hypothesis of the paper is that motion is important to recognize actions in videos,yc54rY6_tX6
+221,"And current 3D convnets models cannot learn it, while they tend to only learn appearance",yc54rY6_tX6
+222,"For this reason, authors use IDTs.",yc54rY6_tX6
+223,"This hypothesis seems unfair since 3D convs can be trained with flow, or even two-stream.",yc54rY6_tX6
+224,"Have authors try their Video IR and Video LA using directly optical flow, or introducing a two-stream model? (C3D, I3D, R(2+1), TSN,…)",yc54rY6_tX6
+225,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,yc54rY6_tX6
+226,"Good research story, good experimental set-up but arguable assumption.",yc54rY6_tX6
+227,[Detailed comments] Additional comments regarding the paper (e.g,yc54rY6_tX6
+228,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",yc54rY6_tX6
+229,Do authors plan to release supplementary material they claim to have in the paper?,yc54rY6_tX6
+230,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",yc54rY6_tX6
+231,The paper proposes a method which uses IDT descriptor and 3DConvNet to obtain action clusters and learns the unsupervised video representation.,yc54rY6_tX6
+232,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,yc54rY6_tX6
+233,- Using IDT as prior knowledge,yc54rY6_tX6
+234,- Extensive related works and ablation study,yc54rY6_tX6
+235,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,yc54rY6_tX6
+236,- It requires training with other big dataset.,yc54rY6_tX6
+237,- Do the authors have any evidence of the performance without the usage of any other dataset?,yc54rY6_tX6
+238,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating,yc54rY6_tX6
+239,The paper has nice analyses and the proposed method outperforms other methods by using IDT descriptors and 3DConvNet.,yc54rY6_tX6
+240,[Detailed comments] Additional comments regarding the paper (e.g,yc54rY6_tX6
+241,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",yc54rY6_tX6
+242,- L.318: Can you elaborate with the fine-tuning stage?,yc54rY6_tX6
+243,"- Can you please clarify for the Table 3 if you train your network with Kinetics-400 or 600? Most of the methods (DPC, 3D-Puzzle, PMAS) in the table use Kinetics-400 for self supervised training.",yc54rY6_tX6
+244,- Do you have any memory usage and time analyses?,yc54rY6_tX6
+245,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",A4ft_k1rJ1C
+246,The authors propose a VQA method that jointly optimizes question answering and answer type classification using an ensemble of existing attention-based VQA methods,A4ft_k1rJ1C
+247,Prior information about the answer types is integrated into a weighted loss,A4ft_k1rJ1C
+248,"Modalities are fused by first merging visual and linguistic features, then merging in question type features.",A4ft_k1rJ1C
+249,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,A4ft_k1rJ1C
+250,The authors use prior information on answer types while allowing the model to account for outlier questions,A4ft_k1rJ1C
+251,The authors perform extensive experiments to show all aspects of their works.,A4ft_k1rJ1C
+252,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,A4ft_k1rJ1C
+253,It is not clear how significant the individual performance increases of each contribution are,A4ft_k1rJ1C
+254,Crucial design choices for the VQA loss are not motivated (e.g,A4ft_k1rJ1C
+255,"Presentation needs work (typos, grammar, typesetting).",A4ft_k1rJ1C
+256,"[Overall rating] Paper rating: Accept (tentative rating, subject to revision until deadline)",A4ft_k1rJ1C
+257,[Detailed comments] Additional comments regarding the paper (e.g,A4ft_k1rJ1C
+258,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",A4ft_k1rJ1C
+259,"- Please review the paper for typos, incorrect grammar and typesetting",A4ft_k1rJ1C
+260,"Specifically lines 40 (grammar), 114, 178, 260 ""constraints"", 264, 287 (capitalizing VQA), 389 ""standardly"", 436 end of line, 590 ""modaality""",A4ft_k1rJ1C
+261,"- Table 4: your method is not the highest (LXMERT is), so please do not use bold numbers",A4ft_k1rJ1C
+262,See also the claim on line 594.,A4ft_k1rJ1C
+263,"- Algorithm 1 should be expressed in math, like the other equations.",A4ft_k1rJ1C
+264,- Source for claim on line 153,A4ft_k1rJ1C
+265,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",A4ft_k1rJ1C
+266,The paper proposes a method which constrains search space by using question type information as prior information and utilizes different attentions to obtain better results.,A4ft_k1rJ1C
+267,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,A4ft_k1rJ1C
+268,- Search space constraints according to question types,A4ft_k1rJ1C
+269,- Performance and better attention maps,A4ft_k1rJ1C
+270,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,A4ft_k1rJ1C
+271,- Question types are prior knowledge yet not visual prior knowledge.,A4ft_k1rJ1C
+272,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating,A4ft_k1rJ1C
+273,[Detailed comments] Additional comments regarding the paper (e.g,A4ft_k1rJ1C
+274,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",A4ft_k1rJ1C
+275,- Fig.3: Some of the notations are not visible,A4ft_k1rJ1C
+276,"In addition, you can show modules with dashed areas with different colors.",A4ft_k1rJ1C
+277,- Table 4: Why did you make your results as bold?,A4ft_k1rJ1C
+278,- The effectiveness of multi-hypothesis interaction learning proposed,A4ft_k1rJ1C
+279,in Section 3.3: The explanation in the subsection makes confusion because the order of showing the results,A4ft_k1rJ1C
+280,It can be better to have a paragraph for each result (table).,A4ft_k1rJ1C
+281,- Will you share the code and models?,A4ft_k1rJ1C
+282,- L.436: not fitting in the line,A4ft_k1rJ1C
+283,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",LvOKdhutM-r
+284,The paper proposes a lightweight action recognition model which can run on embedded AI devices with compressed videos.,LvOKdhutM-r
+285,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,LvOKdhutM-r
+286,- Lightweight model and can fit embedded AI device,LvOKdhutM-r
+287,- Extensive related works and ablation study,LvOKdhutM-r
+288,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,LvOKdhutM-r
+289,"- Although some of information are refered as ""in the suppl",LvOKdhutM-r
+290,"material"", nothing is sent as supplamentary materials.",LvOKdhutM-r
+291,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating,LvOKdhutM-r
+292,[Detailed comments] Additional comments regarding the paper (e.g,LvOKdhutM-r
+293,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",LvOKdhutM-r
+294,- Can the proposed method work with raw videos as well?,LvOKdhutM-r
+295,- L.429: Are all the baselines use the same spatial size of the proposed method?,LvOKdhutM-r
+296,- L.600: The improvement of B-frames is not significant,LvOKdhutM-r
+297,Is there any other evidence to show B-frames are more important than P-frames?,LvOKdhutM-r
+298,- What are the limitations of the work?,LvOKdhutM-r
+299,- L.438: giving full form of FPS,LvOKdhutM-r
+300,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",LvOKdhutM-r
+301,The paper describes a new lighter and more efficient model (ATTP) for the problem of Compressed Video Action Recognition,LvOKdhutM-r
+302,"As backbone, the adopt the EfficientNet network",LvOKdhutM-r
+303,"To better use the information of frames, motion and residuals, the authors also introduce a temporal fusion module (Trilinear Pooling) and a feature alignment method",LvOKdhutM-r
+304,Experiments show ATTP can reach state-of-the-art results by using a lighter model,LvOKdhutM-r
+305,Ablation experiments also demonstrate the benefits of all the modules.,LvOKdhutM-r
+306,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,LvOKdhutM-r
+307,The whole paper is well written and the motivations are well stated.,LvOKdhutM-r
+308,The set of experiments is very readable and clear.,LvOKdhutM-r
+309,The authors clearly demonstrate they can achieve state-of-the-art results using a lighter model.,LvOKdhutM-r
+310,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,LvOKdhutM-r
+311,"More than clear weaknesses, I miss some little further justifications:",LvOKdhutM-r
+312,-	It is clear that feature alignment improves accuracy but interestingly the lambda parameter of the whole ATTP loss (Eq,LvOKdhutM-r
+313,I would also have appreciated an experiment varying this parameter to see the actual influence of it.,LvOKdhutM-r
+314,"-	Regarding the type of frames used, although Fig",LvOKdhutM-r
+315,"4 seems pretty informative, it would also be interesting to see how I, B and P frames affect to computation efficiency, with an experiment like in Table 1.",LvOKdhutM-r
+316,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,LvOKdhutM-r
+317,"Aforementioned strengths and weaknesses explain the rating, but to clarify: good readability, well motivated, sufficient set of experiments and results",LvOKdhutM-r
+318,[Detailed comments] Additional comments regarding the paper (e.g,LvOKdhutM-r
+319,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",LvOKdhutM-r
+320,The Action Localization experiment that authors indicated to be in the supplementary material seems interesting,LvOKdhutM-r
+321,I wonder if authors plan to release the supplementary material as well.,LvOKdhutM-r
+322,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",8V9lE-zP0ZL
+323,The paper proposes to use contrastive pre-training to construct a visal prior (i.e,8V9lE-zP0ZL
+324,the model weights) and subsequently initializes both a teacher and student model with the pre-trained weights to finetune the student network on the dataset while  imposing an additional distillation loss between the frozen teacher and unfrozen student networks.,8V9lE-zP0ZL
+325,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,8V9lE-zP0ZL
+326,* The paper is clear and is easy to understand,8V9lE-zP0ZL
+327,* The method is interesting and seems to perform well,8V9lE-zP0ZL
+328,"* The ablation studies clealy show which portion of the performance gain can be accredited to the proposed method and which portion is due to additional tricks, such as data augmentation.",8V9lE-zP0ZL
+329,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,8V9lE-zP0ZL
+330,* It would have been nice to include experiments on an additional (toy) dataset such as MNIST or SVHN to show that the method generalizes to other tasks.,8V9lE-zP0ZL
+331,* Conclusion section is missing; the paper is ending rather abruptly.,8V9lE-zP0ZL
+332,"8: Top 50% of accepted papers, clear accept",8V9lE-zP0ZL
+333,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,8V9lE-zP0ZL
+334,The method is interesting and seems to perform well,8V9lE-zP0ZL
+335,"In addition, the paper is well-written",8V9lE-zP0ZL
+336,"Please consider extending the paper with a ""Conclusion"" section.",8V9lE-zP0ZL
+337,[Detailed comments] Additional comments regarding the paper (e.g,8V9lE-zP0ZL
+338,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",8V9lE-zP0ZL
+339,* What is $\tau$ in equation (1)?,8V9lE-zP0ZL
+340,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",8V9lE-zP0ZL
+341,"The method has two stages: (i) a teacher network is trained with contrastive learning to obtain feature representation, (ii) the knowledge of the teacher network is transferred to student network by distillation, in the meantime, the student network is also finetuned with labels",8V9lE-zP0ZL
+342,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,8V9lE-zP0ZL
+343,- Using a margin to overcome the small bank size problem ,8V9lE-zP0ZL
+344,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,8V9lE-zP0ZL
+345,- No conclusion and discussion section.,8V9lE-zP0ZL
+346,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating,8V9lE-zP0ZL
+347,[Detailed comments] Additional comments regarding the paper (e.g,8V9lE-zP0ZL
+348,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",8V9lE-zP0ZL
+349,"- How is the margin value chosen? In the text, it is given as 0.6 but in the table, the value is 0.4.",8V9lE-zP0ZL
+350,- Related works: Why is there any margin loss part?,8V9lE-zP0ZL
+351,"simply memorize the dataset and can not generalize well to unseen data..""",8V9lE-zP0ZL
+352,"	> L.31:""..some works.."" (only given one)",8V9lE-zP0ZL
+353,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",PnuDpxJvR0q
+354,The paper proposes a simple method for unsupervised deep clustering by iteratively (1) generating pseudo-labels by performing a forward pass through a CNN and (2) training the CNN using the generated pseudo-labels,PnuDpxJvR0q
+355,The method is evaluated on ImageNet and performs competitively with other unsupervised learning methods.,PnuDpxJvR0q
+356,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,PnuDpxJvR0q
+357,"* The method is surprisingly simple and seems to perform competitively with clustering in latent space, which is much more computationally expensive.",PnuDpxJvR0q
+358,* The paper is well written and easy to understand.,PnuDpxJvR0q
+359,* The performed experiments are sound and demonstrate the effectiveness of the method.,PnuDpxJvR0q
+360,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,PnuDpxJvR0q
+361,* The bold numbers in Table 3 are rather misleading as they do not actually denote the best performance.,PnuDpxJvR0q
+362,"* 8: Top 50% of accepted papers, clear accept",PnuDpxJvR0q
+363,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,PnuDpxJvR0q
+364,The method is simple and effective and the paper is well written.,PnuDpxJvR0q
+365,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",PnuDpxJvR0q
+366,Authors in this paper described a modification of the embedding clustering method (DeepCluster) presented in [2],PnuDpxJvR0q
+367,"Different from DeepCluster, this work proposes a unified pipeline, where clustering is directly performed using an image classification task",PnuDpxJvR0q
+368,Experiments show first that their method achieves same or better performance than that of DeepCluster.,PnuDpxJvR0q
+369,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,PnuDpxJvR0q
+370,The authors found out that the embedding clustering phase in the previous method DeepCluster [2] can be avoided and its two phases can directly be performed using a classification task.,PnuDpxJvR0q
+371,The method is pretty simple but it obtains state-of-the-art results.,PnuDpxJvR0q
+372,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,PnuDpxJvR0q
+373,The paper seems a bit difficult to read,PnuDpxJvR0q
+374,I found it a bit difficult to follow the story.,PnuDpxJvR0q
+375,"The whole paper is built on top of the work of [2], when considering the results, it could be described as a contribution to the field by itself.",PnuDpxJvR0q
+376,"Although authors propose to use different visual data augmentation (at the beginning only random crop and then further extending it with SimCLR techniques), and claim efficiency as they avoid storing embeddings, the work does not seem to be very much related to study visual inductive priors.",PnuDpxJvR0q
+377,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,PnuDpxJvR0q
+378,"With a simpler method, the paper shows good results",PnuDpxJvR0q
+379,"However, readability, structure and out of scope possibility lower the score",PnuDpxJvR0q
+380,[Detailed comments] Additional comments regarding the paper (e.g,PnuDpxJvR0q
+381,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",PnuDpxJvR0q
+382,I suggest the authors to increase the size of Fig,PnuDpxJvR0q
+383,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",S4kvQ7_XBxP
+384,The authors propose a new type of neuron designed for contour recognition,S4kvQ7_XBxP
+385,They detail an extensive algorithm for training these neurons without back-propagation,S4kvQ7_XBxP
+386,They show their method can outperform convolutional methods in low FLOWs regime and is more robust against adversarial attacks.,S4kvQ7_XBxP
+387,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,S4kvQ7_XBxP
+388,Creative approach to a hard problem (replacing the convolutional neuron); builds on related work where possible; solid experiments.,S4kvQ7_XBxP
+389,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,S4kvQ7_XBxP
+390,"Many heuristics are needed to optimize the strong neuron, while the effect of the heuristics are not analyzed or explored",S4kvQ7_XBxP
+391,"In the same vein, an ablation study, including the effects of the unsupervised backbone, would have helped to make the work more solid.",S4kvQ7_XBxP
+392,[Detailed comments] Additional comments regarding the paper (e.g,S4kvQ7_XBxP
+393,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",S4kvQ7_XBxP
+394,"- Lines 156-157, 189-190 are unclear to me",S4kvQ7_XBxP
+395,"- Section 7.1 addresses the reader as ""you""",S4kvQ7_XBxP
+396,"Use of more formal ""one"" would be advised.",S4kvQ7_XBxP
+397,- Change brackets to separate sentences (e.g,S4kvQ7_XBxP
+398,"- Minor typos: lines 490 ""shalow""",S4kvQ7_XBxP
+399,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",S4kvQ7_XBxP
+400,"The paper proposes a novel, computationally efficient artificial ""strong neuron"" for sparse neural networks that combines low-level features through AND and OR operations and a corresponding training strategy",S4kvQ7_XBxP
+401,The resulting networks are evaluated on the GTSRB (German traffic sign) and SVHN datasets and show competitive results in both classification error and adversarial stability.,S4kvQ7_XBxP
+402,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,S4kvQ7_XBxP
+403,"* The proposed ""strong neurons"" are definitely a novel and interesting idea and the motivation is clearly explained through Figure 1.",S4kvQ7_XBxP
+404,* The method seems effective on the evaluated datasets.,S4kvQ7_XBxP
+405,* The paper is generally well written and easy to follow.,S4kvQ7_XBxP
+406,* Code is made available which will hopefully spark interest for research into alternatives to traditional CNNs.,S4kvQ7_XBxP
+407,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,S4kvQ7_XBxP
+408,* The optimization method is based on a lot of heuristics to simplify the otherwise intractable brute force approach,S4kvQ7_XBxP
+409,"Although the optimization method seems effective (based on the performance), it is hard to evaluate the possible negative effects of these simplifications on the model performance.",S4kvQ7_XBxP
+410,* The training strategy not allowing to use mini-batches seems like a major drawback for training on large-scale or high resolution datasets like ImageNet or CityScapes.,S4kvQ7_XBxP
+411,"Top 50% of accepted papers, clear accept",S4kvQ7_XBxP
+412,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,S4kvQ7_XBxP
+413,The authors have proposed a novel and interesting alternative to traditional CNNs and have shown its effectiveness.,S4kvQ7_XBxP
+414,[Detailed comments] Additional comments regarding the paper (e.g,S4kvQ7_XBxP
+415,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",S4kvQ7_XBxP
+416,"* Combine multiple references into same brackets, i.e",S4kvQ7_XBxP
+417,"([1], [2], [3]) should be [1,2,3].",S4kvQ7_XBxP
+418,* What do $k$ and $i$ represent in equation (1) and line 125/126?,S4kvQ7_XBxP
+419,* The paper would be easier to read if a conclusion would be included in the image captions (i.e,S4kvQ7_XBxP
+420,what point is the image trying to make).,S4kvQ7_XBxP
+421,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",f75kMo1dnKD
+422,The authors propose two adding to prior knowledge based modules to image captioning models,f75kMo1dnKD
+423,One module uses prior knowledge on the association of keywords to image regions,f75kMo1dnKD
+424,The other module regularizes generated captions to be more realistic.,f75kMo1dnKD
+425,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,f75kMo1dnKD
+426,Simple but powerful ideas; clear methods; topical submission; excellent writing.,f75kMo1dnKD
+427,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,f75kMo1dnKD
+428,By nature of the method experimental settings are complex; ,f75kMo1dnKD
+429,[Overall rating] Paper rating: Strong accept,f75kMo1dnKD
+430,[Detailed comments] Additional comments regarding the paper (e.g,f75kMo1dnKD
+431,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",f75kMo1dnKD
+432,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",f75kMo1dnKD
+433, The paper tries to mitigate overfitting and generating easy captions by introducing prior knowledge from the dataset during training,f75kMo1dnKD
+434,"To this end, authors propose to add visual-semantic relation prior knowledge by defining a series of Latent Topics, and semantic prior knowledge by training a Seq2seq module with the text",f75kMo1dnKD
+435,"While the former is introduced in the training procedure as a self-attention with image region features, the latter is utilized to remove visual biased on semantic structures",f75kMo1dnKD
+436,"Apart from increasing results of state-of-the-art approaches, they demonstrate that with their approach, image captioning models can rely on less data when training.",f75kMo1dnKD
+437,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,f75kMo1dnKD
+438, -	The paper is easy to read,f75kMo1dnKD
+439, -	It is very well motivated.,f75kMo1dnKD
+440, -	Benefits of both modules (CLTA and SAE Regularizer) are clearly demonstrated in the experiments.,f75kMo1dnKD
+441, -	The implementation is very well explained in detail.,f75kMo1dnKD
+442, -	The benefits of adding prior knowledge (visual and semantic) is showed.,f75kMo1dnKD
+443," -	Additionally, authors demonstrate the relevance of prior knowledge as it allows to train models with less data.",f75kMo1dnKD
+444,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,f75kMo1dnKD
+445," -	Although the improvement exists, in some situations it is marginal.",f75kMo1dnKD
+446,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,f75kMo1dnKD
+447,"Well written, well motivated, simple method and positive results",f75kMo1dnKD
+448,"On top of that, very much in line with the workshop.",f75kMo1dnKD
+449,[Detailed comments] Additional comments regarding the paper (e.g,f75kMo1dnKD
+450,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",f75kMo1dnKD
+451,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",Vh-OGLzvNeo
+452,The paper proposes the Dual Selective Kernal residual building block consisting of Selective Kernel convolutions [17] and BlurPool layers [35],Vh-OGLzvNeo
+453,"Furthermore, a novel positive class loss is introduced motivated by the low number of samples per class and possible label errors, and a tree supervision loss to incorporate semantic relationships amongst the ImageNet classes",Vh-OGLzvNeo
+454,Different models are trained and evaluated on the VIPriors classification dataset where significant performance improvements are shown.,Vh-OGLzvNeo
+455,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,Vh-OGLzvNeo
+456,* Ablation studies have been performed to show the effectiveness of the individual contributions (i.e,Vh-OGLzvNeo
+457,"* Apart from several unclarities in the method section (see 3.), the paper is easy to read.",Vh-OGLzvNeo
+458,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,Vh-OGLzvNeo
+459,* The method section contains some unclarities:,Vh-OGLzvNeo
+460," * (lines 128-129) What are the the two transforms $\mathcal{\hat{F}}$ and $\mathcal{\tilde{F}}$ and where are these in Figure 1? Do you first perform regular 3x3 and 5x5 convolutions, followed by depthwise convolutions? I also don't see the Batch Normalization and ReLU layers and $\mathcal{U}$ in Figure 1.",Vh-OGLzvNeo
+461," * (line 132) ""a compact feature $s$...""",Vh-OGLzvNeo
+462,  $s$ should be $z$ according to Figure 1?,Vh-OGLzvNeo
+463," * (line 135) ""soft attention across channels is conducted""",Vh-OGLzvNeo
+464,  It is unclear how the softmax operation is applied,Vh-OGLzvNeo
+465,Is it applied per channel between $\hat{\omega}$ and $\tilde{\omega}$ or across all channels of $\hat{\omega}$ and all channels of $\tilde{\omega}$ separately? The former seems more reasonable but the text is not very explicit about it.,Vh-OGLzvNeo
+466, * $\lambda$ in equation (2) and lines (160-162) is $\alpha$ in Figure 1?,Vh-OGLzvNeo
+467," * lines (168-169) ""compactness of intra-class"" sounds a bit ambiguous",Vh-OGLzvNeo
+468, * Can you explain the positive class loss as introduced in equation (5)? What is the motivation behind chosing the cosine loss? Please elaborate.,Vh-OGLzvNeo
+469," * What is $l$ in equation (7)? Where do you extract $w_{i,j}$ and $x$ from? Can you intuitively explain how the loss function works and what is optimized?",Vh-OGLzvNeo
+470," * What are the motivations for the model choices? It seems a bit arbitrary that ResNeXt is combined with PSL and CL but not with TSL, and ResNeSt is combined with TSL but not with PSL and CL.",Vh-OGLzvNeo
+471,* The method is only evaluated on a single dataset,Vh-OGLzvNeo
+472,It would have been nice if the authors had shown that their method also generalizes to other settings.,Vh-OGLzvNeo
+473,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,Vh-OGLzvNeo
+474,"The methods introduced by the authors seem effective and therefore I am willing to accept the paper, in the hope that the authors will clarify and extend the method section for the camera-ready version.",Vh-OGLzvNeo
+475,[Detailed comments] Additional comments regarding the paper (e.g,Vh-OGLzvNeo
+476,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",Vh-OGLzvNeo
+477,"* Please combine multiple references in a single bracket, i.e",Vh-OGLzvNeo
+478,"[1][2][3] should become [1,2,3] and use ~\cite{} instead of \cite{} for extra spacing.",Vh-OGLzvNeo
+479," * line 18: ""VIFP"" --> VIPF",Vh-OGLzvNeo
+480, * line 88: architecture --> architectures,Vh-OGLzvNeo
+481," * line 128: ""Then we two transforms"" --> remove ""we""",Vh-OGLzvNeo
+482," * line 131: ""element-wise sum of u-hat and u-hat"" --> one of them should be tilde",Vh-OGLzvNeo
+483, * line 138: same as above: one of u-hat should be u-tilde,Vh-OGLzvNeo
+484,Please check your writing for the camera-ready version.,Vh-OGLzvNeo
+485,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",Vh-OGLzvNeo
+486,The paper smartly combines different loss functions and augmentation techniques to overcome the problem of small classification dataset,Vh-OGLzvNeo
+487,"In addition, it proposes new dual architecture by using Selective Kernel convolution.",Vh-OGLzvNeo
+488,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,Vh-OGLzvNeo
+489,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,Vh-OGLzvNeo
+490,"- Clarity (explanation of models, experiments and results)",Vh-OGLzvNeo
+491,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating,Vh-OGLzvNeo
+492,[Detailed comments] Additional comments regarding the paper (e.g,Vh-OGLzvNeo
+493,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",Vh-OGLzvNeo
+494,- Please explain why each related work part is related to the paper.,Vh-OGLzvNeo
+495,- L.115: (Fig.1) The notations in the figure are not same in the equations,Vh-OGLzvNeo
+496,Fig.1 is not refered in the text.,Vh-OGLzvNeo
+497,- Please explain each notation in each equation.,Vh-OGLzvNeo
+498,- Please explain each proposed method.,Vh-OGLzvNeo
+499,- L.161: How do you choose λi? Is it dropped from one side in each time? Is there any cases that both SK-branches can be kept or dropped?  ,Vh-OGLzvNeo
+500,"- L.344:In the conclusion part, it is said that DSK-net is robust to translations",Vh-OGLzvNeo
+501,Is there any experiments to show that?,Vh-OGLzvNeo
+502,"- L.28: ""image classification[???], object detection[???], semantic segmentation[???]""",Vh-OGLzvNeo
+503,"- L.37: what are those ""few pre-trained models""?",Vh-OGLzvNeo
+504,- L.15: effiective -> effective or efficient,Vh-OGLzvNeo
+505,"- L.147, 221, 347: Starting the sentence with ""And"" (problem)",Vh-OGLzvNeo
+506,- L.271: the word is not fitting into line.,Vh-OGLzvNeo
+507,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",ZHT0ZpxQO5E
+508," In this paper, authors propose guidelines to build proper datasets for object proposals that can offer good generalization when training models on them",ZHT0ZpxQO5E
+509,"Concretely, the paper introduces the idea of prototypical classes as the sufficient and necessary classes to achieve good generalization",ZHT0ZpxQO5E
+510,"To proof this, they conduct a series of experiments on OIV4 and COCO datasets",ZHT0ZpxQO5E
+511,"As oracles, they choose Faster RCNN and RetinaNet",ZHT0ZpxQO5E
+512,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,ZHT0ZpxQO5E
+513, -	The paper is very well written,ZHT0ZpxQO5E
+514,Story is very easy to follow.,ZHT0ZpxQO5E
+515, -	Generalization typically has been study from the model perspective,ZHT0ZpxQO5E
+516,"However, interpreting the problem from the data perspective is very interesting.",ZHT0ZpxQO5E
+517," -	Although authors focus on data, they also offer a study of what is happening with the models to validate the results.",ZHT0ZpxQO5E
+518," -	In particular, prototypical classes seems pretty interesting.",ZHT0ZpxQO5E
+519,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,ZHT0ZpxQO5E
+520, -	The effect of space granularity has a weird interpretation,ZHT0ZpxQO5E
+521,The model used for this experiment is class specific Faster RCNN,ZHT0ZpxQO5E
+522,Have the authors tried the class agnostic version?,ZHT0ZpxQO5E
+523, -	Visual and Semantic diversity seems obvious,ZHT0ZpxQO5E
+524,"It would be interesting to study also the amount of samples, as well as how similar they are.",ZHT0ZpxQO5E
+525,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,ZHT0ZpxQO5E
+526, The whole paper is interesting,ZHT0ZpxQO5E
+527,Even more from the efficiency perspective,ZHT0ZpxQO5E
+528,Prototype classes play an important role,ZHT0ZpxQO5E
+529,[Detailed comments] Additional comments regarding the paper (e.g,ZHT0ZpxQO5E
+530,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",ZHT0ZpxQO5E
+531,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",ZHT0ZpxQO5E
+532,The authors propose to learn object localizations using only prototype classes,ZHT0ZpxQO5E
+533,They explore what defines prototype classes and experiment with many ablations and hyperparameters to their method.,ZHT0ZpxQO5E
+534,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,ZHT0ZpxQO5E
+535,Powerful idea; clear definitions; practical modeling choices for determining prototypical classes; extensive experimentation.,ZHT0ZpxQO5E
+536,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,ZHT0ZpxQO5E
+537,Marginally related to visual inductive priors.,ZHT0ZpxQO5E
+538,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",tqz0rQvz_58
+539,The authors extend popular data augmentation methods to the temporal domain in a straightforward manner,tqz0rQvz_58
+540,Experiments show minor improvements over the spatial data augmentations.,tqz0rQvz_58
+541,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,tqz0rQvz_58
+542,"Simple, powerful idea; simple implementations; clear explanations; self-critical in analyzing the magnitude of their contribution; extensive evaluations.",tqz0rQvz_58
+543,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,tqz0rQvz_58
+544,[Overall rating] Paper rating: Strong accept,tqz0rQvz_58
+545,[Detailed comments] Additional comments regarding the paper (e.g,tqz0rQvz_58
+546,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",tqz0rQvz_58
+547,"- Grammar: lines 40, 254, 521 (whole paragraph needs revision)",tqz0rQvz_58
+548,"- Typos: line 130 ""squre"", 141 ""researches""",tqz0rQvz_58
+549,- Figure 2 could have been pseudocode,tqz0rQvz_58
+550,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",tqz0rQvz_58
+551, This paper proposes to adapt several data-level augmentation techniques from image field to videos,tqz0rQvz_58
+552,"To study the effects of such techniques, authors conduct experiments on the action recognition topic",tqz0rQvz_58
+553,Results showcase that some of the proposed techniques helps improve the performance,tqz0rQvz_58
+554,"Additionally, they described their participation in the 1st VIPriors Action Recognition Challenge.",tqz0rQvz_58
+555,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,tqz0rQvz_58
+556," -	Regarding the results, the paper is really well motivated and clearly understandable",tqz0rQvz_58
+557,The story is clear and is very easy to follow.,tqz0rQvz_58
+558, -	Authors clearly described how they have adapted all the techniques to video.,tqz0rQvz_58
+559, -	The results are marginal (or even worse than baseline) in some situations,tqz0rQvz_58
+560,"However, I like the fact that authors recognise it and discuss it in Section 4.6, suggesting some interesting reasons.",tqz0rQvz_58
+561,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,tqz0rQvz_58
+562, -	Results are marginal (or even worse than baseline) for some augmentation techniques.,tqz0rQvz_58
+563, -	Authors talk always about temporal distortions,tqz0rQvz_58
+564,"However, it seems that basically they apply frame distortions during a concrete temporal window",tqz0rQvz_58
+565,"For me, this is not a temporal distortion",tqz0rQvz_58
+566,Authors can check the paper “Learning Temporal Action Proposals With Fewer Labels”,tqz0rQvz_58
+567,"In this paper, data augmentation on videos is performed by modifying the temporal information accumulated by the features",tqz0rQvz_58
+568,"Concretely, they use time warping and Time masking",tqz0rQvz_58
+569,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating.,tqz0rQvz_58
+570," Despite weaknesses, the paper is well written, and very well discussed.",tqz0rQvz_58
+571,[Detailed comments] Additional comments regarding the paper (e.g,tqz0rQvz_58
+572,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",tqz0rQvz_58
+573, - Line 198: augmentation operation(s).,tqz0rQvz_58
+574, - Line 350: consists (of),tqz0rQvz_58
+575,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",N-SJaozl-3f
+576,The authors use temporal consistency through pose estimation and optical flow estimation to improve human instance segmentation,N-SJaozl-3f
+577,"Though this approach technically does not qualify as self-supervision, the temporal inductive priors are strong and show clear improvements over baselines.",N-SJaozl-3f
+578,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,N-SJaozl-3f
+579,"- Simple, powerful idea to use temporal consistency prior.",N-SJaozl-3f
+580,"- Decent implementations of each contribution, with proven results.",N-SJaozl-3f
+581,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,N-SJaozl-3f
+582,- This method is not a self-supervision method,N-SJaozl-3f
+583,Self-supervision is when a DNN learns from mistakes in predictions on the input data,N-SJaozl-3f
+584,This method instead uses prior knowledge to fill in missing information within the model.,N-SJaozl-3f
+585,- Related to the previous point: the motivation is poorly formulated,N-SJaozl-3f
+586,"It relies on a unfounded claim that self-supervision is superior to using prior knowledge, while the paper actually uses prior knowledge, specifically the temporal consistency prior",N-SJaozl-3f
+587,As a result the introduction uses vague statements without supporting evidence.,N-SJaozl-3f
+588,[Overall rating] Paper rating: Weak accept,N-SJaozl-3f
+589,[Detailed comments] Additional comments regarding the paper (e.g,N-SJaozl-3f
+590,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",N-SJaozl-3f
+591,- N_{GBSR} has zero influence in table 3 & 4,N-SJaozl-3f
+592,Why do the authors not discuss this? Why do they show it in tables 3 & 4?,N-SJaozl-3f
+593,- Fourth contribution is not a contribution,N-SJaozl-3f
+594,The experiments serve to prove your first contribution.,N-SJaozl-3f
+595,"- Line 398: not clear why the different modules get ""different data"".",N-SJaozl-3f
+596,"- Grammar: lines 39 ""have"", ",N-SJaozl-3f
+597,"- Line 486: ""subjective"" = not a fact != about subjects",N-SJaozl-3f
+598,"- Start new sentences instead of using comma: lines 43, 70, 312, 403, ",N-SJaozl-3f
+599,- Premature end to sentence: line 396,N-SJaozl-3f
+600,"[Summary] In 2-3 sentences, describe the key ideas, experiments, and their significance.",N-SJaozl-3f
+601,"The paper proposes  human instance segmentation method which has two main modules: (i) mutual refinement between optical flow and segmentation, (ii) skeleton refinement module",N-SJaozl-3f
+602,[Strengths] What are the strengths of the paper? Clearly explain why these aspects of the paper are valuable.,N-SJaozl-3f
+603,[Weaknesses] What are the weaknesses of the paper? Clearly explain why these aspects of the paper are weak.,N-SJaozl-3f
+604,"- It is emphasized that the method does self supervised learning, but it is not clear how and where it happens",N-SJaozl-3f
+605,"- There is no clear information about online collected videos, their labeling process, how they are used during training and the contribution of this dataset.",N-SJaozl-3f
+606,[Justification of rating] Please explain how the strengths and weaknesses aforementioned were weighed in for the rating,N-SJaozl-3f
+607,A nicely engineered paper which uses some prior knowledge and refinements to improve the performance.,N-SJaozl-3f
+608,[Detailed comments] Additional comments regarding the paper (e.g,N-SJaozl-3f
+609,"typos or other possible improvements you would like to see for the camera-ready version of the paper, if any.)",N-SJaozl-3f
+610,- L.82: If the priors can only function as weak constraints how do they help in this paper?,N-SJaozl-3f
+611,"- L.124: GBSR, TPR and Pose2Seg are not mentioned before and in this line, abbreviation is given",N-SJaozl-3f
+612,It can be better to give full form.,N-SJaozl-3f
+613,- Fig.3: Loss term is not visible.,N-SJaozl-3f
+614,- L.455: How exactly are the annotations generated?,N-SJaozl-3f
+615,- L.462: What are those benchmark datasets?,N-SJaozl-3f
+616,- No explanation of Table 2 in the text.,N-SJaozl-3f
+617,- What are the failing cases?,N-SJaozl-3f
+618,- How are memory and time consumption?,N-SJaozl-3f
+619,- L.279: subscripts of 'l' are different than on the Eq.2.,N-SJaozl-3f
+620,- I guess there is no reason to write methods and backbones twice in Table 1.,N-SJaozl-3f
