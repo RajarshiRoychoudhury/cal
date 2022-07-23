@@ -1,0 +1,102 @@
+I would have liked to see pre-test and post-test scores of students based on this teaching method
+What I really liked about the paper is that the authors reported first hand experiences of their students using this approach, including what went wrong in many cases
+* Missing explicit placement into a machine learning course
+I'm not sure it is entirely finished -- the "Hint" functionality did not do anything, as far as I could make out, and best practice for UI design for this kind of interactive tutorial would be to have documentation in the form of tooltips right inside the app.
+This tool is not based on any of the popular ML frameworks in R or Python, which seems another wasted teachingg opportunity
+Overall, the paper communicates a variety of the author's unique perspectives
+While paper starts strong, the conclusion is weak
+Before the conclusion, the author explains the motivations and ideas to teach machine learning using candy
+The conclusion simply states there's an ethics component included
+Unfortunately, the authors only present their teaching procedure without giving details on how well their approach worked in practice (however that could be measured...), how participants
+reacted, what they had problems with, etc
+The authors provide their teaching materials as a github repository which is great and allows direct adoption
+On the other hand, Older people might get disinterested because they might feel candies are too distracting
+* I would love to see how a few of the episodes are actually described in more detail within the paper but I understand there’s so much information that can be crammed into 4 pages.
+The four main takeaways as they are described in the paper, all seem relevant and reasonable
+As a person that also teaches ML, I would have liked to read more about the structure and the content of the workshops
+This seems to be evidenced by an overwhelming positive response
+For instance, interviews with course participants some months down the line to see if they were able to incorporate some of the introduced topics into their daily workflows or whether they were able to follow through on the collaborative projects mentioned by them
+In particular the takeaways were interesting to me and probably will be to others
+I would like to see the entire material and know under which license it could be reused.
+- I wonder if the title should reflect that the paper is centered on teaching people working in libraries (on the other hand this might stop people from reading it, so not really sure)
+- Section 4.2, line 186, typo: "conversation group conversation" 
+what model to introduce first, which metrics to concentrate on, how to angle the motivation for machine learning and how to control expectations
+The final episode of the curriculum are kaggle like projects for the students to work on.
+If I understood correctly, the course is subsequent to a basic introduction to R and python
+For sure, this is already a great effort for the students to pick up
+In this case, it is to predict the weight given the height and gender
+There are a couple of things, I'd like to stress which I hope can help the author(s) to improve the paper content (potentially for the presentation at the workshop on Sep 14):
+- page 2, line 67: the quote by Burkov is lovely, I would have loved to learn in what context it is presented
+- page 2, line 79 (right): "the evil over-fitting game" sounds very biased to me
+The text does not explain if or how the notion of evil is explained to the students
+I personally would try to dismiss these opinionated terms in courses as much as possible
+I think introducing students to adversarial attacks is a good idea, but the text leaves it unclear if that the intend
+I urge the authors to use scientific language, please
+Thanks to the authors for submitting their paper
+students outside of the science, technology, engineering, and mathematics
+(STEM) fields such as Law or Marketing.
+Apart from minor typographical mistakes which will not be covered here, some
+* line 002: The submitted paper's title does not exactly match the submission's
+* line 118: The "boy who cried wolf example of Type-I error" could benefit from
+* Even though probably known by most readers, one should write out acronyms
+Other that that, the presented course and especially the author's experience
+On a high level, the paper describes the curriculum, diving deeper into only some aspects
+Other than that I really liked some of the anecdotal cues such as giving a grade bonus based on performance on the final project or using a graphical environment for modeling
+I would have appreciated a little more insight into what the students liked/disliked or more tangible material in the form of code and data
+- Page 2, line 63: Just up for debate: While I understand the intention behind disillusioning students that were exposed to hype-fueled media reports, I am note sure if harshly stating something along the lines of "machines don't learn" or "ML is just glorified curve fitting" is strategically useful early on in a class
+After all, what constitutes learning it is still a matter of definition
+- Page 2, line 98: "predict the weight of an undergraduate student just knowing its height and gender." --> "predict the weight of undergraduate students just knowing their height and gender." or "predict the weight of an undergraduate student just knowing his/her height and gender."
+- Page 3, line 153: I have made the same experience and found that the minus sign and log become less scary when referring to the information content
+Teaching students practical machine learning 
+- The idea that communicating technical concepts is an essential skill
+- The usage of version control and testing is part of the course
+I am unsure whats the focus of the course
+- I am unsure why Table 1
+lists "Linear Regression" as "Train/Test Paradigm"
+This is, in my experience, a necessary skill for ML practitioners where most practical problems come with unique caveats
+While I do not have an issue with this reordering naturally, I was wondering if the authors uncovered any evidence that one way or the other was more effective
+The paper nicely describes this introductory machine learning course
+Also, it would have been nice to read, what the students think about the coures (e.g
+- Evaluation: what do you mean by "slack site"?
+Is it the first, second, last, etc contact for a student learning a concept? Finally, one of the features that I was most interested in was the code extraction
+However, there is no control group that never works with this tool
+* Interesting and accessible tool (via `shiny`) 
+Plots of data with more than 4 features are almost unreadable.
+- A very basic model taught in supervised binary classification is the logistic regression model which is missing in this app
+ All these factors make it unlikely to be accepted
+Unfortunately, the implementation seems to be very unstable, buggy and slow:
+Didactically, that's terrible, because students will not have the self-confidence and experience to recognize the wrong/incongruopus results presented by the app
+- the server hosting it was very unresponsive for most of the time I tried to experiment with it, loading the app and reccomputing even very simple models like LDA took a (very) long time on all three occasions that I used it
+max tree depth and min node size), and having only one of the many hyperparameters configurable is likely to lead to misunderstandings like "this is the only tuning parameter that matters" on the side of the students
+Paper needs a spell check ("aswell", "interactivelly" etc) and should be proof-read by a dilligent native speaker ("in specific classification" -> "specifically classification", lots of other weird phrases).
+This is a fairly ambitious project with large potential, not all that well executed
+I don't think I would use it in my teaching in its current state, too many frustrating bugs and inconsistencies and too much waiting around on the unresponsive server (although the shiny app could be easily hosted locally if the authors make their code public, see below, and this would presumably speed up computation and rendering quite a bit) 
+I appreciate the efforts by the authors to submit an article to ECML2020's teaching ML workshop
+The submitted document does not comply with the layouting requirements our workshop has
+Both of these aspects make it unlikely to be accepted
+A majority of the text is written in colloquial language which to me does not aspire to the neutral character an article needs to be written in
+Further, the author gives away his name which makes a double blind review process impossible.
+- page 6: contains again a praise of Machine Learning in general; point 5 tries to motivate the teaching demo by aspiring to prepare programmers for the use of tensorflow or other tools (which are vaguely touched)
+Unfortunately, the way the paper is written hinders a clear understanding on how the demo is provided and what the author wants to achieve his listeners 
+To improve the paper, I suggest the following improvements:
+- keep the volume within 4 pages (without references)
+- present 2-3 learner profiles of the people you expect to participate in the live demo
+- describe key aspects of the code to be demonstrated
+- show how the presented code ties back to the motivation, the learner profiles and learning goals
+- present evaluation data of how your learners liked the demo and on what they learned
+Given the outstanding ideas hidden in the submission, I feel very sorry to reject this paper.
+The submission consists of an announcement concerning a live coding tutorial
+It shows the author's enthusiasm for the covered
+Therefore I cannot recommend this submission to be
+accepted, which is unfortunate, given the author's clearly high motivation.
+Nevertheless, I strongly suggest to submit a revised version to a later
+future submissions more successful, I'd like to point out some aspects that may
+Even though this workshop's call for papers states that submissions shall
+greatly increased the value of this submission
+is, as it seems, an unaltered copy of a workshop announcement for ITS2019,
+rather than an article targeted to the present workshop
+UWI that might not be known by all readers, (iii) reduced usage of everyday
+language (optional, depending on personal style as well as the submission's
+While I do think that the tutorial is valuable (esp
+I there recommend to reject this submission.
+I very much encourage the author to resubmit such an experience report to the next edition of the workshop

@@ -1,0 +1,331 @@
+ Unlike the generative distribution sampling of GANs, the method provides an interesting compositional scheme, where the low frequencies are regressed and the high frequencies are obtained by \"copying\" patches from the training set.
+The conclusion drawn by the authors seems self explanatory and does not require any validation through the presenter work
+  \n\nIf convenient, could the authors comment on a similarly motivated paper under review at iclr 2018:\nVARIANCE-BASED GRADIENT COMPRESSION FOR EFFICIENT DISTRIBUTED DEEP LEARNING
+\n\nMany of the ideas presented are novel.
+ Usually it would be defined as $\\mathcal{S} \\rightarrow \\mathcal{P}(\\mathcal{A})$
+ Indeed when the network misclassifies an example, its adversarial version is forced to be close to it in embedding space while the adversarial term promotes a different prediction from the clean version (that of the ground truth label).
+ Might this also suffer from non-convergence issues like you argue SVAE does?
+ The resulting embeddings were evaluated not only on word similarity tasks but also on a bunch of downstream applications such as sentiment analysis. 
+ Of course, that involves O(K^2) or O(K^3) computation, which is a weakness.
+  \n\nThe third observation seems less useful to me.
+"Summary:\nThis paper proposes a new approach to tackle the problem of prediction under\nthe shift in design, which consists of the shift in policy (conditional\ndistribution of treatment given features) and the shift in domain (marginal \ndistribution of features).
+ It would make a lot of sense to use the same loss as the evaluation metric (not to mention the properties of PCA)."
+And finally, the references are a mess.
+  The game can be programmed to have an \u201cn\u201d lane highway, where n could reasonable go up to five to represent larger highways.
+  This paper then compare this objective with the MMD distance between the samples A & B.
+\n\nThe paper is its current form has the following issues:\n1. There is hardly any baseline compared in the paper.
+\n- No comparisons with prior work are provided.
+ The results are also presented in a confusing way, with the current state of the art results separate from the main results of the paper.
+\n\n+ Paper is well written and easy to follow.
+"The authors argue that the spectral dimensionality reduction techniques are too slow, due to the complexity of computing the eigenvalue decomposition, and that they are not suitable for out-of-sample extension.
+ Furthermore, the paper discusses the algorithm using hand-waiving arguments and lacks the rigor that I would consider necessary on an optimization-based contribution.
+"** post-rebuttal revision **\n\nI thank the authors for running the baseline experiments, especially for running the TwinNet to learn an agreement between two RNNs going forward in time.
+ Are the assumptions in Theorem 2 reasonable?
+\n\nSignificance\nThis paper makes incremental improvements and would be of moderate interest to\nthe machine learning community.
+ Especially it borrows the cyclic loss from the image style transfer, which provides a reasonable regularization to the text style transfer model.
+This paper may sink without trace' h/
+ Even the definition of external vs. internal environment (section 4) was unclear which is used a few times later.
+ The paper has the potential of conveying the message of causality into the ICLR community and thereby trigger other ideas in that area.
+\n\nThere are also quite a few correctness errors in the paper, and the polish of the plots and language needs work, as outlined below. 
+ An important contribution is to show that a well-defined architecture representation could lead to efficient cells with a simple randomized search. 
+"The paper is interesting,
+\n\nWeaknesses:\n- Figure 2: the plots are too small.
+ The \"parallel ordering\" terminology also seems to be arbitrary...
+\n\n\nMinor issues - \n* Use one style for introducing and defining terms either use italics or single quotes.
+ This way, finer discretization does not increase the dimension of \\x (nor its approximation), but rather improves the resolution.
+\n They do not match up to the Zhang paper (I have tried to find the matching accuracies there).
+ It builds on previous works Montufar et al. (2014) and Raghu et al. (2017) and presents improved bounds on the maximum number of linear regions.
+The paper could be considered for acceptance given a rewrite of the paper and change in the title and abstract.
+  However, while results on convex hull task are good,
+ Some more extra work is needed to derive the lipschitz constant of the loss function from the CNN function.
+\n\nOverall, this is a very well-written paper that creatively combines a number of interesting ideas to address an important problem."
+A classic instance of reinvention of the square wheel.
+  It is not clear what implantation of GAN they are using?.
+ And an extensive literature of theoretical results.
+  It would be good to explicitly state that (boldface) s is a vector of scores s_u (or score vectors, in case of multiple edge types) for all u in V.
+"This paper suggests an RNN reparametrization of the recurrent weights with a skew-symmetric matrix using Cayley transform to keep the recurrent weight matrix orthogonal.
+. As I understand, MCTS was not used in this experiment.
+\n\n\n#######################################################\n\nPost-rebuttal review\n---------------------------\n\nGiven the details the authors provided to my review, I decided to adjust my score.
+  That and other recent work have provided some systematic evaluations of complex-valued networks, and shown their utility in a number of cases. 
+While an interesting concept, in its current form, the approach taken is fundamentally inadequate and flawed for almost all use cases.
+ It is the first to study constructing minimal training sets for NPI given a black-box oracle.
+ \n\nThere are many baselines missing.
+\n\nOriginality:\n\npros:\n-The paper while simple sheds some light on important problem with the prior distribution used in GAN.
+ A possible solution is to add a regularization term to the objective function to ensure the sparsity of the factorization."
+The take home message has to be extracted with significant labor from a punishing set of figures with multiple bar graphs
+ As I explain further below given the combinatorial form of the result, the usefulness of this particular extension to ReLU network is not very clear.
+The biggest value of this paper lies in the fact that its pages are bound together.
+If this topic were not dear to my heart, I would perhaps have struggled to follow your logic.
+\n\nIt is rather unclear why changing the learning rate affects the performance of the model and it is would have been interesting to discuss.
+\u201d Let\u2019s consider the top-left subplot of Fig 1, showing a heavily bimodal distribution (modes near -1 and +1.). Is this plot made using data from a single neuron or from  multiple neurons?
+ It also showed good online A/B test performance, which indicates that this approach has been tested in real world.
+ As a result, it is very hard for me to say anything about whether this particular architecture is interesting or is it just in general that background knowledge from concept net is useful.
+ That is because almost all tasks require good representations for all words, not just prepositions.
+\nThe claim that ARM is more robust to partially observable domains is supported by experiments where it outperforms DQN.
+"The manuscript introduces the sensor transformation attention networks, a generic neural architecture able to learn the attention that must be payed to different input channels (sensors) depending on the relative quality of each sensor with respect to the others.
+  The confusion is particularly acute in places where derivatives are taken, because the derivatives continue to be taken as if the weights were untied, but then written as if they happened to be the same.
+ Because of different benchmarks, it is not clear whether the performance improvements are due to technical improvements or sub-optimal parameters/training for the baseline methods.
+ Any of these references would have made a lot of sense.
+Are we modelling an astronomical object here or an abstraction?
+  \n\n2. The proposed idea is very well motivated, and the proposed model seems correct.
+ \n\nThere is also a toy example created to show that this approach works well compared to the RNN based approaches.
+ \nand 2) the distributional discrepancy between the re-weighted source domain and\nthe target domain.
+  The architecture consists of an encoder, a mixer, a decoder, and many modality networks to cover different types of input and output pairs for different tasks.
+ \nAuthors present two architectures: one based on denseNet, and one based on denseNet + LSTM on output dimensions (i.e. similar to NADE model), and compare it to state of the art on the chest x-ray classification.
+ though it's not clear from the paper that the approach is a substantial improvement over previous work.
+\n - p.2: You use pretrained GloVe vectors that you do not update.
+"- Good work on developing VAEs for few-shot learning.
+\n- The idea is novel and impactful if its evaluated properly and consistently.
+  \n2. Unlike one-hidden-layer linear networks, the characterizations of critical points for deep linear networks and deep ReLU networks seem to be hard to be interpreted.
+\n\nThe reviewer is favorable in rising the rating towards acceptance if points 1 and 2 will be fixed.
+ This is a very well-accepted method actually used in real-world autonomous cars.
+ This would have been useful to study in itself.
+ \nThe experimental setting is also unclear.
+\n\nThis is a timely and interesting topic.
+ Using DReLU to improve the state-of-art neural network in an uncontrolled setting is important.
+ \n\nAlthough I get the high-level goal of the paper, I find Sec. 3.1, which describes the technical approach, nearly incomprehensible.
+This paper is under-referenced, conceptually impoverished, and poorly written.
+This is nonsense, It is disingenuous to say the least &amp; The authors should stop pretending their method is useful h/
+ but the presentation is severely lacking.
+"The paper considers a problem of adversarial examples applied to the deep neural networks.
+ The analyses are interesting and done well.
+ The problem is of significance because in many applications one requires deep networks which uses reduced computation and limited energy.
+ --- the new algorithm is 10 times faster and requires only 1/100 resources, and the performance gets worse only slightly.
+ Experiments on TREC-QA and SNLI show modest improvement over the word-based structured attention baseline (Parikh et al., 2016).
+DGA detection concerns the (automatic) distinction of actual and artificially generated domain names.
+ They note that the objective can be very different from the desired loss function if the SGD noise matrix is low rank, as evidenced in their experiments.
+\nTypo: \nIn Session 3 Line 7, there is a missing reference.
+None of this work is cited, which I find inexcusable.\u2028\n\n2. 
+\n- Sec 1: \"abilities not its representation\" -> comma before \"not\".
+ However, it is not made very clear why this matrix is needed or what the qualitative effect of its addition is.
+\n* Problem statement in section 3.1 should certainly be improved.[[CNT], [EMP-NEG], [SUG], [MIN]] Authors introduce rather heavy notation which is then used in a confusing way.[[CNT], [PNF-NEG], [CRT], [MIN]] For example, what is the top index in $s_t^{3-p}$ supposed to mean?
+\n- It would interesting to compare this approach with a conditional training pipeline that sequentially adds branches, keeping the previous branches fixed.
+ It proposes many heuristics to use the object feature and attention weights to find the correct count.
+\n\nCons\n-------\n\nNone
+ It is unclear what exactly helps, in which case, and why.\u2028\n\n3.
+ The \u201cpipeline\u201d is never well defined, only implicitly in p.7 top, and then it is hard to relate the various figures/tables to bottom line results (having the labels wrong does not help that).
+  This idea is very interesting and tries to marry phrase-based statistical machine translation with neural methods in a principled way.
+\nI do not know which message the paper tries to get across here.
+ \n\nQuality: The empirical results (including a video of an actual robotic arm system performing the task) looks good.
+ There is a lot of previous work on evaluating similarity in word embeddings (e.g. Hill et al, a lot of the papers in RepEval workshops, etc.); specialization for similarity of word embeddings (e.g. Kiela et al., Mrksic et al., and many others); multi-sense embeddings (e.g. from Navigli's group); and the hubness problem (e.g. Dinu et al.). For the localized centering approach, Hara et al.'s introduced that method. 
+\n\nWhile this paper is as far as I can tell novel in how it does what it does,
+this may eventually be a cited paper.
+\n- The main contributions of the paper can be seen as an incremental version of (Franceschi et al, 2017) based on the proposal in (Luketina et al., 2016)
+ As is, I don't really see how this motivation has anything to do with getting things out of a KB.
+\nMoreover, it would be interesting to show if this class-based learning rates changes the convergence of the model or if the early stopping occurs earlier etc...\n\n"
+2. [Paper Strengths]: None
+ I would argue that there is a lot of evidence for local inhibitory connection in the cortex.
+ Presumably this statement needs to be made while also keeping mind the number of importance samples.
+ Nevertheless, without going to that extreme, it might be worth adding an extra demo on something bigger than MNIST.
+ \n\nBecause of this, the paper needs to be updated and cleaned up before it can be properly reviewed.
+ For instance, the authors could do more to explain Lamport Timestamps than a 1974 citation.
+ The advertised new results on the asymptotic behaviour assume a first layer that dominates the size of the network.
+  \n \nShould provide a citation for DRQN
+ Much explanation is needed in the author reply in order to clear these questions.
+ All the results are more or less direct applications of existing optimization techniques, and not provide fundamental new understandings of the learning REPRESENTATION."
+ Although the ideas are interest and technically sound, and the proposed algorithms are demonstrated to outperform several baselines in various machine learning tasks,
+ The experimental results seem solid and seem to support the authors' claims.
+"This paper suggests a simple yet effective approach for learning with weak supervision.
+ The experimental results show that the propped model outperforms tree-lstm using external parsers.
+\n- The results show only one form of comparison, and the results have confidence intervals that overlap with at least one competing method in all tasks."
+ The authors then compare their approach to previous work on the 8 datasets introduced by Zhang et al. (2015).
+\n\n\nDetailed comments:\n\n- I think in the title/abstract/intro the use of Neural nets is somewhat misleading as neural nets are typically nonlinear.
+ When the coreset is empty, VCL turns out to be online variational inference [Broderich et al., 2013; Ghahramani & Attias, 2000].
+"****\nI acknowledge the author's comments and improve my score to 7.
+This study is weak. not innovation h/
+\n - p.7: I was slightly surprised by how small vocabs (3k and 5k words) are said to be optimal for NLI (and similar remarks hold for SQuAD).
+ In this work, the authors show that a careful implementation of mixed-precision dynamic fixed point computation can achieve SOTA on 4 large networks on the ImageNET-1K datasets.
+\n2) Terms used in the paper are not defined/explained.
+ I found the formulation of the \\alpha to be non-intuitive and confusing at times.
+ Only on CIFAR100 the proposed approach is much better than other approaches.
+ \n2. A cycle consistency loss that makes sure the content vector of transferred sentences and style vector of the original sentence should be able to reconstruct the original sentences.
+author needs to slow down structure at the grammatical level, but more importantly, the process of research, reflection, and argumentation
+ The model also does not consider the first mention of the answer span as gold, instead formulating its loss function to incorporate multiple mentions of the answer within the evidence.
+"The paper is well written, and the authors do an admirable job of motivating their primary contributions throughout the early portions of the paper.
+\n\n--------------------\n\nadditional review after seeing the author's response: \n\nThe author's response pointed out some of the limitation of Soudry and Carmon, and Xie et al's which I agree.
+\n- The proposed idea (TreeQN) and underlying motivation are almost same as those of VPN [Oh et al.], but there is no in-depth discussion that shows why TreeQN is potentially better than VPN.
+ \n\nIt is not clear why the authors have decided to use out-dated 5-layer \"LeNet\"  and NiN (Network in network) architectures instead of more recent and much better performing architectures (and less complex than NiN architectures).
+ I am not saying that there is none, but I do not see how the presented experimental results show evidence for this.
+\n\nPros:\n-- Efficient model
+ But unfortunately doesn\u2019t show any results even qualitative like generated samples for other  work on next frame video prediction.
+ Perhaps the heuristics for initializing the connectivity matrices will be insufficient, but could these be improved in further work?\n\n
+\n\nPoints against the paper:\n- Methodological advances are limited / unmotivated choice of model
+ I also think that the authors should not discuss the general framework and rather focus on \"data teaching\", which is the only focus of the current paper.
+In the context here this didn\u2019t seem a particularly relevant addition to the paper. 
+It would be\n  interesting to see what would the method learn if the number of layers was explicitly set to be\n  large and an identity layer was put as one of the option.
+Details of how important these effects are are missing. Ref.75 is entertaining but inadequate in this respect.
+Let me expand, using an analogy. 
+\n\nMinors:\nThere are some mixed-up notations: tilde{A_i} => A_i , and rank(A_2) => rank(A)_2 in Proposition 3."
+"The authors define a novel method for creating a pair of models, a student and a teacher model, that are co-trained in a manner such that the teacher provides useful examples to the student to communicate a concept that is interpretable to people.
+ It seems to perform well in practice as shown in the experimental section.
+ \n\nThere are several unanswered questions as to how this observation transfers to a semi-supervised or unsupervised setting, and also devise architectures depending on the level of expected noise in the labels.
+ Another example, \"are obtained using the GloVe vector, not using PPMI\" - there are close relationships between what GloVe learns and PPMI, which the authors seem unaware of (see e.g. the GloVe paper and Omer Levy's work).\u2028\n\n4.
+ For (2), the \"hard\" functions has a better parameterization, and the gap between 3-layer and 2-layer is proved bigger. 
+In fact, your hypotheses are not all that complex are they? Nor is Figure 1; nest-ce pas? ,moi
+It seems like you are torturing the data until the model converges.
+ However, no detailed information is given in the paper.
+\n****\n\nSummary:\nThe authors propose an experimental framework and metrics for the quantitative evaluation of disentangling representations.
+\nThe paper is NOT well organized and so the technical novelty of the method is unclear.
+ There are no theoretical results regarding this question in the paper, and the empirical justification is also lacking.
+This would give a stronger sense of the kind of wins that are possible in this framework
+\n+ The approach is capable of theoretically handling all linked information to an entity as additional information to the link structure
+ This is in my view is how implementations of episodic tasks with a timeout should be done and is implemented this way is classic RL frameworks (e.g., RL glue).
+ I\nlike the idea of using 3D generation, and particularly, 3D printing, as a means\nof generating adversarial examples -- there is definite novelty in that\nparticular exploration for adversarial examples.
+ However, this is not the case for the former (see, e.g., Comon et al., 2008 as cited in this paper).
+\n\n3. Why comparing to A3C+ which is not necessarily better than A3C in final performance?
+  Where is this method most applicable and where is it not applicable?
+\n\nFinally, the experimental part shows nice improvements 
+ \n\n2. Sec. 3.3 and 3.4 is a little bit abbreviated from the major focus of the paper, and I guess they are not very important and novel (just educational guess, because I can only guess what the whole algorithm Smoothie is).
+\n\n3. Some details are not clear.
+Table 2 stunningly over-interprets some relatively small signals in the data.
+The results look like a smorgasbord of data
+"The idea is clearly stated (but lacks some details) and I enjoyed reading the paper.
+Second, it could benefit from a deeper (maybe theoretical analysis) of some of the questions.
+\n\nOriginality: The authors demonstrate experimentally that there is a benefit of using non-saturating GANs
+  Even tough a little bit ad-hoc, it seems promising based on the experiment results.
+\n--Very minor: although it is similar to the generator, it would have been nice to see the architecture of the discriminator with example input and output as well.
+\n\nClarifications:\n- See the above mentioned clarification issues in 'major weaknesses'. 
+ If that is the case, could the authors describe this a bit further?"
+"The paper is well written and clear
+ By the way to me results presented in figure 5 are not enough to claim that the agent trained on random map is implementing a purely reactive wall-following strategy.
+ If it wasn\u2019t, then the comparison is unfair, as the results for CP-ALS are drastically underestimated.
+ \n\n- As pointed out by the authors, the idea of this formulation and doubly SGD is not new. 
+\nThis idea however is difficult to be applied to deep learning with a large amount of data.
+ The point made in the text between \"Where\" and \"overseas\" is perfectly reasonable, but it is a mystery why the base model on the right doesn't learn to associate the common words \"where\" and \"in\" both commonly expressing a location.
+  The idea of using class label to adjust each weight\u2019s learning rate is interesting and somewhat novel,
+\nThere is however a lack of technical novelty or insight in the models themselves.
+Very very sloppy
+ \n- how many new data points are finally added into the training data set?
+ My impression is hence that the only possible outcome is\n\nrejection.
+ Even though LCW performs better than others in this circumstance,
+ The UPS optimizer by itself is not new.
+ I am curious about the efficiency of the method.
+ \n\nTypos / Details: \n- The range of the coefficient of determination is from 0 to 1.
+  To the reviewer, It seems \u201clife-long learning\u201d is the same as \u201conline learning\u201d.[[CNT], [CLA-NEG], [CRT], [MIN]]  However, the whole paper does not define what \u201clife-long learning\u201d is.[[CNT], [CLA-NEG], [CRT], [MIN]]\nThe limited budget scheme is well established in the literature.[[CNT], [CNT], [APC], [MAJ]] \n1. J. Hu, H. Yang, I. King, M. R. Lyu, and A. M.-C. So. Kernelized online imbalanced learning with fixed budgets.
+\n* There are thorough discussion with related works
+ In general it was an OK paper and there are many to be improved.\n\n+ Novelty seems minor.
+ I would suggest to:\n1. Compare more clearly setups where you fix the hidden size.
+\n\nAlthough the manuscript has many positive aspects to it,
+ Vanilla GAN is know to be hard to train and there has been many variants recently that overcome some of those difficulties and its mode collapse problem. \n"
+ And quantify spatial tuning somehow (a natural method would be to use the sparsity measures sometimes applied to neural data to quantify how selective the spatial profile is to one or a few specific locations).
+   There is some text about a variant of CTC, but it does not explain very clearly what was done or what the motivation was.
+\nb) suppose that we run an algorithm with fresh samples, then with respect to the randomness of the k-th sample, we have that with prob. 1, W_k is full rank, and the Jacobian of the model is full rank. 
+\n\nThe problem considered by the paper is interesting,
+With the appropriate revisions these results could provide a very limited contribution to the field.
+ However, the model-free approach does not seem particularly novel in that it is just an extension of that from Tian et al. (2017) plus some additional features.
+ \nFrom these 100 evaluations (with different hyperparameters / architectures), the final performance y_T is collected.
+ This is quite a static strategy, I was assuming the authors are going to use some IR method over the web to back up their motivation.
+ A KB is usually a pretty static entity, and things are added to it at a slow pace.
+ (b) To find the value that best matches a key at the decoder stage?
+X and Y are both tools that knotheads can use to move 
+science backwards
+ More explanations of Figure 2 and the visualization method can be great helpful to understand the advantages of the proposed algorithm.
+ which isnt very common in most meta-learning papers today, so it\u2019s encouraging that the method works in that regime.\n
+ This method presents a family that can span the entire space, but the efficient parts of this family (which give the promised speedup) only span a tiny fraction of it, as they require only O(log(N)) params to specify an O(N^2) unitary matrix.
+\n\nAs such, I do not recommend it for acceptance - it needs significant work before it can be accepted at a conference.
+ However,  the authors here argue that spectral normalization is more powerful; it allows for models of higher rank (more non-zero singular values) which implies a more powerful discriminator and eventually more accurate generator.
+ The main motivation seems to be that it is easier to optimize.
+ It seems as a more natural way to do it.
+ Optimisation by back propagation and discretization of the densities to carry out numerical integration are well explained and easy to follow.
+It is unclear how this would advance the field beyond providing additional, previously unknown information
+\n\nI think the paper does a fairly good job at doing what it does,
+ Studying the relation between predictive coding and deep learning makes sense, but I do not come to the same (strong) conclusions as the author(s) by considering the experimental results - and I do not see evidence for a sophisticated latent representation learned by the network.
+\n\nOverall, I think the technical contributions of the paper are quite limited, and the experiments are not well enough described for publication.
+\n\nReview:\nThe manuscript describes the proposed algorithm in great detail and the description is easy to follow.
+I'm a bonehead so maybe I missed this?
+ Then again, the major contribution of this work is not advancing the state-of-the-art on many benchmark tasks,
+ \nOverall, I like the paper.
+ The approach is evaluated on single word translation, cross-lingual word similarity, and sentence translation retrieval tasks.\
+ so that the recurrent neural networks with attention could capture the learning signal to avoid the repetition issue and the heuristic function in the test time can be removed.
+ \n\nThis is a well motivated and explained paper, in which a research agenda is clearly defined and evaluated carefully with the results reflected on thoughtfully and with intuition.
+A classic instance of reinvention of the square wheel.
+ I liked the fact that the proposed model is very simple, yet very competitive compared to the state-of-the-art.
+ Hence I'm not fully convinced that this model indeed works as claimed.
+\nThe latent variables plus a one-hot-encoding representation of the relation is used to reconstruct the input entities.
+ For example, have another RNN read the assertions and somehow integrate that.
+\nScheme A consists of training a high precision teacher jointly with a low precision student.
+ Extensive experiments demonstrate the usefulness of the approach.
+ \n\nTo me, the paper in it\u2019s current form is not written well and does not contain strong enough empirical results, so that I can\u2019t recommend acceptance.
+  That limits the value.
+.\n\n2. A comparison without dummy parameters would be interesting to investigate the performance differences between the algorithms in a lower-dimensional problem.
+\nHowever, performance results seem to be competitive and that's the reader may\nbe eager for insights.
+ However, the contribution of the paper itself needs to be strengthened in both the theory and empirical sides.
+\nHave you tried on other tasks?
+"Active learning for deep learning is an interesting topic and there is few useful tool available in the literature. It is happy to see such paper in the field.
+ Without understanding this first result, it\u2019s difficult to decide to what extent the rest of the paper\u2019s results are to be believed.
+ What are the runtimes?
+.\nI raised my score to 7.
+ \n\nExperiments don't vary the attack much to understand how robust the method is."
+ However I would encourage authors to rephrase their claim of emergent translation (the title is misleading) as the authors pose this as a supervised problem and the setting has enough constraints to learn a common representation for both languages (bridged by the image) and hence there is no autonomous emergence of translation out of need.
+ \n\nAfter rebuttal:\nThe writing of the paper greatly improved, still missing insights (see comments below).
+ Many terms are not defined or defined after being introduced (e.g. CIGAR, MF, BQMQ).
+ See more detailed points below in Weaknesses.[[CNT], [null], [DIS], [GEN]]\n\n**Strengths**\nI like the high-level motivation of the work, that one needs to understand and establish that language or semantics can help learn better representations for images. 
+ As is, I would guess the second is more likely and so I am not convinced the architecture itself is a significant contribution.
+"--------------\nSummary and Evaluation:\n--------------\nThis work present a novel multi-agent reference game designed to train monolingual agents to perform translation between their respective languages -- all without parallel corpora.
+ While the RWA was an interesting idea
+"The paper extends the idea of eigenoptions, recently proposed by Machado et al. to domains with stochastic transitions and where state features are learned.
+ The numerical experiments show that using CCC strategy leads to an increase in the proportion of efficient equilibrium outcomes.
+Not good.
+ Could this submission show some fine-tune experiments?"
+\n\nAs mentioned in earlier comments, please reword / clarify your use of \"activation function\".
+ \n- Since there are existing methods to generate images from a textual description (e.g. Zhang ICCV 2017, \"StackGAN\"), Fig. 10 merits a comparison to those.
+ \n- What is the effect of network hyper-parameters?
+ \n\nWhile the experiments are compelling,
+ A negative answer to this question will somewhat undermine the significance of the single-hidden-layer result.
+ It seems right and valid.
+ But there are a few key issues that are not clearly addressed and the experimental results are not convincing.
+  The current 82.1% accuracy is nice to see,
+ For instance sec 2.1 reviews the history of games and AI, which is besides the key point and does not provide any literary context.
+It is not clear whether important new insights will be gleaned - it cannot be clear until the final product is reviewed
+ The invariance introduced here does not seem to be related to any real world phenomenon. 
+  The inclusion of proof summaries in the main text would strengthen this aspect of the paper.
+ The authors then propose an efficient parallel algorithm for this class of RNNs, which produces speedups over the existing implements of Quasi-RNN, SRU, and LSTM.
+\n\nI have some concerns about the paper, maybe most notably about the experimental result and the conclusions drawn from them.
+ \n\nStrengths:\n- The paper is very well written.
+  First,  a major part of the paper tries to make the case that there is a symmetry breaking property of the proposed model, which I am afraid I simply was not able to follow.
+I cannot make out signs of independent thinking, work beyond the state of the art, or anything groundbreaking
+ I think there are still some issues, but this work is both valuable and interesting, and it deserves to be published (alongside the Naesseth et al. and Maddison et al. work).
+ The paper essentially introduces a method to use off-policy data, which is of course important,
+ In evaluation time, they insert these cells between layers of a network comparable in size to known networks.
+"This paper focuses on imitation learning with intentions sampled \nfrom a multi-modal distribution.
+ Also, the experiments takes a fixed 20K iterations for training, and the convergence status (e.g. whether the accumulated gradient has stabilized the policy) is not clear.
+ Right now the results are not very convincing.
+ The wording here was confusing.
+"Summary:\nThis paper proposes an approach to learn embeddings in new domains by leveraging the embeddings from other domains in an incremental fashion
+ It is shown empirically that the constrained update does not diverge on Baird\u2019s counter example and improves performance in a grid world domain and cart pole over DQN.
+ My impression is that most papers on NLI use much larger vocabs, no?
+ To figure out if the GAN is adding anything, it would be nice to see what would happen if you varied individual coordinates in the filter space (\"x-space\" of the GAN), or varied the magnitude of filters or filter planes.
+n\nThe paper, however, misses comparison against important work from the literature that is very relevant to their task \u2014 decipherment (Ravi, 2013; Nuhn et al., 2012; Ravi & Knight, 2011) and other approaches like CCA.
+ \n\nLemma 1 summarizes properties of the solutions that are expected to have after reaching equilibria.
+ In my sense, the authors do not provide any evidence theoretically or analysis on why the shifted version of ELU (which does not pass the origin) is more favorable.
+  I noticed the following issues:\n\n1) The learning task is based on error patterns, but it's not clear to me what exactly that means from a software development standpoint.
+\n\nAs is, I cannot recommend acceptance given the current experiments and lack of theoretical results.
+Why chase a gene in this ridiculous organism?
+Table 4 seems unnecessary given figure 8. Indeed, figure 8 also seems unnecessary.
+The supportive tone of this review… took some effort.
+ The application is straightforward and thus technical novelty of this paper is limited.
+Nothing new or ground breaking is discussed in this tutorial
+The result does improve the state-of-the-art, but it is not strong enough for acceptance
+ What is the bases for these parameter choices?
+Why exactly this task? I can think of a zillion other cognitive tasks
+\n\nOverall the paper is well written.
+ The given examples seem to exhibit certain kind of mode collapse, i.e. different examples have similar wording from a very limited vocabulary.[[CNT], [EMP-NEG], [CRT], [MIN]] It is possible that the generator just learned to overfit the sentiment classifier, so that the classifier thought the transferred sentences have the desired sentiment, but the transferred sentences may lack variations and hence lacks practical use.
+\n\nPros:\n- Good literature review.
+ It would be nice to discuss computational cost as well.
+ \n* The block quotes in the introduction may be quite important for points later in the paper, but summarizing the points of these quotes may be a better use of space. The authors more successfully did this in paragraph 2 of the introduction. \n* All long descriptions of the appendix should be carefully revisited and possibly removed due to page length considerations.
+\n\nPros:\n\n1. This paper proposes a simple and intuitive approach for training neural networks.
+ It is well written, the idea is well articulated and presented.
+ In particular, what are the state space and transitions?
+\n+ Improved performance in speech recognition task.
+Moreover, it is unclear whether the effect is sufficiently important to warrant replication.
+ \n\nPros:\n* Important problem
+ I Firstly, the paper introduces a large sketch dataset that future papers can rely on.
+ It captures local information into so-called blocks using self-attention, and then applies a second level of self-attention over the blocks themselves.
+  For example, the Cai et al. paper from ICLR 2017 is not considered
+ In the experiments, authors only stated that \u201cwe fit the GPS architecture using UPS optimizer for varying degree of the neighborhood of the graph\u201d, and then the graph is used to train existing models as the input of the graph.
+ The early stopping criteria tend to favor suboptimal solution, indeed relying on the Cramer distance is possible improvement.
+ The experimental results are very good and give strong support for the proposed normalization.
+Publishable, but why?
+The figures are dishonest and not all that useful.
+\n- The method lacks details (see Questions above)
+n\n- Originality:\nLooking at RNN from an iterative refinement point of view seems novel.

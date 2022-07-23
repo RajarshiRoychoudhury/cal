@@ -1,0 +1,1107 @@
+The paper presents TriScale, a methodology for analyzing the replicability of experiments
+The paper achieves this by partitioning the data into multiple timescales---runs, series, and sequels---and analyzing temporal characteristics of variability at these timescales
+TriScale relies on “variability score,” an estimate of how similar the results are during a replication effort, to quantify the replicability
+Four case studies of various network applications using TriScale is also presented.
++ TriScale tackles an important problem related to replicability of experiments in research
+- A more detailed discussion on metrics/settings that cannot be evaluated using TriScale will be helpful 
+TriScale takes an important step towards improving reproducibility efforts in the community
+It can help researchers determine the number of runs, duration of runs, etc
+* It is understandable that TriScale cannot determine the parameters that should be used for experiments
+However, it will be useful to identify the categories of metrics that cannot be used with TriScale
+For example, the paper mentions that the convergence test does not hold while measuring energy consumption since it is cumulative over time, and hence, one should measure power draw instead
+Cumulative metrics cannot be tested for convergence
+Are there other categories of metrics that do not fit under TriScale framework? It will be useful to identify them explicitly (also, highlight in the discussion section that cumulative metrics cannot be measured)
+* Can TriScale be used with metrics that need a distributed view? For example, maximum queue length encountered by a packet on its path within a data center.
+* TriScale employs specific techniques for each step (Theil-Sen linear regression for convergence test, Thompson’s method for confidence interval estimations, etc.)
+* Network profiling for identifying seasonal components is interesting
+But what if the seasonal components in the replication environment do not match with the seasonal components in the original environment
+For example, the original experiment is cellular analysis performed in a business district and the replication effort is in a residential area
+Can network profiling be used to raise an alarm that the replication environment does not match the original environment and that is the cause for a bad variability score? 
+* A category of experiments in networking involves testing convergence of protocols when users arrive/leave, links fail, etc
+The time taken by congestion control (for example) to converge under these conditions is an important performance criterion
+Overall, TriScale is a useful effort that can improve reproducibility efforts in the community
+However, it will be useful to clearly describe the shortcomings of the system, particularly metrics that cannot be handled
+The paper tackles an important and often overlooked problem of replicability in networking research
+The effort is commendable, thorough, and can be used by other researchers as a template to effectively design experiments and report their results.
++ Clarity: the proposed methodology is intuitive and easy to follow
++ Generalizability: It is unclear where exactly the proposed methodology will fail and why? Section 6 is not really helpful in understanding these limitations
+This paper addresses a critical problem in networking research, replicability
+We all know many research artifacts published at top-tier conferences are hard to replicate
+Designing experiments that report the performance of the proposed research artifacts with quantifiable confidence amidst inherent variability is non-trivial
+These rules don't generalize, and applying them leads to hard-to-replicate experiments/results
+More specifically, the lack of concrete methodology to determine the run/series duration and the number of sequences make it difficult to quantify the true performance of the proposed research artifacts
+The methodology proposed in this paper will aid the researchers in evaluating existing and future research artifacts, promoting replicability
+In Section 6, it will help if the paper can expand on instances where the proposed methodology is not suited to evaluate the replicability of the proposed solution
+I struggled to grasp the generality of the proposed methodology
+Further, elaborate, with examples, on which type of problems (artifacts) will not benefit from Triscale. 
+This paper proposes a methodology for the experiment design and data analysis of performance evaluations
+In addition to test runs and series of runs that have been widely adopted, the authors introduce another time scale -- repetitions of series -- to capture the replicability of an experiment, via the definition of a quantifiable score ("variability score") with user-specified confidence level.
+Furthermore, the paper instantiates the methodology as a software framework called TriScale and showcases the framework's usefulness with case studies.
+TriScale is most useful in guiding networking researchers to design scientifically sound experiments, such as how long each run should be based on the convergence test, how many runs / series of runs to perform before meeting a specific confidence level, and the time span of a series of runs hinted by the network profiling
+Therefore, TriScale could potentially help avoid design mistakes and also significantly foster reproducible studies.
+1a is indeed prone to misinterpretation, as the paper also incorrectly interprets one-sigma ellipses as "one can expect about 68% of the data points to fall in that region"
+The correct percentage is supposed to be 40% because each ellipse represents the confidence region of the sum of squares of two Gaussian-distributed variables, which follows a chi-squared distribution
+The projections of such an ellipse on either dimension are indeed 68% confidence intervals, but the two-dimensional confidence region is about 40%.
+- The KPI of common interest is often multi-dimensional, e.g., people want to know both the lower and upper bounds of a performance metric, or both the average performance and performance variation (robustness)
+It is unclear how useful the one-dimensional KPI of TriScale would be in practice
+If TriScale extends the current KPI, e.g., if Fig
+1(b) reports two-sided CIs instead, then it will have the same issue as Fig
+1(a) when two schemes' CIs are overlapping, losing the claimed advantage "unambiguously compare different schemes"
+The issue is not easily fixable also because the variability score cannot seem to accommodate multi-dimensional KPIs
+What would the score be if the KPI is a two-sided CI? This seems different from a multi-objective evaluation and has not been discussed in the paper.
+- In the same vein, TriScale does not capture the correlation of metrics
+1 as an example again: The one-sigma ellipses in (a) suggest the correlation between throughput and latency (which are usually positively correlated), but the information is lost in (b)
+Again, Pareto-dominance does not address the correlation of metrics.
+- TriScale can check whether a runtime passes the convergence test, but it does not really give a practical way for researchers to choose the runtime during the experiment design
+For instance, the ramp-up time of LEDBAT's throughput would also depend on the bandwidth -- Does it mean that for each network profile, researchers have to increase the runtime repeatedly until the convergence test is passed?
+- Despite TriScale's usefulness, the definition of "variability score" essentially repeats what researchers have been applying to a series of runs, treating each experiment as a run
+foundational insights in statistics can be applied to networking experiment design
+While networking researchers have been working hard to come up with new solutions and conduct extensive evaluations, it’s also the time for us to have a better understanding and more careful examination of experimental results, and that’s where TriScale could potentially help
+For example, given that convergence test does not always apply, oftentimes it’s still hard to know how long a run should be, e.g., for video streaming experiments what should be the total streaming duration in order to compare QoE for different streaming systems/algorithms? The paper uses long-term throughput as an example for congestion control evaluation, but sometimes we need to consider the impact of start-up time, say for short-lived flows/web pages
+More importantly, a user testing a system oftentimes doesn't know whether she really needs the convergence test, and in this case it would be more helpful if the tool (TriScale) can give some hints
+The authors mention that “Given the user’s objectives (e.g., the KPIs to analyze and the confidence levels to reach), TriScale helps answer questions...”, but it's still not very clear how to define the KPIs and choose the confidence level, e.g., should I choose mean, median, or some percentile? The paper also says “for each performance dimension, the user defines a metric together with its convergence requirements, a KPI, and a variability score”, but sometimes a user may not know how to best define them
+It would be better if TriScale can give some suggestions on these low-level details, say according to how much computation resources/time a user has (e.g., lower down the confidence level or analyze only the median if one needs to get some quick results) or what the high-level goals of the experiments are.
+* The methodology has high generality with little assumption of the underlying distribution
+While this makes TriScale more widely applicable and easy to use in some cases, I still wonder if there could be cases where the distribution follows a specific model and TriScale could be tuned to gain improved analysis, especially when those cases are common in networking and the gain is worthwhile, e.g., more accurate claims with fewer runs
+Also, if it’s emulation/simulation/testbed, how would the methodology be adjusted accordingly? Would domain-specific optimizations be beneficial, say web, video, congestion control, routing, wireless, etc? There may also be application specific requirements, e.g., in determining how long a run should be
+However, it’s much more than that, e.g., including what network conditions and workloads to use
+* In the congestion control motivating example, the authors mention that Copa data is not i.i.d., what’s the reason for that? And this seems to disobey “A common hypothesis is that the collected data is independent and identically distributed (i.i.d.).” 
+1a suggests, we observe in Fig
+1b that TCP Vegas is not strictly better than TaoVA-100x”, however, Fig
+1a only shows that the mean throughput of Vegas is better than Tao’s, while Fig
+1b draws 25th throughput, so it’s more of a different metric than contrary
+Also, it would be better to color the label of different schemes as well: some dots are too close to each other so it’s hard to tell which label/text corresponds to which dot.
+* Need more details on how different works such as [84] handles uncontrollable environments
+Some related ideas/tools for more controllable experiments are missing in the paper: Epload (https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-wang_xiao_sophia.pdf) allows to control the variability of computation while also modeling page load dependencies for web browsing
+Livelyzer (https://dl.acm.org/doi/10.1145/3458305.3463375) leverages virtual video capture to enable repeatable live video broadcast
+Another study (https://ece.northeastern.edu/fac-ece/dkoutsonikolas/publications/pam21.pdf) uses a programmable 3-axis motion controller to collect traces in a controlled environment efficiently and in an automated way.
+* “One should also consider robust statistics (e.g., using median instead of mean), i.e., statistics that are not overly skewed by outliers, which are common in experimental networking data.” would be good to have some examples on this.
+* Testbed classification table: Puffer [83] is more of a testbed for in-the-wild characterization/crowd-sourcing than addressing ​​uncontrollability of the experiments.
+* analyzes “network condition data.” => analyzes “network condition data”.
+"SoK: A Generalized Multi-Leader State Machine Replication Tutorial" presents a pedagogical consensus protocol called PPaxos and several improvements on it
+The main idea is that we can understand complex high-performance consensus protocols better by separating dependency service from the main Paxos protocol
+It starts with Paxos and MultiPaxos, and then introduces the idea of conflict and dependency graph
+By separating the dependency requirement, it presents two interesting concepts tension avoidance and tension resolution.
+- Walking through the development of PPaxos, readers can build an in-depth understanding of dependency graph-based consensus protocols
+I think this paper has the potential to be a good tutorial to dependency graph-based consensus protocols
+I think this paper is specifically on dependency graph-based Paxos protocols, not for general multi-leader consensus protocols.) However, it wasn't a paper that reads smoothly, especially since this paper presents many different protocols
+It might be useful to set the goal of understanding EPaxos like protocols and why people want them
+- In the introduction, I would clarify that this paper's scope is on dependency graph-based Paxos protocols
+Also, it covers many protocols not discussed in the paper.
+The current version only shows how many message delays are required
+- 3.2, "Replicas execute conflict graphs in reverse topological order" => why? what goes wrong if executed in topological order? I could imagine it's like EPaxos, but unclear
+- 3.3 "a log one entry" => typo?
+- "v_x = (p_i, m)" => v_x, whose vertex id is (p_i, m)
+Mixing command, vertex, and vertex id was a bit confusing
+For example, "globally unique vertex id v_x = (p_i, m)" but later in text, v_x means vertex, not id
+I think Paxos protocols generally don't require a synchronous network
+- Separate client request (command) from vertex id
+If not, it seems that clients won't be able to retry after the vertex gets noop
+- 4.5 doesn't prove that the two invariants guarantee linearizability or something similar
+- "commit time" is typically defined as the time period between a client sends a request and the client knows it's committed
+It's an important distinction for EPaxos, whose commit latency is different from execution latency (which may be longer than commit latency)
+Also, EPaxos's key advantage is optimistic two wide-area message delays
+More explanation is needed here on the delicate need of FastPaxos & why 4 message delays are considered "improvement" despite MultiPaxos also only needs 4 message delays
+I guess adding multi-leader requires more message delays, which could be removed by "FastPaxos".
+Why not just use an equation? Also, I don't understand why maj(n) needs to be defined separately for odd n and even n.
+- If you used the commit time defined earlier, it can get more than 4
+- 6.2 Recovery => the term recovery is overloaded
+In other places, it commits with real command
+- Does Unanimous PPaxos modify the "Paxos" protocol part? Can you explain why replicas will still converge and agree?
+Authors set a goal to encourage an industry adoption of the multi-leader protocols so I look and evaluate the paper from a position of a practitioner trying to build a multi-leader consensus based system
+Overall it is a good paper: it not only refines the explanations but also introduces an abstraction helping to reason about the multi-leader consensus protocols (Simple PPaxos) and describes a new optimization / multi leader protocol (Majority Commit PPaxos)
+  * a reconfiguration routine
+  * measurable benefits of switching to from Raft/MultiPaxos to the multi-leader protocols
+## Measurable benefits of switching to multi-leader protocols
+Multi-leader consensus protocols are complex and it's harder to implement them than their leadered counterparts but in theory they have better performance
+The authors advocate that the major benefit comes as increased throughput (in Raft/Paxos a leader sends and receives disproportionately more messages)
+napkin math shows that the throughput of multi-leader consensus is `(2f+1)^2/(4f+1)` times better than leadered where `f` is max allowed numbers of failures, proposer, acceptors and learners are colocated, it uses `f+1` sized quorums and the command's payload is way more bigger than the result of command execution.
+Usually production Paxos-based systems depend on bypassing the replication protocol for serving reads but the paper doesn't contain any information on how to do it
+For example the leader-based protocols have well understood models for lightweight reads:
+  - to read from a combination of the followers using methods from "Linearizable Quorum Reads in Paxos" or "Paxos quorum leases: Fast reads without sacrificing writes" papers
+  - to accept a possibility of staleness and to read from any node
+But those models aren't applicable to the multi-leader case: it lacks the leader/follower roles and local reads lead not only to staleness but to observing incompatible histories too caused by the reordering of the commuting commands.
+Without reconfiguration there is no way to replace the failed nodes and since failures are inevitable then eventually the multi-leader consensus based systems lose a majority and become unavailable.
+One of the reasons Raft got so widespread in the industry is an included reconfiguration protocol (joined consensus) so with the declared goal I recommend to update the paper to include the reconfiguration sub-protocol.
+"This paper assumes that at most f machines will fail" - from a practical standpoint it's impossible to guarantee; it's better to mention what happens then this threshold is passed if consistency or availability becomes violated.
+"To reach is consensus on a value, an execution of Paxos is divided into a number of integer value rounds" - it's a clever idea to pre-assign a set of ballot numbers to the machines but using a term 'round' both for a ballot number and an act of communication is confusing
+Maybe it'd be better to mention that rounds also known as ballot numbers (paxos) or term (raft) and add a reference to "Paxos vs Raft: Have we reached consensus on distributed consensus?" to use it as a map between different protocols.
+This paper aims to explain the space of multi-leader consensus protocols
+The key advantage of adopting multi-leader protocols is that they facilitate out-of-order execution of commutating
+In specific, if two commands do not conflict, then these protocols allow replicas to execute them in their desired order
+To explain this space, the paper starts with a primer on SMR and Paxos, following which it explains MultiPaxos and defines the notion of conflict graphs
+These conflict graphs are essential to the design of these multi-leader protocols as they specify the commands that can commute
+To explain how existing multi-leader protocols work, authors lay down two key invariants: consensus invariant and dependency invariant
+Next, authors gradually lay down the design of existing multi-leader protocols by presenting four of their variants: Simple PPaxos, Fast PPaxos, Unanimous PPaxos, and Majority Commit PPaxos
+The paper also shows how these variants can be mapped to existing protocols like Basic Epaxos, Atlas, and so on.
+With so many multi-leader protocols, a survey paper like this can be useful for both pedagogical and engineering purposes.
+For each protocol, authors have presented the algorithm, an accompanying figure, and an example
+This helps inn visualizing the problem at hand
+Authors explain why Simple PPaxos is inefficient and then show how it can be improved by Fast PPaxos
+However, Fast PPaxos is unsafe, so there are two approaches to follow: Unanimous PPaxos or Majority Commit PPaxos.
+It will be really helpful if the authors can illustrate the performance of the four protocols they have proposed against some of the protocols like Epaox, Atlas and so on
+Although the aim of this paper is not to evaluate performance of multi-leader protocols, graphs that illustrate the performance of the proposed variants can help understand various design choices, such as which scheme is better Tension Avoidance or Tension Resolution.
+This paper needs some more work to clarify the different proposed protocols
+Further, for several sections, there is a sudden switch from normal phase to recovery phase, which makes it difficult to understand
+While explaining the recovery for Simple PPaxos, the paper mentions "unchosen vertex" at the start of Section 4.4
+Further, it is important to re-iterate how can a vertex be unchosen.
+I am unsure why at line 21 of Algorithm 1, the propose is sending to at least f+1 acceptors instead of all acceptors
+As f of the acceptors may crash, so sending to all acceptors in important
+The paper should explain what will be the issue if the proposer only waits for messages from f + maj(f+1) acceptors
+Moreover, asking Unanimous Paxos's proposer to wait for messages from all the 2f+1 acceptors can hurt its liveness even if a single proposer fails
+I think there is a typo for lines 6-7 in Algorithm 3
+While explaining the Basic Epaxos optimization on Step 7, page 16, the paper states that "pi receives 2f votes for..
+In the presented algorithm, di only communicates with other dj
+It is unclear what is happening from steps (7) and (8) on Basic Epaxos
+So, when pi receives 2f votes it sends v to ai
+Then, ai records v as chosen and sends back to pi
+Why can't these steps be combined? Further, to reduce from 2f+1 to 2f, the Basic Epaxos optimization requires more network communication--from proposer to all acceptors and then acknowledgments from acceptors to the proposer
+On Page 6, the paper states Consensus Invariants, which uses the terms (x, deps(x))
+It will be helpful if the paper either uses the term replicas or learners
+It is worth separating the recovery algorithm and not receiving enough matching votes (in Fast Paxos section) with suitable titles to improve readability.
+The paper gives a very simple protocol that nicely captures the essence of such protocols
+The paper then presents an unsafe protocol to set the stage for why advanced protocols work the way they do in the literature
+It seems that the bug could be avoided by simply abandoning concurrent leaders
+The first approach to fix this bug, increasing quorum size to 2f+1, also does not seem related to dependency; rather, it seems to be avoiding a tie between concurrent leaders
+This is very important for the paper since at some point the authors claim that most of the design complexity comes from generalized as opposed to multi-leader.
+- When describing Fast Paxos, the authors use proposals, acceptors, and learners; but in Simple or Fast PPaxos, the authors use proposals, acceptors, and replicas
+- Section 2 says that messages can be dropped, and indeed Section 6.3  considers a situation that messages to d3, d4, d5 are dropped
+However, the default model of Paxos does not allow message drop
+Otherwise, one runs into the two-general impossibility
+In this particular example in Section 6.3, can we simply have p1 crash before it sends messages to d3, d4,and d5? If this is sufficient to break Fast PPaxos, then I suggest removing message drop from the model
+ If this is not sufficient, the authors need to carefully define the model regarding message drop, and explain why the two general's impossibility does not apply
+ As such, I feel the area of generalized multi-leader state machine replication is still relatively young and small, and has not reached a stage of needing an SoK paper
+Donut Paxos is a variant of MultiPaxos that uses separate nodes for configuration management
+It addresses the problem of missing reconfiguration protocols in academic consensus protocols
+Performance is on par with horizontal MultiPaxos and Raft.
+It may give more insights on reconfiguration to readers.
+I agree that reconfiguration is an important piece for a consensus protocol to be practical
+But in the industry, consensus protocols are mostly used for configuration service, which manages replicas of primary backup replication
+Even for the case when Paxos-like consensus protocol is used for main applications, replacing a failed server can be handled by the network layer (e.g., updating DNS to redirect requests to a new server)
+Or simple horizontal Paxos-like approach may work fine
+To motivate Donut Paxos well, there should be some explanation on why it is important to provide reconfiguration service directly within consensus protocols.
+Another problem is Donut Paxos doesn't provide a complete solution to the reconfiguration problem in state machine replication
+Donut Paxos only covers how to safely reconfigure Paxos acceptors and ensure that servers can continue to reach an agreement
+However, the difficulty of reconfiguration comes with recovering the state machine on a new replica
+When Google first implemented MultiPaxos, they struggled a lot with the subtleties with recovering state machines
+(Lamport's paper doesn't cover this topic.) On the other hand, Raft could be adopted widely in the industry since it fully specified how to handle the recovery of state machines, including recovery from a snapshot (they are discussed in Diego's PhD thesis)
+Without disclosing how to recover the state machine safely, Donut Paxos has the same problem as horizontal MultiPaxos, which will prevents the industry's adoption again.
+Lastly, the current introduction implies that the exiting reconfiguration protocols cause performance degradation and that Donut Paxos has superior performance to them
+However, in the evaluation section, Multi-Paxos's performance is the same as Donut Paxos's
+- Clarify contribution: I think Donut Paxos can be valuable if it can be applied to any Paxos-based protocols
+- Extend protocol to the full solution
+Then, Donut Paxos can be motivated more strongly.
+"inefficient reconfiguration protocols [15, 22]" ==> can you evaluate their performance and show Donut Paxos's performance advantage?
+"4% effect on the median of throughput and latency measurements" => what does it mean? Median of the whole experiment with a failure? If that's the case, medians cannot capture the reconfiguration behavior
+If this is referring to the experiment in Section 7.1, the paper said reconfiguration completes within a millisecond, and the median was captured within one second window
+I think that the "4%" number will change if a different time window was chosen
+In Algorithm 3, "an arbitrary configuration" ==> is it truly arbitrary?
+In Algorithm 3, "Phase 1 quorum from every configuration in H_i" ==> what is the size of quorum?
+This paper presents Donut Paxos, a crash fault tolerant state machine replication system with vertical reconfiguration
+The paper motivates vertical reconfiguration convincingly, provides useful details in the design of the systems, and evaluates the system with a prototype implementation
+In addition, it would be great if the authors can also comment on whether there are downsides with vertical reconfiguration and external matchmakers
+Though the proof seems detailed, I need to see more details for the protocol to evaluate the proof
+How does it know if the old matchmakers have been shut down or if the messages are simply delayed? What's the criteria for this new proposer to perform a matchmaker reconfiguration? Does it directly install a new matchmaker configuration, or does it wait to hear back from the old matchmakers (which not never come because the old matchmakers have been shut down already)? 
+My main question here is why more clients improve throughput
+Is it because you assume each client generates commands at some rate and you need a certain number of them to saturate the system?  If that is the case, it is better to directly use the fundamental parameter of input command rate in the figure and I see no reason to use the number of clients as an arbitrary proxy
+Paxos works in a partially synchronous network, not an asynchronous one
+As a deterministic protocol, it is subject to the FLP impossibility
+Section 3.4 mentions that premature garbage collection can make a proposer stuck; Section 3.5 instead says premature garbage collection can be unsafe
+The "Paxos Made Simple" paper introduced three logical roles in Paxos: proposers, acceptors, and learners
+In fact, the paper seems to use "replicas" to refer to learners
+To this end, I associate Paxos with 2f+1 replicas
+Later the evaluation section says 2f+1 replicas, adding to the confusion.
+Currently, Section 4.2 states that leader i selects its own configuration for round i but also mentions other alternatives like an external source; the first paragraph of Section 4.3 says that leader i selects the configuration for round i+1; the last paragraph of Section 4.3 reverts back to leader i selecting the configuration for round i
+Related to the above point, it is also helpful to fix a leader/proposer schedule
+Section 4.2 suggests each round has a (possibly different) leader
+But Section 4.4 seems to imply that the same leader is in charge of both round i and round i+1
+The Phase 1 bypassing optimization seems to apply only when a single leader is in charge of both rounds
+This makes it more important to discuss the leader schedule
+If the same leader stays across rounds, then when do you change leaders? If you routinely change leaders, then you may need to discuss when Phase 1 bypassing is applicable, and revisit the claim that "no commands are delayed"
+Donut Paxos is a very good paper that proposes a solution to an actual problem (a reconfiguration of the consensus based systems) which covers both the most widespread log-based systems (multi-paxos, raft) and the promising alternative systems such as EPaxos.
+The main idea, a reconfiguration protocol, is excellent
+It takes from Vertical Paxos and then goes forward with replacing a master with a specialized linearizable replicated service which doesn't rely on consensus and has trivial reconfiguration protocol
+Also Donut Paxos  improves the GC procedure
+I find this approach much easier to understand and to reason about compared to horizontal variants such as joint consensus
+One of the interesting implications of this approach is that it helps to get rid of the control messages which often looks like gaps to an application which uses consensus as a foundation for the  replicated log service.
+It combines linearizable querying and updating into a single command, executes it with a single round trip and the protocol doesn't suffer from contention under concurrency (like dueling proposers do with Fast Paxos).
+Last things I want to highlight is the formalization of the "phase 1 bypass" technique via the triple ballot numbers and the formalization of the pipelining via counting inflight requests (k)
+Engineers measure duration of the reconfiguration from the moment it's started to the moment it's safe to shut down a node
+Since the usual deployment of the consensus based systems in the industry consist of 2f+1` nodes with colocated roles (Etcd, Zookeeper, CockroachDB, Redpanda etc.) having the replicas running on the same nodes as acceptors requires to copy its state before turning a node off (to satisfy GC scenario #3)
+From this position the following statements "reconfiguring to a new set of machines takes one round trip of communication" and "all of our results hold in a co-located deployment as well" contradict each other.
+Another issue is the underspecified replica reconfiguration protocol and the unclear responsibility of the replica nodes
+The sentence "replicas can also be safely added or removed at any time so long as we ensure that commands replicated on f+1 replicas remain replicated on f+1 replicas" isn't aligned with "state machine replicas execute the commands in log order"
+After reading them it's unclear whether replicas store commands after execution and how long they should do it.
+Next issue is related to determinism of Paxos rounds: "every round is orchestrated by a single predetermined proposer"
+This sentence creates an impression that given a current round (a ballot number) it's possible to predict the next one but it isn't true for example after (4,"p1") there may be (4,"p2"), (5,"p1") or any other ballot number which is lexicographically greater than the current round.
+A related thing is using `i+1` notation for the next round
+The next round (ballot number) isn't defined until it happens so defining it as a function from the previous round isn't right
+Also operation `+1` isn't defined on tuples ("let the set of rounds be the set of lexicographically ordered integer pairs (r,id) where r is an integer and id is a unique proposer id")
+It might be better to use "next round" instead of `i+1` or to use subscripts `r_i` and `r_{i+1}` instead of `i` and `i+1`.
+This setup is subjected to the coordinated omission problem, a phenomenon when the measuring system coordinates with the measured system resulting in hiding the long periods of unavailability behind a single outlier which may be ignored even if we look at p99.
+The evaluation part lacks a discussion why median and IQR are the important metrics
+Even when the experiment is set up to avoid coordinated omission the reconfiguration still may significantly delay the requests without affecting the chosen metrics
+For example when reconfiguration happens every second, lasts 250ms (a quarter of a second) and blocks the overlapping requests it doesn't affect IQR (a function from p75) but delays the requests by 850% (from 0.29ms to 250ms).
+ - "we include the comparison to MultiPaxos for the sake of having some baseline against which we can compare Donut MultiPaxos, but the comparison is shallow"
+- "Donut MultiPaxos does provide performance benefits over MultiPaxos’ and Raft’s reconfiguration protocols"
+to compare statistics like p99 and max latency of the requests overlapping with the reconfiguration and not overlapping) and back up performance benefits of Donut Paxos with numbers.
+The paper presents Donut Paxos and Donut MultiPaxos which are a reconfigurable consensus protocol and reconfigurable replicated state machine, respectively
+The primary value of the proposed protocols that they allow quick reconfiguration of the active set of acceptors while having no performance degradation
+The proposed protocol performs reconfiguration off the critical path of standard command processing by employing a set of matchmaker processes
+Matchmakers implement a log that stores the current and previous configurations (i.e., history of all configurations)
+Also, Donut Paxos/MultiPaxos uses vertical reconfiguration instead of the classical horizontal configuration that is used in Paxos
+Vertical reconfiguration enables the system to perform reconfiguration quickly without the need to wait for the execution of some user commands
+The evaluation results show that Donut Paxos/MultiPaxos performs reconfiguration quickly (orders of milliseconds) and does not have any overhead on the systems performance
+The paper addresses an interesting problem that is usually poorly discussed in papers proposing consensus protocols
+I like the way in which the solution was presented starting from building a reconfigurable consensus protocol (Donut Paxos) and then extending it to build a reconfigurable replicated state machine (Donut MultiPaxos)
+Also, I commend the authors for having a detailed proof of the safety of the protocol as well as for discussing how other consensus protocols can be extended to implement vertical reconfiguration.
+First, I have some concerns about the novelty of the solution; you can think of the matchmakers as a separate state machine that is used to manage the configurations
+That is, rather than having a single state machines for both user commands and configurations, Donut MultiPaxos decouples them and has one for each
+Moreover, there are 2f+1 matchmakers and a proposer waits for f+1 (typical majority) matchmaker responses to write current set of acceptors and get all previous configurations
+Second, this decoupling between configuration and command processing accelerates configuration changes
+However, it increases the probability of unavailability as the availability of the commands’ state machine is tightly coupled to the availability of the matchmakers’ state machine
+That is, if the matchmakers’ state machine is not available, a new leader/proposer cannot execute any command even if all acceptors are up and running
+Third, the paper addresses the reconfiguration of the acceptors only and do not discuss the reconfiguration of replicas
+“Replicas can also be safely added or removed at any time so long as we ensure that commands replicated on f +1 replicas remain replicated on f +1 replicas.” 
+However, I believe that the issue of making sure that commands are always replicated on majority of replicas is very tricky and this is what guarantees the safety of a replicated state machine.
+For instance only 8 clients were used which is very small number of clients and not enough to stress the system
+Also, the experiments do not highlight any benefits for Donut MultiPaxos over MultiPaxos in terms of throughput and latency
+For better evaluation and better presentation of results, I suggest having a throughput-latency graph that compares Donut MultiPaxos and MultiPaxos for different number of clients and different alpha values (i.e., concurrent commands)
+- The results shown in Figure 9 and 10 are confusing; why Donut MultiPaxos has higher throughput that MultiPaxos in the first 10 seconds (no reconfigurations occur)? 
+- Having Donut MultiPaxos and MultiPaxos results in the same Figure will make it easier to read and compare results
+- “Many state machine replication protocol do not have logs and cannot perform horizontal reconfiguration [2, 8, 27, 30, 33]” (Introduction)
+- Sections 2.2 states that Paxos requires f+1 proposes, and I think it does not, and it works fine with any number of proposers.
+- In Figure 4, should the number of replicas be 2f+1?
+However, while none of the protocols have logs” (Section 6)
+The paper presents a SOK on the subject of Serverless Computing, with the focus on the information that can be useful for application developers (as opposed to infrastructure managers)
+In the first part, the authors describe the main results of several measurement studies with the goal of helping developers with deploying and configuring their serverless applications
+cost trade-offs and present a set of potential applications that can leverage the performance, cost, or both aspects of serverless computing
+Furthermore, *most* are on-point for developers (i.e., they provide useful, concrete information that developers can use to improve their serverless applications, reduce their costs, or both).
+* Similar to the issue above, some parts of the paper are aimed towards researchers and not application developers (for example, describing possible research areas)
+For example, future research section 6.3 is something that--even though developers could tackle themselves--is very unlikely that they would
+Serverless is not a common choice due to costs (not main reason) but rather due to ease of use; specifically, not having to worry about managing the infrastructure
+Idea 6.3, though a very good idea, is not somethings that application developers would be interested in doing (it basically adds servers back to serverless!) but rather something that should be offered by providers and also perhaps explored by academia.
+* I feel that the use cases section (Section 5) is not thorough enough; e.g., it is missing important use cases like: DevOps / Maintenance tasks, HTTP APIs that interact with end user, and ETL tasks
+Deciding to read a 19-page paper can be daunting; for this reason, I think removing Section 5 and instead pointing the reader to other studies about serverless applications (e.g., [1]) may be better
+* In Section 3.1, the authors talk about how serverless platforms use "approaches [that] employ container reuse, loose isolation between function instances, and memory snapshotting and restoring to achieve a cold-start latency that is as low as 10 ms or less." Here, the authors are missing approaches related to placement/routing/scheduling that are also used to achieve low cold-start latency (by increasing locality and thus maximizing environment re-use or benefiting from caching, in combination with placement/routing/scheduling algorithms)
+Examples of these are sticky routing [2], package-aware scheduling [3], and ENSURE [4]
+There are also works related to reducing cold starts via optimal capacity planning like COCOA [5]
+Not related to cold-starts but related to improving performance via improving locality, is the work of Bhardwaj et al
+* In Section 3.5, you should also cite the AWS results by Tarasov et al [7] (see Figures 8 and 9 and their explanation in the paper), who also conducted similar measurement studies.
+For example, the work by Eismann at al
+Example of one place where you are using references as noun: "Tools such as [48,49,61,98]
+You can change to "Tools like X, Y and Z [...]" or "Other have proposed tools that..
+Examples that should be fixed: "one life-cycle of an application into two categories: one-time decisions and online-decisions"; in this example, life cycle and online decisions should not have dashes
+[1] Serverless Applications: Why, When, and How? @ IEEE Software ( Volume: 38, Issue: 1, Jan.-Feb
+[2] Firecracker: Lightweight Virtualization for Serverless Applications @ NSDI 2020
+[3] Beyond Load Balancing: Package-Aware Scheduling for Serverless Platforms @ CCGRID 2019
+[4] ENSURE: Efficient Scheduling and Autonomous Resource Management in Serverless Environments @ ACSOS 2020
+[5] COCOA: Cold Start Aware Capacity Planning for Function-as-a-Service Platforms @ MASCOTS 2020
+[7] Infinicache: Exploiting ephemeral serverless functions to build a cost-effective memory cache @ Usenix FAST 2020
+[8] Predicting the Costs of Serverless Workflows @ ICPE 2020.
+This paper describes the state of the art of serverless from the perspective of a user/developer (as opposed to the more traditional provider perspective).
+The collects the evaluation of aspects like the cost and the performance from other papers.
+It also poses some open research challenges in the area and proposes high-level solutions.
+Overall, the paper is useful and gathers the relevant state of the art.
+The measurements section also mixes actual content (measurement analysis) and description of the platform (belonging to the background).
+Given that the paper focuses on building applications on serverless, I think that FaaS should be brought up earlier.
+Currently, FaaS is only instroduced when discussing the economical aspect (Section 4).
+From this paper perspective, I would say that the serverless aspect refers to developers not having to care about managing servers and the programming mode lwhile FaaS refers to the pricing scheme.
+Other variations (e.g., FaaS being the programming model) can be valid and up for interpretation but it should definetely be established.
+The paper focuses on the execution of the functions but seems to overlook the communication aspect (across them and state with inputs and outputs).
+It would be good to go over what are the options for communication (e.g., messages and distributed storage) and how users would choose which approach to use and why.
+The introduction, states what "an ideal SoK paper should address".
+Note that SLA also refers to the penalties not only the guarantee (in contrast with SLOs).
+The end of the background section has forward pointers which transform the section into a motivation for Section 6.
+In addition, it could use more structure (i.e., paragraph labels) to make the topics tackled easier to follow.
+In Section 3.2, when explaining performance, there are a few basic explanation that seem to belong to Section 2.
+It is also questionable if Section 3.2 should be two separate sections for cost and performance.
+It would be good to consolidate and structure in a way that makes the paper flow into just one description of the cost model.
+Most of the general concepts should be left in a shorter version of Section 3 and the rest (e.g., data related to Table 2) moved before Section 6.
+It might be a good idea to have a section describing each of the providers and describing them deeper highlighting their singularities (these nuggets are mentioned throughout Section 3 but summarizing them per provider would be valuable).
+Currently, they follow the model f(x, y, z,...) which does not bring any insight other than saying what the inputs are.
+To present the inputs just plain text or a table comparing the two seems a better choice.
+Going towards the formula approach, one would give more specifics on the actual relation across 
+In particular, given the observations of the previous sections, a low rate application is very expensive to maintain for the provider.
+Another main feature for using serverless is the programming model itself.
+It is true that this is closely related to the ease of maintenance, scalability, etc.
+However, the programming model is the enabled of most of this and there are users that do not care about these aspects but choose serverless and FaaS because of how easy it is to just code a function with clear inputs/outputs.
+It may need a conclusion section which compares or summarize the uses of serverless and then maps it back to the features.
+This could be done by splitting each section into two or three (following the previous points) or having a section describing the current work on these areas and a separate section with a pure future research section.
+This SoK paper in the area of serverless computing systematizes measurement studies, summarizes a serverless economic model, discusses challenges for different classes of applications, and outlines future research directions
+It primarily takes the perspective of an application developer (or cloud user) focusing on decisions a developer can make to influence the performance and cost of serverless applications.
++ Strong focus on controllable parameters by developers linked to experimental studies (i.e., Table 2 establishing causal relationships)
+The refinement of this classification into one-time and online decisions is helpful.
++ Section 3 on Measurement Studies is well developed combining a useful classification with the discussion and comparison of detailed results from multiple studies
+- The second part of the paper (Section 4-6) could benefit from clarified purpose, improved structure, and enhanced support from existing literature (see primary comments below).
+- The flow of the paper could be improved by reducing redundancies and keeping the writing more focused/concise
+While there exist (multiple) SoK papers for the covered topics (measurement studies, serverless usage, future research), it presents the broadest view on serverless computing while also summarizing detailed technical results.
+p3: The background information on serverless platforms (i.e., Table 1) is incomplete/outdated and inconsistent and should be verified carefully:
+Google Cloud Functions supports additional runtimes (Java, .NET, Ruby) as documented here: https://cloud.google.com/functions/docs/concepts/exec
+The .NET runtime is not limited to C# and hence misses other languages (e.g., F#)
+The billing interval for AWS Lambda is outdated
+Optional: It would be great to provide traceability (using footnotes or an online appendix) because these properties are subject to frequent changes.
+      - Castro et al
+      - Baldini et al
+[40] similarly discuss developer control in serverless computing (see Fig
+For example: "Can legacy code be made to run serverless?" is closely related to Section 6.2 in this paper on "Decomposing Serverless Applications".
+      - Leitner et al
+particularly focus on the developer's perspective in "A mixed-method empirical study of Function-as-a-Service software development in industrial practice"
+p9ff: Section 5 on Serverless Usage needs some restructuring and/or clarification of its purpose:
+ Section 5 aims to "identify suitable classes of applications [...]" (p2) and "look at various classes of applications that are best suited for the serverless computing model" (p9)
+However, in my opinion, Section 5 discusses interesting usage scenarios of serverless (as the section title suggests) in research rather than identifying "best suited" or common application classes
+The language used to describe these scenarios also indicates the more experimental nature of the cited studies rather than serving as examples for best suited applications: 
+        + potential: "the potential of using serverless computing for scientific workflows"
+        + can: "serverless computing can be employed to solve various mathematical and optimization problems"
+        + explore: "explore deploying various machine learning applications using serverless platforms" and "explored to deploy stream processing applications"
+        + feasibility: "look at the feasibility of using serverless functions for IoT devices"
+      One idea would be to adjust the formulation of the purpose for Section 5 more towards interesting usage scenarios that leverage serverless features
+The discussion of challenges and open issues would also fit better rather than contradicting a "best fit" application class
+The goal stated for an ideal SoK paper in the introduction also fits better than the current formulations in other parts of the paper: "2) what makes serverless com- puting ideal for certain classes of applications"
+Related to the previous comment, "5.5 Improving QoS of Cloud Applications" rather sounds like a general usage scenario than a class of application
+Maybe a different subsection header (offloading, hybrid, idk) could alleviate this concern as I have the impression that "Improving QoS of Cloud Applications" doesn't fit well together with scientific workflows, ML and data processing and IoT.
+The connection between "distinct features of serverless computing" at the beginning of Section 5 with the remainder content on serverless usage should be clarified
+The goal stated for an ideal SoK paper in the introduction gives a better hint towards this connection than provided in Section 5
+A short note on how you derived these distinct features could be helpful given that other SoK papers [97,45] present similar key features
+Could it be an option to move the description of "distinct features of serverless" to the background section instead?
+The second part of the summary (i.e., "An application developer [...]") belongs to Section 6 and needs to be moved and adjusted to the ordering of Section 6 accordingly.
+The first part of the summary covers the authors' interpretation of distinct features of serverless computing
+It would be preferable to have a summary that covers the key aspect of this section (i.e., serverless usage based on findings from literature).
+Section 4 (p8f) on "Serverless Economic Model" would benefit from more diverse input and a unified model:
+        - Adzic and Chatley 2017: "Serverless Computing: Economic and Architectural Impact"
+Why does the paper present two similar but different economic models for serverless computing (Section 3.2 Cost and Performance and Section 4)? Can these models be unified? If not, I suggest explaining the reasoning and motivation.
+Section 6 (p12ff) on Future Research could benefit from a better distinction of challenges (what is the problem? maybe emphasized as question), existing work, and open issues (what remains unsolved?)
+6.1 Parameter Tuning: COSE is praised to address (most of) the raised challenges, hence a clarification of what remains unsolved is recommended here.
+It appears counter-intuitive to describe such frameworks and approaches as ideal/common application class in Section 5.5
+Reducing the redundancies between these sections could also help to keep the discussion more focused.
+As a SoK paper covering multiple topics where other SoK papers exist, it could strengthen the diversity and credibility by considering existing views
+How do future research challenges compare to existing SoK papers? e.g., Eyk et al
+Further reaching idea: Synthesize future work from primary research papers.
+Are there other classes of applications / usage scenarios that are relevant? What about web APIs? Clarifying the purpose might be sufficient to dismiss this point because I think the usage scenarios you discuss are more interesting (but not exhaustive).
+The introduction could potentially hint towards this that some findings are also relevant from a service provider's perspective.
+For example: Section 3.1 says that "1) For serverless platforms: Serverless platforms can im- prove the cold-start latency by having fast sandboxing tech- niques or by keeping the sandbox instances warm for a longer time." before talking about the developer's perspective in point "2)".
+Given you also consider open-source platforms: (How) Does the developer's perspective differ compared to hosted platforms? For example, do you consider tunable system parameters of open-source platforms in control of developers (i.e., as a serverless user) or out of control (but still controllable by sys
+Could it be helpful for the reader to mention how these "own experiments" are related to this paper?
+p13: "To the best of our knowledge, we did not come across any previous work that suggests decomposing monolithic serverless applications to optimize the cost or performance." => Related work published in IEEE Software: Ristov et al
+2021 "DAF: Dependency-Aware FaaSifier for Node.js Monolithic Applications" 
+Overall, reducing some redundancies could improve the flow and keep the paper more focused
+p13: Cost and performance benefits of serverless have been repeatedly discussed before so I suggest removing this sentence: "We believe that in addition to performance, serverless com- puting also offers a unique pricing model, and as discussed in Section 4, serverless computing can be cost-effective for certain demand."
+p12: The limitation of "limited control" has been introduced in the background and extensively discussed in Section 3
+Hence, a re-explanation in 6.1 might not be necessary anymore: "In a serverless computing model, a user has limited control over the function’s run-time environment, i.e
+p2: "The output of the serverless function is then returned as the response to the trigger." => This description is limited to synchronous function invocations and does not hold for asynchronous invocations
+p2: "A user can control limited configurable parameters, namely memory, CPU-power, and location." => maybe a add clarifying modifier (e.g., such as memory size, ...) and/or mention that configuration capabilities differ per platform (e.g., memory is not explicitly configurable for Azure)
+p9: "Summary: Serverless is more economical for applica- tions with low rate and bursty demand." => "bursty demand" is not explicitly discussed in Section 4
+I suggest emphasizing that many of the specific results (e.g., CPU type, CPU share, instance lifetime, concurrency level) are of temporary nature and subject to changes (e.g., if providers decide to update hardware, policies, etc).
+* p1: "introduced by Amazon in 2014 as Amazon Lambda [1]" => "AWS Lambda" (AWS != Amazon)
+* p1: "Tools such as [48,49,61,98] were built" => preferably re-formulate more self-containing or de-emphasize the citations alike "Many tools [...] were built to ..."
+* p1 "allows a developer to focus on writing code in a high-level language (as shown in Table 1)" => could clarify reference to Table 1 as listing examples of runtime languages (rather than showing how it allows a developer to focus on writing code)
+* p2 "Then we present an economic model of serverless computing and compare it with traditional Infrastructure-as-a-Service (IaaS), and iden- tify suitable classes of applications that can leverage server- less computing for its performance/cost (Sections 4 & 5)." => misses a word at the end of the sentence
+Consider reducing this redundancy (maybe shorten the background because it fits better into the flow in Section 3)
+* p5, Table 2: Could it make sense to align the names in the first column with the subsection headers, maybe even link them? It could make it easier to relate the table rows to the individual subsections that currently have slightly different names.
+* p5: "the underlying infrastructure of commercial serverless platforms consist" => the infrastructure (ie it) *consists*
+* p7: "The authors could not find a consistent value for Azure Functions
+While another recent study [14] claims this value to be 20-30 min for Azure Function, 5-7 min for AWS Lambda and 15 min for Google Cloud Function." => I would expect some contrasting argument for the 2nd sentence starting with "while"
+* p9: "Serverless is more economical for applica- tions with low rate and bursty demand." => low invocation rates
+* p9: "Even though serverless computing is a relatively new paradigm and still evolving, there have been several attempts from independent developers and researchers to deploy vari- ous applications using this computing model." => why only these groups? This sounds like serverless would be a niche offering but given the adoption by companies running production workloads, I suggest re-phrasing this sentence more optimistic.
+* p10: "While ‘pay as you go‘ pricing, on-demand scaling, and minimal cold start, make serverless computing a good fit to deploy machine learning models" => no comma (,) after cold start
+* p10: "Recent approaches [47, 83, 84]" => consider omitting recent here for a study [84] published 4 years ago (which is about half the lifetime of AWS Lambda)
+* p13: Figure 4 could be presented horizontally more space-efficient and analogous to Figure 1
+Paper summary: This paper provides a systemization of knowledge (SoK) for serverless computing from a developers perspective
+Besides providing an overview of how function-as-a-service (FaaS) platforms work, it characterizes existing  FaaS platforms along three dimensions: their features and configuration parameters that are exposed to a user via prior measurement studies, the applications across various domains that can and are suitable for serverless computing, and future research directions that can improve the utility of serverless computing from a developers perspective.
+Strengths: The paper provides a comprehensive overview of research in the serverless computing domain, presented from a perspective that is useful for application developers
+It is also well-written, with very helpful summary/conclusion boxes summarizing takeaways for each dimension of FaaS platform they analyze.
+Areas of improvement: The discussion on characterization of prior studies on serverless computing provides detailed insights on what those studies found, but could benefit from a more detailed discussion on the why and how behind those findings.
+My main suggestion for improvement for this study is to focus a bit more on the why and how behind the findings of prior work presented in the paper — currently, the text primarily focus on only what the findings are
+* In section 3.1, it is mentioned that the choice of programming language have performance implications — scripting languages have 100x less cold-start delays compared to compiled runtimes
+* Again, in section 3.1, choice of  serverless provider is cited to impact cold-starts as well, depending on their underlying infrastructure, etc
+* In section 3.2/3.3, the summary of prior studies suggest that choice of underlying operating system, concurrency, co-location and underlying infrastructure/policies of cloud providers affect performance
+* In section 3.4, there is a detailed description on how CPU and memory allocation is shared across various cloud providers, but the discussion on network I/O is brief — how and why exactly is network IO affected by resource configuration and co-location?
+There are more instances through out sections 3-6, and could benefit from brief intuitive descriptions of the underlying reason behind presented findings, and a more detailed characterization of their impact on developer choices.
+Second, I was a bit confused by Figure 2: is the plot obtained from real experiments, or simply a characterization? The figure is missing axes labels, and makes me believe it is the latter, although the text states “we deployed various (I/O-intensive, memory-intensive, and CPU-intensive) functions on Amazon Lambda and invoked them with varying resource conﬁgurations.” The figure is referenced for a number of resource types (CPU, memory, network, etc.) as well — do all the resources exhibit the same characteristic trend? How does it vary across different cloud providers?
+* Your paper is titled ‘Serverless Computing: From An Application Developer’s Perspective’, but focuses only on FaaS platforms
+* In Section 3.1, you mention “One has to be careful with conﬁguring more resources for the serverless function to remedy cold start, as it can increase the cost of running the serverless function.” I was expecting to see a characterization of this tradeoff there, but found it in Section 3.2 instead
+Perhaps it might be useful to provide a forward pointer in 3.1 to 3.2.
+* The discussion on reducing/circumventing cold-start latencies talks about how serverless platforms can reduce them
+While this is informative, it isn’t particularly useful for an application developer, since they do not have any control over it
+Is there a reason for separating the two? I feel merging the two sections would lend depth to cold-start analysis.
+* IMO Section 5.2 is better titled as Data Analytics applications (which subsumes ML)
+* The paper mentions in number of places (abstract/intro, section 5, 6) that serverless platforms can lead to performance gains
+Specifically, in Section 5: “In addition to the ease of development, the particular pricing model and on-demand elasticity of serverless computing can beneﬁt such applications both in terms of cost and performance.”  This sentence is contradicted two paragraphs later: “However, the stateless nature of serverless functions can adversely aﬀect the cost and performance of such applications.”   As I understood it, the performance gains stem from being able to scale and provision resources faster using serverless platforms, outperforming IaaS solutions when they are underprovisioned — however, it is unlikely that a serverless realization will outperform a sufficiently provisioned IaaS solution, at least today (e.g., due to cold-start overheads, shared infrastructure overheads, etc., as you mention in Section 3)
+It would be useful to disambiguate scalability+elasticity from performance for serverless platforms
+* Section 6 could benefit from similar conclusion/summary boxes employed in Sections 3-5
+This paper proposed a customizable container-based profiling framework for ML work's reproducible performance analysis
+However, the mentioned core-hours the authors invested on each of the clusters for data gathering and analysis make me wonder about how much time it will require for a developer/researcher to perform the performance analysis of a new ML workflow
+(2) The proposed framework can determine the bottlenecks of an ML workflow pipeline which will significantly help the community
+(3) The proposed analysis approach combines the approaches proposed by various previous works to provide a more holistic approach
+(5) The high-level goals mentioned in Section 3.1 are well thought and clearly show the framework's purpose
+(6) The evaluation of the two clusters is thoroughly performed and considers a wide range of parameters
+(1) I am concerned about how much effort is required by the researcher/developer to utilize this framework for another ML workflow.
+(2) This manuscript does not mention whether containerization affects performance? Is there a trade-off between the reconfigurability and the efficiency of the framework?
+(4) The performance analysis is done on only one model and dataset
+Point 5 of Section 5 states that the importance of preprocessing worker and batch size varies for Lisa and Cartesius
+Though section 5.4 mentions that the under-provisioning of CPU compute to GPU compute may cause this difference, I expected such a performance analyzer to provide concrete reasoning behind each bottleneck
+(5) This manuscript does not mention whether this framework applies to clusters that share resources
+However, I am concern about the required effort to use this framework for other models and clusters
+(1) It will help the community if the authors explicitly mention how much effort a developer/researcher needs to invest to use this framework.
+(5) A discussion on how this framework applies to shared resourced clusters
+(1) In the last line of the first paragraph of Section 3.1, the number of sub-objectives should be four instead of three
+This paper presents SURFBoard, a framework for data scientists to perform detailed performance analysis of distributed machine learning pipelines
+SURFBoard packages different profilers and ML tools into a container image and provides visualization notebooks to show and study the profiling results
+The authors demonstrate the type of analysis that can be performed with SURFBoard by training a ResNet50 model on two different GPU clusters, collecting profiling metrics, and visualizing and analyzing the results.
+- Tool for automated, detailed performance analysis for ML pipelines is very useful
+- Tool allows automated exploration of infrastructure parameters
+- Evaluation has been done on two real-world, large-scale GPU clusters
+- The exact meaning of "reproducible performance analysis" and how that is supported by SURFBoard is not clear enough
+- The paper is missing a comparison to existing ML model management frameworks such as MLflow or Pachyderm
+Being able to, as you say "gathering performance data from all the components of the training workflow" is useful to debug and optimize pipelines
+This is particularly true in the case of distributed training, where collecting such metrics becomes even harder
+This is a nice feature that can be provide useful guidance to users, who would like to, e.g., retrain a model and need to size/estimate their resource requirements
+Reproducibility in your case could mean a variety of things
+For example, it could mean that individual experiments have reproducible performance across runs or that somebody else could use SURFBoard to train a model on a different cluster and achieve the same performance
+It could also mean that SURBoard can be used the same way in different environments (which would be more like the portability that you also mention in the paper) or that it collects and makes available all the necessary information (e.g
+hardware, hardware configuration, software configuration, etc.) that is required to reproduce the performance from the initial experiment
+Given these different potential meanings, it is important to clearly and early on define, what you mean by reproducibility in the context of SURFBoard.
+I was also missing a bit stronger motivation for why performance reproducibility is crucial for ML workloads
+You mention in the introduction that it is important for productivity, model and knowledge sharing, and energy efficiency
+While the energy efficiency part made sense, I wasn't sure about the other two parts
+This issue might also resolve itself once the reproducibility meaning has been clarified.
+Related to this, it would also be good to show an example for the effort it takes to extend SURFBoard to a different ML framework, profiling tool, data loader, etc
+That is fine to have as an initial limitation but it would be good to quantify that in some way, e.g., by lines of code changes required or time it took to make the changes
+This would give users a better idea of *how* difficult adaptation would be and help them to decide whether it is feasible to deploy SURFBoard in their specific environments.
+Finally, I was wondering, whether you considered the option of integrating SURFBoards's profiling capabilities with any of the existing ML management frameworks such as MLflow, Determined AI, Pachyderm, Polyaxon, etc
+Those frameworks already allow for reproducible training, hyperparameter exploration, and some even collect basic resource utilization statistics
+Would it be possible to extend those frameworks to provide SURFBoard's profiling mechanisms on top of the other features? Why would that be difficult? Some of those questions might be answered once comment 2 has been addressed but I would still like to see a more explicit discussion of "if and how" or "why not" SURFBoard can be integrated with such tools
+A distinction to those tools in the related work should also be added.
+- Can you better indicate the two sections of host and containerized code that you're referring to in Figure 2? I wasn't sure where exactly the boundary was.
+- In Section 3.1 you mention that your goal is to construct a performance model for performance extrapolation
+Is this referring to the cost model of the volume of MPI_Allreduce messages? I was expecting something more general for this, maybe one (or several) model(s) for different metrics, integrated into SURFBoard
+- Can you clarify what is the difference between workers and nodes? 
+4), scaling wasn't actually linear but rather started to flatten after 4/16 nodes/GPUs
+- The analysis of the network traffic felt a bit thin, given the amount of graphs associated to it (Figures 5-10)
+- I was wondering, if the data in Figure 11 could be broken down further, e.g., what portion of the backward pass was network traffic, CPU/GPU data exchange, etc.? Do you think that is possible?
+- In the Related Work, you mention that you adhere to reproducibility methods for achieving reproducible performance
+- page 2: "[...] container-enabled large-scale HPC infrastructureS."
+- page 6: "It is important to note that THE DL model described above is used as an example for THE validation study and to showcase THE capabilities of the framework [...]"
+- page 8: "FigureS 6 and 5 presents [...]" -> present (without s)
+- page 8: Resnet50 -> ResNet50
+Summary of the paper: This paper proposes SURFBoard a container-based solution for performance evaluation of ML workflows
+They show on two different use cases that the container can be used to generate results for a variety of performance questions
+The objective is to make it easier for users to share performance and efficiency characteristics of ML workflows
+Is the research problem with "reproducing ML workflows", or is it "analysis of ML workflow performance" or is it "evaluation of ML workflow performance" or is it "profiling of ML workflow performance"? Given the proposed solution, it seems the problem is of challenges in "sharing ML workflows and their performance results"
+ Sharing a workflow raises the question of what to share and the container-based solution is an approach for improved sharing
+In that regard, sharing is conflated with reproducing, analyzing, evaluating and profiling
+It is not clear what is the role of reproducibility beyond portability via containers, which is a limited use of definition of reproducibility
+In particular, how using a container, which is for isolation, aids reproducible performance? If a performance result differs on a H/W it will differ irrespective
+further if application has library conflict with other libraries in the container, SURFBoard will not run
+It would help if the authors describe in more detail what are the challenges behind running this framework, since they claim "performance analysis framework is able to run and achieve significant results on multiple types of infrastructure."
+The proposed solution is not compared with alternate approaches for sharing such as 
+Some concepts such as performance evaluation and analysis are overlapping and have not been distinguished clearly
+Originality: Building containers of complex software stacks is a recent trend to improve devops and speed deployment
+The paper shows that several HPC libraries can be part of a singularity container and this container can be successfully used to generate complex performance results often needed for HPC workflows
+Significance: The work is significant as specific containers that ease sharing of complex software must be made known to the broader community
+Instead of studying how to achieve reproducible results, this paper studies reproducible performance analysis, focusing on ML application
+Therefore, this paper proposes a new performance analysis framework called SURFBoard
+The key contribution is to implement and evaluate this framework
+The paper argues that a large amount of implementation efforts have been made for the development of this framework
+The paper evaluates SURFBoard on one deep learning application Resnet on two large-scale GPU clusters for performance analysis to demonstrate reproducibility.
+This paper describes the implementation details such as what hardware and software tools are used.
+What is the definition of reproducible performance analysis? What is the difference between performance analysis and reproducible performance analysis? Why do people care reproducible performance analysis? What's the relationship between performance analysis and reproducibility? The paper is not clearly justify why analyzing performance of ML workflows can help reproducibility
+What is ML in this context? ML systems, ML algorithms, or ML models? Also, the paper uses ML workloads/algorithms/models interchangeably, which is actually confusing
+The paper conducted extensive experiments of the chosen DL application on the chosen hardware.
+It is not enough to evaluate only one workload in only one domain with one software in system paper evaluation
+There is no baseline for comparison
+In a rare case, it is fine if the proposed work studies a new problem that no prior work has studied before
+But, this paper studies reproducible performance analysis
+This paper presents an approach to implementing congestion control at
+The key novelties are the approach of using
+large windows at TCP layer to support free window changes controlled
+shows that the app-layer implementation has high fidelity with respect
+    windows at app layer over large windows at TCP layer
+(2) Real implementation on linux and android
+    components can read tcp_info for congestion window information and
+(3) Not requiring datapath modification is a very useful feature in
+    ossified environments like cellular backbones and mobile OS
+- Purely-server-side modifications are already possible today with
+  large deployments -- think schemes like BBR and algorithmic
+So, downlink transfers (ex: web server -> mobile UE)
+- the connection must be long-lived, allowing the TCP cubic window to
+- if a cellular link exhibits highly variable RTTs or displays
+  otherwise lossy behavior, the TCP cubic window itself might be low,
+  which upper bounds what the ALCC algorithm can do in terms of window
+This makes it difficult to build ALCC protocols that
+  would likely developments in the flexibility allowed by datapaths
+(2) The paper must report full CPU overhead measurements rather than
+    different from 50% to 75% even though both are 1.5x increase
+    claiming "comparable cpu overheads to ccp" is dubious given that
+    the ccp overheads were obtained at 10 Gbit/s
+    client as well by implementing a UDP-socket based version of the
+(3) Showing more protocols would help make the point about
+    expressiveness of the framework (BBR, Vegas)
+    eval seems to lack purely pacing-based protocols like BBR.
+(4) The comparisons to ccp and quic need to be refined.
+    CCP does not require total rewrites of CC algorithms
+    some datapaths already have CCP support mainlined, like the mvfst
+    QUIC library from Facebook and the mTCP DPDK-based TCP
+    upstreaming) is now easier than ever with bpf-based alternatives
+    Also, migration to QUIC on mobile client is doable without
+For example, uber recently managed to
+(5) The authors must describe their mobile app design and interaction
+    Specifically, it is unclear how the http library enforces
+    congestion windows, and measures RTT estimates, etc
+An HTTP req/resp is not the same as a single TCP
+    packet/ACK, since http responses may straddle multiple packets,
+    Is MDI a prerequisite to run ALCC for uplink in mobile clients?
+    data transfer (mobile -> server) is one of the key novelties of
+- how can ALCC use a blocking signal from the network stack since
+  blocking signal also affects the behavior of the higher layer
+  protocols to adapt to the varying signal."; maybe give a concrete
+  "on-datapath" component and implement most or all of the algorithm
+- it is not very surprising that almost any TCP modification in the
+  downlink diretion can be supported with just server-side
+  congestion control don't (typically) require packet structure
+  alternatives like QUIC and DTLS
+- in general, it is not clear how ALCC will receive signals from the
+  TCP stack without modifying the TCP stack itself or at least have
+- architecturally, datapath modifications are mainly a problem on
+  running new variants or tuning algorithms on server side is fairly
+  protocols in literature over QUIC" -- support for ccp in mvfst
+It is fairly easy to implement CC algorithms.
+  quic traffic, and if the trends persist, operators will be pressured
+- "if the TCP socket reports a full buffer and blocks on a potential
+"  -> how would a blocking
+- an architecture figure or a forward-pointer to one will help in this
+  so long as the semantics of the socket object remain similar and the
+  rest of the app can just assume the prior semantics (before ALCC
+- what's the return value of the send() call? is it the amount of data
+- netfilter hook to intercept ACKs and send to userspace module is a
+  nice idea, to send protocol ACKs to the mobile client (for uplink
+But netfilter and iptables may not scale to
+  large line rates or number of connections, especially on the server
+Scalability of these mechanisms will definitely be an issue
+  considered evaluating your system against increasing number of
+  register and deregister iptables rules seems like a problematic
+  substantial datapath modifications were in fact required even for
+- if the client needs to send an ACK for feedback, that seems to go
+- implementation seems to use OkHttp, which won't work for any app
+  that doesn't use okhttp or uses more generic socket API-based
+  messages can span multiple packets, especially responses
+  orthogonal approach to implementing the CC.
+  Mbps flows from the cell phones may or may not capture anything
+  paper clarifies what these traces are really useful for
+- it would be useful to dig into why the average delays are higher
+  with ALCC-verus, both in the median and the quartiles
+  premium? The numbers from ccp were reported at 10 gbit/s, showing an
+  different from running on a cellular trace which runs at tens of
+- "Given that native Copa or Verus can not operate on the native
+  overhead was not feasible."  -> what about sprout? also, we could
+  still compare the overhead over just running tcp cubic, to get a
+- why not develop a version of the algorithms over udp, like they work
+- "1% a relatively high error rate in cellular contexts especially
+  after lower-layer recovery within the cellular net- work [13]
+The paper proposes and implements ALCC, an application-layer framework that facilitates the development and deployment of congestion control (CC) algorithms for cellular networks on top of a legacy TCP stack
+This is feasible due to the observation that TCP's congestion window is kept unnecessarily large on cellular networks, allowing ALCC the latitude to operate at a lower effective congestion window (or sending rate) than the underlying TCP
+In the evaluation, this paper demonstrates that porting three well-known CC protocols -- Verus, Copa, and Sprout -- to ALCC requires little effort, while it is possible to maintain comparable performance as their native implementations at the same time.
+- The solution is practical and has the potential to accelerate the adoption of new CC schemes on cellular networks.
+- The core idea sounds too good to be true and lacks justification, i.e., the paper does not describe in what scenarios ALCC is not applicable, and it is unclear when the underlying TCP congestion control will affect the efficacy of ALCC.
+One of the biggest strengths of the paper is to bring an elegant but unexploited idea to light and embed the idea into a practical framework, which may simplify the development of cellular CC protocols and potentially accelerate their adoption in real settings
+The obvious missing piece is an in-depth evaluation that reveals the internal mechanism
+The paper shows that three CC protocols (Verus, Copa, and Sprout) achieve similar performance with and without ALCC, using repetitive experiments and figures
+By contrast, when things get interesting on lossy links where the performance discrepancy starts to manifest (Figure 13), the paper stops delving into it
+Additionally, the micro-experiments for validating the design choices are largely missing (described as suggestions below).
+- Plot how the underlying TCP CWND varies over time along with each cellular CC scheme's CWND (if available; plot sending rate otherwise)
+Show how often ALCC receives blocking signals from the underlying TCP and other noteworthy interactions between them.
+Prior work has pointed out that even on cellular links, Cubic is not necessarily worse than these new protocols.
+- It is better to include an experiment to illustrate that when there is no bufferbloat, ALCC's approach may not attain superior performance, which necessitates the setting of bufferbloat or cellular networks.
+- Besides stochastic packet losses, what are the other scenarios (e.g., high-speed networks?) when ALCC-based CC differs from the native implementation? For these scenarios, give evidence to explain the unusual behavior, such as why ALCC-based Verus in Figure 13 achieves higher throughput than Verus between 100-150 seconds
+Describing a hypothesis without a quantitative proof ("ALCC indirectly reduces the chances ...") or using words like "surprisingly" does not help shed light on the phenomenon.
+- Even under the setting of stochastic packet losses, I doubt ALCC-based CC algorithms can always reach a higher throughput as shown in Figure 13
+E.g., if an algorithm were informed a 10% random packet loss beforehand (on a link with infinite bandwidth), then it could leverage FEC and send 10% extra redundancy packets to maintain a high goodput
+However, ALCC would have limited its sending rate to the underlying TCP's data rate, which would be extremely low under such a high loss rate
+Therefore, the results of Figure 13 might not be generalizable.
+- A cellular CC protocol implemented on a UDP socket typically also specifies a retransmission mechanism
+Now that the retransmission has to be done by the underlying TCP, the implications are unclear to the audience
+The paper would have offered more insights if it could present the implications and how ALCC could correctly avoid packet losses / retransmissions in certain circumstances.
+- Protocols such as Sprout are intended to be used with low-latency applications such as videoconferencing, so it might be a good idea to replace the obsoleted RTMP streaming application with that
+On a related note, the paper only describes how easy the integration with off-the-shelf applications is, while missing the impact on their performance after the integration.
+- The three different ways to realize ALCC require a quantitative comparison
+And the CPU usage is missing for the client/server implementation and the mobile Java library; even if it is infeasible to measure the CPU overhead on an Android phone for Copa or Verus, the paper could have reported the overhead compared with running the default kernel TCP.
+- ALCC library is currently implemented as several threads -- what are the alternatives and pros/cons? 
+Apart from the above suggestions, real-world experiments are essential as well
+Figure 1 and 2, the only figures that justify and motivate the core idea, are performed in a controlled environment
+However, the evolution of CWND can be much more complex on real cellular networks
+Empirical results have shown that TCP exhibits drastically different behavior on different operators' networks, e.g., the bufferbloat problem is less prominent sometimes, which might invalidate ALCC or negate the performance gains of ALCC
+Real experiments would make the paper's arguments and findings more compelling.
+- Why are we not seeing the sawtooth pattern of TCP Cubic in Figure 1? Is it because a large bin is used in the graph?
+- It does not make sense to require developers to replace their calls to send() with alcc_send() in every place, so I wish a more elegant solution is implemented, such as the LD_PRELOAD trick mentioned in Section 4 or system call hijacking (which understandably has other limitations).
+- Thank you for the replies to my comments! I agree that there is value in the server-side ALCC library, but it still sounds possible and straightforward to implement Sprout on top of a non-blocking TCP socket without the need of ALCC's client/server library, so long as it operates at a lower speed than TCP with the help of TCP's blocking signal
+The current paper draft does not compare with the alternative approach, or describe what else ALCC's client/server library actually does beyond a simple user-space wrapper around a TCP socket
+Besides, the authors did a better job in their replies explaining the interactions between ALCC and the underlying TCP than the paper does; more experiments to break down the impact are required to support these interaction claims regardless.
+This paper presents an interesting system ALCC which implements congestion control for cellular networks in the application layer
+The authors implicitly assume that cwnd of kernel TCP (e.g., Cubic) should be larger than cwnd of application layer, which ALCC wants to enforce
+Thus we have cwnd of ALCC = min(cwnd of kernel TCP, cwnd of application)
+This assumption may not always hold in practice, e.g., Cubic significantly reduces the congestion window due to small switch buffer and non-congestion packet losses (e.g., bit errors, failures)
+It seems to me that ALCC lacks a general method to support customized ACKs required by various cellular network congestion control algorithms
+ALCC provides different APIs compared to legacy socket
+This introduces non-trivial modifications to migrate an application to ALCC
+ Instead of assuming kernel TCP's window is always large enough, I suggest the authors enforcing a static high window size in kernel TCP, thus 'disabling' kernel TCP congestion control
+Instead of exposing customized APIs to applications, I suggest the authors using LD_PRELOAD to translate legacy socket APIs to ALCC APIs
+I hope the authors can summarize how to support customized ACKs in a more principle way
+But the solution described in 4.3 is not so related to 4.1 and 4.2, and lacks many important details
+There are many high performance user space network stacks designed for cloud environment
+Many of them can support legacy socket APIs without requiring any application modifications, e.g., Mellanox LibVMA
+Why not port them to cellular devices and implement congestion control algorithms on the top of them? I suggest the authors discussing these solutions in the paper
++ thorough evaluation with three well-known congestion control algorithms
+I'm little confused about the implementation of ALCC, similar to the reviewer 48B from Eurosys
+From my understanding, ALCC still need kernel patches (as introduced in Section 4) to realize its function
+I understand that such a patch is much more lightweight than implementing a new cc from the scratch
+A suggested experiment: what if fix the congestion window to the maximum value and fully let the application layer takes over the control? I'm wondering if (and how much) the underlying cubic is still effective when the ALCC works above.
+Besides, a key assumption in this paper is that the cubic always maintain a higher cwnd than other algorithms, which needs more convincing analysis
+The authors try to explain that cubic *usually* maintains an unnecessarily high cwnd, which is different from *always*
+Since the performance difference between algorithms usually depend on their actions in these corner cases, it would be better if the authors could provide more convincing arguments (theoretical analysis, or the detailed investigation on cwnds) on this.
+My understanding of the assumption above is that cubic is the most *performance-oriented* algorithm compared to the three algorithms evaluated in the paper
+However, there are indeed some other algorithms that are more aggressive in throughput than cubic (e.g., bbr or a finetuned pcc towards throughput)
+- Since ALCC controls the deliver of packets at the application layer, introducing such a new queue at the application layer might increase the end-to-end delay
+- I fully agree with the authors that ALCC could ease the efforts for operators to implement new congestion control algorithm
+However, instead of human work days, it would be more straightforward if the authors could present other quantitative metrics (e.g., line of codes).
+How could the newly added header (introduced in Section 4.3) be zero-byte? If ALCC is encapsulating / decapsulating within the protocol stack, will such operators increase the overhead? If not, will such a header be delivered over the network? 
+The paper presents a very interesting approach to generalizing PBFT
+It claims one primary contribution: higher-performance (throughput, specifically) BFT TOB, which is unaffected by request duplication attacks
+The system is called SRB and there is a thorough protocol description, some proofs of correctness, and system evaluation
+- It would improve the quality of the paper if you are more precise early on (Intro) about which "state-of-the-art BFT" systems you are comparing to.
+    - If I understand correctly your solution, I would propose that the concept of a "duplicate request" does not make much sense in the context of an ordering service (which is what SRB is)
+Concretely, your interface is `BCAST(r)` which a client calls once for every distinct `r`
+Duplicates make sense when there is a higher-level abstraction, e.g., commands (like in an SMR) or transactions (like in a UTXO model), and in that case you could say that two inputs to the service are duplicates
+But if a client calls `BCAST(r)` twice with identical input `r` the service is agnostic to it and should treat each call as a separate request and should order the same `r` twice.
+    - SRB implements a total-order broadcast, while some of your competitors (PBFT, from [15], for instance) do more than total-order and also have an execution engine
+Is that engine disabled? Or is the overhead from passing transactions through an execution step still present in some competitors, while SRB omits that? It would be good to clarify since this is important.
+    - You mention that the VMs have a 1Gbps network and I'm trying to understand how does that translate into Chain's throughput in Fig.4(a), since you pointed out that the bottleneck is probably the weakest link
+A back of the envelope calculation shows that this link is using around 20000 (req/s) * 500 (bytes) = ~0.08 Gbps, which is one order of magnitude smaller than the theoretical bandwidth you have of 1Gbps.
+    - If Chain's performance is indeed limited by the weakest link, then I would expect in a growing network size to see lower and lower throughput, since there would be higher chances of traversing weaker links
+But Fig.4a shows roughly fixed (or even growing) throughput for "Chain-500b"
+  - Some other recent papers also claim "excellent performance", and some do evaluation on even larger setups (~200 nodes)
+It would have been good if you compared against them in an evaluation, since that would prove your case of "best throughput to date on public WAN networks"
+But it would be more valuable and respectful for the readers (and reviewers) if the pseudocode was explained in text, e.g., you could weave the algorithms with your text of section 5 (and 3), and in that way the two sections could support each other consistently.
+  and other protocols that use similar optimizations [25, 33].
+- builds on the seminal PBFT protocol, instead of building the solution up from scratch
+    - This evolutionary (vs
+    - In such systems, the same transaction does not usually end up
+      in more than a block, either because of the UTXO model or because the
+      mempool implementation takes care of removing already-ordered txs, so
+      charging for the same transaction does not apply, but if a transaction
+- " While many successor BFT protocols eliminated watermarks in favor of batching (e.g, [13, 16, 39])"
+    - Is watermarking the same as pipelining? In PBFT, watermarking functions as a pipelining optimization
+While they don't mention water marking explicitly, some avoid watermarking ([16]) while some do use pipelining, e.g., [13] (which I understand to be similar to watermarking)
+And it's confusing to say that watermarking would be eliminated in favor of batching, since these two techniques are not mutually exclusive.
+- You cite the journal version of PBFT (ACM TOCS'02) and state in Table 2 that this protocol has "no" batching
+- I see how your solution generalizes the idea of primary, to permit an arbitrary number of primaries
+Does your solution resemble the following thought experiment, and how is it different if so? Suppose we simply run X concurrent instances of PBFT among the same N nodes, and each instance `i` of PBFT writes its client requests in a specific log (no execution of client requests, just log them in a database/file), then a separate process would merge these log files deterministically, in the same manner at all N nodes?
+- "SRB implements all of these and is thus robust in the Aardvark sense."
+- I am not contesting your claim that the bottleneck in BFT TOB is the leader's network (though some other papers claim differently), just to note that some systems take alternative approaches to relieving this bottleneck
+One example is to avoid the broadcast primitive which the leader typically uses, and instead let a gossip overlay load-balance the pre-prepare step (and all steps in fact)
+- While I appreciate the evolutionary approach, it would be nice to be precise about what exactly are you changing from PBFT (e.g., Section5.6 mention common-case changes, but your delta to PBFT is quite substantial)
+It does not help that you include the bulk of the pseudocode in section 6 and there is no apparent common-case reuse (despite claiming that you simply generalize PBFT and only affect liveness).
+- Please take effort to consolidate the writing and provide intuitions where possible (not sure table 1 is necessary, the pseudocode can be reduce and focused on what is important / delta to PBFT, LTO section is out of place)
+This paper aims to scale existing BFT consensus protocols by allowing multiple each node to act as a leader and run independent consensuses in parallel
+To achieve this task, the paper proposes SRB that follows the seminal PBFT protocol and runs up to n instances of PBFT in parallel
+In each epoch, one of the replica is chosen as the primary, and the primary chooses a set of epoch leaders
+Once a leader has received sufficient number of client requests, it proposes it as a batch to all the other nodes
+As a byzantine client can send the same request to multiple leaders, SRB divides the client requests into buckets
+Each leader only proposes requests assigned to its buckets
+In the case any leader fails or acts malicious, SRB switches to the new epoch with a new primary leading the epoch and determining the next set of leaders.
+This paper represents a timely problem as it is critical to design BFT protocols that are not dependent on a single primary
+SRB bolsters system throughput and facilitates load balancing by allowing multiple leaders to propose requests in parallel.
+The paper is easy to read and clearly motivates the problem at hand.
+The paper presents a good set of experiments to evaluate the effectiveness of SRB against the presented protocol
+Further, the paper includes a set of failure scenarios, which have been explored well during experimentation.
+My main concern with this paper is that it completely misses the state-of-the-art protocols, such as Omada[1] and RCC[2][3], which also parallelize consensus
+Hence, this is not the first paper to allow up to n nodes to run consensuses in parallel as claimed by the paper
+Omada was the first paper to allow up to n nodes to propose requests in parallel
+In recent years, RCC has been proposed which does the similar tasks with some improvements under failures
+In fact in the common case operations, SRB can do no better than Omada and RCC as all the three protocols can allow all of their nodes to act as leaders
+Hence, this paper needs to add extensive comparison with Omada and RCC.
+The paper highlights the ability of a byzantine client to send duplicate requests as a major concern for the multiple leader protocols
+To resolve this challenge, the paper presents the bucket distribution scheme as a novel solution
+Although this solution works, RCC handles this problem in a similar manner by dividing clients equally among the leaders
+The key difference is that SRB continuously switches the buckets, while RCC switches clients across leaders only under failures
+Hence, it is important to understand the effectiveness and costs of both the schemes.
+For a protocol allowing multiple leaders, it is important to describe the order in which the client requests be executed
+If one or more leaders fail, do the replicas continue executing requests from other replicas
+Hence, how do nodes realize the right time to execute the client requests
+Although SRB can recover itself from the failure of its leader nodes, it presents a blocking design where failure of one leader causes the epoch to change
+During this epoch change all the leaders have to stop proposing new requests and the nodes can no longer execute requests until the system is recovered
+RCC on the other hand proposes a design where failure of one leader allows other leaders to continue proposing requests as the view change is localized and there is no notion of epoch change
+Hence, it is important that the paper illustrates the performance of SRB against RCC under such failures
+In Section 5.6, SRB adds a tricky optimization
+When a failure-free execution starts observing simple failures, message delays or loss, even if a replica has sufficient number of Prepare messages, it will continue waiting until timeout for Prepare from the selected f+1 replicas to arrive
+As a result the system may face severe performance degradation, or worse could undergo an epoch change.
+On Page 7, in the last paragraph, the paper states that conditions 5 and 8 are not met by PBFT, which is not a correct claim
+Condition 6 is implicit in PBFT
+PBFT does not force clients to send only one request at a time, and clients do add timestamps to each request
+PBFT's OSDI'99 version does include clients signing request with digital signatures
+The notion of MACs is included in PBFT's journal version, which is further expanded in Castro's thesis.
+the paragraphs in this section are trying to borrow ideas from two different variations of the PBFT (conference and journal versions)
+Such variations may be difficult to understand for a reader who is not well-versed with the working of both the PBFT variants.
+Distler: Scalable Byzantine fault-tolerant state-machine replication on heterogeneous servers
+Sadoghi: Brief Announcement: Revisiting Consensus Protocols through Wait-Free Parallelization
+Sadoghi, RCC: Resilient Concurrent Consensus for High-Throughput Secure Transaction Processing, ICDE 2021 [arxiv]
+This paper presents a BFT system that has concurrent leaders proposing request batches in order to improve the throughput via parallism
+The paper makes commendable efforts in providing detailed pseudocode, correctness proofs and evaluation results
+But the paper also has several issues that need to addressed in a revision
+The paper claims that no prior work has ever studied parallel leaders with duplicate prevention
+It uses a common subset procedure that commits multiple proposals, and also has a discussion on avoiding duplicates
+The solution is very similar to this paper: assign requests to proposers using a hash function
+Once you employ the hash partitioning, a client request is only assigned to one single node
+This raises the natural issue  that a Byzantine node can now censor a transaction
+The paper touts censorship resistance as a main feature of the system, but the solution here (reassigning buckets) is also quite straightforward and a bit underwhelming as it allows Byzantine nodes to censor a transaction for f "periods"
+The paper makes solid contributions by implementing simple and natural (and likely existent) ideas of random request assignment and demonstrating improved performance over existing systems
+The paper uses vanillar PBFT as the baseline in an overly rigid fashion
+More notably, the PBFT view change has been improved by the Tendermint and HotStuff paper
+For a few minor points, it seems unnecessary to emphasize that PBFT has no batching
+It is pretty obvious how to add batching to PBFT and PBFT-style protocols
+Most of the steps in the code and proofs are adopted from PBFT and hence are not really useful to understanding this paper
+It also goes against the idea that SRB simplifies the reasoning by building on top of a well understood system
+In that spirit, it will be more helpful if the authors can pinpoint and highlight the differences to PBFT in the pseudocode and proofs
+It is unclear what "reliable" means here
+It is mentioned that  leaving  the payload out of the hash can prevent  the client from manipulating the bucket assignment
+This is not clear as the client still has control over the timestamp and may still manipulate to some degree.
+If some nodes do not need to commit the request, one can think of request hash as the "committed values" and the totality property naturally follows
+The paper presents a BFT total order broadcast system targeted for the support of blockchain systems, particularly for permissioned systems and as a module for agreement in Proof-of-Stake permissionless systems
+The target environment is for planet scale networks, and was evaluated up to 100 nodes
+While it excels in WAN settings, the protocol also shows decent performance in LAN settings, albeit with lower throughput wrt the competing best algorithm
+The design is based on the classic PBFT protocol and makes possible the use of parallel leaders and to distribute the verification of client signatures
+Correctness is based on the correctness of PBFT core algorithms, which brings some confidence on the properties given the high complexity of this kind of systems and the difficulty of evaluation for manual proofs, as is the case here
+I also appreciated that the protocol generalizes PBFT and allows emulation of other protocols
+While, I am not a specialist in BFT consensus, I am familiar with the concept, with approaches to crash fault consensus (non BFT), and some of the mentioned BFT designs and blockchains
+System model assumes unique node identities and mapping into a [0,n-1] integer namespace
+This is a static assumption, so it might merit some discussion on if some dynamicity on participating server nodes can be handled
+Epoch leaders, "i adds itself to the leader set of epoch e′ and removes one node (not itself) for each epoch between e and e′"
+Please explain why one  is removed per each epoch in between
+Can the reply to HELLO messages create excessive traffic if Byzantine nodes keep issuing HELLOs to induce replies from other nodes?
+You state that "While details of membership reconfiguration are outside of the scope of this paper, we briefly describe how SRB deals with adding/removing clients and nodes." but recall this is a journal version with plenty of space
+Are the =, logical tests from invariants or states changes, as in $\leftarrow$ ?
+"delivered in the same batch, and" -> "delivered in the same batch."
+In figures X axis, instead of 20,40,60 you could label the actual n used, like 16,32,48 ...
+"with a drop from 28.3k rew/s" -> "with a drop from 28.3k req/s"
+* New problem potentially opening another subspace for video streaming research
+* Considers both segmentation and augmentation leveraging both heuristics and simulation-based techniques
+* Other components beyond chunking are not tuned to best fit variable-length segments and variable numbers of tracks
+* Experiments are mostly based on simulation
+The argument for adding more flexibility to ABR chunking is backed up by a simple yet effective scheme that carefully segments videos and creates different numbers of versions for different segments
+The idea of having more chunking flexibility is great
+Two challenges exist: (1) how to tailor other parts of the video streaming ecosystem (including player logic, ABR algorithm modeling & parameter tuning, QoE function definition & metrics, etc) to make them aware of that and avoid bad interactions, (2) how to optimize chunking given such flexibility
+Without this part being clearly fleshed out, the numbers measured for a specific encoding won’t represent its real performance when everything works in synergy.
+Does SEGUE only work for video-on-demand (VoD)? How about live streaming? One challenge for live streaming is that there may not be enough time to run SEGUE and the video complexity information over the entire duration (especially the future scenes) to carefully form tracks
+How well would SEGUE work when the ABR algorithm is learning-based, e.g., Pensieve and Fugu? Some platforms randomly choose the ABR algorithm, e.g., Puffer, in this case, whenever an ABR algorithm is chosen, you also need to choose a corresponding ABR track ladder? How do you realize that? Seems that it may need extra control messages in order to inform the server what ABR algorithm the client is currently using.
+SEGUE causes extra preparation time overhead when searching for good chunk boundaries for segmentation
+Some services can have more than one ABR algo deployed, each for a specific platform (e.g., web v.s
+Mobile, or different versions of players), in this case, do you need to prepare another version of tracks for another ABR, which may be too overwhelming? 
+3 in Section 3.2 where the y-axis is QoE yet there is no reasonable definition of QoE for variable-length-segment ABR tracks yet before Section 3.2.
+SEGUE's benefits over existing studies (e.g., [24, 28]) are not quantified with experiments, in terms of a better tradeoff between performance and storage overhead
+The benefits of segmentation and augmentation are only evaluated separately.
+Network traces are classified into three categories based on mean bandwidth value
+Might also be good to do some classification based on bandwidth variability across time.
+What if a user starts playing a video from the middle instead of the beginning? Will SEGUE’s prediction cause bad behavior and QoE？
+It mostly focuses on bitrate/frame-rate adaptation rather than segmentation adaptation
+It is also not the first to propose adaptive video conferencing encoding -- WebRTC has been doing that for a long time
+“To avoid the effects of startup behavior, we show results starting at the 25th segment, i.e., 125 seconds into playback.” It may also be worthwhile to look into the first 125s to understand the startup behavior
+125s is not short, and nowadays short videos are the most popular ones so optimizing them considering the startup behavior (instead of “avoiding” it) would be more valuable practically speaking.
+Y-labels could use more text to denote the ABR algo and other info
+Also fig 1(bcd) could use another set of colors than fig 1a, to avoid establishing wrong mappings at readers’ first glance.
+2(a): why during 5-10s key frames do not occur frequent despite highly varied bitrates (motions)？
+3: care to explain why videos A and D behave differently using the same ABR? Also, are these two videos same as video A and D in Table? If so, a forward pointer could be helpful.
+6: how is VMAF stability defined?
+“However, we use this implementation only to verify the fidelity of an orders-of-magnitude faster simulator, which we use for extensive experimentation.” Don’t you also use a real player for video playback in extensive experimentation? Or the extensive experimentation is simulation only? 
+“Appendix E details the DASH player implementation, demonstrating that it achieves results near-identical to the simulator.” This demonstration was based only on video A, not sure if it generalizes to other videos.
+“There can also be value in synchronizing these change points with segmentation, allowing more informed adaptation decisions that account for such changes.” could use some concrete examples to better argue for this.
+“RMPC’s implicit assumption that a certain number of segments comprises a long-enough future planning horizon....” I wouldn’t say RMPC assumes that a certain number of segments comprises a long-enough future planning horizon, rather, how to adapt RMPC to a different setting has nothing to do with the RMPC algorithm itself, and the RMPC paper itself never said you should always use 5 segments as lookahead in any situations (e.g., for ABR track ladders with longer/shorter fix-length segments and for those with variable-length segments).
+“Adaptive bitrate video streaming comprises two pieces, video encoding, which runs offline at the content provider, and...” May need to mention this offline nature of encoding only applies to VoD
+“It is unclear to us how or if QoE functions should reward such local improvements.” You may also want to mention you are the first (AFAIK) to put VMAF values into the QoE function so summing over them could be different from summing up bitrate values.
+“and their QoE function is used rank the candidate chunkings” => “and their QoE function is used to rank the candidate chunkings”
+“providers also want to contain infrastructure costs” => ”providers also want to constrain infrastructure costs”
+used in this paper, segmentation and selective augmentation,
+based on ABRs, which are themselves tuned based on encoded
+storage and pre-computation for y% QoE improvement), since
+However, IMHO the paper could use more thought into
+provider?  Does it reduce memory requirements for caching?
+The terms "playback context dependence" is nebulous in the
+It would help to define what it means clearly or at
+Industry efforts: Is SEGUE's idea just to capture a subset
+indeed related, since the average bitrate of a segment
+"behavior aggregated across a large set of traces"
+and Fig1(d) is that rate-based algorithms perform better
+than buffer-based algorithms for the traces considered in
+large-scale experiments from the "learning in situ" paper by
+Francis Yan and others (NSDI'20), where buffer-based
+segments or just the average across the next segment.
+"Unfortunately, even with the freedom of variable bitrate
+percep- tual quality for complex segments, or
+higher-than-necessary bitrate is “wasted” on simple
+segments." I couldn't follow this observation
+video) when the "complex" segments arrive? Why? It's not
+obvious that increasing the number of tracks for the complex
+it more possible for the client to experience more changes
+What does this phrase mean? "runs of smaller chunks, that
+Does adding more tracks for some segments increase the
+section 4.1: It would be useful if the segmentation goal and
+strategy are compared to the shot-change detection
+How do you choose the target time/bytes?
+It was unclear how the "intuitive" segmentation approaches
+Why do segment boundaries from the highest average bitrate
+track translate directly to other bitrates? For example,
+lower resolutions exhibit lower differences in encoded
+bitrates (and, presumably perceptual quality and perceptual
+Parameters of ABR algorithms may often be tuned given
+interestingly, this paper does the opposite, tuning the
+available bitrates using existing ABR algorithms
+comment on whether this circularity might push the (ABR +
+be useful to use the simulation-based approach to tune both
+normalize QoE by the bytes overhead? "For each candidate, we
+quantify its QoE improve- ment compared to the default
+normalized by the overhead in terms of bytes added by that
+Why not use logarithmic bucketing covering the entire range?
+For example, the fact that 91% of Puffer traces are FAST
+7.1: It would be great if the paper provides some insight on
+7.3: It could be interesting to design QoE functions that
+This paper seeks to optimize video streaming by offline video chunking -- adjusting lengths of video segments (segmentation) and introducing additional quality levels to the bitrate ladder (augmentation) in a manner that improves QoE
+The proposed technique, Segue, features the awareness of the video sequence context and the provider-specified ABR algorithm
+By accounting for both factors mainly through simulation, Segue shows potential improvement in QoE.
+\- brute-force and simulation-based solution lacks insights and is not thought-provoking
+The proposed method is easy to understand and appears beneficial to QoE.
+Both aspects that constitute Segue -- segmentation and augmentation -- have been studied before, with the prominent effort originating from Netflix and in the industry as engineering innovations.
+Regarding segmentation, Netflix documented a method called "per-shot encode optimization," as mentioned in Section 2.2
+However, the authors seem to have misunderstood its mechanism by incorrectly stating that each quality level comprises a number of "fixed-length" segments
+In fact, the initial version of their method -- according to Netflix's blog [18] -- chunks a video at boundaries of "shots," each containing a *variable* length of the video
+A subsequent [blog](https://netflixtechblog.com/optimized-shot-based-encodes-now-streaming-4b9464204830) further introduced "shot collation" that merges multiple shots into a single chunk, bearing the same spirit as Segue (for a purpose different from QoE optimization though).
+As for augmentation, this paper also mentioned the "per-title encode optimization" technique shipped by Netflix years ago, so the only differentiator of Segue on this front is selectively augmenting parts of a video, which sounds like more of a marginal revision than a new "direction" or "thread." In fact, Segue's unique dependence on playback context and ABR algorithm only manifests through basic simulation.
+One side effect of positioning itself as a unique direction is that the paper misses baselines from prior work in evaluation.
+- Segmentation: Prior work [9, 29, 33] is considered orthogonal to Segue, but what if merging two fragments into a chunk and converting the second keyframe as an inter-frame actually improves the coding efficiency? This will apparently lead to strictly better results (same chunk length with a smaller size) and would reduce (and improve) Segue to the same domain as prior work.
+- Augmentation: A naive baseline can be adding one or more additional tracks to the bitrate ladder, which can be used to evaluate Segue's effectiveness and savings (for not encoding and storing the extra tracks)
+Similarly, although prior work [22, 31] pursues the opposite of Segue, they simply navigate the same tradeoff space by being more generous on the number of tracks, and can also serve as baselines.
+If Segue could practically deploy and prove its usefulness, the proposed method could be of great engineering value; otherwise, Segue would probably become more ready to publish if it leveraged more interesting insights in its solution, e.g., the interaction between Segue and ABR.
+Define $P(i)$ as the lowest penalty achieved by segmenting the first $i$ keyframes as chunks, and $C(j, i)$ as the per-chunk cost of merging keyframes $j, j+1, \ldots, i, 1 \le j \le i$ into a chunk -- whether the cost is defined using time, bytes, or time and bytes
+Then $P(i) = \min \\{ P(j-1) + C(j, i) \\}, 1\le j \le i$
+Given a maximum chunk length, only a small number of $j$s are required to be enumerated and the per-chunk cost table can be pre-computed, so the actual time complexity is close to $O(N)$
+Even so, it remains a question as to how segmentation and augmentation could optimize a more sophisticated QoE function given an ABR algorithm without blindly relying on simulation.
+Additionally, I am not fully convinced about which segments are more "vulnerable" (besides chunks being overly large): If I were allowed to modify the traces used in the paper arbitrarily, I could choose to increase the instantaneous bandwidth before streaming the "vulnerable" segments such that they are no longer "vulnerable." In other words, bandwidth fluctuation seems to play some fundamental role in offline optimization, but it has not been explored by the paper and could even undermine its findings.
+- As mentioned above, [18] actually uses "variable-length" segments.
+- Why is S30 more likely to incur rebuffering than a higher-bitrate chunk S37? Chunks prior to S30 do not look more "challenging" than those before S37
+The playback context dependence does not seem to be explained in detail by the paper.
+- Nit: "We describe three augmentation functions": should be "four" and $\lambda_v$ is missing.
+The paper investigates co-designing encoding and bitrate adaptation for video streaming applications
+It argues that existing practice, where videos are segmented into chunks of fixed duration, misses opportunities to optimize QoE further
+More specifically, the paper shows that chunks with complex scenes require higher bit rates and are more vulnerable to QoE degradations (e.g., rebuffering)
+It further argues that using variable-length chunks (segmentation) and more bit rates for complex scenes (augmentation) provides more knobs to optimize user QoE
+It formulates the relevant optimization problem and uses simulation-based experiments to quantify QoE improvements for different videos and network conditions
+I think the idea of co-designing encoding and adaptation, especially for low-bandwidth networks, is timely and innovative and advances the state-of-the-art in the area.
+- The idea to co-design encoding and adaptation is well-motivated
+ The paper does an excellent job of illustrating why fixed-duration chunks leave a lot desired from a QoE optimization perspective, especially for low-bandwidth networks
+- The evaluation does a good job demonstrating the value of new(ish) QoE optimization knobs
+To illustrate, the first paragraph in Section 3 says, “Using two rate adaptation algorithms, …” — which two algorithms? Where is the explanation for red/green shades in Figures 1b and 1c? Where can I find an explanation for the difference between 1c and 1d (is there any reference for 1d?)? I am not sure what is a bitrate track here; is it the same as a resolution? 
+My first reaction is that the choice of fixed-duration chunks has a lot to do with operational simplicity
+NetFlix’s interest in looking beyond naive fixed-duration chunks hints at the operational value of variable-length chunk boundaries
+However, the cost of enabling such dynamism in video encoding is still unclear
+This paper has the noble aim of  understanding the requirements of reproducibility for ML applications and to assess the
+reproducibility support of existing ML lifecycle management systems
+The authors claim (with citation) that "ML model creation is experimentation-based, making it an ad-hoc process with frequent jumps between the different lifecycle phases"
+As someone who works with ML codes (mostly in the Computer Vision space), we see projects that are much more like typical software development lifecycles, since they often result in proper software releases and tools
+It might be beneficial for the authors to be more clear about the actual types of ML projects they are considering as part of this study (and which are being left out)
+Later in the same paragraph, the authors state, "As a result, existing software engineering methodologies and best practices cannot be directly applied." I don't agree with this statement either
+We already know that agile methods (outside of the ML space) also jump freely between lifecycle stages, so it would seem at first blush like the same limitations apply to many other types of software projects.
+The authors state, "To prevent an impending reproducibility crisis [23, 25, 49], both research and industry have spent significant effort on trying to incorporate reproducibility as a first-class citizen into the lifecycle management systems." Given that one of the projects cited is TensorFlow, the authors may wish to be aware of the TensorFlow Models Garden effort at Google, https://github.com/tensorflow/models and an experience report at https://arxiv.org/abs/2107.00821v1.
+ For many projects, we have observed that the paper often amounts to the equivalent of a "requirements document" that describes what the model is supposed to do and how it does it
+Could it be that many ML projects amount to being part of a general class of research software that is often linked to a paper or set of papers? We have observed this in many NLP and CV projects.
+The paper proposes a framework for evaluating the reproducibility capabilities of ML tools, applies the framework to 12 popular ML lifecycle management tools, and provides a set of observations and research challenges.
+* Output data and metrics - The point of reproducibility research space is that these outputs can be recreated
+These artifacts are not “essential for achieving reproducibility”, but can be considered essential for “verifying reproducibility”
+Even, reproducibility can be verified with just a fraction of those outputs (in case they are large in volume)
+If the focus on the paper is to “achieve reproducibility” then these two should be excluded from the artifacts, however, if the focus is to “verify or evaluate reproducibility” these two can remain in the list -- but more information needs to be added in case these are large in size
+* Software dependencies - these dependencies should include software itself and necessary packages (e.g., Python and NumPy)
+In other words, add that dependencies include the software itself, which is now missing
+* Experiment - Consider renaming this to “Computational workflow”, and update the language in the paragraph.
+* Don’t use “achieve perfect reproducibility” as reproducibility is already binary (either something is reproducible or it is not)
+If you’d like to introduce nuance in reproducibility, you should add a definition on partial reproducibility and a reproducibility range in 2.2
+Table 1: add what each letter means in the table caption 
+Also it seems that both versions (light blue and light yellow) are fetched at the same time, is this intentional? It is unclear what “automation” is in this figure.
+That way a reader can immediately see which tool has the best reproducibility support.
+* Observation 1 is a bit arbitrary and vague (ie, all systems have some versioning)
+I suggest removing it and instead adding a project description for each project and a conclusion pointing out which systems are best for reproducibility
+* Observation 2 - do the tools have integration/support for git? If so, they don’t need to ‘reinvent the wheel’ and implement their own versioning
+Putting higher emphasis on them would be good and also adding in Tab 3 if the tools support dependency capture, containers, VMs
+It is also important to note that Python based platforms can use built in dependency capture
+Continuous integration (CI) allows testing a ML workflow on various software versions and systems seamlessly
+Also, “different types of reproducibility” sounds very odd
+The main points from this observation can be added to the description of each tool.
+* Observation 7 is essentially saying that the presented methodology is bad
+First, I don’t see why the same observations and reproducibility metrics cannot be applied to the development phase of the ML process
+Second, I don’t understand why one would measure reproducibility of a model in the operation phase unless that model is not updated in real time
+Further, does any of the systems support/encourage/enforce code testing? 
+* The “Scalability” subsection doesn’t actually speak about the system scalability, but stand-alone parts of the ML lifecycle that are not incorporated as part of the main flow.
+* “Sensitivity” has a misleading name, and it points to the bad methodology (ie “we do not yet understand how important each of the artifacts is individually”)
+* python -> Python with capital P
+The authors have reasonably defined reproducibility, identified artifacts that during ML lifecycle that directly affect reproducibility, and have proposed a framework for categorizing system support for reproducibility
+Using this framework, the authors presented a systematic survey on the support status of mainstream tools, and from which they found generally good reproducibility support with rooms to improve, including hardware dependency tracking and interoperability.
+Model throughput reproducibility? In production settings we look at two major metrics: accuracy and throughput, and the later is needed for business purposes, for example: we need this inference to be done within 100ms before the user gets impatient
+Thus, during the design stage we expect the model to hit XYZ queries/s, we would like it to hit a similar QPS of XYZ in production setting, and it will be highly desirable to capture the runtime performance aspect of ML training;
+Run to run variance? in ML we often tolerate a small run to run variance, and I think it would be important to explicitly consider this, as the strictest sense of reproducibility does not and need not apply
+This variance can stem from random initialization, random optimizer walk, asynchronous updates, and the order with which the data is fed
+This paper presents a framework to compare management systems for machine learning (ML) code and data in terms of versioning and automation capabilities
+These two aspects are critical to making ML systems more reliable to reproduce
+The paper provides a solid overview of a typical ML workflow, ML artifacts, and differences between repeatability, reproducibility, and replicability and considers a large number of systems as candidates for their framework
+In the end, it finds that 12 systems out of all candidates in some way aim to assist reproducibility and compares them as follows: whether they only store nothing, single snapshots, or full version histories for the different artifacts; and whether they allow automating creating/publishing/fetching/executing the artifacts
+Finally, the paper presents ideas to continue the analysis of these tools as well as some points that could be part of a future research agenda for ML reproducibility.
+- The paper highlights the important challenge of reproducibility of ML, and why this goes beyond just the code.
+- The list of ML artifacts and the potential versioning/automation capabilities are comprehensive
+- The paper does not motivate the benefits of specialized tools for versioning and automation, in particular, what these tools provide compared to a "tried and prove" pipeline consisting of version control with git and continuous integration/deployment.
+for deployment in a large-scale environment) and using that space for more detailed insights into the compared tools.
+4.2, Observation 3 (automatic dependency discovery): I am unconvinced of the actual benefits of discovering software dependencies compared to using docker images; I rather believe that using docker images is a strictly more powerful approach
+Docker separates the dependencies of the host system from the container (all we need to know from the host are the kernel and docker version), reducing interference
+Furthermore, only capturing libraries and version numbers often is not enough: What if libraries need to be configured properly? Or do not work if another library is installed? A docker image contains all these interactions in an isolated environment that can also be versioned easily (as a simple dockerfile specifies the image).
+5.1, (user experience): I believe addressing the user experience (ease of version and automation) of each tool in this work would make this framework much more valuable, and I feel it should be addressed in this paper already.
+5.1, (performance & benchmarking): It seems to me that the performance overhead of a (useful) versioning framework should be negligible
+The main requirements for computational resources (training, eval, ...) seem orthogonal to how exactly the artifacts are versioned
+Maybe it would make sense to plot the framework overhead for different artifact counts and sizes, but this could already be addressed by this paper without a user study and using random artifacts.
+The line "if and how a distributed system can be retrieved and set up automatically" best highlights this problem for me
+Moreover, is this kind of reasoning enough? There is a lot of research in the field of "interpretable ML" which could be incredibly important to truly understanding why something can fail even if all commands run through.
+(sensitivity): Understanding the sensitivity of ML to inputs and hyperparameters is a research discipline on its own and goes far beyond "value ranges" for e.g
+For example, consider the research into Bayesian optimization for hyperparameters
+It is the only example for the category "visualization" and seems in general to have a different focus than the other tools which makes me question whether it would make more sense to exclude it.
+- Why introduce the Development and Operation stages in detail if they are not relevant for the framework? Focusing on the experiment stage might help to make the paper more on-point.
+Summary : This paper presents an algorithm to schedule Real-time periodic tasks that are expressed as pipelines
+The Real-time requirements here include end-to-end (E2E) delay and loss-rate guarantee of the pipeline
+The algorithm returns the budgets and periods that each of the tasks get during runtime at every stage of the pipeline
+The resulting tasks with the budgets and period can the be scheduled asynchronously and without any data dependencies among them.
+The paper also has takes another step forward and maps tasks to a Multiprocessor platform
+The tasks are mapped to processors using a heuristic
+For dynamic pipelines, it also does - (a) runtime task migration  and (b)scheduling parameter optimization
+- Visualizations of the algorithm operation provided improve the readability of the paper.
+- Reduction of utilization for already accepted task pipelines when mapping to multi-processor fails is a tradeoff between end-to-end delay and utilization
+- Pipelines are common in sensing-actuation chains as seen in automotive and avionics systems, and applications such as ROS can use CoPi to predictably schedule pipelines using this scheme
+- The schedulability used in RMS for single processor and partitioned RMS for multiple processor, so the utilization is still bounded by the theoretical limits of RMS.
+- The disadvantage of scaling the period and adjusting the computation time can lead to increased memory requirements of buffers between tasks, the overhead of which is not presented
+- the values of $\alpha$ and $\beta$ are empirically determined with no application mentioned for reference
+- Task assignment and migration on multiprocessor can be made practical by considering the system implementation details, but these have elided
+- Why is LBG (Latency Bandwidth Gap) plotted only for values between 10 and 15? It would be useful if the authors can discuss this.
+- Why does the loss rate = 25% lead to loss of performance of CoPi (Fig 8b)? This can be discussed in camera-ready
+- The authors mention about integrating the framework into a Multi-core OS and into the ROS middleware, these will greatly enhance the impact of this work.
+Paper summary: Embedded applications consists of one or more sensor-to-actuation pipelines, e.g., object perception pipelines in autonomous vehicle systems
+These pipelines are typically modelled as multiple data-dependent tasks (or processes)
+They have strict end-to-end (E2E) constraints because of the cyber-physical nature of such applications
+Additionally, the pipelines may also have constraints on the end-to-end sampling rates, which determine the quality of service provided
+When deploying such pipelines on multiprocessor embedded platforms, mapping the tasks to appropriate scheduling policy, parameters, cores such that the constraints are satisfied is known to be an NP-hard problem, even if the the workload is known in advance (as is the case in many embedded applications)
+While prior works have proposed to use constraint solvers to come up with a satisfiable task schedule, these are slow, especially when the workload changes at runtime and new schedules are desired at runtime, This paper proposes a heuristic-based algorithm instead — CoPi — that maps the pipeline to independent tasks and data buffers, and uses rate-monotonic scheduling to come up with a set of feasible schedule
+CoPi is evaluated against open-source constraint solvers like GEKKO, pyomo, and scipy using pipelines with synthetic parameters
+While it is slightly worse than GEKKO in terms of scheduling capabilities, it finds a solution much faster than GEKKO.
+I believe CoPi can be very useful in many modern-day embedded applications and it also has the potential to be used for applications outside the embedded systems domain, e.g., datacenter systems with QoS constraints
+The paper also presents an extensive evaluation for CoPi against open-source baselines for a large parameter space
+My main concern is that the paper does not demonstrate the use of CoPi for any real-world applications, i.e., there are no case studies using realistic workloads
+In the absence of such case studies, I expect that at least the constraints are directly derived from real-world applications
+For example, the paper currently does not sufficiently show if runtime scheduling is a problem in applications and if yes how does a certain scheduling delay fit within the overall scheme of things
++ The problem is relevant for many modern embedded applications
++ Given the QoS constraints in many datacenter applications today, the paper also highlights possible design choices for scheduling in datacenter systems
++ The solution is explained clearly with underlying formalism, wherever needed
++ The solution is evaluated extensively against multiple open-source constraint solvers and shown to outperform them in terms of scheduling capabilities and/or speed
++ Overall, the solution seems to be simple and intuitive, and easily deployable in practical systems
+- CoPi is motivated from real-world pipelines, but the paper does not demonstrate the use of CoPi for a real-world application
+- While runtime scheduling is a motivation, the paper does not delve deeper into such examples from real-world applications, neither does it show what types of constraints exist in practical systems
+- The paper assumes the reader is familiar with many concepts from real-time systems literature
+* The paper never really explains why the design avoids timing and data dependencies, and what does asynchronous scheduling mean (as opposed to synchronous scheduling before)
+“The main idea behind CoPi is to get rid of the unnecessary delay and message losses in a pipeline, and consequently avoiding the timing and data dependencies between the communicating tasks [21].”, “As CoPi meets the E2E delay and loss-rate guarantees of a pipeline, the tasks are asynchronously scheduled without any timing or data dependencies between each other.” 
+* “We show that CoPi performs significantly better, an order of magnitude at the highest, in runtime, and comparably in acceptance ratio, with respect to other solvers.” Simplify this statement
+* Could you cite examples where L (loss rate) is an input parameter of the system?
+* I realize the Equation 1 is derived from prior work
+“As Equation 1 is a recursive equation, the computation time depends on the wanted precision on E.” Why is the equation recursive? Is it because Ri’s are unknown? The LHS E does not feature on the RHS.
+* “Aligned with Feiertag et al.’s concept of data-path reachability conditions [21], the ratio of non-reachable messages to the total number of messages is the loss-rate of a pipeline.” I found this reference unnecessarily confusing
+Reachability conditions can be interpreted as something completely different.
+* At the beginning of Section 3.2, it was unclear whether loss rate refers to only messages that are input to the source task, or to all tasks.
+* Does the ratio in Equation 4 also hold if the two tasks are not started synchronously? Does this equation represent an upper or lower bound on the sampling ratio?
+* “This problem is known to be NP-hard [29].” Citations [29] is a general paper on nonlinear integer programming
+Recently, many papers have proposed precise complexity classes for different problems in the RTS domain
+* In equations 9 and 10, M is used as multiplier, but in the paragraph earlier, K is used.
+also proposed a similar approach of deriving task periods, offsets and other parameters from the end-to-end constraints, albeit on task precedence relations [23].” How are task precedence relations different from the dependencies considered in the paper?
+* Runtime migrations may affect the budget parameter C
+* “CoPi takes the initial task runtime budgets (C in the model and budgets in Algorithm 1) and the desired upper bound on the end-to-end delay (EUB in the model and e2e_ub in Algorithm 1) as its inputs.” What about the upper bound on the loss rate?
+* “CoPi runs Stage 1 only once for a pipeline, but it runs Stage 2 and 3 multiple times with different $\alpha$ values.” Can we instead start with one large $\alpha$?
+* Figure 9(c): it would be nice to also learn about how GEKKO’s runtime varies with the pipeline length.
+For each task in the (linear) execution order, new computation times and periods are derived for data-independent periodic subtasks that can be scheduled under traditional RM, so as to guarantee end-to-end delays and acceptable loss rates
+In simulation, the heuristic approach, called CoPi, outperforms MINLP solvers.
+In section 3.2 the authors write “Based on the relationships between the periods of all the producer-consumer pairs starting from the source to the sink task, the end-to-end loss rate of a pipeline is calculated.” This statement is pretty vague… the authors should explain how this computation is performed.
+Soon after equations 6,7,8 it’s stated that the problem is an integer nonlinear programming problem
+This is a bit unclear to me just from the equations, where max could be handled with integer constraints, but I do not see nonlinear arithmetic involved
+Where specifically do the nonlinear terms come from
+Is the difficulty of this problem that the periods and computation times are assumed to be integers? I suspect scheduler granularity is fine enough that real-valued solutions would be acceptable
+In Section 5.1 the authors mention in [23] a similar method is used
+Further clarity could be provided on the differences between these two, or a comparison could be done in the evaluation with the method in [23].
+In section 6.1 dealing with migration overhead and table 5, it doesn’t seem like the cost of migrations is reflected anywhere in the scheduling algorithm, only that task migrations can be kept low with the proposed approach.
+In the evaluation in section 7, the approach is evaluated on 1000 randomly generated task pipelines
+How are these created and are they realistic? Evaluating realistic pipeline parameters would provide a better evaluation than random parameters, which can be misleading for an evaluation.
+This paper presents delay and loss-rate aware scheduling of tasks in cause-effect pipeline chains
+However, there are two fundamental limitations of the paper
+First, the uniprocessor case: This is the classic design-time schedulability analysis
+While the analytical part is convincing, the evaluation results show CoPi performs very poorly, especially the lost rate bound <= 25%
+The authors need to justify the requirement of such a heuristic approach, given that state-of-the-art solvers can find a solution with a high acceptance rate
+Since this is a purely design-time test, the runtime overhead (e.g., Table 2) should not be an issue in this case.
+Second, the multiprocessor case: the way the paper is written, first, it seems the heuristic is about design-time analysis used in traditional real-time schedulability tests
+However, the authors then introduce the runtime pipeline optimization method (RPO) in Section 6.2, making the model less plausible and leaving many issues undiscussed
+For instance, (a) How often the Algorithm 2 will be executed and conduct RPO? (b) How will PRO be integrated into the real-time schedulers? (c) What are the criteria that trigger the new budget and periods?
+Further, the runtime for a pipeline of 10 tasks is as high as 60 ms in a general-purpose Core i5 laptop
+What type of real-time schedulers can tolerate 60 ms of delays at runtime? How will this significant overhead be feasible in embedded devices while retaining real-time guarantees if the scheduler needs to execute Algorithm 2 quite often to conduct RPO? In contrast, if RPO is not needed, traditional optimization solvers' timing overhead is not a problem
+Then, why should the designers use CoPi given that traditional solvers can result in better acceptance?
+The paper is evaluated on simulations/synthetic workloads only
+The paper will be further strengthened if the authors include actual workload, case study, and an implementation/evaluation of Algorithm 2 in existing real-time schedulers
+The simulation parameters are used without any justification
+For instance, why N=10? Why LGB in [13, 15]?
+For instance, "Latecy" in the x-axis of Fig 8a.
+(a) For the uniprocessor case, the authors need to justify why such a heuristic approach is reasonable compared to existing MINLP solvers
+For instance, if the problem is NP-hard, the traditional solvers may break in certain conditions — the authors could analytically or experimentally show the efficacy of CoPi for such cases
+(b) For the multiprocessor case, address the issues mentioned above, and include the realistic implementation on existing schedulers
+For instance, in the Introduction, the authors mentioned that ROS uses such a pipeline-based model — how could the designers integrate algorithm 2 RPO techniques in a ROS chain? (c) The evaluation part should be improved
+ For example, the authors should also include a thorough evaluation with realistic workload/case-study/implementation on real hardware/real-time schedulers
+ Further, justifications of the parameters used in the simulations/experiments should be presented precisely
+The paper presents the formulation and solution of a mixed integer non linear programming problem to determine the best periods for pipelines of tasks that share data with one another.
+I believe the paper does not really succeed in showing the relevance of the problem that is solved: periods of tasks are usually selected based on characteristics of the tasks (e.g., in cyber-physical systems sensor periods, control periods, and actuation periods are selected based on the physics of the process to be controlled, rather than being optimisation variables that can be selected at will)
+Given that, I wonder what is an example of a real system where the period selection technique is useful.
+In terms of positioning and relevance, I would recommend taking a look at papers like "Time-selective data fusion forin-network processing in ad hocwireless sensor networks" (by Jaanus Kaugerand, Johannes Ehala, Leo Motus, and Jurgo-Soren Preden) and trying to model the sensor fusion algorithms presented in these papers with a pipeline
+In the paper, the authors present a sensing pipeline that can in principle be implemented with a chain (where sensor 1 passes data to sensor 2 and eventually sensor N passes data to a fusion algorithm)
+This will impose requirements on the end-to-end latency, but unfortunately it also imposes constraints and requirements on the period values.
+Another very general comment is the following: why splitting tasks makes more sense than having a single task that invokes in sequence the functions that do $\tau_1, \dots, \tau_N$? It seems like there is a point in merging the tasks in a single big task that is actually trying to complete the pipeline in sequence within the pipeline deadline/period
+No task is being used by multiple pipelines so there is no task that cannot be merged without problems.
+For example, the very first sentence of Section 2.1, i.e., "A task $\tau$ is a two-tuple $(C,T)$ and asynchronous.", is (already) problematic
+What is a two-tuple? I suppose this means that a task is a tuple with two elements
+The same appears later with a pipeline being a "four-tuple".
+This said, there is an enormous confusion between derived characteristics and intrinsic characteristics
+A pipeline is not a tuple with four elements
+The pipeline, as modeled in the paper, is completely described by a single element: a set of tasks (each task having its own characteristics)
+In fact, the cardinality of the set is $N$, hence $N$ is not part of the definition of the pipeline
+Even more important, given what is written in the paper $E$ and $L$ are fully defined once $S$ is known, and hence they do not belong to the definition of the pipeline.
+The scheduling model also presents a set of problems
+The sporadic server abstraction (probably better described in "An Application-Level Implementation of the Sporadic Server" than in [48], both being technical reports) is NOT a rate-monotonic scheduling algorithm
+In a sporadic server, the priority of the task is dynamic and decreased when the task has completed its budget, hence this cannot be a rate-monotonic scheduling algorithm
+The RMS bound that is enforced also comes as a surprise as it it clearly too conservative given the model of computation that is chosen.
+At the end of 2.3, the paper reads "Moreover, the fixed execution strategy tightly bounds a pipeline's end-to-end latency [26]." - the formulation is [26] includes initial release offsets for the tasks, that are not considered in the current paper
+There is therefore an inconsistency between the results taken from the literature and the model used in the paper.
+This is also true for Equation (1)
+Paper [20] is the source of the equation
+However, Theorem 5.4 in [20] specifies that the quantity bounded is the reaction time and not the worst-case end-to-end delay (as used in the paper)
+This is different and the term $T_1$ is therefore not needed (it refers to the fact that an event may happen precisely at the time of the start of $\tau_1$ and not be detected at the start, hence the event would only be detected and correctly reacted upon with the following job of $\tau_1$).
+Furthermore, it would be good to add the (possibly acceptable) assumption that the worst case response time of each task is less than the period in the definition of the task characteristics
+Another source of problems is the lack of the specification of a communication model
+The results in [20], for example, are derived for an implicit communication model (see the paragraph "Communication Semantics" just before Section 2.2 in the referred paper)
+In the absence of a communication model between tasks, it is quite hard to understand the results and their relevance.
+While I understand what you mean with the sentence "total lost output messages corresponding to the input messages" and "total input messages to a pipeline", these two quantities do not mean anything if not properly defined
+In particular, to calculate the loss-rate there is a need to specify a time interval and the loss rate will necessarily be a function of the time interval
+Section 3.2 does not resolve how to calculate the end-to-end loss-rate of a pipeline because it does not specify the time interval.
+What is calculated in Section 3.2.1 as the loss-rate is necessarily an average loss-rate over the entire execution of the tasks, but it is also important to understand and evaluate *which* events/messages are lost and which events are not.
+Furthermore, the statements in the section are heavily dependent on the hypotesis that the initial release offset of tasks is zero for all the tasks, while the results used from the literature do not make that assumption
+In figure 3, the ratio between the period of $\tau_2$ and the period of $\tau_3$ is incorrect
+If the period of task $\tau_3$ is 50, for every output of task $\tau_2$ (every 200) there should be 4 outputs of $\tau_3$, so we should see "1
+Similarly, in the text "As $\tau_3$ runs twice frequently than $\tau_2$" should be corrected.
+More in general, pages 4 and 5 can be significantly compressed as the statements (rules and examples) are very obvious
+Similarly, the description of the algorithm is too verbose for something that is very simple.
+The WCET is usually an upper bound on the execution time of a task and is obtained using techniques like static analysis
+Adjusting the budget using a constant $K$ may seem like a good idea, in principle, but take for example a control example: the pipeline here is composed of sensor, control, and actuator
+If we increase the budget of the control task with $K=2$, this means that we are trying to consider two different sensor messages in the same controller execution
+However, the result is that there is only one actuation command that can be applied at the end of the budget, and hence the two tasks would overlap
+More in general, once the budget of one task in the pipeline is inflated, this also has consequences on all the tasks that are connected to it in the pipeline
+I don't see therefore how it is possible to calculate a "per task" $M_i$ as in Equation (9)
+As a minor note, it is quite annoying that the same concept changes name (in Section 4.1 there is $K$ and then right after in Equation (9), $M_i$ appears).
+The evaluation is conducted with independent tasks while pipeline examples have been made available, for example in "Real world automotive benchmarks for free" (Simon Kramer, Dirk Ziegenbein, and Arne Hamann) or also the RTSS 2021 challenge (http://2021.rtss.org/wp-content/uploads/2021/06/RTSS2021-Industry-Challenge-v2.pdf)

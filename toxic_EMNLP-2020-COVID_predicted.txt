@@ -1,0 +1,568 @@
+ Search results organized by relationships with other potential drug targets and entities of interest
+ The authors evaluate the system's predictions in a small manual study.
+Since the methods used to build the system are applications of existing methods, and the key innovation is in the interface, I recommend restructuring this paper like a demo paper
+ Taking us through a compelling example from the perspective of a real biomedical researcher user would be nice  (the current example in Figure 3 caption is a bit lacking in motivation)
+- Please include the Appendix from the GitHub containing domain-expert-checked instances in the final version of this paper
+- I'm disappointed to not see a human evaluation of the system in front of (at least one) real user
+I think this is a valuable work, well written, however a little confused in its structure
+The introduction provides a good insight of the work, but I was expecting more information here
+About Vapur, it seems a useful search engine, but there is no evaluation here
+Introduction: The last paragraph staring with “in order to”, contains technical detail of the work
+It would have been better to highlight the contribution and importance of the work and leave the technical description to the next sections
+ Section 3.3 there seem to be no need to reference BioBERT again
+As a reader I found myself going back and forth between sections to try to find how the components are introduced and what the contributions are
+I would suggest describing Vapur only in the Conclusion section
+Final update:  Per continued dialogue with the authors (see thread below), I've modified my rating of this work from 4 to 6, leaning toward acceptance under the belief that the authors will make the changes to their manuscript as they've described below
+ I stand by my initial review as other reviewers also pointed out much of the same concerns; but I thank the authors for engaging & working toward what I believe will be a more clarified contribution.
+I've increased my rating of this work from 3 to 4 based on the author response below
+ NIRR appears for Round 2 and Round 3, but not Round 1
+ It's really hard to see any meaningful patterns with results reported in this manner
+ This could've been very interesting if the authors did a more thorough analysis -- how often does this happen? how big of an impact does this have on the performance scores (e.g
+if these documents were judged, what would the scores look like?)   why might this model be behaving in this manner that's different from other systems?
+Overall, this submission, while a perfectly fine detailed report about a team's submissions to a competition, does not propose a particularly powerful system or novel method (either of which would be great)
+A large concern about the paper is its incoherency in supporting its main contribution
+- The paper does not describe why certain documents were unjudged
+My biggest concern is that the contribution of this paper is not clear
+The article is well written and structured, and the authors do a good job in providing the full context of the challenge, together with their own contributions
+---This is just a humble suggestion, though.
+The paper itself is very well written and structured, there is a clear logical progression between sections and ideas
+The corpus is not provided, and it is impossible to reproduce based on the information in the article.
+The authors state that "words deem to be irrelevant such as “copyright” or “et al” are removes”, but they provide no criteria for this judgment, such as a publicly available stop-words list or, say, 50 most frequent words in the data set
+Some elaborations appear to be unnecessarily extensive.
+In footnote 10, it seems the data is ONLY available during the review time? I want to make sure if this is the case
+While my rating is leaning positive to acceptance, it depends on the authors' response on point 3 above.
+The authors have defined several criteria which, in my opinion, can be used as targeted labels, because these criteria seem to target different groups of users
+For example, practitioners who focus on treating patients may feel articles beloing to criteria 3 is relevant but those to criteria 5 irrevant
+- Page 4: You didn't mention which classifier you use in Section 3, until in Section 5, you say the BioBERT based classifier is used as the base classifier
+- Page 6: Table 2, not sure why the bottom line of the first column is missing
+- Page 6: not sure what Figure 5 is for, since you didn't mention it at all in the text.
+- Page 7: suggest to simplify Section 6
+For example, delete the first paragraph, which seems no need to repeat.
+- The section 4 may benefit from rewriting
+The authors do a great job in framing the problem and presenting their approach
+Did the manual reviewers had access to only the abstract/first 2 paragraphs of paper? or did they had access to the full paper to make their decision on topic relevance? the agreement between reviewers is quite excellent, so a bit more in-depth discussion about this would have been nice to have
+something which we don't see so much and which practitioners might benefit
+The substance however is very limited, as it basically consists of a report of a human evaluation campaign
+ - how is a topic represented to an evaluator? By its 5 most frequent words, or some other way?
+It evaluates the quality of these topics through manual evaluation as incoherent, generic or specific
+This is an interesting and well-written paper that I found easy to understand
+I would suggest that it could be fleshed out more and sent to a more general NLP venue
+The ideas proposed in Section 4.2
+seem intriguing but are too quickly explained and explored.
+- Anti-HIV treatments for cancer seems like an odd topic, especially in a coronavirus corpus
+- The Data section mentions concepts and non-generic terms before they are defined, which is confusing
+- I know it was likely down to the page limit, but it’s weird to have the concluding remarks in the Related Work section.
+I am not sure why the authors selected the 4 and left the other 2 languages
+- Not enough people are working in this space, and the authors should be commended for tackling a difficult but important problem (lack of access to foreign language papers can be harmful especially with so much important knowledge about the virus being generated in different countries)
+- Translation datasets are difficult to curate & valuable 
+It consists partly of official guidelines and reports from relevant governmental bodies, and partly of abstracts from biomedical papers
+Reasons to reject: Two of the three results in the biomedical domain are behind the state of the art
+However, a lot of critical information is not included in this paper and without these information, it is hard to determine the contribution of this paper
+However, there is not enough experiments to support this claim
+Even though the idea is interesting
+But they are several issues that need to be addressed before considering it for publication
+To classify tweets into different information categories (eg
+In this reviewer's view, this work is well written
+To extract text-based geolocation, are tweets with misinformation filtered out? People may discuss things in other places, which may not true
+For the tweets that are not the first-person narrative, how do the maps of 'affected_people', 'deaths_reports' reflect the changes of the situation?
+This is subsequently made more precise: "tweets would reflect more negative emotions throughout the pandemic, up to its peak"  In the conclusions, it is stated "the evolution of the six basic emotions ..
+is correlated with the disease evolution" and that "more negative tweets posted in the beginning of the pandemic, up to its peak"
+However, the data don't really support the conclusions, first because no direct "correlation" is measured, and second because the negative emotions do not in fact seem to intensify at all up to the peak in late March, but rather much earlier in the month
+Are English-language tweets ignored? Is there some way to assess the effectiveness of the geolocation strategy?
+In all, it is an interesting direction, however, even for a short paper the 'preliminary' analysis should be approach in a more considered manner, or the contributions that the authors claim should be clarified
+- is "decreted" a word in English?
+[Also see related/citing papers listed at https://pubmed.ncbi.nlm.nih.gov/26776213/ ]
+My concerns about the paper are:
+Although the authors went to great lengths to gather and filter relevant Tweets, I am not sure if the size of the resulting Tweets is large enough to extract any meaningful insight.
+Emotion analysis using keyword counting is very basic and cannot capture the overall emotion prevalent in the Tweet accurately.
+In the figure, the only positive emotion, Joy is sometimes more prevalent than other individual negative emotions even though the Tweets are all about the pandemic
+I am not sure what lessons can be learned from the current formulation of the experiment
+Of course, it is expected that you would see more negative emotions when you look at Tweets about an event as negative as COVID-19
+- The authors original aim is very interesting
+- The authors only compare time-series plot to support their claims
+- The authors analyze only tweets related to covid-19
+In my opinion, it is straightforward that negative emotions will be associated to tweets talking about a virus
+Mental health issues are externalized in the totality of an individual's interactions, and not specifically when they decide to talk about a virus.
+- Moreover, even a healthy person can be afraid of a deadly virus
+- Based on the last point, the authors do not address at all how they would proceed after they would detect a person who tweets very negatively
+However, the paper has the following issues:
+I realize that the authors applied an external tool, but still a brief explanation is needed
+ Due to a noisy content in social media, sarcasm, and other factors that might affect the annotation, I assume that the annotator encountered some "difficult" cases
+Also, I think that reporting validation accuracy is redundant
+Section 3.2: Footnote should come after punctuation.
+This work described a series of public sentiment analysis regarding Dutch governmental policies
+Reddit data is based on subreddits, can you please clarify the subreddits that you were using?
+The authors should provide more information on the motivations for retweeting (or why people propagate tweets)
+I don’t quite believe that people are incompetent simply because they do not understand medical terminology
+The paragraph concluding the introduction section needs to be rewritten
+Why did the authors choose these terms and this time period? Please explain
+“Take the red pill” is a reference to the Matrix (popular movie from the 1990s)
+Do the authors think this tweet is appropriate to include in their study? Wouldn’t this tweet suggest the authors’ data is very noisy? Please explain
+The authors suggest that people are misunderstanding the medical terminology, but it seems as if people simply don’t agree on what information is being presented
+I don’t doubt that members of the public struggle with medical terms but this study does not seem to show misunderstanding as much as the authors believe it does
+This paper investigates in how medical information is distorted during its propagation on Twitter
+This is a rather interesting topic, and can potentially have social impact
+The authors addressed an important phenomena: distorted medical information on Twitter
+The analysis in this paper offers deep understanding of distorted medical information on Twitter
+# [REVIEW]  Coronavirus:  Public Arabic Twitter Dataset
+  Saudi has a relatively high proportion of Twitter users and produces around 40% of all Arabic tweets
+The development of this corpus is a useful endeavour, but it is not clear to this reviewer that in and of itself it warrants publication
+I commend the authors for their effort in this endeavour
+Hence, unfortunately, I have to recommend that this work is rejected at this moment, while at the same time I recommend the authors to continue their research and submit an updated and extended version in future venues.
+- Can authors detail which (if any) strategies were used for filtering or identifying unwanted messages (e.g., hate speech) or irrelevant messages (e.g., I have anecdotally seen that replies to an official source often contain a large portion of messages which are plain spam, completely unrelated to the original message).
+Similarly, an analysis of the most common terms used in different categories
+- Regarding collected retweets, are these plain retweets, or retweets with comments, or both? I think plain retweets, even if valuable to understand how a tweet flows through the network, are less relevant than retweets with comments which can also be used to estimate stance or opinion w.r.t
+Once again, I commend the authors for their hard work so far and recommend they continue working on this very important line of research.
+However, the paper in its current form falls short in providing any deeper look at the dataset
+There are also a few relevant references missing
+- line 69-71: needs a reference
+- line 89: which government accounts?
+- line 124-130: what are the limitations of that tool? How is the sampling done? How do you know which part of the Tweet population you are getting? Some references you’d want to look at here are [1], [2] and [3] (see below:
+which topics are discussed in the tweets (using LDA, for example)? What can we learn from the data?
+A key limitation is further see is that it focuses on Twitter without discussing the limitations that follow
+# [REVIEW] Tracking And Understanding Public Reaction During COVID-19: Saudi Arabia As A Use Case
+ First, public sentiment fluctuated substantially over the course of the pandemic, with sentiment improving (i.e
+My overall assessment is that this is a worthwhile effort, but as it stands, the work is somewhat undercooked
+	* “While governments are taking extreme measures to **compact** the spread of the virus…”  I don’t think that “compact” is the right word here.
+ The background for the work is extensive, but somewhat unfocussed.
+ Some of the citations (e.g
+ It sounds like the geolocation from CrimsonHexagon is something of a black box, given the quotation you use
+ Is there any evidence regarding the reliability of their geolocation algorithms?
+ Geographical distribution (Fig 3) looks about right given population centres in Saudi.
+In this reviewer's view, this work is well structured
+Can you please clarify how to annotate the sentiment of posts based on the lexicons? Is human involved in this? If not, what is the algorithm to identify the sentiment of posts based on lexicons? One post may contain more than one sentiment keywords
+After training the SVM model (the best model shown in Table 4), please clarify if you apply this model to the entire dataset for the sentiment distribution in Figures 1 and 2.
+However, the paper in its current form falls short of a few requirements, the most important of which is the lack of statistical testing and thereby the lack of alignment between the findings and the conclusions that are drawn.
+- line 83-84: needs a reference
+- line 116-120: the research questions are not motivated enough
+- line 259: why do the tweets need to be related to influenza? This needs clarification.
+- line 296-299: how were the keywords and hashtags categorised? Who did this? What was the annotators' agreement?
+- line 353: what do we know about the validity of Crimson Hexagon? 
+- line 369-377: why were only tweets between 160-170 characters selected for sentiment identification?
+- fig 1: the figure is off - the percentages do not align when they should.
+- line 440-470: this needs proper statistical testing - right now there is no way to assess the findings in a quantitative manner according to statistical standards
+- line 476-478: how were the topics labelled?
+The dataset and baseline comparsion dataset are well constructed, but when 'filtering' for only college student related posts it decreases in size to almost being only 5% of the collected set
+A discussion of the demographics of reddit users would have better strengthened the authors argument
+The techniques applied to the dataset are sufficient to elucidate what the authors are trying to show, but many details are obscured from the reader, hindering both reproducibility, and clarity of the writeup
+The sentiment analysis part is a bit dry and lacking in additional details/purpose
+One of the major issues is the lack of usage of appropriate vocabularies/lexicons for the depression evaluation, as well as the lack of a detailed qualitative evaluation
+Overall, the paper needs additional details to be self-standing and extra clarity and rigor is needed for publication worthiness
+topic modelling, sentiment analysis) to find out some stress factors and effects among young people
+To improve this paper I’d like to see the authors answer the following questions: 1)Did the authors consider using the Unified Medical Language System (UMLS) to identify depression-related terms? Why or why not? 2) What degree of statistical significance did this study rely on? 3) Why did this study introduce a sentiment analysis in the discussion section? This seemed out of place.
+Additionally, this study made a number of claims without appropriate supporting documentation
+I’d like to see this corrected, for example, how did this study determine that “the data here spans across geographical, demographic and socio-cultural barriers,” and how did it determine statistical significance? Please explain
+So the third type (naming the pandemic) is excluded from the dictionary? 
+I'm wondering how generalizable/productive the rules are that expand the terms
+My biggest concern with this paper is that it is presented as a way of expanding coverage of automated tools
+However, there are reasons to believe that it will be limited: the novel terms belong probably to the long tail and are very rarely used, and maybe even in a redundant way with the more standard terms
+Before referring to the content of the paper, I would like to strongly urge the authors to proof-read and run a grammar/format checker on the paper, as there are many formatting and grammatical issues that degrade the readability of the paper
+Add whitespace after the full stop
+Fix trivial typos that can be spotted with a spell checker.
+Regarding the content of the work, I agree that multilingual misinformation detection can be useful especially in times like this when digesting wrong information could potentially impact the well-being of the person
+The presentation of the paper is a bit difficult to follow
+The supervised experiments aimed at detecting emotion (8 classes labeled in the Twitter data) and misinformation (5 classes: false, half-false, no evidence, misleading and true).
+There is a major problem with the writing style: it needs to be improved thoroughly, and several grammar, spelling and typographic errors need to be fixed
+- The approach considers Twitter data in several languages beyond English (e.g
+- The article needs a great deal of work to correct grammar errors, ortographic and typographic errors
+Moreover, an an effort of synthesis is required: several excerpts are redundant or revolve around the same ideas about the spread of information in social media, etc.
+5.1: the authors state that they "created a list of Out-of-vocabulary (OOV) words which were replaced with meaningful complete words."; I think this is not expressed correctly
+The font size in the legend is too small.
+- Unify use of uppercase or lowercase letters in the title of the article.
+- Check ACL citation style: e.g
+- The authors are encouraged to split long sentences into short text fragments for the sake of clarity
+For instance, the 2nd sentence of the first paragraph in the Introduction; the first sentence of Sect
+2: Unify use of single quotes; they are sometimes used, but not in all words: ’anger’, ’disgust’, ’fear’, anxiety, sadness, happiness, relaxation ,and desire
+Regarding names of languages, no single quotes are needed (Sect
+- There are many missing white spaces between words and punctuation marks (e.g
+between a bracket and the next word, etc): e.g
+The writing quality of the paper is pretty good, and the logic is nice
+Are both the query and paragraph initialized by a pre-trained Word2vec model? There is no clear explanation in the experiment part, but the readers could get the above clue in the last paragraph
+One limitation is the lack of proper explanation on the baseline in the 3rd round
+However, the experimental data provided in the paper (which I briefly cross-checked w.r.t
+A prototype of the system is deployed and usable online (I've been able to perform some queries while others have taken too long)
+In general, I believe this paper provides a valuable approach and a tool the community can benefit from, and I think it is very relevant for this workshop
+My only suggestion is regarding the evaluation
+As it is currently written in the paper, there is too much emphasis (in my opinion) on the idiosyncrasies of the TREC-COVID challenge, which makes the evaluation section unnecessarily long
+In this paper, they concentrate on identifying the people with depression through analyzing their tweets
+The paper is well structured with clearly outlined aims, assumptions, and weaknesses
+In my opinion, it indicates that the authors went the extra mile to gather information about the subject of their analysis
+I recommend that this paper be revised and resubmitted as a short-paper, focusing on the unique challenges of multi-national mental-health predictions.
+- Lots of superficial information in the paper
+Reasons to reject: the design of the experiments cannot fully support the claim in the paper
+While this hypothesis is effectively demonstrated by the experimental results, I believe this is a direct consequence of the fact that these ontologies are from different domains and thus mostly disjoint, which in my opinion renders the hypothesis self-evident
+Finally, I commend the authors for their effort
+(I believe this stems from the incorrect to use of $<$ and $>$ in LaTeX)
+- I do not understand why would it be useful to recommend concepts to someone
+So the evaluation is biased and tells little about the results
+It is just not an appropriate measure for expertise
+    But I don't see any advantage of using h-index over other metrics of publication and citation impact
+- I have trouble following the evaluation; it has many suspect steps and I feel that they are underaddressed
+I don't have a sense for what their numbers mean
+- some of the methodology is arbitrary but would likely matter in practice, e.g
+I am deeply dissatisfied with the evaluation methodology
+I would be much happier if a less ad-hoc version were performed on a limited subset
+Given the lack of results using ERC panels as experts, a large portion of the paper seems irrelevant (null results are fine, but there's no meaningful investigation of the null result)
+The paper would benefit from some technical clarifications and, in my mind, can be extended to the long format
+- The process of graph generation is not straightforward and should be accompanied by examples and/or illustrations
+The paper and idea is good
+This work reports an approach to symptom detection on Twitter data
+- I also missed a pragmatic perspective and brief discussion as to how these types of approaches would be valuable in the real medical-use or pharmacovigilance context
+4, Figure 4: These figures are, in my opinion, small to be read adequately
+I suggest authors to make them larger and move one or two to an Appendix
+One limitation is that this paper over-emphasized the necessity of being end-to-end
+the concept wikifier has to perform ..
+Experiment results show SciBERT has terrible Recall
+5, Table 2: What does "essential medicine" stand for? General medical concepts? Generic or frequent medication names? Please, explain this or give an example.
+Overall, I think this is a reasonable short paper for this workshop
+Significance: not life-changing but certainly an important problem
+- The dataset seems to be adequate (it is nice that the authors release it) and the models that are applied are appropriate
+- The strong match SciBERT (no fine-tune) seems to perform worse than the baseline
+This work is interesting to read
+in the 3rd paragraph of Sec 3, how the use of the keywords liberals/democrats not presenting a bias in this study? Is keyword "republicans" also used? Further any control on the metioning of keywords and their community? (e.g
+maybe democrats are mostly mentioned by republicans and vice versa?)
+In Table 1, what are the scales of those association numbers? BTW the table caption is weirdly formed and needs fix.
+* Novel way (Section 3) to use data from multiple sources, building associations between people online language and their stances or behavior patterns.
+* The writing of Section 4.4 and 4.5 is hard to understand, hard to connect these two sections and other sections
+* The section 5 is too brief
+I found this work interesting, well-structured and -written, and an enjoyable read overall
+I have a few comments and clarification questions:
+As mentioned above, I enjoyed this work, and assuming authors’ clarifications re the above point in the final version, I’m recommending it for acceptance.
+This short paper presents a lexicon-based approach to understanding moral narratives in English-language Twitter data
+ It’s an interesting approach, and nice to see a paper that utilises psychological theory
+Tweets pertaining to social distancing are characterised by empathy, compassion, and protection, and tweets pertaining to misinformation characterised by the opposite qualities
+My overall view is that this paper and line of research is promising, but currently needs a little more time to marinate before it is ready for publication
+* The writing is generally comprehensible, but there are some points that would benefit from being tightened up
+* Technical details are somewhat lacking (e.g
+* My understanding is that MFT, while very influential in moral psychology, is also quite controversial and competes with stage based models and theories that are more influenced by moral philosophy (e.g
+ When you say that the choice of hashtags was inspired by Shanthakumar, did you make any changes?
+ A quick search of twitter suggests that the hashtag #Trump is used both to propagate misinformation, and to attempt to correct it.
+* I’m a bit confused about why you chose the countries you did given that all your tweets were in English
+ How representative are English language tweets generated from Italy? Also, isn’t Twitter severely restricted in China?
+The work sets out to answer two COVID related questions looking into Twitter data
+The questions are if people cooperate or compete at the time of crisis and what are the major moral values of people believing in conspiracy theories
+Each tweet is annotated using a moral and a sentiment lexicon
+Also based on presence of certain hashtags, all the tweets are divided intto two categories
+The research questions are answered based on the average moral and sentiment score of each tweet
+The paper needs to be proofread
+There are sentence structure issues throughout the paper
+This work characterized the sentiment and moral analysis based on more than 3M English Tweets from the Coranavirum Twitter Data
+Each word in the tweet was annotated based on these two lexicons and each tweet is marked by the average value over 8 sentiments and 5 moral dimensions
+In this reviewer's view, this work is a worthwhile contribution
+Is it to match each word to the lexicons in the two dictionaries(morality and sentiment)? 
+The 'Hashtag/keywords' in Table 1 and 2, are they listed based on certain criteria or just the keywords related to COVID19 from the original Twitter data? 
+What does the 'Fear' column mean in Table 2 (the averaged moral values)? Is it the fear score or the ratio of posts? 
+I really like the resource and think it is a good contribution to the workshop
+Just have one suggestion regarding the manuscript and one advice about the chatbot that the authors intend to develop based on the corpus:
+Did you do it taking only the questions into account or you also use the answer linked to the candidate question?
+It collected 2,200 question-answer pairs from popular websites
+Then it extracted 27, 000 unanswered questions from tweets, identified the most similar questions in the collection and provided top 5 answers
+For the 27, 000 unanswered questions, it seems that only the questions similar to the existing questions in the collection can be kept
+Therefore, many new questions will be potentially missed
+And what is the motivation of only annotating the questions that are similar to the existing questions in the collection? Critically, the questions that are significantly different from the existing questions are more valuable and need the power of manual curation
+For instance, the statement 'Over 18, 000 examples were judged to be less than 1% relevant, indicating that the majority of the questions extracted from twitter are irrelevant to the answered questions in our dataset' seems that most of the questions do not have a precise answer yet
+When updating a question-answer pair how the update is done
+The paper lacks the explanation of how the question-answers are updated
+The answer is a URL, if the correct answer is to be found there, then perhaps an example of the website content should also be included
+The process of extracting questions from Twitter seems to be the main part of this research but is not explained properly to be useful to the research community
+I consider the paper to be appealing for the audience of the workshop, however it is not clear whether it is a short or a long one
+I am considering it a short one, although the authors use the "annex escape" to complement important aspects of the paper
+Table 5 is quite explanatory and an important part of the paper
+However, I would ask for the authors to elaborate more on the distinction between some of the intent categories, that seem quite similar
+I wonder if the synthetic data could reflect the real world problem or it is just a much more simplified problem with utterances expressed in less diverse forms
+How did they deal with a sample that received different annotation labels ( majority vote? adjudication among annotators? just throw them away? )? These details are important for other researchers to assess the quality of the dataset
+- The dataset `is synthetically created by annotators based on an ontology describing all intents with few representative examples`
+ The idea is good, and the experiments used seem OK
+* What about the standards and quality control for manual labeling of lockdown-train
+The paper describes work in progress whose goal is to the collect a hate speech corpus with Argentinian Spanish Tweets about COVID-19
+Once the collection is finished, authors also intend to answer questions regarding social science, using SOTA computational tools
+-  is there a continuity between hate speech during the pandemic and those that previously existed?
+- is there any difference in how hate speech is expressed by users in the different newspapers and over time? 
+- to what extent do newspaper articles induce the emergence of hate speech?
+- is hate speech linked to a snowball effect or to the performance of some influencer users?
+- is there a link or community among people who produce hate speech? 
+Although the idea is great and the work is going on a very positive direction, I saw some flaws in the description of the experiment
+Moreover, despite the fact this is a short paper, I agree with the reviewers that more comprehensive results are necessary before the publication of the manuscript/
+The acronyms OT, NPAs and RPs are counter-intuitive and confusing
+I suggest the authors to change them or refer to the proper term
+If one of the paper’s goal is to obtain Spanish tweets (preferably from Argentina) associated with the COVID- 19 pandemic, why haven’t you used the geolocation function from Twitter? (However, we do not have information of tweet authors’ demographics
+I think this work might make for a good paper if the dataset annotation had been completed and there was a comprehensive analysis of the data
+Moreover, the questions mentioned in section 4.1 are important and interesting but do not seem related to the preliminary findings they present in the paper
+I very much look forward to seeing a completed version of this work the analysis of results
+This work proposes to annotate Spanish-language tweets, associated with coronavirus news articles, for hate speech
+The article discusses the intended plan to annotate a set of tweets using multiple annotators and then build a machine learning system to identify more tweets containing hateful language
+These tweets would then be used to answer several questions about hate speech during the coronavirus pandemic
+Firstly, I find the article clearly written and easy to understand
+This work appears to be primarily a research proposal with a description of the proposed steps and an outline of the research questions to be discussed
+The data collection description is fairly clear, but the intended questions to ask are general and not well fleshed out
+While the call for papers for this workshop mentions work in progress, this article seems to be a little too early work in progress.
+- The data analysis in the final section sounds quite interesting
+- Section 4.1 provides a brief overview of the types of questions that you intend to ask with the final Twitter dataset
+This is really lacking detail and it’s unclear how you will answer several of these questions with the dataset that you describe
+For the first descriptive question, how will you evaluate trends of hate speech from before the pandemic when your dataset will only include tweets on coronavirus articles? For the first explanatory question, how will evaluate the effect of newspaper articles on hate speech if you only have tweets related to newspaper articles and not other sources? You also suggest doing some sort of network analysis on Twitter users to identify influencers and community but don’t provide any details
+- There’s a strange dip in tweets in mid May in Figure 2
+I would like to applaud the authors for their efforts to construct such a benchmark with the under-served languages in mind.
+This work described a translation system TICO-19 based on multiple sources including English PubMed and Wikipedia
+In the Quality Assurance subsection, It is not clear how the first editing is performed? How do you solve the disagreements? Can you provide examples?
+In the second round QA process, how the 95% rate was achieved? How do you evaluate?
+I would be happy to see this paper accepted, although I think there are some easily tackleable areas for improvement
+It's not clear to me whether or the not the authors intend on releasing their systems (licensing of the data?)
+As is, I would assume not, which would be unfortunate but not a reason to stop publication
+First, the "related entities" service in the online demonstration seems not working well
+- The online demo was not functioning
+- Table 5: how should we interpret the result? From my understanding, the performance of this work is much worse compared to some of the systems
+- Section 1, Paragraph 4: The development of ...
+Reasons to accept: A large amount of human-annotated web documents is a valuable resource on its own
+Reason to reject: I am not sure if the evaluation of the topic classification is fair
+All in all, I acknowledge that the authors went to great lengths to construct a potentially useful dataset
+I would really like to accept this paper based on the magnitude of work that the authors have put into the pipeline and dataset, but the paper in its current form seems a bit lacking in analysis and evaluation
+How is this paper beneficial to the NLP community? It certainly is a useful website for the general public, but it is unclear to me what I have learned and what ideas can be useful for NLP researchers or others working in the area.
+If there is a more thorough analysis of the system and/or an argument for what can be learned from this paper or how this paper can be useful for the NLP community, I would be happy to change my rating
+The introduction sets out a rationale for building such a system, but does not present any evidence that such a system would be taken up by the public, or result in them being better informed that without it - the benefits are simply asserted
+The conclusion is very brief and makes no mention of how and even whether the impact of the system will be studied
+I also have concerns about the reliability of the crowdsourced annotations
+The system collects information from 10 people per article, yet no mention is made of how often the annotators agree
+As such I cannot recommend that the paper is published in its current state.
+“Development of a corpus for evidence based medicine summarisation.” (2011)
+Unfortunately, it’s just one task out of ten where the authors knew the questions and pre-processed them to achieve better results
+Authors present question answering and query focused multi-document summarization techniques for mining scientific literature given a query
+How are the authors considering addressing this? Keeping track of sources as the authors have done for extractive summarization gives users a way of keeping track of this information, but what about in the abstractive case?
+The system asks users a variety of questions in an attempt to make them write about their feelings and emotions
+- intro paragraph: references are missing
+It would also be good to look at some of thee other work on well-being, mental health, etc
+- p1 (last sentence): you say multiple meta-analyses but mention only one
+- another big issue relates to the statistical reporting:
+- - using p < .05 is already very liberal (many argue that we need to move to stricter values --> https://www.nature.com/articles/s41562-017-0189-z)
+- - an interpretation of "just-not" significant relationships is inappropriate as these fail to meet your own statistical criterion (even in its uncorrected and liberal form)
+- please add detail on the participants (who were they, where was the sample obtained from, etc.)
+- a comparison to a non-chat-based tool would be interesting (e.g
+- the comparison with Woebot is interesting but incomplete - I'd like to see a proper sample that meets criteria of experimental research (e.g
+- - the comparison uses Likert scales but you report a binarisation based on an arbitrary cut-off (> 3) - please report means and SDs so we can assess differences between the users' ratings of either tool
+Overall: I'd like to see this paper reworked with proper analysis
+Authors engage with ethical nature of their work
+Missing methods section is glaring; system is not explained or reproducible
+The assess the correlations of various mental health statuses against the time users spent using this bot in a study
+The paper's chief flaw is the omission of a meaningful system description
+The author's have an obligation to describe the system in such a way that a skilled practitioner (or team thereof) would be able to reproduce the system
+The only hints to how this system works are that it uses motivational interviewing and expressive writing as influences and that it is built using Python and Javascript
+The author's use significance testing for their analysis, which makes it hard to gauge the true meaningfulness of their findings
+The authors must perform statistical tests if they wish to make claims about the differences in performance
+Clear distinction between system description and system evaluation
+Re (2): It’s hard to draw any conclusions from (largely inconclusive) evaluation by a single expert, as presented on page 4
+All in all, it seems like an interesting but not sufficiently mature work in its current form.
+Existing research streams are mentioned in a sentence, without providing enough context
+  * The author mentioned `..
+to ensure that COVID-19 related *authentic information* reaches the common people in their own language...` However, it is unclear whether the information was translated factually correctly
+In general the application could be potentially promising and helpful, but the authors need to have some direct evaluation to show the efficacy of the application
+I would like to applaud the authors for this effort which shows that a lot of work has been put into making the system operational
+I would also like to raise several shortcomings, possible misunderstandings from my part, and suggestions for improvement.
+I would suggest the authors to not use “smart” to describe the tool as it doesn’t tell the reader much, and there’s no explanation in the paper what makes the tool smart
+“To grasp the nitty-gritty of a document or a collection of them is clearly much more than summarizing or finding interconnections but, comprehend what is expressed in the texts is part of the process.”
+ Paper is comprehensible and well-written but authors could have done a better job at optimizing the space limitations
+This work is quite interesting and very needed, as there is a clear difference in finding posts that mention symptoms and actually being able to attribute them to the user
+2020 which was not the main time for COVID to be widely spread in larger parts of the Twitter population of users? (USA)
+A large amount of space was given to show some tweet samples (which could be an appendix instead) taking away space for content
+It also shows that it misses 1 in every 3 positive tweets, which is definitely not ideal
+Comparison with other classifiers, at least as baselines, should be the standard these days and it is missing from this paper
+Overall, this is an interesting problem to solve, but the current manuscript needs considerable work to be a valuable and more robust contribution
+- Easy to follow, straightforward storyline
+  - The authors chose to use BERT-large, which is ok
+  - The authors may consider BERTweet (https://arxiv.org/abs/2005.10200)
+  - The most we care about should be the positive class
+However, the positive class's performance isn't perfect
+  - There is no error analysis
+  - In table 2, negative side: `¡hashtag¿`, `amp;` should be fixed/escaped.
+While the described work is interesting, the authors did not evaluate their model and do not provide any evidence of the model accuracy
+**Recommendation:** Though mostly sound, the paper does not make a novel contribution; reject.
+Unfortunately, none of this is novel
+And indeed, even some of the paper's more nuanced findings, such as the implications of anti-Asian or sinophobic sentiment have been documented (e.g., [here](https://arxiv.org/pdf/2004.04046.pdf) and [here](https://arxiv.org/pdf/2005.12423.pdf))
+I thought that was an interesting and creative approach, and the paper was a very enjoyable read overall
+The two issues above, however, prevent me from recommending it for acceptance
+The paper seems to be put in haste and lacks good presentation
+Results section feels incomplete due to lack of any rigorous evaluation
+ While the opening of the paper is quite well crafted, the important evaluation and results section needs considerable work for the paper to be clear and fully self-standing
+Sharing tweets like on the screenshot shown as figure 1 is definitely not ok in terms of privacy issues and it would go against Twitter's terms and conditions as well
+A paraphrased summary of the tweet and removing the author would be the best way to share
+While the direction here is important and interesting, I think the paper has several key details that are missing and need to be included before it would be ready for publication.
+Is there a quantitative way to measure explainability? All I see is one qualitative example.
+I think what the authors mean to show in Figure 4 is that there are fewer false negatives
+The paper overall is written well: easily understandable and transparent
+Given this imbalance, it is hard to tell how much original work is being presented in this paper
+- the work suffers from major disfluencies that make reading challenging
+The existing measurements only partially cover these and are somewhat unclear
+The paper collects questions and answers and verifies them using experts at JHU and Bloomberg
+A lot of work described in this paper seems to be at a high level
+The URL to the chat-bot given seems to only answer trivial questions
+Finally the paper needs to be checked for erroneous grammar and writing inconsistencies
+Unfortunately the paper is challenging to read due to many spelling and grammatical mistakes and I am not 100% confident that I understand the scope of the work discussed
+The work seems to be building a QA system as part of a chatbot that is currently live on a website (https://covid-19-infobot.org/)
+The paper briefly describes a dataset of question & answers constructed by JHU experts
+Unfortunately due to the lack of clarity, I can’t really recommend this paper
+I would, however, like to commend the authors on making their code public and suggest significant restructuring to improve the paper.
+However little information is provided on the rationale for this
+interannotator agreement, what different scores from 0-100 are judged, etc.
+The answer states to only wear a mask if you have symptoms, which is certainly against medical advice in the US as well as most other countries.
+- Is the chatbot at https://covid-19-infobot.org/ using this approach?
+The paper is clearly written and a pleasure to read
+The actual work in progress is presented in broad terms only (with a few technical details for the more trivial parts such as preprocessing), which is in my opinion the biggest shortcoming of the paper
+I am wondering, for example, how the model is precisely recomputed after the user has provided feedback (incorporation of label information, deletion of words, removal of topics etc.)
+Reasons to reject: Their description of the plans human involvement is frustratingly brief and vague; the most useful part seems to be a pair of references to other group's work in 2017 and 2018
+Overall: This work is highly preliminary, and thus lacking in detail, and as such, in my opinion, publication of this work at this stage would be premature
+- The reported Precision-Recall is in some cases really low (e.g
+Therefore I kindly encourage them to address (if possible) following issues:
+- provide the accuracy of other models in place of ME (CRF) and ML (LL) and report your accuracy
+- provide the predictive ability of standard models for annotating data in other cases in order to provide a measure for your models' accuracy
+(What is a general acceptable precision and recall for tagging e.g
+- Since considerable time has passed since the submission of the paper
+ * the ML algorithms used are probably the weakest part of this proposal
+The F scores for their baseline system are very low - 0.58 - 0.00 for entities and 0.40 - 0.01 for relations - this is not a viable baseline, and is purely of value for comparisons
+I am not at all familiar with these kinds of knowledge discovery approaches so I find it hard to gauge the importance of the research or its likelihood of producing outcomes of value to biomedical researchers - especially of value to Covid-19 researchers in a timely enough manner
+However, given that other people see fit to publish this kind of work, I very tentatively recommend publication
+Is my understanding that the fact that certain keywords show an increased prevalence does not necessarily imply that users are actually feeling an increased mental-health burden
+I commend the authors for their efforts in this clearly important endeavour and I suggest they continue strengthening this analysis.
+**Reasons to reject:** I believe the paper does not advance our understanding of the scientific problem under study, that is, the impact of COVID-19 in public mental health, as it does not provide any new insight or result in this matter.
+Since the authors didn't present any analysis of the contextualization of the topics or, for example, some sentiment analysis performed over the texts some of these conclusions can be false
+In this context, I recommend to check the paper and consider rewriting some of these parts.
+Comparison between anxiety, depression, suicide is very relevant
+The authors comparison of anxiety and depression is an important contribution
+USC's Understanding America Survey COVID-19 is doing this as well
+As it is written, the authors analysis and discuss implications simultaneously--leading to temporary uncertainty over what is an evidence-backed finding and what is author speculation.
+The authors exclude comments to the original posts during the collection of the dataset
+I did not understand this decision, could the authors detail their reasoning? Aren't comments more prone to hold some kind of support utterance? If one user asks for a specific information I would expect that the comments associated to the original question to contain some kind of informational support
+I understand this is a short paper, however in the current form it wouldn't be possible to reproduce the work done by the authors
+- line: 46: define social support 
+- line 195: I'd really like to see comparisons with other models (e.g
+- Fig 1: please assess statistically whether the lines in the plot are different - right now the interpretation relies on eye-balling.
+- line 287-386 (Discussion section): you are now not talking about the prediction any more but focus on the findings derived from the plots
+- a key (and very interesting) finding is that the rate of support given/received is divergent for emotional and informational support - this merits more attention and I'd like to see more details on this (e.g
+The manuscript is well-written and the structure is clear
+The description of their system is quite clear and succinct, making this a very easy and intuitive read
+This manual review is a good idea but it is lacking in depth and detail to be fully stand-alone, more discussion would be nice to have
+Overall, the paper proposes an interesting system and poses a very interesting question with regards the typical evaluation procedures for such systems, while it needs a bit of work and tidying up, it is a nice contribution
+The paper is interesting, insightful, mostly clear and very well-written.
+long answers for what essentially are factoid questions
+That is, the “user preferences” as stated in the title are somewhat misleading
+Article selection is based on finding out which textual chunks from the article is maximally similar to the question (using Sentence-BERT)
+The authors test these components as they are, without re-training or adaptation.
+I see a number of methodological shortcomings that in my opinion make the publication of the article in the current state premature
+However, the importance of that snippet in the article has no weight by itself, so no indication of how central it is to that article
+no mention of how many annotators graded the quality of answers, what was their agreement, how many answers were verified, and when the topic is deemed equivalent between the answer text and the question
+The authors go on to claim that “a substantial improvement to RECORD’s performances is brought by the analysis of the whole body of the articles”
+This is a rather crucial detail which is lacking
+All questions and tasks they are listed under are extremely important
+The keyword-based collection could result in many duplicated tweets, for example, the same announcements from the government reported by lots of different news accounts, and popular tweets retweeted by other accounts
+searching "Li Wenliang" could pick up tweets that falsely accused him of spreading rumors or tweets that described his profile)
+This is a short paper providing an overview of the collection of tweets posted on a popular Chinese social media platform called Weibo from December 1, 2019 to April 30, 2020
+The authors first create a pool of active users by filtering them based on their activity and the number of tweets, followers, and fans
+They then compile a collection of tweets from these users using 179 manually pre-defined keywords.
+- In what languages are the tweets collected in Weibo-COV? I assume the majority is in Chinese, this should be stated explicitly somewhere at the beginning of the paper
+- Not sure what is meant by “Cirque du Soleil in Canada” in section 3.5, please review.
+- Typos and grammar mistakes occur throughout the text (e.g
+- I am not sure whether collecting only active user's tweets makes sense
+It is possible that some users create and start to post tweets because of (after) the pandemic
+- Are these keywords manually choosen or decided based on their popularity? Also it looks to me some keywords are repeated
+All tweets were manually labeled by researchers from the UCI School of Medicine as: 1) having a positive expression of the misconception, 2) contradicting/disagreeing with the misconception or 3) being neutral or not relevant to the misconception
+bench-marking them against the content on the reputable websites, such as CDC, WHO or PHAC, rather than relying on human annotators to maintain the misconception databases current)
+Then, they perform stance detection to investigate if the tweet agrees to the specific misconception or not
+I enjoyed the study and I definitely support its publication
+In this study, the misinformation in tweets is annotated by experts
+To adapt to new misinformation and automate the process, the authors can link the information in tweets with peer-reviewed scientific publications to detect the new misinformation in tweets
+The paper is about creating variations of COVID-19 drugs in Twitter using three different methods to capture posts with misspelled drug names
+The Title and the Abstract gives the impression that paper is about finding potential COVID treatments in social media
+However, the research is about the use of automatic techniques for dealing with misspelled drug names in Twitter
+ If we only are targeting English tweets, then what is the point of labelling all 424 million tweets?
+Text tagging and annotation is used interchangeably, and I suggest using just tagging as annotation could imply manual effort in examining and labelling the tweets.
+At the same time, my feeling is that the title of the paper does not correspond to its content
+There is no further characterisation of the context in which those drugs are mentioned
+- Table 2 shows the number of mentions of the top 10 drugs
+How many additional tweets does it allow to recover? How can the authors ensure the additional data is identified correctly?
+While the paper is interesting, well-written and concise, the authors over-sell some of its aspects
+The paper is straightforward, yet interesting and I would say it would be easily understood by a wide audience
+On the downside, starting by the title, I considering it misleading as the paper solely addresses the use of drug-related terms in tweets
+The sole  use of COVID-19 drugs-related vocabulary is not an indicator of a possible treatment being followed by the author of a given tweet
+The work presented is of interest and clearly exposed and should be presented as it is: a COVID-19 drug terms frequency on Twitter chatter
+The abstract and introduction also lead the reader into thinking a 424 million tweets corpus was mined and annotated, however the corpus size is considerably smaller (the clean corpus has approx
+100 million tweets, out of which only 67% are in English and were considered for this study)
+Other remarks: in Table 1, what is delta in the last row? Could the authors elaborate on the differences of the drugs found using with the 3 different spelling methods? I would expect the list of drugs to be more similar, but with different frequencies
+The author does a great job at framing the problem and providing relevant related work
+The 'experiment' section is quite brief and generic, things that should have been discussed are: was this setup for all dataset? just one dataset? and more details are needed
+The whole evaluation of the proposed model hinges on the manual review of ONE, summarized article, making this quite lax and not sufficient to show what the author claims in this paper
+Without a proper and rigorous evaluation, the discussion section seems a bit mute
+- insufficient exploration of continual bert's inability to summarize literature - if old literature is the issue then it could be excluded or this impact directly measured.
+They frequently contain positioning information and words not found elsewhere in the document
+- There are some broken citations
+However, the author did not provide a way of accessing the tool (e.g
+I found multiple sentences without proper punctuation, which makes reading the paper more difficult (e.g
+A citation at the end of a sentence should be placed before punctuation (e.g
+In addition, the paper does not provide the URL of the tool for evaluation
+I found this article reports work-in-progress and I think it is still not ready for publication
+Even though a visualization tool could certainly help medical professionals, no URL is provided to test the system (only screenshots)
+Moreover, there are several typographic mistakes and grammar infelicities that seem like something authors dashed off
+85: The reference to sciSpacy should be given when this library is mentioned for the first time
+I recommend the author to place them in an Appendix, in a larger size and with higher resolution.
+The author mention an "interactive web visualization", but no URL is provided to test it
+-Write a white space between "Dataset" and the opening bracket in the title.
+There are similar problems throughout all the article: a white space is missing between the last character of some words and the following opening bracket; e.g
+-Several sentences lack a dot at the end of the sentence: e.g
+-In general: the author is encouraged to split long sentences into short text fragments
+137 is made up of only 1 sentence
+ -- the correlation between tweet discussions and infected cases
+ -- tweets categorization into several manually defined categories
+ -- It is a really interesting reading, providing lots of interesting observations on Iranian public reaction
+ -- The paper structure looks strange, and it causes difficulty in understanding the paper
+Should Section 2 (results) be put after section 3 (methods)? and Section 4 (data collection) become Section 2? Put Appendices after References
+ -- The experimental setup looks arbitrary
+The comments I am making are just some examples of the issues I found with the paper – I believe the authors would benefit from collaborating with writing experts from their university
+The paper needs to be proofread
+It should be changed to: Introduction, Data, Method, and Analysis and Conclusion.
+There are references to Tables in the paper, but every image is captioned as a Figure
+The fact that Twitter is widely used by Iranians needs a reference
+It is hard to believe this platform is popular between Iranians given their aversion to government oversight and their private nature
+(What percentage of Iranians use Twitter? Compared to Facebook/Instagram/Pinterest?) 
+It is strange to read first “Discussion and Results” before any explanations, and phrases such as “In this round of analysis” are perplexing  - at this point we have no notion of “rounds of analysis” let alone what this round might be.
+Section 2 brings to our attention the fact that the number of corona-related tweets has steadily gone down after the onset of the disease in Iran
+ However, there is no analysis done on this important trend, instead an obvious point is made about people being less active on Twitter around the Persian New Year day! This diminished activity is explained as related to travel – is travel the only thing that Iranians do more of that would explain the pattern around Nowruz – but really, why is this significant at all for the study? It could just be quickly mentioned and not in such detail
+The reader is left asking herself how many tweets were annotated if manual labelling was used
+This is just one example of the frustration that occurs because of an incorrect sequence
+On the other hand, references are made that would require a fine distinction between topics, but these cannot be found in the examples
+The choice of 50 topics seems unreasonable and it is not justified
+If it is only 240 tweets that is not enough for giving a sound analysis
+Section 4.1 The keywords used for collecting tweets only based on 8 hashtags which is a very limited scope
+It would have been useful to show a few examples of satire tweets.
+The mentions of conversations on Whatsapp is completely irrelevant and confusing for the reader
+Whatsapp is a messaging app, not belonging to the social media category
+ - it contains several interesting nuggets which are probably distinct of this culture, and are worth comparing with studies performed in other languages (eg: the drop during Persian new year, the high tweets which are about satire)
+ - there are several points which are unclear (see below), and I believe should be clarified if this is to be accepted
+ - it contains several unrelated analyses and reads sometimes as a collage of different things
+ - "Twitter is one of the widely-used online platforms by Iranians" could you add a reference to that, detailing, for instance, the market penetration?
+ - Sect 3.1.2: for what is the document-wide analysis done? If you want a hard-clustering, then why do an LDA and not directly a kmeans like you do afterwards? In general, the LDA analysis seems underexploited
+The test datasets used in the categories of Self/Others infection, Infection and Vaccine were very small
+- Lines 237-238: it is unclear what are the 5 categories? Both the introduction section (line 141) and figure 1 mention only 4 categories
+To avoid confusion I suggest the authors review the paper and make sure variables are properly introduced in the main text
+Very well written paper with proper descriptions and examples where needed.
+Although a very well written paper, there are few mistakes in writing and grammar
+Such as "The accuracy of the influenza classifier is DISCUSS in section 3.4" in page 5 and a few other minute errors.
+The respondents' answers (in French and English) were segmented into short sentences
+I found this work fits the audience of the workshop and could provide an original contribution
+Still, I had some difficulties in following some of the explanations because of structure and the writing style (I did not understand some abbreviations after reading the full article)
+ I wonder whether authors could resubmit to this workshop a paper with a structure and writing clarity that meets the required level.
+-Some parts of the article need to be reestructured
+-Several grammar errors and typographic infelicities.
+-Tables 10-14 (Appendix) and Figures 2-6: Please, provide a note to explain that "p" stands for "probabilities" obtained with the Logistic Regression model
+-Several acronyms need to be defined the first time they are used: e.g
+207: "diverse styles :" -> no space before the ":" character in English
+-Long sentences (such as lines 248-326) should be split in 2 for the sake of clarity
+The idea behind the paper is of interest for the NLP community, however the paper seems to have been written in a rush
+The methodology is not clear enough, paper organization is flawed and the authors tried to overcome the page limit by adding an annex where they dumped most of the tables and figures, without proper descriptions
+Abbreviations are also misused, in some cases they are only written by extension the second or third time they are found in the text (e.g
+The authors claim that the answers in the corpus are generally enumerations "due to the nature of the proposed task"
+However, five out of the nine questions in the questionnaires ask for a description, so I would expect at least the answers to these questions to be descriptive
+The paper presentation is not fluid, I had a hard time following its logic and the issues regarding its organization made it more difficult
+Discussion of relevant research is missing
+Discussion of methods / data overly implementation-specific
+I recommend discussing the neural network architecture and then discussing the four experiments carried out with it
+Though this information is relevant, it is more appropriate for a footnote than the body of the paper
+This is a growing area of interest
+The authors could do better to describe their methods and notably miss an opportunity to summarize the research on semi-automated/human-in-the-loop content analysis
+I recommend the paper be accepted conditional upon revisions.
+**Reproducibility:** This paper could be reproduced.

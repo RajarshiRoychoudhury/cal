@@ -1,0 +1,820 @@
++ The systematic methodology presented in TriScale can improve the community’s confidence about research results presented in a paper and its replication efforts
++ The paper is well-written and easy-to-follow  
+Thanks for submitting your paper to JSYS 2021.
+required to ascertain the confidence in conclusions derived from an experiment
+The paper is well-written and easy to follow.
+There are a few aspects that can be improved in the paper
+Are there alternatives? If so, is it easy to plug in another user-preferred function in place of the TriScale default functions?
+How will TriScale handle such metrics? 
+Thank you for submitting your work to JSys
++ Significance: the paper addresses an important problem
+Researchers often opt for simpler rules-of-thumb that were applied by previous works
+Though I am glad to see the paper applying the proposed methodology to five different problems
+It will be great to elaborate on what attributes of these problems enable applying the proposed methodology
+- First-of-its-kind paper to quantify the replicability of performance evaluations
+- Developed a readily usable framework to implement the concrete methodology
+- TriScale's methodology has its own practicality issues (explained in the comments)
+Thank you for submitting your work to JSys
+I really enjoyed reading the paper
+Its excellent writing clearly outlines the methodology as well as the statistical methods
+I also appreciate the development effort of the tool TriScale.
+The quantifiable replicability is not novel in this sense (maybe it does not need to be novel?).
+* Generally well-written and relatively easy to follow
+* Useful, could potentially benefit all scientific researchers
+* Methodology is grounded from strong theoretical analysis
+* Methodology is a bit high-level and lacks more detailed solutions
+* More like a general experimental design tool instead of in the networking domain
+Thank you for submitting TriScale to JSys
+I enjoyed reading your paper learning how 
+Meanwhile, I have a few comments below, which I hope could further improve the paper.
+* It’s nice to break down experiment design into three questions and answer each one by one
+However, I feel that the provided solution is a bit limited in what it can help
+* Saying “Tools like Pantheon [84] support data collection, but leave the design of the experiments and the data analysis up to the researcher” makes the scope of “design of the experiments” seem limited to the three questions TriScale answers
+To me the paper is mostly on “when” (durations and specific start times) to run experiments instead of the entire “experiment design” which is a much bigger scope/problem to solve.
+* Fig 1: The authors argue that “Contrary to what Fig
+* “Only users can know what is more appropriate for their evaluation, but it is important to understand this distinction when designing it.” again, the user may not always know, or at least prefer some tool that tells her such.
+* Does Triscale have applications beyond academic research? Say for network operators, application developers, or testing services?
+- Although the paper targets to be a pedagogical paper, it is not easy to read
+Cleaning up writing may be necessary.
+- Paper often gets not precise
+Clear assumptions and thorough correctness arguments are missing
+As it is targetting to be a pedagogical paper, I recommend authors to spend time on that
+In the detailed comments below, I added a few suggestions.
+Also, the paper gets loose on preciseness from time to time
+I understand that it might be impossible to present proofs to all protocols presented
+But it sometimes felt too loose to wrap my mind about correctness
+Finally, I felt the paper wanders among various PPaxos & other prior work
+I wonder if setting up a goal upfront would be helpful
+- "For example, with two proposers ..
+the leader of the round" seems not important.
+- "chosen" at the end is not defined
+It seems different from "chosen" in page 4
+I would clarify "chosen" and "voted" in page 3
+- Figure 1 added little value to me
+Except "number of leaders", terms in other boxes are not yet defined
+- I add details to Figure 3
+I think a figure with terms (vr, vv, PHASE1A<i>, etc) used in the text will be very helpful
+- remove (see [15] for details)
+- Meaning of "v" is mixed
+Sometimes "v" means the value given by the client
+- If any message gets ignored, what does a proposer do?
+- Can you elaborate on how replicas work? Why is it safe, and how to ensure consistency?
+- Need an explanation on directed edges
+There is no introduction of the meaning of direction
+The definition of dependency explained so far doesn't pose any order.
+I wish to see some explanation based on the ultimate goal.
+- Texts for figure 11 are difficult to read
+- Here, you introduce the timer
+I think this new requirement should be declared earlier.
+I would like to see the correctness argument for SMR, not just to the two invariants.
+- I don't understand how EPaxos leverages FastPaxos
+- Why use both learner and replica? Any difference?
+- I feel "maj()" is awkward
+It must wait for dependent commands.
+- In the bullet starting with "In Figure 14b," => remind readers about Paxos protocol
+I think that's necessary to understand why "so is forced to propose (x, pi).
+- I initially didn't understand why proposer p2 doesn't send the request to d1, d2, ..
+It felt more natural to do that
+But I guess you strictly abided by the Paxos protocol.
+- 7.1 => first paragraph is complicated
+Renaming phases and describing what they do would be helpful.
+The explanation of fast paxos and multi-leader protocols is clear and it helped me to develop an intuition for the protocols sufficient for building a prototype.
+But the paper lacks several important characteristics necessary for building a production system:
+  * information on the retrieving data from the state machines
+As a practitioner I wonder if the benefits are worth the complexity but the paper doesn't give me an answer.
+I recommend to include either experiment data or an estimation of the upper limits of throughput for both systems.
+## Retrieving data from the state machines
+  - to read from a leader after waiting for a round of the heartbeats or after checking that its lease doesn't expire
+The last important missing part is reconfiguration
+It's crucial from a practical perspective
+It may create a false impression that it's impossible to skip ballot numbers
+I think this paper is a timely addition to this space and has potential to become a paper like Raft that cleanly explains the domain of multi-leader protocols
+The first seven pages of this paper are really fun to read and insightful
+The authors have laid down the framework very well and kudos to them for the nice description
+To motivate the spectrum, authors have started by explaining even Paxos, and as a reader, this really helps set up the pace
+I found the paper as a whole to be very descriptive
+Further, the story is finely knit
+I strongly believe that this paper is missing some evaluation
+I explain most of my concerns next:
+It will be helpful if the paper explains what is meant by unchosen here
+It is unclear to me what is the benefit of waiting for messages from all the 2f+1 acceptors in line 1, Algorithm 3
+I understand that the change at line helps to resolve the safety bug of Fast PPaxos but not sure why change at line 1 important
+In such a case, how will the proposer recover the state
+The paper needs to clarify this scenario.
+They are not identical to the lines is Algorithm 1.
+I am not sure when did di sent a vote to pi
+This step needs to be clarified.
+Then pi sends to all other ancestors, and waits for acknowledgments
+These terms have not been mentioned anytime before in this subsection
+Although it can be understood by further reading, it will be helpful to the reader if explained before.
+The paper switches between the terms, which makes it often confusing.
+The following line "We consider what happens when not every..." on page 11, left hand side column are confusing the reader, as I expected that following this line the solution will be presented, but that happens much later in this section
+Either consider removing this line or re-write it a little.
+I enjoyed reading this tutorial paper on generalized multi-leader state machine replication
+I am usually skeptical about deriving insights from unsafe protocols, but this paper does a good job with this approach
+However, I am not entirely certain what went wrong for Fast PPaxos
+The paper claims that it is due to a dilemma between reaching consensus and preserving dependency
+But it seems to me that the bug is a result of multi-leader rather than dependency
+ I would like to see more discussion on the root cause of the problem, and how exactly it is fixed
+Other than that, I have a few minor suggestions in terms of presentation
+I suggest the authors stick to one convention, preferrably learners
+- Page 11 right column touched on why the threshold must be > 1.5f
+While this may be obvious for experts, it is helpful to elaborate on this in a tutorial paper for non-expert readers.
+Overall, I like this tutorial paper and would support its acceptance as a tutorial paper
+However, it is currently submitted as an SoK paper
+ If judged as an SoK paper, I am less supportive
+The paper mentions that there are few generalized multi-leader systems, and indeed it only reviews 3 papers in detail (EPaxos, Caesar, Atlas)
+The related work section mentions a few other works very briefly and they are not closely related
+This is not a criticism of the paper
+I think the authors are well aware that their paper is more of a tutorial than SoK
+The onus is on the editorial board to accept this paper under an appropriate category
+- This paper focuses on the reconfiguration problem
+- The paper's solution is missing an important component.
+I got many questions after reading through this paper
+The primary concern is that this paper is missing a good motivation
+It was a surprise when the evaluation section admits that the performance is not the contribution of Donut Paxos
+I think this should be made clear earlier
+To show that, I think it should show another example, maybe applying Donut Paxos to EPaxos
+It's a bit disappointing to see just the Multi-Paxos example as it already has horizontal reconfiguration.
+If you believe that missing reconfiguration was the reason why the industry didn't adopt improved Paxos variants, you should provide the full solution.
+- I would conduct a survey on how industry people use consensus protocols and what problems they are suffering from
+"MATCHA" and "MATCHB" are a bit confusing.
+"The proposer then ends the Matchmaking phase" ==> Is there a termination guarantee?
+"to every acceptor in every configuration in H_i" ==> Isn't it just 1 per round?
+The paper is well written for the most part
+I have a few suggestions for further improving the paper and clarifying certain issues
+I think the paper can help the readers by motivating vertical reconfiguration early on
+While the introduction mentions the lack of logs in certain systems, it is too terse and easy to miss
+This leaves me wondering about the motivation for vertical reconfiguration while reading the paper
+I suggest the authors moving some of nice arguments from Section 6 to the introduction
+I am also wondering if vertical reconfiguration is fundamentally tied to external masters, or is it just the only way we know
+It would be helpful to see some discussion on this early on.
+The paper contains fairly complete details for the most part
+The only part I find a little lacking is matchmaker reconfiguration
+Running a Paxos instance makes sense intuitively, but how do proposers figure out current situation? For example, if one proposer shuts down the old matchmakers and immediately crashes, what do we do now? Another proposer may contact the old matchmaker and it will not hear back from them
+The experiments seem fair and thorough
+If it is for some other reason, it should be explained
+ Please also explain the meaning of violin plots
+I, for one, do not know what they are
+Below are some secondary comments on readability, clarity, and consistency
+I think these are two sides of the same coin
+It is better to be consistent about its effect
+On a related note, I find it more natural to talk about when to garbage collect before how to garbage collect
+The paper adopts the first two but not the third one
+I do not recommend this convention
+To me, replicas refer to physical servers that may play multiple logical roles
+Section 4.1 says there are f+1 replicas (learners in my interpretation) is a little confusing
+While I agree that configuration selection is an orthogonal issue, I think it is helpful to fix a simple configuration selection mechanism and stick to it throughout the paper
+The title of section 6 is not the most suitable one
+The section made several good insights, and generality is just one of them
+Some of the points in the latter part of Section 6 may fit better in the related work section
+It contains a lot of good practical optimizations and it will definitely benefit the community
+However I recommend doing another iteration before accepting the paper because some of its parts look misleading or contradict each other.
+Another great idea is the communication protocol between the proposers and the matchmaker services
+Those ideas (bypass, pipelining) have been around since "Paxos Made Simple" but often they're left underspecified and finding info on how to do it becomes a rite of passage for an engineer implementing a consensus based system.
+What I find concerning is that the authors claim that reconfiguration takes only one round of communication
+While being technically correct it feels misleading
+The last disturbing part is the evaluation section: the experiment is subject to the coordinated omission problem, it's unclear why the median and IQR metrics were chosen and the conclusion is self contradicting.
+Clients wait to receive response before issuing the next command
+The following statements from the evaluation section contradict each other:
+I recommend to redesign the experiment to avoid the coordinated omission problem by maintaining the constant rate of the requests, come up with meaningful metrics (e.g
+However, I mark this paper as weak reject for several reasons
+The paper does not discuss this issue or evaluate it
+That is, the only place in which the paper discusses that is in the following excerpt:
+Fourth, Donut Paxos was not rigorously evaluated
+The following are other minor notes I have about the experiments: 
+- Figure 14 and its caption does match the text used to describe it in section 7.2
+Finally, a minor point, I found that the text is not accurate is some places:
+The citations include EPaxos and Raft and both have logs.
+- “Raft cannot safely perform horizontal reconfigurations” (Section 6)
+I believe that Raft reconfiguration is based on the replicated log.
+I must confess that I was unexcited about reading yet another Serverless SOK paper, but I found the perspective refreshing and enjoyed reading the (19-page!) paper.
+The paper is structured in three big parts
+In the second part, the authors discuss the performance vs
+In the third and shortest part of the paper, the authors discuss future research directions for serverless computing.
+* The ideas are presented very clearly and the paper is well written and easy to read.
+* The insights of the authors are well described and clearly identifiable
+* Tables 2 and 3 are novel and a very good contribution for a SOK paper.
+* The list of papers cited by the authors is well curated (however, I do think they've missed a small number of important--as in very relevant--papers, as I describe later in my review).
+* At times, I felt like the authors got confused about what is actionable for developers and what isn't
+It is good that developers have a SOK paper where they can read about research directions in serverless computing, but I think the authors should make a clear distinction between the things it is good that developers know about, and those that are actually things that developers can apply / use in practice.
+I feel this is fine as long as it is clear in the paper which parts are for the interest of application developers and which are aimed at researchers that wish to focus their ideas on things that would be of use to developers of serverless applications
+* Some important references are missing, see the next section of my review.
+Furthermore, I think it distracts the reader from the most important parts of the paper (Sections 3, 4 and 6)
+However, if you do think the section is critical and want to keep it, then you should at least add an "Other applications" subsection and briefly mention other important use cases that developers should be aware of.
+* Section 4 (Serverless Economic Model) as this is a SOK paper, I think you should cover more works that have been published on this topic
+[8] and the other papers they reference in their Related Work section (refs [2], [17], [39], [13], [18], [23] in their paper, though I think 1-2 of these you already have).
+Minor nitpicks (not reasons to reject paper but would improve final manuscript quality if fixed):
+* It is better if you don't use references as nouns
+* Use dashes to join words when the words are used as adjectives, not when used as nouns
+References that the authors should consider citing:
+[6] On the Impact of Isolation Costs on Locality-aware Cloud Scheduling @ HotCloud 2020
+My main concern with the paper is its structure which mixes high-level description, current research, and future work.
+First, I give details on these general comments and then follow with comments for each section.
+The structure of the paper needs some work.
+The main issue is the mix of current work and future work throughout the paper.
+In each section, I am leaving some proposals on how to improve this.
+However, this should be clarified earlier on (maybe even in the introduction).
+I would even argue that most of the topics discussed in the paper are more related with FaaS than with Serverless.
+Everybody has a definition to serverless and FaaS which is fine as long as the definition is clear.
+I do not think making this passive helps.
+I would suggest to directly state what this paper will address and state it as its own contributions right away.
+An alternative would be to talk about the previous and then go into what this paper does without passively bringing it up earlier.
+It might be better to make this split more explicit.
+The beginning of Section 3 presenting the concepts of online and one-time decisions seem to belong to the background section.
+The concepts are related but there is a clear separation; separating these two section would help following the ideas.
+Section 3.2 talks about cost and then Section 4 goes into the economics.
+Another example of the flow of this section not being clear is the amount of footnotes.
+Some clarifications are useful and belong to a footnote.
+However, most of the footnotes, should be introduced and incorporated to the main text.
+Section 3.6 seems to also break the theme of the other subsection in Section 3.
+I would expect it to be its own section (like the economic model) and probably earlier.
+Overall, the content, flow and structure of Section 3 (specially cold starts) should be improved.
+The concept of "cold start" is used in early section but it is not formally introduced until Section 3.1
+The paper already cites [14] regarding the reclamation time.
+However, [14] also includes thourough studies on cold starts which should be cited.
+Section 3.5 is very related to cold start management and this link should be tighter explicitly referring to it and probably making sections 3.1 and 3.5 to follow each other.
+This link is even mentioned in Section 3.2 when referring to cold starts.
+I would expect a deeper introduction of Table 1 in the text instead of referring to it 3 times.
+At least discussing what are the most significant differences across platforms.
+I cannot see the value on defining the FaaS and IaaS formulas as equations.
+The conclusions to Section 4 should be a little more nuanced and include a discussion of the provider perspective.
+There are some references to this throughout the text but the introduction of Section 5 should include this for completeness.
+This is even mentioned in Section 5.1 but this seems to be at the same level as the features mentioned in the introduction of Section 5.
+When describing the applications and uses, [64] does a pretty good job at it.
+This section should at least refer to this work.
+The summary at the end of Section 5 is a little out of place.
+Otherwise, the current summary just relates to the intro of Section 5 and the other subsections do not lead to anything that strengthens the summary.
+At this point, it looks like the summary is just there to have the same structure across sections without a real purpose other than consistency.
+I would suggest to split the content of the paper into two clear parts: current state and the proposal.
+Right now, the paper keeps pointing into the future work discussed in Section 6.
+Section 6 can be presented in the introduction to describe the paper overall but there is no need to keep referring to Section 6 later on.
+Currently, these references divert from the core which focuses on the state of the art.
+In Section 6 itself is a little confusing as it is labeled as future research when it actually cites plenty of work already happening.
+The parameter tuning section is a pretty good example of this.
+I would differentiate clearly that (1) there is work already going to improve parameter tuning, (2) this work falls short in some aspects, and (3) there is some new techniques that should be explored (which this would actually be the future research).
+It covers the most important studies in the field.
+The paper addresses a relevant and active area of research where lots of papers have been published in the past few years
+I like the paper and have some suggestions to strengthen its second part.
+      1
+      2
+IBM lacks for example Ruby: https://cloud.ibm.com/docs/openwhisk?topic=openwhisk-runtimes
+      3
+Mixing languages with runtimes (Node.js vs C#)
+I recommend focusing consistently on runtimes instead of programming languages here to cover this aspect.
+      4
+The argumentation on Page 4 and 11 about fixed cost per request might need to be adjusted or re-phrased accordingly.
+      5
+Please carefully verify all properties of Table 1.
+      6
+I like the paper's focus on a developer's perspective but have the question: Why do you think previous papers are written from the perspective of the service provider? I suggest clarifying or adjusting this argumentation.
+[45] discuss the level of control a developer has (e.g., Table 1) and generally talk about "developers" often (e.g., about tools, frameworks, level of control)
+I would argue that the developer's perspective is very much highlighted in discussions around the programming model as well as in many open questions they raise under "Open Research Problems"
+The Summary of Section 5 covers the wrong section and needs to be moved.
+        1
+        2
+In contrast to other sections of the paper, the economic model summarized here appears to be mainly a summary of a single blogpost (reference 13)
+I highly recommend enriching this discussion with additional perspectives from published literature
+        - Eivy 2017: "Be Wary of the Economics of "Serverless" Cloud Computing" 
+I noticed its strong focus on discussing related work, which partially solve the challenges:
+6.3 Multi-Cloud Usage: The distinction between Section 5.5
+and Section 6.3 needs to be much clearer
+and then reference Section 6 for further discussion of them under Future Research as well
+[97] raise several issues concerning developer experience
+I would argue the paper focuses primarily on the developer's perspective but not exclusively
+The introduction mentions to "augment [previous work] with our own experimental results and insights." In the remainder of the paper, own (preliminary) experimental results are mentioned about 4 times as a side note
+I suggest introducing FaaS shortly and how it relates to serverless in the background section given you use both terms in the paper.
+hardware, op- erating system, CPU-type, etc."
+Either indicate that this sentence describes a typical case or explain different invocation types.
+I would expect that a term used in the summary is at least mentioned in the previous section.
+Minor comments (e.g., typos, readability, minor inaccuracies)
+[40, 60, 64] also provide" => Please correct the order and names of these citations
+I suggest clarifying that Section 4 covers the economic model by moving the section reference accordingly instead of grouping them.
+* p3: The first paragraph of Section 3 is largely redundant with the 2nd last paragraph in Section 2 (just before)
+Maybe drop "While" and connect the sentences better.
+Comments for authors: Thank you for submitting your work to JSys’21! I enjoyed reading the systemization of knowledge — it was a well written summary of prior studies on serverless computing, with a novel application developer-driven perspective
+While the analysis of prior work is comprehensive, the summary boxes at the end of sections/subsections are helpful in highlighting the major takeaways from the many prior works in the space.
+What is the intuitive reason behind this, and how does this impact an application developer’s choice of language? Should they always prefer scripting languages to avoid cold-start delays?
+Why such a difference, and how does it vary across different cloud providers? How should an application developer reason about this choice?
+Again, how do they affect performance, and why? How does it factor into an application developers choices?
+There are other BaaS platforms that also claim to operate under a serverless model — if your focus is primarily FaaS, perhaps its better to reconsider the title.
+Given your focus on application-developer perspective, perhaps it can be dropped.
+* Section 3.5 seems to focus on aspects very closely tied to cold-starts (Section 3.1)
+* I really liked the summary of applications in Section 5
+One trend that was consistent in describing applications (which I really appreciated) was a discussion on why those applications are a good fit for serverless computing, and what challenges they face in existing platforms
+I would suggest adding a table that summarizes these opportunities and challenges — it would really help summarize your discussion.
+Also, the section is missing a number of recent works on Serverless Analytics (e.g., Starling [SIGMOD’20], Cloudburst [VLDB’20], etc.)
+Might be useful to look at this years publications that appeared after your submission (e.g., Caerus [NSDI’21]).
+(1) This work is precious to progress the community and ensure reproducibility
+I especially appreciate the effort to develop a modular and highly configurable framework.
+(4) I appreciate the rich related work section that clearly states the difference with the proposed framework
+(7) The manuscript is very well written and easy to follow
+(3) I am curious about how and why the authors chose the parameters in Table 1
+I am curious how the chosen model, along with the cluster configuration, affects the bottleneck
+Thank you very much for submitting your work to JSys
+I appreciate the paper and think that it is a valuable contribution to the community
+Following are some of the concerns I have, and I believe that addressing this will make this work stronger and more valuable to the community
+(2) I would love to see the overhead due to containerization in both the system—a discussion or experiment showing how the trade-off between reconfigurability and performance will be highly valuable
+(3) A discussion on how the parameters in Table 1 are selected will help the community
+(4) I will appreciate an experiment/discussion on how different models and cluster configurations affect the bottlenecks
+Also, I will enjoy a discussion of how this analyzer can provide the reasoning behind the bottlenecks
+- The description of SURBoard is missing several important details
+Thank you for submitting your work to JSys! I think your paper is filling an important gap in the currently available ML tooling space, i.e., that of providing automated, detailed performance profiling as part of ML pipeline execution
+I liked the fact that SURFBoard allows automated exploration of infrastructure parameters
+Overall I think the community would benefit from your tool.
+However, I think there are three main issues in the current paper that should be addressed before publication:
+While reading the paper, it never was fully clear to me, what exactly "reproducible performance analysis" means and why the reproducibility aspect is particularly important for ML
+I completely agree that detailed performance profiling and analysis is useful and necessary but I wasn't sure about the reproducibility part of it
+How does performance analysis/reproducibility help productivity or model sharing? Is it because it helps to optimize models to make training more efficient? I think it would be good to elaborate a bit more on this point to strengthen the motivation
+I felt that the description of SURFBoard was incomplete
+After reading the paper, I didn't have a good sense for what I would need to do to deploy and use SURFBoard in my environment
+In terms of system setup, some questions I had where: What are the different components that the system consists of, where do they need to be deployed, are they containerized or are infrastructure changes required? In terms of usage, I was wondering: What do I need to do to collect performance profiling metrics with SURFBoard, does it require code changes to my existing pipelines and how many, can I configure the collected metrics? Some of this information is missing from the paper while some is scattered across it
+I think it would be good to have one section to describe in detail the architecture and the programming model of SURFBoard to give readers a better feeling for how they could use it.
+In Section 6 you say that extensibility is difficult
+- The last/first paragraph on page 1/2 wasn't fully clear to me
+What are the exact reasons that new, complex ML pipelines make reproducible performance analysis more difficult? Is it because they consist of more components and have more dependencies so profiling needs to happen at many different points in the stack?
+- You mention the visualization notebooks that are part of SURFBoard
+How general are they? How easily can they be adapted to other metrics?
+- What did the set up of the NVTX profiling infrastructure entail? Why was it difficult?
+Would that be feasible? Are you planning to provide such a set of performance models?
+- Can you provide more details on the NVTX annotations? Who needs to add those annotations? Where do they need to be added?
+- I found Figures 3 and 4 a bit confusing
+First, it seemed that on the LISA cluster (Fig
+Also, I think I got confused by the way you measure duration and I didn't fully understand why duration increases with more GPUs
+Shouldn't it still be going down, despite the additional network traffic, as you're doubling the processing power? Or is the network the main bottleneck?
+Could you comment a bit more on the differences you observed between the different clusters? Was there anything interesting you found from looking at the network metrics? If not, some Figures (e.g
+7 and 8) could be removed to make space for some extra content
+Additionally, the captions of those Figures are also repetitive.
+- Could you add the GPU statistics from the LISA cluster to Table 4 or was there a specific reason why those haven't been added?
+- I liked the Pyprof-based kernel analysis, that seems to be really useful to identify major bottlenecks.
+Is that something that is integrated in SURFBoard or is that currently something the user needs to do manually?
+- page 1: "This is because OF the sheer complexity [...]"
+The uses cases are comprehensive and methodology for doing experiments is well-explained
+The authors have done a comprehensive survey of related work
+The issues are in the research problem and proposed solution
+Is it difficult to get this framework to run because contained software has dependency conflicts and is notorious to port, or is the application using some external libraries, or if multiple types of infrastructure do not support containers or these libraries?
+virtual machines (i.e., SageMaker and similar offerings from Azure) and application virtualization, which can lead to either lacking jitters in some cases, or a more light-weight solution
+Clarity: The paper lacks clarity of exposition
+The paper, in its current form, is at best vague on the specific research question that it aims to address
+The paper is unclear as to why their solution suffices?
+If the paper focuses on the specific research problem, originality will be more highlighted
+This paper studies an increasingly important problem in open science: reproducibility
+The paper does not do a good job in motivating and justifying why the proposed approach can make a significant difference compared to prior work, especially no insights on how this paper achieves reproducibility
+What would happen if performance analysis does not have reproducibility? How big the difference would be? These questions are not discussed or empirically evaluated.
+This paper is not clearly written for several reasons:
+The introduction is confusing and does not deliver important information
+"performance analysis of ML" or similar phrases appear multiple times in the paper
+The reviewer is not sure what it means
+The reviewer guesses that the authors mean the same things, but the meanings of these terms are subtlety different
+What kinds of metrics in the evaluation can reflect the reproducibility? Actually, it goes back to the initial question: what is the definition of reproducible performance analysis? How do you justify that the proposed approach has reproducibility? Are the metrics good enough to compare reproducibility? The reviewer cannot find the answers in the evaluation.
+Thanks for submitting this paper! I enjoyed reading it.
+purely from the app layer, without datapath modifications
+(1) I think it is a really interesting idea to piggyback protocol
+    where the congestion windows can be kept large indefinitely, I
+    think it makes a lot of sense.
+    the descriptions in 3.2 and section 4 on how the userspace
+    how netlink/iptables is used to intercept ACKs.
+(1) The applicability of the framework seems limited.
+  innovations like TLP, RACK etc
+  are already doable if no explicit receiver feedback is required.
+So this approach won't work for
+  latency-sensitive apps that only send a few packets.
+  respond to such scenarios more effectively than tcp cubic.
+- Reliance on UDP/QUIC looks poised to accelerate in the future, as
+ALCC is certainly a good point solution but its
+  shelf life appears limited.
+    just relative overheads
+Going from 5% to 7.5% looks very
+    If possible, please also provide measurements from a mobile phone
+ Support for the kernel datapath (without
+    invasive app changes
+    migrate their app to quic, their experience suggests not requiring
+    extensive app modifications.
+    with congestion control more thoroughly.
+    CC algorithms
+    for instance.
+    To me, not requiring the mobile client to change its OS for uplink
+    ALCC's design
+But the description of the solution is incomplete.
+- The descriptions make it appear as if TCP is inescapable, but there
+  are of course apps out there which use HTTP over UDP, QUIC, etc.
+  processes are put to sleep upon blocking (with blocking socket)? Or
+  is the point that the socket is blocking from the point of view of
+  the app, but always non-blocking from the point of view of ALCC?
+- I didn't understand the second point about the blocking signal "The
+- The comment that "ccp requires users to re-think congestion control
+  algorithms entirely" seems unfair
+It is possible to use a simple
+  in the userspace component.
+  modification, unless specific client-side feedback is required.
+- what do you mean by zero-byte overhead? modifications to tcp
+- "The last hop from the VPN server to the desired remote host/server
+  will continue to rely on the host’s TCP variant, thereby negat- ing
+  performance gains." won't this be true for ALCC protocols as well?
+- what does it mean for "other network entities to participate in the
+- "UDP lacks required security support" is simply untrue given
+- QUIC deployment numbers are trending up, how significant still is
+- modifying the "datapath", not data
+- in general, comparisons against CCP felt more like engineering
+  concerns rather than conceptual design differences
+  conceptual difference appears to the removal of the requirement to
+  modify the datapath, which the authors should boldly say outright!
+Is what is available in tcp_info enough
+They aren't an issue on the server side since
+- "why there are no successful attempts to include any of the newer
+  library was upstreamed after the papers referenced here were all
+- how significant is the issue of quic packets being dropped by
+  middleboxes at this point? youtube and facebook are driving lots of
+- it would be interesting to consider a scenario where the link is
+  lossy with a highly variable RTT.
+- using tcp_info in user space to get feedback from kernel is pretty
+  transfer (or indicates full buffer in a non-blocking socket), ALCC
+  delays the next packet transmission
+  socket "report" anything, since the process and the ALCC library
+  would actually be put to sleep?
+- what purpose do the ACKs from the kernel module serve?
+- does your framework support other operations on the socket, like
+  sockopt? In general, replacing operations with other calls is fine
+  pushed into the TCP socket (blocking semantics) or the amount of
+  data in ALCC's circular buffer?
+  different mechanism, like a shared memory buffer or running a BPF
+  hook with maps, might turn out to be more CPU efficient
+- what if the userspace process fails? Having external hooks to
+  design from the fault tolerance perspective.
+- The discussion of the verus implementation seems to indicate that
+do you anticipate that the set of
+  datapath features is frozen at this point, or that you will need
+  more based on trying out new algorithms?
+- Copa description seems a little in the weeds.
+  against "zero byte overhead" mentioned in the intro?
+This is a weakness of the implementation.
+- adding a custom HTTP header is certainly a nice way to not require
+  kernel modifications for things like RTT measurements
+- didn't follow the discussion on why MDI is needed
+- Notions of window sizes, ACK feedback..
+  control/obtain from the http layer? you might never receive an
+  app-level response from a partial http request and you're not
+  getting any ACKs or socket interface feedback from TCP either
+  well does the control loop actually work?
+- did you try integrating with existing mobile client apps?
+- is measurement under low contention/low data rates sufficient? 2.5/5
+  meaningful about the channel capacities
+it would be nice if the
+  fundamental? same thing with sprout 5.3.
+- there are no space constraints in this journal paper! :) feel free
+  to report all the results from all the traces.
+- please show the actual cpu overheads
+  increase of a few percent cpu (e.g., 2% -- 5%), which is very
+  Android mobile in the uplink direction, phone measuring the CPU
+  sense of how much it increases.
+  the uber blog post I linked above disagrees.
+- This paper identifies an interesting research opportunity and comes up with a simple idea that works surprisingly well.
+- Nice discussion of the motivations and clear comparison with QUIC and CCP.
+- Shallow and repetitive evaluation that has only scratched the surface of the problem and the solution.
+- Missing evidence from the real world.
+Thank you for submitting the paper to JSys! It was a pleasure to read it, particularly the sections before the evaluation.
+I appreciate that you intentionally mimic the widely used socket APIs, as well as the effort of porting three CC protocols to your framework.
+However, the paper is not yet in good shape unfortunately.
+The entropy is low and the effective information conveyed to the audience is limited
+- Report the performance numbers of TCP Cubic as a sanity check
+There should be real-world experiments too in the evaluation section; they need to be performed repeatedly with error bars included in the results
+Thanks for submitting the paper to JSYS
+I like the idea of moving congestion control to user space, which can significantly accelerate the adoption of new congestion control algorithms
+However, I have the following concerns:
+The solutions in 4.1.3 seem very ad hoc to me
+I worry that this can limit the scope of congestion control algorithms that can be supported by ALCC.
+ This should be easy to implement using a loadable Linux kernel module, like what you do in 4.1.2.
+and 4.1.3 seem very unclear and ad hoc to me
+I like your observation that Android imposes restrictions on modifying kernel in section 4.3
+ I suggest the authors moving 4.3 to discussion
+Client/Server seem a little bit confusing as both client and server can send and receive data
+Thank you for submitting your paper to JSys! Overall I really like the idea of implementing the congestion control algorithms within the application layer to eliminate the overhead of deploying new algorithms
+The paper is also interesting in
++ interesting idea and pragmatic solution
+- implementation cost in kernel 
+- limitations in the scope of deployable algorithms 
+However, now that the kernel still needs modification (no matter a large patch or a small one), what's the difference for operators?
+It would be better to discuss and clarify the scope of ALCC.
+It would be better if the authors could explain or measure such influence in detail.
+- Another thing I don't understand is related to the zero-byte claim in the paper
+The evaluation is quite extensive though some details could help improve it
+In general, the paper is well-written but is missing some important details and clarifications
+The style and presentation is mostly clean, but the authors rarely make efforts to simplify and make the topic accessible (i.e., "Only experts can understand the paper")
+In this sense, there is room for improvement before it can be considered a quality publication.
+I think the paper is relatively strong and very interesting, but has multiple serious flaws
+It's possible that these flaws can be simply fixed by being more clear, but it's also possible some more extensive experiments would be necessary (wrt
+batching, Chain's performance, and the dubious claim of "best throughput to date")
+I remain optimistic that the authors can fix them within ~3 months.
+- The major novelty seems to be in preventing request duplication attacks.
+    - This clear distinction as to what is a duplicate request in your model is lacking and clarifying that would be a great improvement to your paper.
+- In general, it is more valuable to show fewer evaluation results if that means
+  that they are higher quality and more thoroughly explained.
+    - Some questions and suggestions below...
+    - I find it surprising that SRB manages to beat Chain consistently, except for the cluster environment (where Chain uses MACs, Fig.7)
+Is it because Chain has no batching? This may be an important detail you overlooked, so please clarify.
+I am thinking of [25] and [33] for example
+With the present evaluation, your claim is not on a very solid ground
+You could just rephrase that to be accurate by saying "best throughput among the systems we evaluated"...
+- Section 9.4 is impressive in showing the importance of preventing duplicate requests, though as I mentioned earlier I believe the definition of a "duplicate request" should be clarified, since this seems something specific to your system and not a concern in your competitors (PBFT, HotStuff).
+- I appreciate that you took the effort to put the pseudocode of PBFT in section 6, and also that of SRB
+- Please clarify the difference (if any) between your signature verification sharding technique (5.6)
+- The buckets approach and periodic redistribution (sec.4) is very neat!
+    - (Though I didn't find Fig.2 very intuitive or helpful, consider simplifying that figure.)
+- I found the "emulation" of other BFT protocols very interesting.
+    - "In more established
+      decentralized systems, such as Bitcoin and Ethereum, it
+      is standard to charge for the same transaction only once,
+      even if it is submitted by a client more than once."
+      did end up included multiple times in the blockchain, it would pay fees
+      multiple times.
+    - It would be good to be more accurate with your description of other systems
+Also, your approach has the flavor of a mempool (line 59, alg 4), but it is sharded.
+    - I looked at the references and could not find evidence that watermarks are eliminated in those protocols
+I found that strange so I looked at the paper again, and found in 6.1 that it describes request batching
+So please double-check this statement and try to be more accurate.
+    - Does SRB indeed implement separate NICs? That was not clear.
+Some new systems are starting to build on gossip (beside the usual suspect Bitcoin, there is RapidChain and Tendermint that come to mind, the latter being closer to your model)
+I suspect a highly-efficient gossip overlay is a simpler approach to relieving the leader bottleneck, and I would be curious to know how would this approach compare to your multiplexing strategy.
+# Potential improvements in writing and clarity
+- section 3 title is "PBFT and its Bottlenecks" but there is a single bottleneck, at the primary node at step pre-prepare, correct? I was wondering if there are other bottlenecks and I missed some.
+- make it clear, early on, that the solution is deterministic (as opposed to randomized solutions, e.g., HoneyBadger, Algorand,...)
+- "Gracious" means kind and warm (see dictionary)
+I think it may be more precise to use "graceful".
+- Probably a typo, please fix: "This paper presents SRB (or, simply, SRB)"
+This is a noteworthy observation, which this paper should have highlighted and presented in the evaluation
+The paper presents no discussion on request execution
+Clearly, this should not be the case as there will be a safety violation
+How much time do nodes have to wait for executing requests post failures.
+In fact, a byzantine replica may just play this as a trick on some other replica, even though nothing bad has happened to the system
+The paper includes a lot of code, which could come really handy if there is some accompanying explanation
+In its current form, the code is hard to follow.
+Section 5.4.1 needs to be re-worked with the details regarding the messages transmitted clearly specified
+Before starting to execute participate in..
+I have doubts about this claim
+The HoneyBadger BFT paper discussed this exact matter
+And I think the HoneyBadger paper credits even earlier papers for observing this challenge and solution
+The authors should cite those papers and reconsider the how novel this method is
+To be honest, even without those prior works, I find the idea of hash partitition straightforward
+Given the above, I suggest the authors tone down claims about proposing certain designs or addressing certain attacks for the first time
+This is strong enough for a systems paper
+While BFT is undoubtedly a seminal work, it has been more than two decades since it invention
+There has been a lot of progress and new understanding since then
+I suggest the authors incorporate the latest progress in BFT
+In terms of the writing, while it is commendable that the authors provide super detailed pseudocode and proofs, I have to say they are not very helpful to a reader
+The code is too detailed and low level
+Section 3 mentions "bottlenecks" in the title but did not discuss them
+Section 4: the third paragraph makes it sound like batching and watermarking are two competing and incompatible approaches
+I don't think that is what you mean there
+Page 5 says that the primary "reliably broadcast" its selection
+Do you mean Bracha-style reliable broadcast?
+Section 8 feels like a rather minor point 
+While this is a crowded area of research, I believe the paper and the system it describes, SRB, presents an interesting combination of technology and delivers a system that improves performance over competing approaches
+Even so, most arguments look sound and decisions taken looks rooted on solid grounds
+The text itself is well written and I only detected minor issues that should be simple to correct
+Bellow I list some more detailed comments on the paper content
+"This paper presents SRB (or, simply, SRB) ..." Show acronym in full
+If this is not an open choice and is required for correctness, maybe give some explanation here
+Please increase the size of Fig 2 to make it more readable
+I believe there is no page limit in JSys.
+Unless it is usual to use $\parallel$ in this setting, please consider a different symbol for concatenation, e.g
+"However, such such inconsistent epoch" Remove such
+"information about committed batches.." Remove .
+Is the "$⟨HELLO, ne_i , c_i , b_i ⟩$" not signed?
+This looks the only place with this kind of typing info
+Maybe this symbol is not needed, and just make sure everywhere to use = for testing equality and $\leftarrow$ for changing state
+The first paragraph in this page "We define ..." looks a bit out of context
+"a client can be committed — Validity follows." -> "a client can be committed
+second)" -> "(resp., second)" or "(resp
+"Aardvark [24] was the one the first BFT protocols" Remove the
+* Improvement numbers are not very large
+Thank you for submitting SEGUE to JSys
+Overall this is a decent paper and I have a few comments as follows.
+As much as I appreciate the efforts the paper made in addressing the second challenge, I feel there is a lack of detailed justification on the first one, which IMO is even more important in the infancy of this big idea (people will first question this first part too)
+SEGUE’s use cases need to be more explicitly specified
+Did you evaluate that? This is something Youtube and other open video platforms need to consider as they receive a lot of video uploads every minute and need to encode them ASAP
+Need to mention QoE function adjustment early (currently the authors do not mention it until Section 6), otherwise readers will question Fig
+The “Other work” paragraph in the related work section is a bit confusing
+Salsify [7] seems not very related, not sure how it relates to SEGUE
+1: labels are not descriptive enough
+“For the segments highlighted in pink, there is a huge fluctuation in VMAF within the segment boundaries,” true but why do users care? Users don’t even know where the segment boundaries are.
+“Unfortunately, our requests for CAVA’s code were unsuccessful” Why mention this?
+Some of the paper info in Reference (e.g., [10], [11], [14], [25], [31]) are incomplete.
+“too many bytes or two few bytes are undesirable”=>”too many bytes or too few bytes are undesirable”
+Thanks for the interesting and well-written paper! I
+appreciated the exploration of the design space of
+segmentation and augmentation and the evaluation on real
+The main concern I have with this paper is that the levers
+are proposed without clear reasoning towards why these are
+the right solutions to solve the problems discussed in the
+Brute-force searching is a nice and simple strategy, but
+provides little insight into the structure of the
+Specifically, I worry about optimizing encoding
+Why not co-design them in the first place, as
+In many parts, the methodology feels ad-hoc (setting
+I further feel that the paper
+should do more to justify the tradeoffs it achieves (x% more
+the proposed strategy does not dominate existing
+There are definitely some clear sparks of ideas in this
+its presentation and reasoning for the advocated
+I hope that the authors could improve these
+detailed thoughts on parts of the paper.
+Regarding augmentation: I couldn't follow why using more
+bitrate tracks for specific scenes (but not the whole video)
+Is the idea to reduce storage at the video
+Perhaps the authors could quantify how much reduction in
+data storage (at the provider, caches, or elsewhere) is
+least provide an example how this information is used.
+of the fixed bitrate tracks? that are available at the video
+"SEGUE’s ideas are orthogonal to this, and address grouping
+which scene fragments into seg- ments will result in
+beneficial rate adaptation behavior."  I feel the ideas are
+depends on the homogeneity of the content in the segment.
+traces are these? Which video? which users?
+What are the bandwidth ranges corresponding to the slow,
+One conclusion that a reader could make from plots Fig1(c)
+(Also, might the problem proposed in the paper
+be "solved" if one merely used rate-based adaptation?)
+However, this seems to go against the conclusions from
+this apparent contradiction relative to prior work?
+Providing more details on the traces, the environments where
+As background for the discussion in section 3.1, it would
+help if the paper clarified whether today's video clients
+request a bit rate corresponding to average across all
+coding, it is sometimes either hard to achieve sufficient
+difference in perceptual quality occurring because of an
+implicit assumption that the client will switch to a lower
+bitrate (averaged only over the segment, not the entire
+segments is the right thing to do here, because that makes
+reduce the plan- ning lookahead in terms of time"
+amount of metadata that must be exchanged during playback
+time? Does that have any performance impact especially for
+connections with poor bandwidth or high base latency?
+in section 4.1 help in attaining higher QoE and resolving
+the issues pointed out in section 3 regarding poor
+segmentation, namely the differences in perceptual quality
+across segments or needlessly low quality segments.
+variation between 'complex' and 'simple' segments)
+they benefit from their own independent segmentation?
+datasets of videos with existing bitrates
+video preencoding) system into a suboptimal regime? Might it
+section 4.2: how are thresholds for the various
+Regarding simulation for augmentation, what does it mean to
+5.1: Could you please provide more details of the QoE
+function used in the simulation? Also, please provide some
+The slow/medium/fast bucketization seem kind of arbitrary.
+seems to indicate that the buckets are highly skewed.
+why the tradeoff achieved by WideEye is a good one
+general, it appears that none of the schemes discussed
+dominate the naive scheme (constant-time seg) on all
+Could you explain why the tradeoff achieved by the
+make significant local improvements stand out in the overall
+Could the authors comment on the computational cost of
+running the simulations to get the noted QoE improvements?
+How acceptable might those overheads be in practice, for a
+\+ clear writing with a precise description of the problem and solution
+\- missing baselines from prior work in evaluation
+Thank you for submitting your work to JSys! This paper has almost impeccable writing and is truly enjoyable to read
+That said, I am not so sure about the statements in the paper claiming that it "frames a new direction" or  "sets off a new thread" for ABR streaming and offline chunking
+Putting the above concern aside, Segue's solution does not seem very novel or inspirational to future work
+Brute force and simulation are the most straightforward way that one could approach the outlined problems, not providing many insights to the readers
+To make my review more suggestive, here is a possible next step to begin with
+In Section 4.1, multiple intuitive heuristics have been defined and associated with penalties
+Instead of exhaustively enumerating $2^k$ outcomes, can you try the dynamic programming algorithm below off the top of my head? I hope I am not missing something.
+Thank you for submitting your paper to JSys
+I thoroughly enjoyed reading your paper, and I learned a lot in the process
+- Though the writing, in general, is good, it is hard to follow at times
+For example, the illustrative example in Figure 1 is quite critical to the story
+However, it took me a while to grasp the key idea
+The section had a few forward references and many moving parts that made it difficult to follow the narrative
+- More elaborate discussion on challenges with the proposed scheme is needed
+Where does the proposed approach lie in that design spectrum? The paper does have a cursory discussion on this issue
+I will encourage the authors to add a more in-depth discussion on this issue
+Although the word "systems" is mentioned, its use here strongly suggests software engineering as opposed to traditional computing systems
+That editorial concern aside, it is clear that machine learning is becoming an increasing part of what we do in systems research in general, so I will proceed with the assumption of this being in scope.
+Overall, I found this paper to be fairly well-written
+Throughout the text, however, I feel that more use of active voice would make the paper read a bit stronger
+So I would ask the authors to please consider an editorial to make the writing a bit more active--and a bit tighter as well
+The abstract, or example, is a bit too long
+I also think the "Research Agenda" is a bit inappropriate for a technical paper
+This makes the paper conclude more like a proposal when, in fact, there has been substantial scholarly effort leading into this section
+Consider significantly shortening this section or removing it, unless it is really contributing to the contributions of the paper.
+Regarding the motivation for the paper, there are few points that could be sharpened:
+I'm not sure this statement is true and certainly will benefit from a clear example/examplar that supports this claim
+I really like the discussion of artifacts in section 3.1
+But I found myself wondering, why isn't any technical report or paper describing an ML Project not an artifact, too
+Overall, I find the study to be well-constructed
+However, I did find myself wondering whether the study itself is reproducible
+This is an anonymous submission but it would be nice to know more about the methods used and whether any tools/datasets are being made available to the community to reproduce or extend these efforts
+ If this paper is accepted, I hope the authors can speak more directly about how reproducible this study actually is and what tools/scripts/datasets will be made available to the community.
+In closing, there are some flaws in this paper but most can probably be addressed with routine revisions
+ This work is definitely worthy of attention in the software engineering community and, although a bit of a stretch for systems, probably has a home in JSys.
+The paper is well-written and easy to follow
+It has the potential to be a valuable paper
+However, it needs a significant amount of additional work.
+Here are my comments and suggestions on how to improve the paper.
+Change this to “to enable reproducibility” or “to verify reproducibility” or “evaluate reproducibility”
+Creating the experiment and reproducing the experiment parts should be divided
+* It would be helpful for the reader to see a bullet list of each of the projects with a 1-2 sentence description (as many will not be familiar with at least some of the tools)
+Can these systems be used with each other or they serve the same purpose? 
+* Table 3 is the essence of the paper, yet it is not very informative
+I suggest sorting the tools from best to worst, adding a rating based on its popularity (ie GitHub stars, or no of contributors), maybe a comment, and setting it to landscape
+* The observations are somewhat in contradiction to the results presented in the table.
+Also I wouldn’t say that full versioning is rare given that there are many “Vs” in Tab 3
+* Observations 3 and 4 are critical
+Would that be possible for the rest of the platforms? 
+I expect any of these systems can be tested with CI, so I don’t agree with this observation
+Also, I don’t understand why would one want to “export experiments to a different environment”, when the original one can be exported or encapsulated into a virtual container
+* Observation 6 is vague (“similar but different” sounds unscientific), and it should be removed
+The first sentence is in contradiction with Observation 1
+Some of the points here may be true, but the fact that “classification is difficult and messy at times” just showcases the flaws in the methodology
+If the paper is to be resubmitted, this observation should be removed and difficulties of classification should be discussion elsewhere.
+* The Framework extensions section is not very convincing
+* The “Entire Lifecycle” points to a major flaw of the methodology, which is that the paper only evaluates the “experimentation phase of the ML lifecycle”
+I don’t think that is the case
+This paper uses “reproducibility” where it should just use code/model “testing”
+* “Reasoning” is not very convincing
+Surely all systems support process/model/code documentation?
+* There is no space after a full stop and a capital letter in several places, ie, 2.1 first paragraph “.E”
+While I think the authors did a reasonably comprehensive job in covering the major aspects of reproducibility, I would like to add a few points for consideration/discussion.
+How would a perfect tool accommodate to this?
+- 2.1: white space after dot
+- 4.2 One one end -> on one end
+Disclaimer on expertise: While I am actively publishing in the area of continual/lifelong machine learning, I am not very familiar with state-of-the-art reproducibility systems and the tools presented in this paper.
+- The paper points out the need for standardization.
+- The actual analysis of tools is rather shallow, the paper only reports whether a tool checks a certain box or not, and does not provide much-needed detail into *how* a tool implements these capabilities, which in my opinion would be essential to decide between tools.
+- The future research agenda is highly idealized and fails to fully convey the complexity of some of the raised tasks, e.g
+how difficult it is to capture the sensitivity of ML models to input data.
+- The paper lacks any discussion of the limitations of such a framework
+I feel it would benefit greatly from a better differentiation from other frameworks and discuss what the framework should do, and what it should *not* do.
+Thank you for submitting this paper, which I believe highlights an important need for more thorough versioning and standardization.
+However, I believe that in the current state, this paper is rather shallow and I feel it would benefit from a more clear separation from other frameworks (e.g
+In particular, I feel that many of the points raised in 5.1 should already be addressed in this work.
+Secondly, I believe many points raised in the research agenda are active research fields, and a more insightful comparison would be beneficial to clarify the position of this framework in the larger context of ML research.
+3.2: What are the benefits for versioning/automation of such tools compared to simply git+CI/CD? Can you provide a more detailed description of what these tools *do to help?*
+5.2: I question whether a single framework should attempt to capture everything
+Especially the development and deployment stages seem to be very environment-specific, e.g
+which training or monitoring capabilities are available; this all seems very different from code versioning and the current text does not convince me of the benefits of packing all into a single framework
+This is an incredibly large area in itself
+Maybe you should focus more on how the framework could *connect* to existing systems for large-scale deployment, instead of trying to try and capture it all under the umbrella of this framework.
+(reasoning): This seems to boil down to "good coding practices", i.e
+explaining your work instead of just throwing artifacts out there
+This is already possible when versioning code (and even data), as you describe yourself in the comparison between snapshots and versioning
+To me, this seems like an appeal to the developer(s), not a missing capability of the framework
+The "while not straightforward" does not appreciate the complexity of this problem at all and I feel that it mischaracterizes the difficulty of adding such capabilities, which may be borderline impossible in a general way.
+- The inclusion of TensorBoard in the framework seems rather out-of-place
+- I believe it would help the reader to put a legend for the notation in the table captions, it is currently rather hard to jump back and forth between the tables with results and the text explaining the notation.
+- I do not understand the arrows in figure 3: why are code and outputs not published?
+- The system model is well-presented,
+- Comparison with state of the art solvers that support integer non-linear programming is well-presented
+- The paper has released its artifacts with a good README file, kudos to the authors
+Dear authors, thank you for submitting your paper to JSys! Thank you also for anonymously sharing the CoPi source!
+The paper is written well; the CoPI algorithm is particularly nicely explained
+While this may be the case, this is not apparent from the paper
+In the following, I summarize the strengths and weaknesses of the paper in brief, followed by detailed comments.
+- There seems to be an unnecessary emphasis on loss rates in the early part of the paper
+* The phrase “loss-rate” is used multiple times in the Introduction and Abstract
+However, despite being familiar with the real-time systems literature, I had a hard time understanding the exact meaning of this phrase
+I suggest the meaning is clarified once in the beginning itself.
+I personally understand the intuition and the rationale, but it may not be obvious to all readers, especially when reading the following sentences in the introduction
+* Explain the WFD heuristic and the Simpson's four-slot algorithm in brief, maybe in footnotes.
+* “Without the loss of generality, we consider unidirectional pipelines.” Please elaborate
+* “If a task has already finished its work for a job invocation, it yields and does not start its next job until next period.” When and why does this happen?
+* “Moreover, the fixed execution strategy tightly bounds a pipeline’s end-to-end latency [26].” What does a fixed execution strategy mean?
+I would still prefer to read about how it is derived in this paper
+* “Then, the loss-rate of a producer-consumer pair is …” I think the example in this sentence is wrong
+* I think Section 3.2.1 can be significantly shortened
+Particularly, the proofs in the section are really just explanations
+I suggest keeping the rules as they are, but getting rid of the proofs, and weaving the explanations along with the examples, which are most helpful in understanding the concepts.
+Could you also cite a paper from the real-time systems literature
+Could you cite one of these papers, if applicable?
+* The rationale for budget adjustment was not clear in Section 4.1
+It became clear in Section 5 later.
+The paper currently does not comment on this aspect.
+This paper deals with the scheduling problem for pipelined tasks, where there’s an overall end-to-end delay
+The paper is pretty well-written, easy to follow, and solves a practical problem
+The analytical formulations also seem rigorous
+Final comments: The scheduling problem addressed in this work is worth considering, and the paper has intellectual merit
+The paper could be improved in the following ways:
+The paper is certainly not ready for publication:
+1) the relevance of the problem is not well explained,
+2) there is a lack of connection to any practical application,
+3) the writing and presentation style is not up to standard.
+While the contribution is clear, I think it is certainly not enough for an invitation to resubmit.
+I do understand that the problem solved is not the same and not necessarily limited to cyber-physical systems, but with the lack of an application example in the paper, this is what comes to mind
+The writing in the entire paper is quite poor.
+The two objects are quite different and they are not related in the way the authors describe
+I do understand what the authors mean with the beginning of 2.3, but this needs to be fixed
+I also have a hard time seeing how using a sporadic server for periodic tasks would be the best choice (rather than e.g., a constant bandwidth server)
+I also don't entirely follow the argument that leads to the transition from Equation (1) to Equation (2), which I think is quite poorly written
+I do understand the point, and the fact that the quantity on the right of equation (2) is now bigger than the right-hand-side of equation (1), and therefore this is still a valid upper bound, but this needs to be expressed quite a lot better than it currently is
+I think this assumption, while acceptable, is very limiting.
+The definition in Equation (3) is completely unacceptable
+The sentence "Therefore, the oversampling ratio: [...]" lacks a verb
+The statement that when the producer has a larger period than the consumer there is no lost message in the pair is very obvious, as it is all the content of Section 3.2.1 in general
+B" four times, and then eventually "3
+Page 5: "A task's runtime budget $C$ to read, process and write 1 message is usually determined by profiling its worst-case execution time (WCET)" - the use of the word "profiling" here is very misleading
+If one obtains it via profiling, it is not really certain that this is precisely the worst-case.
+Is the new loss rate calculation taking into account the fact that tasks overwrite the same values and maybe the values are then not meaningful any longer?
+The paragraph that starts with "Our heuristic constraint solver algorithm [...]" is very unclear
+I don't really understand what this means, with two forward references and very little information.
+Overall the evaluation seems to be superficial and rather a comparison of different solvers than something that provides insights into the problem and solution.
